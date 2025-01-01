@@ -1,0 +1,686 @@
+_______________________________________________________________________________________________________________________________________
+
+
+
+_______________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+_______________________________________________________________________________________________________________________________________
+
+
+Concepts:
+    -------------------
+    1.Docker Engine.
+    2.Docker Desktop.
+    3.Docker Hub.
+    4.Docker File.
+    5.Docker Compose
+    6.Docker Swarm
+    7.Kubernetes.
+    -------------------
+    1.Image.
+    2.Container.
+    3.Network.
+    4.Volume.
+    5.Docker Compose.
+    -------------------
+    Docker Files:
+                Dockerfile
+                Dockerfile.dev
+                Dockerfile.prod
+                Dockerfile.test
+                Dockerfile.template
+                
+                docker-compose.yml
+                docker-compose.override.yml
+                docker-compose.prod.yml
+                docker-compose.env or .env
+                
+                docker-stack.yml
+                
+                docker-entrypoint.sh
+                config.json
+                .dockerignore
+    
+
+
+    =>>>> Containerizing your Application:
+                        A.Single  Host:
+                                        1.Single-Container Applications 'Monolithic    App'.   "Project 1"
+                                        2.Multi -Container Applications 'Microservices App'.   "Project 2"
+                        A.Multiple Host:
+                                        # Multi -Container Applications 'Microservices App'.   "Project 3"
+
+________________________________________________________________________________________________________________________________________________________________
+Image     Management :             (Write   "docker image"     to list all image     commands)
+Container Management :             (Write   "docker container" to list all container commands)
+Network   Management :             (Write   "docker network"   to list all network   commands)
+Volume    Management :             (Write   "docker volume"    to list all volume    commands)
+Docker Compose:
+
+________________________________________________________________________________________________________________________________________________________________
+
+                                                                Examples                                
+                                                                Examples
+                                                                Examples
+________________________________________________________________________________________________________________________________________________________________
+Basic Commands:
+    docker info
+    docker -v
+    docker --version
+    docker -h
+    docker --help  
+    
+    echo "your-password" | docker login -u <your-username>            --password-stdin     <registry'>
+    echo "mo#es.com123"  | docker login -u mohamedfawzizaki@gmail.com --password-stdin     https://registry-1.docker.io/v2/
+
+    docker logout   <registry>
+    docker logout   https://registry-1.docker.io/v2/   
+   
+
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+Image Management:
+    (Write "docker image" to list all image commands)
+
+    docker search <ImageNameOrID>
+    docker image ls                   : Lists all images.
+    docker image ls -q                : Lists all images' IDs.
+    docker image inspect <ImageNameOrID>
+    ---------------------------------------------------------------------------------------------------------------
+    # Builds an image from docker init in your root directory of your project:
+    docker init                          
+
+    ---------------------------------------------------------------------------------------------------------------
+    # Builds an image from a Dockerfile.
+    
+    docker image build -t <name>:<tag> .
+    docker image build -t myapp:v1 -f MyDockerfile .
+    docker image build -t myapp:v1 --no-cache .
+    ---------------------------------------------------------------------------------------------------------------
+    # Building an image from a running container:
+
+    docker container commit <container_id_or_name> <new_image_name>:<tag>
+    docker container commit abcd1234 myapp:v1
+    
+    docker commit -m "Added necessary configurations" -a "Your Name" <container_id_or_name> <new_image_name>:<tag>
+    docker commit -m "Updated app dependencies" -a "Mohamed Fawzi Zaki" abcd1234 myapp:updated
+    ---------------------------------------------------------------------------------------------------------------
+
+    # you should tag the image like this to be able to push it:
+    
+    docker image tag <Image-nameOrRebo-name:ImageTag> <username>/<Image-nameOrRebo-name:ImageTag> 
+    docker tag myapp:latest mohamedfawzizaki/myapp:latest
+    ---------------------------------------------------------------------------------------------------------------
+
+    docker image push <username>/<Image-nameOrRebo-name:ImageTag>         : Upload an image to a registry
+    docker image push mohamedfawzizaki/myapp:latest
+    ---------------------------------------------------------------------------------------------------------------
+    # Pull an image from the Docker-Hub registry to your local registry:
+    docker image pull <image>                                             : Pull an official image from Docker Hub.
+    docker image pull nginx:latest
+
+    docker image pull <username>/<Image-nameOrRebo-name:ImageTag>         : Pull a  non official image from Docker Hub.
+    docker image pull mohamedfawzizaki/myapp:latest
+
+    docker image rmi <image_id> -f               : Remove an image.
+    docker image rm $(docker image ls -q) -f     : Remove all images.
+    docker image prune                           : Remove unused images.
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+Container Management:
+    (Write "docker container" to list all container commands)
+
+    ############################################################################################################################################################
+    ## my app container:
+    docker container run -it --name <my-container> -h <my-hostName> <Image> <command'bash'> -c "/user/local/bootstrap.sh; bash" 
+    // -c "/user/local/bootstrap.sh; bash  ------------>>>>> bootstrap.sh is a shell script used to bootstrap your services when you run your container.    
+    ############################################################################################################################################################
+
+
+    docker container run <image> <app/Command>                  : Runs a container from an image, 
+                                                                 <app> it's the main app if exit from it the container will stop, 
+                                                                 if i don't write it it will be the defualt in the image CMD.
+    docker container run -d  <image>                                                         : Runs a container from an image in the detached mode 'background'.
+    docker container run -it <image>  <Command>                                              : Runs a container from an image in the interactive mode.
+    docker container run -it alpine:latest sleep 10
+
+    docker container run -d  -p <hostport:containerport> --name <my-container> <Image>       : Run a container in detached mode with custom name.
+    docker container run -d -p 8080:80 nginx
+
+    docker container run   -it -p 8080:80 --name my-server nginx:latest bash/sh                 : Case 1 :
+    docker container start -it <container_name-or-id>  bash/sh                                     if you exit from the container's shell in this case the container will stopped
+    
+    docker container exec -it <container_name-or-id> bash/sh                                    : Case 2 :
+                                                                                                   Access the container's shell.
+                                                                                                   if you exit from the container's shell in this case the container will not stopped   
+    exit                                                                                        : exit from the container's shell
+
+
+    docker container ps                                                                      : Lists running containers.
+    docker container ls                                                                      : Lists running containers.
+    docker container ps -a                                                                   : Lists all containers, This will show all containers, including stopped ones.
+    docker container ls -a                                                                   : Lists all containers, This will show all containers, including stopped ones.
+    docker image inspect <container_name-or-id>
+
+    docker container logs  <container_name-or-id>                                            : Fetch the logs of a container.
+    docker container stats <container_name-or-id>                                            : Display a live stream of container(s) resource usage statistics.
+    docker container port  <container_name-or-id>                                            : List port mappings or a specific mapping for the container.
+    docker container top   <container_name-or-id>                                            : Display the running processes of a container.
+
+    docker image pull <image>
+    docker container create -it --name <my-container> <ImageNameOrID>  bash/sh               : create   a container.
+    docker container start  -i <container_name-or-id>                                          : running  a container.
+    docker container restart <container_name-or-id>                                          : Restart one or more containers
+    docker container stop    <container_name-or-id>                                          : Stopping a running container.
+    docker container kill    <container_name-or-id>                                          : Kill one or more running containers.
+    docker container rename  <current-name-or-id> <new-name>                                 : rename   a container.
+    docker container rm      <container1_name-or-id>   <container2_name-or-id>               : Remove   a   stopped container.
+    docker container prune                                                                   : Remove   all stopped containers.  
+
+    docker container cp <yourDirectoryOrFilePath>  <container-name>:/<path-to-container>     : from outside the container to the container.
+    docker container cp <container-name>:/<path-to-container> <yourDirectoryOrFilePath>      : from the container to outside.
+
+    docker container commit <container_id_or_name> <new_image_name>:<tag>                    : Building an image from a running container:
+    docker container commit abcd1234 myapp:v1  
+
+    ---------------------------------------------------------------------------------------------------------------------------
+    # Restart-Policies 'self-healing containers':
+    --restart always                : docker container run --restart always         <image> <app/Command>
+    --restart unless stopped        : docker container run --restart unless-stopped <image> <app/Command>
+    --restart on-failure            : docker container run --restart on-failure     <image> <app/Command>
+    ---------------------------------------------------------------------------------------------------------------------------
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+Network Management:
+    (Write "docker network" to list all network commands)
+
+    docker network ls                                          : List networks
+    docker network create                                      : Create a network
+    docker network connect                                     : Connect a container to a network
+    docker network disconnect                                  : Disconnect a container from a network
+    docker network inspect                                     : Display detailed information on one or more networks
+    docker network prune                                       : Remove all unused networks, Removes networks not associated with any container.
+    docker network rm                                          : Remove one or more networks
+
+    -----------------------------------------------------------------------------------------
+   
+    ---------------------------------------------------------------------------------------------------------------------------
+    # Listing:
+            docker network ls
+            docker network ls -q --filter driver=bridge
+    # Inspection:
+            docker network inspect my_custom_network
+    # Create:
+            docker network create my_custom_network
+            docker network create --driver bridge my_bridge_network
+            docker network create --driver host   my_bridge_network
+            docker network create --driver none   my_bridge_network
+            docker network create --subnet=192.168.1.0/24 my_subnet_network
+            docker network create --internal      my_internal_network          
+                     : the containers only connected to this network can communicate 
+                       with each other but cannot communicate with the outside and the outside cannot communicate to them.
+                       this useful in testing and Database.
+                       """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+                       docker container run -d --name my-db-server -p 8000:80 nginx:latest
+                       docker container run -d --name my-app-server -p 8080:80 nginx:latest
+                       docker network disconnect bridge my-db-server
+                       docker network connect my-internal-network my-db-server
+                       docker network connect my-internal-network my-app-server         
+                       """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+
+
+
+            docker network create --driver overlay my-overlay-network
+
+            docker network create -d macvlan \ --subnet=192.168.1.0/24 \ --gateway=192.168.1.1 my-macvlan-network
+    # Connect:
+            docker network connect    my_custom_network <container_name-or-id>
+    # Disconnect:    
+            docker network disconnect my_custom_network <container_name-or-id>
+    # Pruning:
+            docker network prune
+            docker network prune -f
+    # Removing:
+            docker network rm my_custom_network
+        
+    # Connection during createing a container: 
+            docker run -it --net my_custom_network <image> <app/Command>
+            docker run --network my-network -d my-container
+            docker run --network host my-container                          : if you uses the host driver.
+            docker run --network none my-container                          : if you uses the none driver.
+
+
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+Storage/Volumes Management:
+    (Write "docker volume" to list all volume commands):
+    
+    # Listing:
+            docker volume ls
+    # Inspection:
+            docker volume inspect <volume_name>
+    # Creating:        
+            docker volume create [OPTIONS] <volume-name>                          : Without specifying options, Docker creates the volume in its default location.
+            docker volume create --driver <driver-name> <volume-name
+
+            
+    # Attaching to a container:
+            docker run -it --volume <volume-name> <image>
+            docker run -it --volume <volume-name:myCustomPathIntheVolumeDriver> <image>
+            
+            docker container run -it -v myVolume:/app/myCode    --name my-container python:latest              : volume
+            docker container run -it -v myDirectoryinHost:/app/myCode --name my-container python:latest        : bind mount
+    # Pruning:
+            docker volume prune
+    # Removing:
+            docker volume rm <volume-name>
+
+    Volumes in Docker are a mechanism for persisting data generated and used by Docker containers. 
+    Unlike bind mounts or temporary container filesystems, volumes are managed directly by Docker and stored in Docker's filesystem. 
+    They are independent of the container's lifecycle, meaning data stored in a volume will persist even if the container is deleted.
+
+    Why Use Docker Volumes?
+        Data Persistence       : Volumes ensure that data remains available even after a container is removed.
+        Container Independence : Volumes are not tied to a specific container and can be shared across multiple containers.
+        Performance            : Volumes often perform better than bind mounts when used with Docker Desktop or on remote filesystems.
+        Backup & Migration     : Volumes can be easily backed up or moved between Docker hosts.
+    Types of Storage in Docker
+        Volumes       : Managed by Docker and stored in /var/lib/docker/volumes/.
+        Bind Mounts   : Link host directories/files directly into the container.
+        tmpfs Mounts  : Temporary storage in the host's RAM.
+        
+
+
+    Use Cases for Docker Volumes
+        1. Persistent Storage for Databases
+                Scenario: Running a MySQL database in a container.
+                Problem : Without a volume, database data will be lost if the container stops or is removed.
+                Solution:
+
+                        docker volume create mysql_data
+                        docker run -d --name db -v mysql_data:/var/lib/mysql mysql:latest
+
+                This ensures all database data is stored in the mysql_data volume.
+                Even if the container is deleted, the data remains intact.   
+
+        2. Shared Storage Between Containers
+                Scenario: Multiple containers need access to the same configuration or data files.
+                Solution: 
+
+                        docker volume create shared_data
+                        docker run -d --name app1 -v shared_data:/data app_image:latest
+                        docker run -d --name app2 -v shared_data:/data app_image:latest
+
+                Both app1 and app2 can now read and write to /data, sharing configurations or data.    
+
+        3. Backup and Restore of Critical Data
+                Scenario: Backing up a volume’s data for disaster recovery.
+                Solution:
+                    Backup: 
+                        docker run --rm -v mysql_data:/data -v $(pwd):/backup busybox tar cvf /backup/mysql_backup.tar /data
+                    Restore: 
+                        docker run --rm -v mysql_data:/data -v $(pwd):/backup busybox tar xvf /backup/mysql_backup.tar -C /data        
+
+        4. Temporary Storage with Anonymous Volumes
+                Scenario: Containers require temporary storage that is not persistent.
+                Solution:
+                        docker run -d -v /data my_image
+                Docker automatically creates an anonymous volume and mounts it to /data.
+                Once the container is removed, the volume becomes "dangling" and can be pruned.
+
+        5. Testing Applications
+                Scenario: Running multiple test environments with isolated data.
+                Solution: 
+                        docker volume create test_data
+                        docker run -d --name test_env -v test_data:/app/data app_image:latest  
+
+        6. Custom Volume Drivers
+                Scenario: Using cloud storage or network-based storage systems.
+                Solution:
+                With NFS: 
+                        docker volume create --driver local --opt type=nfs --opt o=addr=192.168.1.100,rw --opt device=:/path/to/dir my_nfs_volume
+                        docker run -d -v my_nfs_volume:/data my_image                      
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________
+Docker Compose:
+    (Write "docker compose" to list all compose commands)#
+    Define and run multi-container applications with Docker:    
+
+                           -> Basic Commands:
+        docker-compose up	                      Builds, (re)creates, starts, and attaches to containers for a service.
+        docker-compose up -d	                      Runs containers in detached mode (in the background).
+        docker-compose down	                      Stops and removes all containers, networks, and volumes created by docker-compose up.
+        docker-compose build	                      Builds or rebuilds services defined in the docker-compose.yml file.
+        docker-compose start	                      Starts containers that are already created but stopped.
+        docker-compose stop	                      Stops running containers without removing them.
+        docker-compose restart	                      Restarts all containers.
+        docker-compose ps	                      Lists all containers and their current status for the project.
+        docker-compose logs	                      Displays logs from all containers.
+        docker-compose logs -f	                      Follows logs from all containers in real-time.
+        docker-compose exec <service> <cmd>	      Executes a command inside a running service container.
+        docker-compose run <service> <cmd>	      Runs a command in a new container for the specified service. 
+
+                           -> Project and Configuration Management: 
+        docker-compose config	                      Validates and prints the docker-compose.yml file.
+        docker-compose config --services	      Lists all services defined in the docker-compose.yml file.
+        docker-compose config --volumes	              Lists all volumes defined in the docker-compose.yml file.
+        docker-compose config --profiles	      Lists all profiles defined in the docker-compose.yml file.
+        docker-compose version	                      Displays the version of docker-compose. 
+
+
+                           -> Service and Volume Management:
+        docker-compose pull	                      Pulls service images specified in the docker-compose.yml file from the Docker registry.
+        docker-compose push	                      Pushes built images to a Docker registry.
+        docker-compose rm	                      Removes stopped service containers.
+        docker-compose up --force-recreate	      Recreates all containers even if they haven't changed.
+        docker-compose up --no-deps	              Starts only the specified service and skips dependencies.
+        docker-compose down --volumes	              Removes the volumes created by docker-compose up.   
+
+
+                           -> Scaling and Resource Management:
+        docker-compose scale <service>=N	      Scales a service to N number of instances.
+        docker-compose up --scale <svc>=N	      Combines scaling with starting services.
+
+
+                           -> Advanced Options:
+        docker-compose pause	                      Pauses running containers.
+        docker-compose unpause	                      Unpauses paused containers.
+        docker-compose port <service> <port>	      Displays the public-facing port for a service.
+        docker-compose top	                      Displays processes running inside service containers.
+        docker-compose events	                      Streams real-time events from the containers.
+        docker-compose kill	                      Forcefully stops running containers.
+
+________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+___________________________________
+// Containerizing Your Application:
+
+
+Method 1:
+    1.Create a container from a base image.
+    2.Run the container.
+
+                    docker run -it --name php-container -p 8000:80 ubuntu:latest
+
+    3.Install your app dependencies, packages and tools.
+
+                    apt update && apt install -y apache2 php php-mysql vim curl
+
+    3.Copy the application code into the container or Install code editor in the container and write your app source code.
+
+                    cd /var/www/html
+                    vim index.php 
+                    press Esc and write :wq and press Enter
+
+    4.Run  your application in the container.
+
+                    service apache2 start
+                    hostname -I
+
+    5.Test your application in the container.
+
+                    curl http://<container-ip>/index.php
+
+    6.Build a new image from the container.
+
+                    docker commit php-container php-app:1.0
+
+    7.Push the new image to a registry.
+
+                    docker tag php-app:1.0 <your-dockerhub-username>/php-app:1.0
+                    docker login
+                    docker push <your-dockerhub-username>/php-app:1.0
+
+    8.Deploy the image to a container runtime environment.
+    ___________________________________________________________________________
+    /    docker run -it --name php-container ubuntu:latest
+    /
+    /    apt update && apt install -y apache2 php php-mysql vim curl
+    /
+    /    service apache2 start
+    /    cd /var/www/html
+    /    vim index.php
+    /
+    /
+    /    # Commit and push
+    /    docker commit php-container php-app:1.0
+    /    docker tag php-app:1.0 <your-dockerhub-username>/php-app:1.0
+    /
+    /    # Test the application
+    /    docker run -it --name php-container -p 8000:80 <your-dockerhub-username>/php-app:1.0
+    /    curl http://localhost:8000:80
+
+    /
+    /    docker login
+    /    docker push <your-dockerhub-username>/php-app:1.0
+    /__________________________________________________________________________
+
+Method 2:
+    1.Create your app in your host machine.
+    2.Create a Dockerfile in your app directory.
+    3.Build a Docker image from your Dockerfile
+    4.Run your application in the container.
+
+
+
+    -----------------------------------------------------------------------------------
+    my-app:    
+          ->app
+               /contrllers
+               /models
+          ->resources
+          ->bootstrap
+          ->public
+          ->tests
+          ->vendor
+          ->.env
+          ->.gitIgnore
+          ->.dockerIgnore      
+          ->Dockerfile
+          -------------------------------Dockerfile-------------------------------------
+          # get base image:
+          FROM php:7.4-apache
+          
+          # set working directory to /app
+          WORKDIR /app
+          
+          # copy composer.lock and composer.json
+          COPY composer.lock composer.json ./
+          
+          # install dependencies
+          RUN apt-get update && apt-get install -y libzip-dev zip
+          
+          # expose port:
+          EXPOSE 80
+          
+          # copy application code
+          COPY . /app/
+          
+          # CMD Command:
+          CMD ["php", "-S", "localhost:8000"]
+
+
+
+
+
+
+
+
+
+    -----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+// 1. Create a Dockerfile
+// 2. Build the Docker image
+// 3. Run the Docker container
+// 4. Push the Docker image to a registry
+// 5. Pull the Docker image from a registry
+// 6. Run the Docker container from the registry
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################################################################################################################################
+Network:
+    Docker networking allows containers to communicate with each other, 
+    with the host system, and with external networks. 
+    It is a fundamental feature for deploying applications in isolated containers that require interconnectivity.
+    
+    # Docker Network Types:
+        bridge: The default network type. Containers on this network are isolated from the host and other containers.
+        host: Containers on this network are not isolated from the host or other containers.
+        none: Containers on this network are not isolated from the host or other containers.
+
+    # Use Cases for Each Network Type
+        Network Type	Use Case
+        bridge	        Default for single-host setups; containers communicate within the host.
+        host	        High-performance scenarios where network isolation isn’t needed.
+        none	        For containers that don’t need network access (e.g., data-only containers).
+        overlay	        Distributed applications requiring multi-host communication in Swarm mode.
+        macvlan	        For direct container integration into a physical network. 
+
+        // using non you can only communicate with the host:
+                    ping localhost
+                    ping 127.0.0.1
+                    curl http://localhost:8080
+                    curl http://127.0.0.1:8080
+
+Notes:
+1.Communication between Host and Containers:
+    - Your host can communicate with your container service by exposing ports: 
+        Examples:
+                docker container runr   -p HPortFortheWHoleContainer:servicePortInContainer <my-image>
+                docker container run -d -p 8080:80 nginx
+
+                From Host      Shell:  curl http://localhost:8080:80      -> localhost refers to the host machine localhost '192.168.1.5'.
+                                       curl http://localhost:8080         -> you do not need to the servicePortInContainer if it take the port 80
+                From Container Shell:  curl http://localhost:80           -> localhost refers to the container's localhost.
+
+2.Communication between Container and another Container in the same host machine:
+    - Container in the same host can see each other by their IP address, but cann't see each other by thier names.
+    - Your container can communicate with other containers by using the container IP address:
+        Example: 
+                From Container Shell:  curl http://172.17.0.2:80           ---> http://ContainerIP:servicePortInContainer
+    
+    - to communicate with container's name, you should do one of the following:
+            1. Use the container name in the /etc/hosts file of the container:
+            Example:
+                  1.Solution1:
+                                docker container run -it --name my-client --add-host my-server:172.17.0.2 centos:latest
+                  2.Solution2:
+                    From Container Shell:  echo "172.17.0.2 container1" >> /etc/hosts
+                    From Container Shell:  curl http://container1:80
+                                            [root@container /]# echo "172.17.0.2 my-server" >> /etc/hosts
+                                            [root@container /]# curl http://my-server
+
+            2. Use the --link option when running the container:
+                                docker container run -d  --name my-server -p 8000:80 nginx:latest   
+                                docker container run -it --name my-client --link my-server centos:latest    : the server container should be running.
+                                [root@05bad2692e60 /]# curl http://my-server:80
+
+            3. Use the --net option  when running the container:
+                                # Create a custom network
+                                    docker network create my-custom-network
+
+                                # Start the server container on the custom network
+                                    docker run -d --name my-server --net my-custom-network nginx:latest
+
+                                # Start the client container on the same network
+                                    docker run -it --name my-client --net my-custom-network centos:latest
+            ________________________________________________________________________________________________
+            1.docker container run -it --name my-client --add-host my-server:172.17.0.2 centos:latest
+
+            2.docker container run -it --name my-client --link my-server centos:latest
+
+            3.docker network create my-custom-network
+              docker run -d  --name my-server --net my-custom-network nginx:latest
+              docker run -it --name my-client --net my-custom-network centos:latest
+            ________________________________________________________________________________________________
+
+
+2.Communication between Container and another Container in different hosts machines:
+    - Containers in different host machines can't see each other by their IP address.
+    - Containers in different host machines can't see each other by their names.
+    - Containers in different host machines can see each other by 
+      their IP address if they are in the same network, and they are in the same network if they are in the same Docker network.
+
+    
+
+
+
+
+    
+
+
+####################################################################################################################################
+
+
+- Docker uses a virtual network to connect containers together.
+- You can create a network using the `docker network create` command.
+- You can connect a container to a network using the `docker run` command with the `--net` option.
+- You can list all networks using the `docker network ls` command.
+
+
+
+
+
+
+
+
+_______________________________________________________________________________________________________________________________________

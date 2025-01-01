@@ -1,0 +1,128 @@
+Here’s a **secure and optimized `.htaccess` file** for your Laravel project. This configuration is designed to:
+
+1. **Restrict access to sensitive files and directories.**
+2. **Only allow access to the `public/` directory.**
+3. **Protect against common security threats (e.g., directory listing, unauthorized access).**
+4. **Improve performance with caching and compression.**
+
+---
+
+### **Complete `.htaccess` for Laravel**
+
+```apache
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Deny access to all files and folders except the public directory
+    RewriteRule ^(?!public/).* - [F,L]
+
+    # Redirect Trailing Slashes If Not A Folder
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ public/index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Prevent Clickjacking
+    Header always append X-Frame-Options SAMEORIGIN
+
+    # Enable Content Security Policy (CSP)
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; frame-src 'none';"
+
+    # Prevent XSS Attacks
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Enable MIME Type Sniffing Protection
+    Header set X-Content-Type-Options nosniff
+
+    # Enforce HTTPS (if SSL is enabled)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+<IfModule mod_expires.c>
+    # Enable Cache-Control Headers
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+# Deny access to sensitive files
+<FilesMatch "(^\.env|^\.htaccess|composer\.(json|lock)|phpunit\.xml|artisan|Dockerfile|docker-compose\.yml)$">
+    Require all denied
+</FilesMatch>
+
+# Disable directory listing
+Options -Indexes
+
+# Limit access to the storage and vendor directories
+<DirectoryMatch "/(storage|vendor)/">
+    Require all denied
+</DirectoryMatch>
+
+# Protect against file injection
+<FilesMatch "\.(php|phar|phtml|php5|php7|php8|html?|xml|json|yml|ini|log|sh|bat|exe)$">
+    <If "-f %{REQUEST_FILENAME}">
+        Require all denied
+    </If>
+</FilesMatch>
+
+# Block bad bots and crawlers
+SetEnvIfNoCase User-Agent "libwww-perl|Python-urllib|MJ12bot|AhrefsBot|SemrushBot" bad_bot
+Deny from env=bad_bot
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+
+### **Explanation of Key Features**
+
+1. **Restrict Access to Non-Public Files:**
+   - The `RewriteRule ^(?!public/).* - [F,L]` ensures only the `public/` folder is accessible.
+
+2. **Protect Sensitive Files:**
+   - Deny access to `.env`, `.htaccess`, `composer.json`, `phpunit.xml`, etc., with the `<FilesMatch>` rule.
+
+3. **Prevent Directory Listing:**
+   - `Options -Indexes` ensures that directory contents cannot be listed.
+
+4. **Restrict Access to `storage` and `vendor` Folders:**
+   - `<DirectoryMatch "/(storage|vendor)/"> Require all denied </DirectoryMatch>` blocks direct access to these folders.
+
+5. **Enable Security Headers:**
+   - Includes headers for clickjacking prevention, XSS protection, and MIME sniffing protection.
+
+6. **Enable HTTPS:**
+   - Strict Transport Security (HSTS) forces browsers to use HTTPS if SSL is enabled.
+
+7. **Caching Rules:**
+   - Improve performance by defining expiration times for static assets like images, CSS, and JavaScript files.
+
+8. **Block Malicious Bots:**
+   - Denies access to known malicious crawlers using `SetEnvIfNoCase`.
+
+---
+
+### **Important Notes**
+1. **Web Server Must Be Configured Correctly:**
+   - Ensure the web server is pointing to the `public/` folder as the document root.
+2. **Test the Configuration:**
+   - Use tools like [Apache config checker](https://httpd.apache.org/docs/2.4/programs/apachectl.html) to validate your `.htaccess` file.
+3. **SSL/HTTPS:**
+   - Ensure HTTPS is enabled to fully leverage security headers.
+
+This `.htaccess` configuration provides a secure baseline while allowing Laravel to function seamlessly.

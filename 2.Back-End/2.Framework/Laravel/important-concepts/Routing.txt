@@ -1,0 +1,34 @@
+___________________________________________________________________________________________________________________________________________________________________                                                                          
+                                                                          Routing:
+___________________________________________________________________________________________________________________________________________________________________                                                                          
+Basic Routing:
+        The Default Route Files
+        Redirect Routes
+        View Routes
+        Listing Your Routes
+        Routing Customization
+Route Parameters
+        Required Parameters
+        Optional Parameters
+        Regular Expression Constraints
+Named Routes
+Route Groups
+        Middleware
+        Controllers
+        Subdomain Routing
+        Route Prefixes
+        Route Name Prefixes
+Route Model Binding
+        Implicit Binding
+        Implicit Enum Binding
+        Explicit Binding
+Fallback Routes
+Rate Limiting
+        Defining Rate Limiters
+        Attaching Rate Limiters to Routes
+Form Method Spoofing
+Accessing the Current Route
+Cross-Origin Resource Sharing (CORS)
+Route Caching
+___________________________________________________________________________________________________________________________________________________________________                                                                          
+#1-Basic Routing:

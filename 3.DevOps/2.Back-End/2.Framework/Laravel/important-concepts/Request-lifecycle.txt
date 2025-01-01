@@ -1,0 +1,14 @@
+
+
+Route::get('/', ['HomeController', 'index'])->middleware('AuthMiddleware');
+Route::middleware('AuthMiddleware')->get('/', ['HomeController', 'index']);
+
+
+
+AuthMiddleware::handle($request, $next);
+
+HomeController::index($request);
+        ---------------------------------
+        HomeService::serve($request);
+        ---------------------------------
+        return Response::json();    

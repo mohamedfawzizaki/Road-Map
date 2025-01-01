@@ -1,0 +1,40 @@
+____________________________________________________________________________________________________________________________________________
+# "test" Directory :
+      - The tests directory contains your automated tests. 
+      - Example Pest or PHPUnit unit tests and feature tests are provided out of the box.
+      - Each test class should be suffixed with the word Test.
+      - You may run your tests using :
+                              "  /vendor/bin/pest    "
+                              "  /vendor/bin/phpunit "
+                              "  php artisan test    "
+      - The tests directory in Laravel is where all your application’s automated tests reside. 
+      - It is structured to help you write, organize, and execute tests effectively. 
+      - Laravel supports PHPUnit by default and offers additional testing utilities, 
+        such as HTTP assertions and helpers, to make testing easier.                        
+
+      - Subdirectories:
+               :--------------------------------------------:----------------------------------------------------------------------------:
+               :1.Feature :                                 :                                                                            :
+               :         'Http'                             :     Tests for HTTP routes, controllers, and middleware.                    :
+               :         'Views'                            :     Tests for rendering views and view data.                               :
+               :         'Database'                         :     Tests for database migrations, seeders, and queries.                   :
+               :         'Jobs'                             :     Tests for queued jobs or synchronous tasks.                            :
+               :         'Mail'                             :     Tests for mail templates and sending email functionality.              :
+               :         'Notification'                     :     Tests for notifications (email, SMS, Slack, etc.).                     :
+               :         'Events'                           :     Tests for events and their listeners.                                  :
+               :         'Form Submissions'                 :     Tests for user input validation and handling of form data.             :
+               :         'User Authentication/Authorization':     Tests for user login, registration, and permission handling.           : 
+               :                                            :                                                                            :
+               :--------------------------------------------:----------------------------------------------------------------------------:               
+               :2.Unit:                                     :                                                                            :
+               :         'Controllers'                      :     Tests for controller methods.                                          :
+               :         'Middlewares'                      :     Tests for middleware logic, such as request/response modification.     : 
+               :         'Requests'                         :     Tests for custom form requests and validation rules.                   :
+               :         'Responses'                        :     Tests for custom responses or transformations.                         :
+               :         'Models'                           :     Tests for Eloquent models, including relationships, accessors.         : 
+               :         'Repositories'                     :     Tests for repository classes that abstract database queries.           :
+               :         'Services'                         :     Tests for application logic encapsulated in service classes.           :
+               :         'Helpers'                          :     Tests for utility functions or custom helper methods.                  :
+               :--------------------------------------------:----------------------------------------------------------------------------:
+               
+____________________________________________________________________________________________________________________________________________

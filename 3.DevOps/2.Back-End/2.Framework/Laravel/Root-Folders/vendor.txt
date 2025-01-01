@@ -1,0 +1,4 @@
+____________________________________________________________________________________________________________________________________________
+# "vendor" Directory :
+      - The vendor directory contains all third-party libraries and dependencies installed via Composer. 
+      - Avoid making changes directly to this folder.

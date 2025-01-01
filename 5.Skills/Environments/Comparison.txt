@@ -1,0 +1,44 @@
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feature	                          Development Command	              Production Command
+Compile Frontend Assets          	npm run dev	npm                     run production
+Laravel Route Caching	            php artisan route:clear	            php artisan route:cache
+Laravel Config Caching             	php artisan config:clear        	php artisan config:cache
+Debug Mode	                        APP_DEBUG=true	                    APP_DEBUG=false
+Environment	                        APP_ENV=local	                    APP_ENV=production
+
+
+
+
+
+
+
+
+
+
+
+"composer create-project laravel/laravel my-laravel-app"
+"composer create-project --prefer-dist laravel/laravel my-laravel-app"
+
+When Should You Use --prefer-dist?
+        When you want a faster installation.
+        When you don't need the Git history or source control from the repository.
+        For production environments where you won't modify the core package.
+When Should You Skip --prefer-dist?
+        When you're actively developing or debugging Laravel itself (e.g., contributing to the framework) and need the full Git repository.

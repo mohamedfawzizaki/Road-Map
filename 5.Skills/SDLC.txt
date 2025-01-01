@@ -1,0 +1,146 @@
+_______________________________________________________________________________________________________________________________________________________________
+Software Development Lifecycle :
+        -----------------------------------------------------------------------------------------------------------------------------------------
+        Def:
+            - The software development lifecycle (SDLC) is a series of phases that a software project goes through from conception to delivery. 
+            - The SDLC is a framework that outlines the steps involved in developing, testing, and deploying software. 
+            - The SDLC is used to ensure that software projects are completed on time, within budget, and meet the required quality standards.
+            - The SDLC is a critical component of software development, 
+              as it helps ensure that software projects are completed on time, within budget, and meet the required quality standards.
+        -----------------------------------------------------------------------------------------------------------------------------------------
+        Phases:
+        
+            1.Planning: 
+                        - This phase involves defining the project scope, goals, and timelines. 
+                        - It also involves identifying the resources required to complete the project.
+                        - Methodolgy                   : Agile, Waterfull. 
+                        - Project management tools     : Jira
+                        - Communication      Tools     :  Slack - Microsoft Teams - Discord.
+            
+            2.Analysis: 
+                        - This phase involves gathering and analyzing data to understand the problem or opportunity that the software is intended to address.
+            
+            3.Design: 
+                        - This phase involves creating a detailed design of the software, including the architecture, user interface, and user experience.
+                        - UI/UX              :   Figma.
+                        - Software Workflow  :   '    '.
+                        - Database           :   DB.Build.
+
+            4.Implementation/Development: 
+                        - This phase involves writing the code for the software and integrating it with other systems.
+            
+            5.Testing: 
+                        - This phase involves testing the software to ensure that it meets the required quality standards.
+            
+            6.Deployment/Production: 
+                        - This phase involves deploying the software to the production environment.
+        -----------------------------------------------------------------------------------------------------------------------------------------
+          
+
+
+_______________________________________________________________________________________________________________________________________________________________
+1.Planning:
+        - Methodolgy                   : Agile, Waterfull. 
+        - Project management tools     : Jira
+        - Communication      Tools     :  Slack - Microsoft Teams - Discord.
+_______________________________________________________________________________________________________________________________________________________________
+2.Analysis:
+_______________________________________________________________________________________________________________________________________________________________
+3.Design:
+        - UI/UX              :  Figma.
+        - Software Workflow  :  '    '.
+        - Database Design    :  Database.Build.
+_______________________________________________________________________________________________________________________________________________________________
+4.Development Environment:
+    # Set-up :
+        A.Manually:
+                    -------------------------------------------------------------------------------
+                    I.From Scratch:
+                                    1.Operating system    : 'Windows / Linux-Ubuntu'.
+                                    2.Web Server          : 'Nginix  /  Apache  /  PHP-Artisain'.
+                                    3.Database            : 'MySQL'.
+                                    4.Package Manager     : 'Composer / npm'.
+                                    5.Framework           : 'Laravel'.
+                                    6.JS runtime          : 'NodeJS'.
+                                    7.Tools               : 'VS Code / Git / Git-Bash'
+                    -------------------------------------------------------------------------------
+                    II.Using Tools:
+                                    1.Operating system              : 'Windows / Linux-Ubuntu'.
+                                    2.Web Server + Database + PHP   : 'WAMP / LAMP / XAMPP / Laragon'
+                                    3.Package Manager               : 'Composer / npm'.
+                                    4.Framework                     : 'Laravel'.
+                                    5.JS runtime                    : 'NodeJS'.
+                                    6.Tools                         : 'VS Code / Git / Git-Bash'.
+                    -------------------------------------------------------------------------------
+        B.Automated:
+                    -------------------------------------------------------------------------------
+                    I.Using Docker :
+                                    1.Operating system    : 'Linux-Ubuntu'.
+                                    2.Web Server          : 'Nginix  /  Apache  /  PHP-Artisain'.
+                                    3.Database            : 'MySQL'.
+                                    4.Language            : 'PHP'.
+                                    5.Package Manager     : 'Composer / npm'.
+                                    6.Framework           : 'Laravel'.
+                                    7.JS runtime          : 'NodeJS'. 
+                    -------------------------------------------------------------------------------
+    # Technologies:
+
+          1.Languages:
+                    - PHP.
+                    - JavaScript.
+                    - HTML/CSS.
+          2.Liberaries:
+                    - Bootstrap.
+                    - jQuery.
+                    - Livewire.
+                    ------------
+                    - guzzlehttp/guzzle.
+                    - firebase/php-jwt.
+                    - phpunit/phpunit.
+                    - phpunit/php-code-coverage.
+                    - 
+          3.Frameworks:
+                    - Laravel.
+                    - NodeJS.
+          4.Databases:
+                    - MySQL.
+                    - MongoDB.
+                    - Redis.
+          5.APIs:
+                    - RESTful API.
+                    - GraphQL API.
+                    
+          6.Repositories:
+                    - GitHub.
+                    - DockerHub.
+                    - SwaggerGub.
+                    
+                    - Packagist.
+_______________________________________________________________________________________________________________________________________________________________
+5. Testing Environment :
+
+            1.PHPUnit   :  'Unit        Testing'.
+            2.PHPUnit   :  'Integration Testing'.
+            3.Selenium  :  'End-to-End  Testing'.
+
+            4.Postman   :  'API         Testing'  
+            5.Swagger   :  'API Design - Document - Build - Test - Share'.
+
+            6.JMeter    :  'Performance Testing'.
+
+            7.Jenkins   :  'CI/CD - Continuous Integration - Continuous Deployment'.
+_______________________________________________________________________________________________________________________________________________________________
+5.Deployment / Production Environment :
+_______________________________________________________________________________________________________________________________________________________________
+
+
+
+  
+
+
+
+
+
+
+    
+                              

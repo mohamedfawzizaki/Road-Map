@@ -1,0 +1,1154 @@
+_______________________________________________________________________________________________________________________________________
+Linux Concepts: 
+        - History:
+_______________________________________________________________________________________________________________________________________
+
+        - Architecture:                                - Terminal ->  Shell  ->  Kernel  ->  Hardware.
+        
+                - Terminal : It is a program with text-based interface that provides a command-line interface to interact with the shell and execute commands.
+                - Shell    : It is a program that runs on top of the kernel and provides a command-line interface to interact with the kernel and hardware.
+                - Kernel   : It is the core of the operating system that manages the hardware resources and provides a platform for running applications.
+                - Hardware : It refers to the physical components of a computer system, such as the CPU, memory, storage devices, and input/output devices.
+_______________________________________________________________________________________________________________________________________
+
+        - Destributions :
+                        - A Linux distribution is a collection of software packages that are bundled together to provide a complete operatin system. 
+                        - It includes the kernel, shell, and other software packages that are required to run applications
+                        - Examples:
+                                    Ubuntu, Debian, Fedora, and CentOS.
+_______________________________________________________________________________________________________________________________________
+        - File System :
+                        - A file system is a way to organize and store files on a computer system.
+                        - It provides a hierarchical structure for storing files and directories.
+                        - Examples:
+                                    ext4, xfs, btrfs, and NTFS.
+                    '/':
+                            - The root directory is the top-most directory in the file system hierarchy.
+                            - The root directory is the starting point for navigating the file system.
+                            - It is denoted by a forward slash (/) and contains all other directories and files.
+                            - It is different from '/root' directory that Contains configuration files, scripts, and personal files for the root user.
+                    '/root':
+                            - It is located in the root directory '/'.
+                            - The '/root' directory is the home directory of the root user.
+                            - It contains configuration files, scripts, and personal files for the root user.
+                            - It is different from the root directory (/) that is the top-most directory in the file  system hierarchy.
+                            - The root user is a special user account that has superuser privileges.
+                            - The root user has the ability to perform any action on the system, including modifying system files
+                            - The root user is often used for administrative tasks, such as installing software, configuring system settings
+                    '/home':
+                            - It is located in the root directory '/'.
+                            - It contains user-specific directories for each non-root user, For example: /home/user1 is the home directory for user1.
+                    '~':
+                            - It is a shortcut for the user's home directory.
+                            - It is used to represent the current user's home directory in the command line
+                            - It is a convenient way to navigate to the user's home directory without having to type the full path.
+                            - It is denoted by a tilde (~) and contains the user's personal files and
+                    '.' :
+                            - The current working directory is the directory that the user is currently in.
+                            - It is denoted by a dot (.) and is the default directory for the user.
+                    '..' :
+                            - The parent directory is the directory that contains the current working directory.
+                            - The parent directory is used to navigate up the file system hierarchy.
+                            - It is denoted by a dot-dot (..) and is one level up in the
+                    '/boot':
+                            - It is located in the root directory '/'.
+                            - It holds files essential for booting the system, such as the kernel, initrd images, and boot loader configuration files.
+                            - It is critical for the system's startup process.
+                            - Key Files:
+                                    'vmlinuz': The compressed Linux kernel.
+                                    'initrd' : Initial RAM disk image loaded during boot.
+                                    'grub/'  : Boot loader configuration files for GRUB.
+                            - Subdirectories inside /boot:
+                                    '/init':
+                                        Refers to the initial process started by the Linux kernel (PID 1). Often linked to systemd or another init system.
+                                    '/run' :
+                                        Stores runtime data needed for the initial stages of booting. It is often a tmpfs directory.
+                            - It my be empty if you use linux in WSL or containerized setup.                    
+                    '/etc':
+                            - It contains configuration files and system-wide settings.
+                            - It is a central location for configurations like networking, user management, services, and daemons.
+                            - Key Examples:
+
+                                    '/etc/sudoers'      : Configuration file for the sudo command.
+                                    '/etc/sudoers.d'    : Directory containing configuration files for specific sudo rules.
+
+                                    '/etc/group'        : Group membership details.
+                                    '/etc/passwd'       : User account details.
+
+                                    '/etc/profile'      : Provides a centralized place to define environment variables, default paths, 
+                                                          and other settings that apply to all users.    
+                                    '/etc/profile.d'    : rovides a modular way to manage environment variables and system-wide shell initialization settings.
+                                                          it keeps configurations for specific programs or settings isolated from the main /etc/profile file.
+
+
+                                    '/etc/hostname'     : The hostname of the system.
+
+                                    '/etc/hosts'        : Hostname and IP address mapping.
+                                    '/etc/hosts.conf'   : Hostname and IP address mapping configuration file.
+                                    '/etc/hosts.allow'  : Hosts allowed to access the system.
+                                    '/etc/hosts.deny'   : Hosts denied access to the system.
+
+                                    
+                                    '/etc/NetworkManager' : Configuration files for Network Manager.
+
+                                    '/etc/systemd' 
+                                    '/etc/systemd/system' : 
+                                    '/etc/systemd/system/multi-user.target.wants :
+                                    '/etc/services'       : 
+                                
+                                    '/etc/fstab'          : Filesystem mount points.
+                                    '/etc/environment'    : Environment variables for the system.
+                                    '/etc/environment.d'  : Directory containing environment variable configuration files.
+
+
+                                    '/etc/networks'       : 
+                                    '/etc/network'        :
+                                    '/etc/netconfig'      :
+                                    '/etc/resolv.conf'    : DNS resolver configuration. 
+
+                                    '/etc/protocols'      :
+                                    '/etc/ssl'            :
+                                    '/etc/ssh'            : 
+
+                                    '/etc/vim'            :
+                    '/bin': 
+                            - It contains essential binaries (commands, executable files, shortcuts) required by all users.
+                            - It houses basic tools needed for system operation and user tasks.
+                            - Examples:
+                                    '/bin/ls' : Lists directory contents.
+                                    '/bin/cp' : Copies files.
+                    '/sbin':
+                            - It contains System binaries meant for administrative tasks, typically requiring root privileges.
+                            - It houses basic tools needed for managing the system.
+                            - Examples:
+                                    '/sbin/shutdown' : Shuts down the system.
+                                    '/sbin/fsck'     : Checks filesystem integrity.
+                    '/lib':
+                            - It contains shared libraries needed by binaries in /bin and /sbin.
+                    "/dev"
+                            - It contains device files representing hardware or virtual devices.
+                            - It allows the OS and users to interact with hardware as if they were regular files.
+                            - Examples:       
+                                    /dev/sda    : First hard disk.
+                                    /dev/null   : Discard output.
+                                    /dev/tty    : Terminal devices.
+                    "/mnt"
+                            - It is used as a temporary mount point for filesystems like USB drives or network shares.
+                            - It contains mount points for removable media, such as USB drives, CDs, and DVDs. 
+                            - It provides a standard location to temporarily mount storage devices. 
+                            - Example:
+                                    mount /dev/sdb1 /mnt/usb.
+                    "/sys":
+                            - It is a virtual filesystem providing information about kernel objects.
+                            - It is used to interact with and modify kernel parameters at runtime.
+                            - Examples:
+                                    /sys/block/      : Information about block devices.
+                                    /sys/class/net/  : Network interface details.
+                    "/srv"
+                            - It contains data for services provided by the system, such as web servers or FTP servers.
+                            - It is used to store site-specific data served by services.
+                            - Example:
+                                    /srv/www/  : Web server data for a site.
+                    "/snap"
+                            - It is directory for Snap package management files and applications.
+                            - It is used to store snap packages, which are self-contained, compressed packages of software
+                              that can be easily installed, updated, and removed.
+                            - Examples:
+                                    /snap/core/  :  Core Snap packages.
+                    "/tmp"
+                            - temporary files created by applications and the system.
+                            - Used for temporary storage; often cleared on reboot. 
+                    "/var"
+                            - Contains variable data that changes over time, such as logs, cache, and spool files.
+                            - Used for dynamic content generated by services.
+                            - Examples:
+                                    /var/log/     : System logs.
+                                    /var/cache/   : Cache files.
+                                    /var/spool/   : Spool files for print queues and mail servers.
+                    "/usr"
+                            - Stores user applications, tools, and libraries.
+                            - Contains non-essential programs used by users.
+                            - Examples:
+                                    /usr/bin/     : Non-essential user binaries.
+                                    /usr/local/   : Locally installed software.
+                    "init"
+                    "/run"
+                            - The /run directory holds runtime information such as:
+                                        Process IDs (PID files) for running services.
+                                        System state information (e.g., systemd service status).
+                                        Sockets for communication between processes.
+                                        Temporary files used by running services or daemons.
+                                        User-specific runtime data.
+                    "/opt"
+                            - Houses optional or third-party software.
+                            - A standard location for add-on packages.
+                            - Example:
+                                    /opt/softwares/       : Third-party software installation directory.     
+                                    /opt/google/chrome/   : Chrome browser files.
+                    "/proc"
+                            - Virtual filesystem providing real-time system and process information.
+                            - Enables interaction with kernel and processes.
+                            - Examples:
+                                    /proc/cpuinfo  : CPU details.
+                                    /proc/meminfo  : Memory usage.
+                    "/media"
+                            - Default location for automatically mounted removable media, like USB drives and CDs.
+                            - Provides a consistent place for user-accessible media.
+                            - Example:
+                                    /media/username/USB/.
+_______________________________________________________________________________________________________________________________________
+More Concepts:
+   .Stream   -  Redirection  -  Pipes        -  Filters.
+   .Process  -  Threads      -  Fork         -  Exec.
+   .File     -  Directory    -  Permissions  -  Ownership.
+
+
+    1.Stream:
+            - stdin   :  
+                        - Input stream  (file descriptor 0).
+            - stdout  : 
+                       - Output stream  (file descriptor 1).
+                       - example:
+                                echo "Hello, World!" >   file.txt      override
+                                echo "Hello, World!" 1>  file.txt      override
+                                echo "Hello, World!" 1>> file.txt      append
+            - stderr  :  
+                       - Error stream  (file descriptor 2).
+                       - example:
+                                echo "Hello, World!" 2>  file.txt      override
+                                echo "Hello, World!" 2>> file.txt      append 
+    2.Redirection ('>'1>'>>'1>>'______'2>'2>>'______'<'):
+            - Redirecting input/output streams to files.
+            - Redirecting input/output streams to other processes.
+            - Redirecting input/output streams to devices.
+    3.Pipes('|'):
+            - Connecting processes through pipes.
+            - Pipes are unidirectional.
+            - Pipes are used for inter-process communication (IPC).
+    4.Filters('grep'):
+            - Filters are used to process data.
+            - Filters are used to transform data.
+
+
+    5.Process:
+            - A process is an instance of a program.
+            - A process has its own memory space
+            - A process has its own set of open files
+            - A process has its own set of open network connections
+    6.Threads:
+            - A thread is a lightweight process.
+            - A thread shares the same memory space as the parent process.
+            - A thread has its own stack.
+    7.Fork:
+            - Fork is a system call that creates a new process.
+            - The new process is a copy of the parent process.
+            - The new process has its own memory space
+            - The new process has its own set of open files
+            - The new process has its own set of open network connections
+    8.Exec:
+            - Exec is a system call that replaces the current process image with a new one
+            - The new process image is loaded from a file
+            - The new process image is executed in the same memory space as the parent process
+
+
+    9.File
+            - A file is a collection of data stored on a file system.
+            - A file has a name and a path.
+            - A file has a set of permissions.
+            - A file has a set of ownership.
+    10.Directory
+            - A directory is a collection of files and subdirectories.
+            - A directory has a name and a path.
+            - A directory has a set of permissions.
+            - A directory has a set of ownership.
+    11.Permissions
+            - A file or directory has a set of permissions that determine what operations can be performed on it
+            - Permissions are represented by a set of bits that determine read, write, and execute permissions.
+   
+   
+    12.Network
+            - A network is a collection of devices connected by communication links.
+            - A network can be local or wide area.
+            - A network has a set of protocols that determine how data is transmitted.
+    13.Socket
+            - A socket is a endpoint for communication between two devices.
+            - A socket is identified by a unique address and port number.
+            - A socket can be used for both connection-oriented and connectionless communication.
+    14.UDP
+            - UDP is a connectionless protocol that provides best-effort delivery of packets.
+            - UDP is used for applications that require high throughput and low latency.
+    15.TCP
+            - TCP is a connection-oriented protocol that provides reliable delivery of packets.
+            - TCP is used for applications that require guaranteed delivery and sequencing of packets.
+
+____________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________
+                                                                        Linux Commands
+____________________________________________________________________________________________________________________________________________________________
+                                                                        nano ~/.bashrc
+                                                                        source ~/.bashrc
+____________________________________________________________________________________________________________________________________________________________
+............................................................................................................................................................
+man  -  bash  -    sh  -    code . -     sudo  -     su  -     clear  -     pwd  -     ls  -     which  -     whoami  -     who     
+............................................................................................................................................................
+informations :           who    whoami   which     hostname       info      man       --help     type      ip address      history   
+............................................................................................................................................................
+1. System: 
+         - Informationn :                                    
+         - Monitoring.
+         - Performance.
+         - Boot.
+         - Shutdown.
+2. Process Management.
+3. User and Group Management.
+4. Environment and Shell Management.
+5. Time and Date Management.
+6. Disk and Storage Management.
+7. File and Directory Management.
+8. File Content and Text Processing.
+9. File Sharing and Remote Access.
+10.Networking.
+11.Security and Permissions.
+12.Package Management.
+13.Services Management.
+14.Archive and Compression.
+15.Log Management.
+16.Backup and Recovery.
+17.Remote Access Management.
+............................................................................................................................................................
+............................................................................................................................................................
+
+1. System :
+                    ---------------------------------------------------
+        -           -  Informationn  -  Monitoring   -  Performance   -
+                    ---------------------------------------------------
+
+                uname                       – Print system information.
+                hostname                    – Show or set the system’s hostname.
+                uptime                      – Show how long the system has been running.
+                top                         – Display real-time system resource usage.
+                htop                        – Enhanced version of top (interactive process viewer).
+                dstat                       – Versatile resource statistics.
+
+                lsb_release -a
+
+                systemd-analyze             – Analyze system boot-up performance.
+                systemctl                   – Start, stop, or manage systemd services.
+                
+                dmesg                       – Print or control the kernel ring buffer.
+                
+                lscpu                       – Display CPU architecture information.
+                iostat                      – Report CPU and I/O statistics.
+                ps                          – Report a snapshot of current processes.
+                strace                      – Trace system calls and signals.
+                
+                free                        – Display memory usage.
+                vmstat                      – Report virtual memory statistics.
+
+                lsblk                       – List information about block devices.
+                lsusb                       – List USB devices.
+                lspci                       – List PCI devices.
+                lsscsi                      – List SCSI devices.
+                lsof                        – List open files.
+
+                df                          – Show disk space usage.
+                du                          – Estimate file space usage.
+
+                netstat                     – Network statistics.
+                ss                          – Socket statistics (alternative to netstat).
+
+                whoami                      – Show the current logged-in user.
+                who                         – Show who is logged into the system.
+
+
+
+                         ------------------------------
+        -                - Boot      -    Shutdown   -
+                         ------------------------------
+                shutdown                    – Shut down the system.
+                reboot                      – Reboot the system.
+                poweroff                    – Turn off the system.
+                halt                        – Halt the system (stops all processes).
+                systemctl reboot            – Reboot the system using systemd.
+                systemctl poweroff          – Power off the system using systemd.         
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Process Management :
+
+                ps                          – Display information about active processes.
+                top                         – Display dynamic real-time information about running processes.
+                htop                        – Interactive process viewer.
+                pstree                      – Display the processes in a tree format.
+                jobs                        – List active jobs.
+                
+                kill                        – Terminate processes by PID.
+                killall                     – Terminate processes by name.
+                pkill                       – Kill processes by name, user, or other criteria.
+                
+                pgrep                       – Find processes by name.
+                
+                nice                        – Start a process with a given priority.
+                renice                      – Change the priority of an already running process.
+
+                [Command]  &                - to run the process in the background.
+                [Command]  $$               - to get the PID of the current process.
+
+                
+
+                bg                          – Resume a paused job in the background.
+                fg                          – Bring a background job to the foreground.
+                disown                      – Remove a job from the job list.
+                
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. User and Group Management
+                useradd                     – Add a new user.
+                usermod                     – Modify a user account.
+                userdel                     – Delete a user account.
+                groupadd                    – Add a new group.
+                groupdel                    – Delete a group.
+                passwd                      – Change user password.
+                chage                       – Change user password expiry information.
+                chown                       – Change file owner and group.
+                chmod                       – Change file permissions.
+                groups                      – Show user’s groups.
+                id                          – Show user and group IDs.
+                whoami                      – Show the current user.
+                su                          – Switch user.
+                sudo                        – Execute a command as another user (usually root).
+                w                           – Show who is logged in and what they are doing.
+                last                        – Show the last logins of users.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Environment and Shell Management
+                env                         – Show environment variables.
+                export                      – Set environment variables.
+
+                declare     
+                set                         – Display or set shell variables.
+                unset                       – Remove shell variables.
+
+                alias                       – Create command shortcuts.
+                unalias                     – Remove command aliases.
+                source                      – Execute commands from a file in the current shell.
+
+                bash                        – Start a new Bash shell session.
+                sh                          – Start a new POSIX shell session.
+                zsh                         – Start a new Zsh shell session.
+                fish                        – Start a new Fish shell session.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Time and Date Management :
+                date                        – Display or set the system date and time.
+                timedatectl                 – Query and change the system clock and time zone.
+                hwclock                     – Show or set the hardware clock.
+                tzselect                    – Select a time zone interactively.
+                chrony                      – Network time synchronization service (alternative to NTP).
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Disk and Storage Management
+                df                          – Report disk space usage.
+                du                          – Estimate file and directory space usage.
+                fdisk                       – Partition table manipulator for Linux.
+                parted                      – Command-line tool to manage disk partitions.
+                mkfs                        – Create a file system on a device.
+                mount                       – Mount a file system.
+                umount                      – Unmount a file system.
+                fsck                        – File system consistency check and repair.
+                lvcreate                    – Create a logical volume.
+                lvextend                    – Extend the size of a logical volume.
+
+                vgcreate                    – Create a volume group.
+                vgextend                    – Add physical volume to a volume group.
+                pvcreate                    – Create a physical volume.
+                lsblk                       – List block devices.
+                lsblk                       – List information about block devices.
+
+                iotop                       - Monitor disk I/O operations
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+7. File and Directory Management
+                cd                          – Change directory.
+
+                mkdir                       – Create a new directory.
+                rmdir                       – Remove an empty directory.
+                rm                          – Remove files or directories.
+                cp                          – Copy files or directories.
+                mv                          – Move or rename files or directories.
+
+                ls                          – List directory contents.
+                pwd                         – Print working directory.
+                stat                        – Display file or file system status.
+
+                find                        – Search for files in a directory hierarchy.
+                locate                      – Find files by name (using a database).
+                updatedb                    – Update the database for locate.
+                grep                        – Search text using patterns.
+
+                dpkg -L apache2             - Find All Related Files.
+
+                chmod                       – Change file permissions.
+                chown                       – Change file owner and group.
+                chgrp                       – Change group ownership of files.
+
+                ln                          – Create hard and symbolic links.
+                file                        – Determine file type.
+                
+                touch
+                echo 
+                cat
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+8. File Content and Text Processing:
+
+                echo                        – Output text to the standard output.
+                cat                         – Concatenate and display file content.
+               
+                more                        – View file content page by page.
+                less                        – View file content with backward and forward navigation.
+                head                        – Output the first part of a file.
+                tail                        – Output the last part of a file.
+               
+                grep                        – Search text using patterns.
+                awk                         – Pattern scanning and processing language.
+                
+                cut                         – Remove sections from each line of files.
+                sort                        – Sort lines in a file.
+                uniq                        – Report or omit repeated lines.
+                wc                          – Word, line, character, and byte count.
+                tr                          – Translate or delete characters.
+                diff                        – Compare files line by line.
+                cmp                         – Compare two files byte by byte.
+                tee                         – Read from standard input and write to standard output and files.
+
+                Text Editor:
+                        sed                         – Stream editor for text manipulation.
+                        nano                        – Simple text editor.
+                        vim                         – Advanced text editor.
+                        code                        -
+
+                Code Editor:
+
+                        code .                      - To open VS Code for the current directory.
+                        code ..                     - To open VS Code for the parent  directory.
+                        code /path                  - To open VS Code for the specified path.
+                        code directory              - To open VS Code in the specified directory.
+                        code file                   - To open VS Code in the specified file.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+9. File Sharing and Remote Access
+                ssh                         – Secure shell for remote login.
+                scp                         – Secure copy for file transfer over SSH.
+                rsync                       – Remote synchronization of files and directories.
+                ftp                         – File Transfer Protocol (unsecure).
+                sftp                        – Secure File Transfer Protocol (secure FTP).
+
+                nfs                         – Network File System (mount remote directories).
+                samba                       – SMB/CIFS protocol to share files between Linux and Windows systems.
+                mount                       – Mount network file systems or devices.
+                umount                      – Unmount file systems or devices.
+                netcat (or nc)              – Network utility to read and write data across network connections.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+10. Networking
+                hostname                    – Show or set the system’s hostname.
+                
+                ping                        – Send ICMP echo requests to a host.
+                traceroute                  – Trace the route packets take to a network host.
+                
+                ipconfig                    – Configure network interfaces (deprecated, replaced by ip).
+                ip                          – Show/manipulate network interfaces and routing.
+                ip link                     – Show or manipulate network devices.
+                iptables                    – Configure firewall rules.
+                netstat                     – Show network connections, routing tables, interface statistics, etc.
+                
+                ss                          – Display socket statistics.
+                tcpdump                     – Capture and analyze network packets.
+                route                       – Show or manipulate the IP routing table.
+                
+                curl                        – Transfer data from or to a server (supports many protocols).
+                wget                        – Download files from the web.
+                dpkg                        - Install  downloaded files.
+
+                ssh                         – Secure shell (remote login).
+                scp                         – Secure copy (file transfer between hosts over SSH).
+                
+                ftp                         – File transfer protocol client.
+                sftp                        – Secure FTP.
+                
+                nslookup                    – Query Internet domain name servers.
+                dig                         – DNS lookup utility.
+                
+                nmap                        – Network scanner.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+11. Security and Permissions
+                sudo                        – Execute commands as another user (typically root).
+                su                          – Switch user.
+                passwd                      – Change user password.
+                sg                          – Execute commands with a different group ID.
+
+                chmod                       – Change file permissions.
+                chown                       – Change file owner and group.
+                chgrp                       – Change group ownership.
+
+                umask                       – Set default file creation permissions.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+12. Package Management:
+        A.Destro-Independend PM 'Universal':
+                        1. 'snap'.       2. 'flatpak'.       3. 'AppImage'.            sudo [PM] [options] [command]
+        B.Destro-dependenet PM :
+                        1. 'dpkg'.       2. 'apt'.           3. 'apt-get'.             sudo [PM] [options] [command]
+
+        1."dpkg":
+                - dpkg is a low-level package management tool used in 
+                  Debian-based Linux distributions (like Debian, Ubuntu, etc.) to install, remove, and manage .deb packages. 
+                  Unlike higher-level tools like apt, dpkg does not automatically resolve package dependencies.
+                - Disadvantages:
+                        - dpkg does not automatically resolve package dependencies.
+                        - dpkg does not handle package conflicts.
+                        - dpkg does not handle package upgrades.
+                        - dpkg requires downloading the packages before installation:
+                                         Tools like wget or curl can be used to download .deb packages directly from a known URL. 
+                                         
+                        - wget <package-url>
+                          sudo dpkg -i <downloaded-package-name>.deb                 
+                - Example:
+                        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+                        sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+                - Common Options : 
+                        dpkg -l <package-name>          : Lists the status of installed packages matching the given name (or partial name).
+                        dpkg -L <package-name>          : A list of file paths where the package's components are installed (e.g., binaries, configuration files, libraries).
+                        dpkg -s <package-name>          : Provides detailed information about the installed package, including: Version, Status, Description, Maintainer, Architecture.
+                        dpkg -i <package-name>.deb
+                        dpkg -r <package-name>
+                        dpkg -P <package-name>
+        
+        2."apt":
+                - apt is a higher-level package management tool used in 
+                  Debian-based Linux distributions (like Debian, Ubuntu, etc.) to install, remove, and manage .deb packages. 
+                  It automatically resolves package dependencies and handles package conflicts and upgrades.
+                - Advantages:
+                        - apt automatically resolves package dependencies.
+                        - apt handles package conflicts.
+                        - apt handles package upgrades.
+                        - apt can be used to search for packages, list installed packages, and list available packages.
+
+                _____________________________________________________________________________________________________________
+                # Commands:      
+                        sudo apt list                             - List packages based on package names
+                        sudo apt list --installed                 - Displays all installed packages on the system.   
+                        
+                        sudo apt depends  <package_name>          - Lists all dependencies of a package.  
+                        sudo apt rdepends <package_name>          - Lists reverse dependencies (packages that depend on the specified package).    
+                        
+                        sudo apt search <package_name>            - Searches for packages matching the provided name.
+                        sudo apt show   <package_name>            - Displays detailed information about a package, such as its description, dependencies, and source.
+                        dpkg -l <package-name>                    - Lists the status of installed packages matching the given name (or partial name).
+                        dpkg -L <package-name>                    - A list of file paths where the package's components are installed (e.g., binaries, configuration files, libraries).            
+                        dpkg -s <package-name>                    - Provides detailed information about the installed package, including: Version, Status, Description, Maintainer, Architecture.
+
+                        sudo apt update                           - update list of available packages
+                        sudo apt upgrade                          - upgrade the system by installing/upgrading packages
+                        sudo apt full-upgrade                     - upgrade the system by removing/installing/upgrading packages
+
+                        sudo apt install <package_name>           - install packages
+                        sudo apt install <package1> <package2>    - Installs multiple packages at once.
+                        sudo apt install <package_name>=<version> - Installs a specific version of a package.
+                        sudo apt install ./path_to_file.deb       - Installs a .deb package file while handling dependencies.
+                        sudo apt reinstall                        - Reinstall packages
+                        sudo apt --fix-broken install             - Fixes and completes broken package installations.
+
+                        sudo apt remove <package_name>            - Removes a package but keeps its configuration files.
+                        sudo apt purge  <package_name>            - Removes a package and its configuration files.
+                        sudo apt autoremove                       - automatically remove all unused packages
+
+                        sudo apt clean                            - Removes all cached .deb files in /var/cache/apt/archives/.  
+                        sudo apt autoclean                        - Removes outdated .deb files no longer in repositories.            
+                        
+                        sudo add-apt-repository <repository>      - Adds a new repository to the sources list (ubunto@myWinHostMachine:/etc/apt$ cat sources.list
+                                                                                                                ubunto@myWinHostMachine:/etc/apt/sources.list.d$ cat ubuntu.sources).
+                        sudo apt update                           - Always update the package database after adding or modifying repositories.
+
+                        sudo apt edit-sources                     - edit the source information file
+                        sudo apt satisfy                          - satisfy dependency strings
+
+      _____________________________________________________________________________________________________________
+                # General Options
+                        -h, --help:       Displays the help message and usage instructions for the apt command.
+
+                        -v, --version:    Displays the version of apt currently installed on your system.
+
+                        -q, --quiet:      Reduces the output verbosity. Can be used multiple times to further suppress messages.
+                                          Example: apt -qq update (Minimal output)
+                        
+                        -y, --yes:        Automatically answers "yes" to all prompts during package installation or removal.
+                                          Example: apt -y install curl
+                        
+                        --assume-no:      Automatically answers "no" to all prompts.
+
+                        --force-yes:      Forces the operation even if it might cause issues. Use with caution!
+                                          Example: apt --force-yes install risky-package
+                        
+                        --dry-run:        Simulates the command without actually making changes to the system.
+                                          Example: apt --dry-run install package_name
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+13. Services Management:
+
+
+    A.systemctl (systemd-based systems)
+                - Systemctl is the command-line tool used to interact with systemd, 
+                the default service manager in most modern Linux distributions like Ubuntu, Fedora, and CentOS.
+
+                    sudo systemctl start   <service_name>	        Starts the specified service.
+                    sudo systemctl stop    <service_name>	        Stops the specified service.
+                    sudo systemctl restart <service_name>	        Restarts the service (stop and then start).
+                    sudo systemctl reload  <service_name>	        Reloads the configuration without stopping the service.
+                    sudo systemctl enable  <service_name>	        Enables the service to start on boot.
+                    sudo systemctl disable <service_name>	        Disables the service from starting on boot.
+
+                    sudo systemctl is-active  <service_name>	    Checks if the service is active.
+                    sudo systemctl is-enabled <service_name>	    Checks if the service is enabled.
+                    
+                    sudo systemctl list-units --type=service	    Lists all loaded services.
+                    systemctl list-dependencies <service_name>      List all dependencies of a service
+
+                    sudo systemctl status  <service_name>	        Displays the running status of the service.
+                    sudo journalctl -u <service_name>               Use journalctl with systemd to view logs for a specific service
+                    systemctl --failed                              List failed services                              
+
+    B.service (SysVinit/Upstart-based systems)
+                - This tool is commonly used for older Linux distributions,
+                but is compatible with systemd for backward compatibility.
+
+                    sudo service <service_name> start	            Starts the service.
+                    sudo service <service_name> stop	            Stops the service.
+                    sudo service <service_name> restart	            Restarts the service.
+                    sudo service <service_name> reload	            Reloads the configuration without stopping.
+                    sudo service <service_name> status	            Displays the service status.
+                    sudo service --status-all	                    Lists all services and their statuses.
+
+
+    Examples of Common Services
+
+                Service Name        	     Purpose
+
+                    apache2	           Apache HTTP server
+                    nginx	           Nginx web server
+                    mysql	           MySQL database server
+                    docker	           Docker container runtime.
+
+                    ssh	               Secure Shell (SSH) server
+                    cron	           Cron job scheduler
+                    networking	       Network configuration
+                    ufw	               Uncomplicated Firewall
+                    cups	           Print service
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+14. Archive and Compression: 
+
+                1.Archive:    
+                            zip                          – Create zip archives.
+                            unzip                        – Extract files from zip archives.
+
+                            rar                          – Create RAR archives.
+                            unrar                        – Extract files from RAR archives.
+
+                2.Compression: 
+
+                            gzip                         – Compress files using the GZIP format.
+                            gunzip                       – Decompress GZIP files.
+
+                            bzip2                        – Compress files using the BZIP2 algorithm.
+                            bunzip2                      – Decompress BZIP2 files
+                                                
+                            xz                           – Compress files using XZ algorithm.
+                            unxz                         – Decompress XZ files.
+                    
+                3.Archive and Compression:
+                            tar                          – Create or extract compressed tarballs.
+                                ex:
+                                    tar -cvf archive.tar file1.txt file2.txt directory/
+                                    tar -xvf archive.tar
+
+                                    tar -czvf archive.tar.gz file1.txt file2.txt
+                                    tar -xzvf archive.tar.gz
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+15. Log Management
+                    dmesg                       – Print kernel and boot logs.
+                    journalctl                  – Query and view logs collected by systemd.
+                    logger                      – Add messages to the system log.
+                    tail -f                     – Follow log files in real-time.
+                    logrotate                   – Rotate and compress logs.
+                    syslog                      – Log system events (typically used in /var/log/syslog).
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+16. Backup and Restore
+                    tar                         – Archive and compress files (often used for backups).
+                    rsync                       – Synchronize files and directories (useful for backup).
+                    dd                          – Copy and convert raw data (useful for creating disk images).
+                    cp                          – Copy files and directories.
+                    dump                        – Backup a file system.
+                    restore                     – Restore a file system from a dump.                
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+17.Remote Access Management:
+
+    # Concepts:    
+
+        1.openssh-client:
+                        - It is a command-line tool for SSH-based remote access and file management.
+                        - It is a package that allows users to connect securely to remote machines using SSH.
+        2.openssh-server:
+                        - It is a package that enables a machine to act as an SSH server, accepting secure connections from SSH clients.
+                        - It is a service that allows remote access to a system using SSH.
+        3.ssh:
+                        - ssh user@remote-host                /   ssh user@remote-host [command]        
+                        - It is a command-line tool for secure remote access to a system.
+                        - It is used to connect to a remote system using SSH.
+                        - It is used to execute commands on a remote system.
+                        - It uses a cryptographic network protocol "SSH" for secure communication, remote login, and command execution.
+        4.scp:
+                        - scp file.txt user@remote-host:/path/to/destination
+                        - It is a command-line tool for securely copying files to and from a remote system.
+                        - It is used to copy files to and from a remote system using SSH.
+        5.sftp:
+                        - sftp user@remote-host
+                        - It is a command-line tool for securely transferring files to and from a remote system.
+                        - It is used to transfer files to and from a remote system using SSH.
+        6.rsync:
+                        - rsync -avz source/ destination/
+                        - It is a command-line tool for synchronizing files and directories between two systems.
+                        - It is used to synchronize files and directories between two systems using SSH.
+        7.ssh-keygen:
+                        - ssh-keygen -t rsa -b 4096
+                        - It is a command-line tool for generating public and private SSH keys.
+                        - It is used to generate public and private SSH keys for secure authentication.
+        8.ssh-agent:
+                        - ssh-agent:
+                        - It is a command-line tool for securely storing and managing SSH keys.
+                        - It is used to securely store and manage SSH keys for authentication.
+        9.ssh-add:
+                        - ssh-add
+                        - It is a command-line tool for adding SSH keys to the SSH agent.
+                        - It is used to add SSH keys to the SSH agent for authentication.
+        10.ssh-copy-id:
+                        - ssh-copy-id user@remote-host
+                        - It is a command-line tool for securely copying the local host's SSH keys to the remote.
+                        - It is used to securely copy the local host's SSH keys to the remote host for authentication.
+        
+        11.'~/.ssh' directory:
+                        - It is a directory that stores SSH-related files and configuration.
+                        - It is used to store SSH keys, configuration files, and other SSH-related files.
+                        - It is typically located in the user's home directory.
+                        - A hidden folder in a user's home directory used to store SSH-related files, such as keys and configuration.
+                        - Contents:
+                                   A.On the Client:
+                                                                                
+                                                1.Public Key "id_rsa.pub":
+                                                                - It is a file that contains the public key used for SSH authentication.
+                                                                - It is used to authenticate the user on the remote system.
+                                                                - It is typically located in the "~/.ssh" directory on the client side.
+                                                2.Private Key "id_rsa":
+                                                                - It is a file that contains the private key used for SSH authentication.
+                                                                - It is used to authenticate the user on the remote system.
+                                                                - It is typically located in the "~/.ssh" directory on the client side.
+                                                3.'known_hosts' file:
+                                                                - It is a file that stores the public keys of the remote systems that the user has connected to using SSH.
+                                                                - It is used to verify the identity of the remote system.
+                                                                - It is typically located in the "~/.ssh" directory on the client side.
+                                                4.'config' file:
+                                                                - It is a file for client-side that stores the SSH configuration settings.
+                                                                - It is used to customize the SSH connection settings.
+                                                                - It is typically located in the "~/.ssh" directory on the client side.        
+ 
+                                   B.On the Server:
+
+                                                1.'authorized_keys:
+                                                                - A file on the server containing public keys of clients allowed to connect.
+                                                                - It is a file that stores the public keys of the users who are allowed to connect to the remote system using SSH.
+                                                                - It is used to authenticate the users on the remote system.
+                                                                - It is typically located in the "~/.ssh" directory on the server side.
+                                                2.'sshd_config':
+                                                                - A file on the server containing SSH server configuration settings.
+                                                                - It is a file that stores the SSH server configuration settings.
+                                                                - It is used to customize the SSH server settings.
+                                                                - It is typically located in the "/etc/ssh" directory on the server side.
+
+
+
+
+
+
+
+____________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________
+                                                                Shell Script 
+                                https://www.geeksforgeeks.org/introduction-linux-shell-shell-scripting/                                
+____________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________
+- Definition:
+        - It is a text file containing a sequence of commands for a Unix-based operating system's shell to execute in a specific order. 
+        - It automates repetitive tasks, simplifies complex workflows, and enables users to create powerful utilities.
+        - It can be used for a wide range of tasks, including file management, system administration.
+        - It is a program written in a shell scripting language (e.g., Bash, Zsh, Ksh). 
+        - It allows users to write commands and logic to execute tasks automatically.
+
+- Types:
+        1. Bash Shell Script : "Bourne Again Shell" This is the most common type of shell script and is used on Linux and macOS systems.
+        2. Zsh  Shell Script : "Z Shell, an extended version of Bash", This type of shell script is used on macOS systems.
+
+- Features :
+        - Automation   : Shell scripts automate repetitive tasks, freeing up time for more complex and creative work.
+        - Portability  : Shell scripts are platform-independent, making them easy to transfer between different systems.
+        - Reusability  : Shell scripts can be reused, reducing the need to rewrite code for similar tasks.
+        - Scalability  : Shell scripts can handle large datasets and complex workflows, making them ideal for big data processing tasks.
+        - Security     : Shell scripts can be used to implement secure workflows, such as encrypting data and authenticating users.
+
+- Examples:
+        - Backup scripts      : Automate data backups to ensure data integrity and availability.
+        - Deployment scripts  : Automate the deployment of applications and services.
+        - Monitoring scripts  : Automate the monitoring of system performance and resource utilization.
+        - Security scripts    : Automate security tasks, such as password management and access control.
+
+Bash Scripting Language:
+        Variables                               : Store and manipulate data.
+        Control Structures                      : Use conditional statements and loops for logic.
+        Functions                               : Modularize code into reusable components.
+        I/O Redirection                         : Handle input and output efficiently.
+        File and String Manipulation            : Process and edit files or strings.
+        Command Execution                       : Run commands and handle their output.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Shell Script creation:
+        1. Choose a text editor (e.g., Vim, Emacs, Nano) to create a new file with a `.sh` extension (e.g., `script.sh`).
+        2. Write the shell script using a shell scripting language (e.g., Bash, Zsh).
+        3. Save the file and make it will be executed when run.
+        4. Make the file executable by running the command `chmod +x script.sh` in the terminal
+        5. Run the script.sh by typing ./script.sh in the terminal.
+
+                    
+        Create a Script File:                   touch myscript.sh
+                                                nano myscript.sh
+                                                        #!/bin/bash
+        Write your script:                              echo "Hello, World!"
+                                                        your script
+                                                        exit 0
+        Make the Script Executable:             chmod +x myscript.sh
+        Run the Script:                         ./myscript.sh
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Backup Script:
+        
+        -------------------------------------------------------------------------
+        Purpose: Automates data backups to ensure data integrity and availability.
+        -------------------------------------------------------------------------
+        #!/bin/bash
+        # Backup Script: Backs up a specific directory to a backup location
+
+        SOURCE_DIR="/home/user/docs"
+        BACKUP_DIR="/home/user/backups"
+        TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+        BACKUP_FILE="$BACKUP_DIR/backup_$TIMESTAMP.tar.gz"
+
+        # Ensure the backup directory exists
+        mkdir -p "$BACKUP_DIR"
+
+        # Create the backup
+        tar -czf "$BACKUP_FILE" "$SOURCE_DIR"
+
+        echo "Backup completed: $BACKUP_FILE"
+        -------------------------------------------------------------------------
+
+2.Database Backup Script:
+
+        -------------------------------------------------------------------------
+        Purpose: Automates database backups to ensure data integrity and availability.
+        -------------------------------------------------------------------------
+        #!/bin/bash
+        # MySQL Database Backup Script
+
+        DB_NAME="my_database"
+        DB_USER="root"
+        DB_PASS="password"
+        BACKUP_DIR="/home/user/db_backups"
+        TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+        BACKUP_FILE="$BACKUP_DIR/${DB_NAME}_backup_$TIMESTAMP.sql"
+
+        mkdir -p "$BACKUP_DIR"
+
+        # Dump the database
+        mysqldump -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" > "$BACKUP_FILE"
+
+        if [ $? -eq 0 ]; then
+        echo "Database backup successful: $BACKUP_FILE"
+        else
+        echo "Database backup failed!"
+        fi        
+        -------------------------------------------------------------------------
+
+3.Deployment Script:
+
+        -------------------------------------------------------------------------
+        Purpose: Automates the deployment of applications and services.
+        -------------------------------------------------------------------------
+        #!/bin/bash
+        # Deployment Script: Deploys a web application to the server
+
+        APP_DIR="/var/www/myapp"
+        DEPLOY_DIR="/var/www/html"
+        LOG_FILE="/var/log/deploy.log"
+
+        echo "Starting deployment at $(date)" | tee -a "$LOG_FILE"
+
+        # Remove old files
+        rm -rf "$DEPLOY_DIR"/*
+
+        # Copy new files
+        cp -r "$APP_DIR"/* "$DEPLOY_DIR/"
+
+        # Set appropriate permissions
+        chmod -R 755 "$DEPLOY_DIR"
+
+        # Restart the web server
+        systemctl restart apache2
+
+        echo "Deployment completed at $(date)" | tee -a "$LOG_FILE"        
+        -------------------------------------------------------------------------
+
+4.Container Deployment Script:
+
+        -------------------------------------------------------------------------
+        Purpose: Automate Docker container deployment.
+        -------------------------------------------------------------------------
+        #!/bin/bash
+        # Docker Deployment Script
+
+        IMAGE_NAME="my_app"
+        CONTAINER_NAME="my_app_container"
+        PORT=8080
+
+        echo "Stopping existing container..."
+        docker stop "$CONTAINER_NAME" || true
+        docker rm "$CONTAINER_NAME" || true
+
+        echo "Deploying new container..."
+        docker run -d --name "$CONTAINER_NAME" -p "$PORT:80" "$IMAGE_NAME"
+
+        if [ $? -eq 0 ]; then
+        echo "Container deployed successfully!"
+        else
+        echo "Failed to deploy container."
+        fi        
+        -------------------------------------------------------------------------
+
+5.Monitoring Script:
+
+        -------------------------------------------------------------------------
+        Purpose: Automates the monitoring of system performance and resource utilization.
+        -------------------------------------------------------------------------
+        #!/bin/bash
+        # Monitoring Script: Logs system performance metrics
+
+        LOG_FILE="/var/log/system_monitor.log"
+        INTERVAL=10  # Check every 10 seconds
+
+        echo "System monitoring started at $(date)" >> "$LOG_FILE"
+
+        while true; do
+        echo "------ $(date) ------" >> "$LOG_FILE"
+        echo "CPU Usage:" >> "$LOG_FILE"
+        mpstat | tail -1 >> "$LOG_FILE"
+        echo "Memory Usage:" >> "$LOG_FILE"
+        free -h >> "$LOG_FILE"
+        echo "Disk Usage:" >> "$LOG_FILE"
+        df -h >> "$LOG_FILE"
+        sleep "$INTERVAL"
+        done        
+        -------------------------------------------------------------------------
+
+6.Network Monitoring Script:
+        -------------------------------------------------------------------------
+        Purpose: Monitor the status of a specific network service.
+        -------------------------------------------------------------------------
+        #!/bin/bash
+        # Network Monitoring Script
+
+        SERVICE="google.com"
+        LOG_FILE="/var/log/network_monitor.log"
+
+        echo "Monitoring network connectivity to $SERVICE..."
+
+        while true; do
+        ping -c 1 "$SERVICE" > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+                echo "$(date): $SERVICE is unreachable!" >> "$LOG_FILE"
+        else
+                echo "$(date): $SERVICE is reachable." >> "$LOG_FILE"
+        fi
+        sleep 30
+        done        
+        -------------------------------------------------------------------------
+
+7.Security Script
+        -------------------------------------------------------------------------
+        Purpose: Automates security tasks like password management and access control.
+        -------------------------------------------------------------------------
+        #!/bin/bash
+        # Security Script: Checks for unauthorized SSH login attempts
+
+        LOG_FILE="/var/log/auth.log"
+        OUTPUT_FILE="/var/log/unauthorized_attempts.log"
+
+        echo "Scanning for unauthorized SSH login attempts..." | tee -a "$OUTPUT_FILE"
+
+        grep "Failed password" "$LOG_FILE" | awk '{print $1, $2, $3, $11, $13}' >> "$OUTPUT_FILE"
+
+        echo "Unauthorized login attempts have been logged to $OUTPUT_FILE"        
+        -------------------------------------------------------------------------
+
+8.Security Scripts
+        -------------------------------------------------------------------------
+        User Account Monitoring Script
+        Purpose: Detect newly added or removed user accounts.
+        -------------------------------------------------------------------------
+        #!/bin/bash
+        # User Monitoring Script
+
+        PREV_USERS="/tmp/users_prev"
+        CURRENT_USERS="/tmp/users_current"
+
+        cut -d: -f1 /etc/passwd > "$CURRENT_USERS"
+
+        if [ -e "$PREV_USERS" ]; then
+        diff "$PREV_USERS" "$CURRENT_USERS" | grep ">" | awk '{print "New User: "$2}'
+        diff "$PREV_USERS" "$CURRENT_USERS" | grep "<" | awk '{print "Removed User: "$2}'
+        fi
+
+        mv "$CURRENT_USERS" "$PREV_USERS"
+        -------------------------------------------------------------------------
+
+
+
+
+        -------------------------------------------------------------------------
+        Firewall Rule Checker
+        Purpose: Check if specific firewall rules are active.
+        -------------------------------------------------------------------------
+        #!/bin/bash
+        # Firewall Rule Checker Script
+
+        REQUIRED_PORTS=("22" "80" "443")
+        LOG_FILE="/var/log/firewall_check.log"
+
+        echo "Checking firewall rules..." > "$LOG_FILE"
+
+        for PORT in "${REQUIRED_PORTS[@]}"; do
+        if sudo iptables -L -n | grep -q ":$PORT"; then
+                echo "Port $PORT is open." >> "$LOG_FILE"
+        else
+                echo "Warning: Port $PORT is not open!" >> "$LOG_FILE"
+        fi
+        done
+        -------------------------------------------------------------------------
+
+
+
+_______________________________________________________________________________________________________________________________________
