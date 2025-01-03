@@ -25,7 +25,7 @@ ________________________________________________________________________________
                 -> A process can be in various states such as New, Ready, Running, Waiting, and Terminated.
     - Inter-Process Communication (IPC):
                 -> Mechanisms like message passing and shared memory allow processes to communicate with each other.
-
+--------------------------------------------------------------------------------------------------------------
 2.Memory Management:
     - RAM Allocation:
                 -> The OS manages the computer’s primary memory (RAM), 
@@ -37,7 +37,7 @@ ________________________________________________________________________________
                 -> Ensures that processes cannot access each other's memory, providing security and stability.
     - Paging and Segmentation:
                 -> Techniques used to manage memory, breaking it into smaller, manageable chunks.
-
+--------------------------------------------------------------------------------------------------------------
 3.File System Management:
     - File Management:
                 -> The OS provides an interface for creating, deleting, reading, and writing files. 
@@ -49,7 +49,7 @@ ________________________________________________________________________________
                    and other storage devices, ensuring efficient use of available space.
     - File Systems:
                 -> Defines the structure of data storage on a disk (e.g., NTFS, FAT32, ext4).
-
+--------------------------------------------------------------------------------------------------------------
 4.Device Management:
     - Device Drivers: 
             -> The OS includes drivers for hardware devices like printers, monitors, keyboards, 
@@ -59,7 +59,7 @@ ________________________________________________________________________________
             -> The OS provides a standard interface for applications to interact with devices.
     - Device Scheduling: 
             -> The OS allocates devices to processes based on their priority and availability.
-
+--------------------------------------------------------------------------------------------------------------
 5.Security and Access Control:
     - Authentication: 
             -> The OS ensures that only authorized users can access the system through login mechanisms like usernames and passwords.
@@ -69,7 +69,7 @@ ________________________________________________________________________________
             ->  Protects sensitive data by converting it into unreadable formats, accessible only with the appropriate decryption key.
     - Firewalls and Anti-Virus:
             -> Provides security by detecting and blocking malicious activities, ensuring that the system remains protected from threats.
-
+--------------------------------------------------------------------------------------------------------------
 6.User Interface (UI):
     - Command-Line Interface (CLI): 
             -> A text-based interface that allows users to interact with the OS by typing commands.
@@ -93,19 +93,19 @@ ________________________________________________________________________________
                        with other services running as user-space processes (e.g., Minix).
             - Hybrid Kernel: 
                     -> Combines aspects of both monolithic and microkernels (e.g., Windows NT, macOS).
-
+--------------------------------------------------------------------------------------------------------------
 2.Shell:
     - Provides an interface for user interaction, either through CLI or GUI.
     - In CLI, users type commands which the shell interprets and passes to the OS for execution.
-
+--------------------------------------------------------------------------------------------------------------
 3.System Calls:
     - Interfaces that allow user programs to request services from the OS kernel, 
       such as file manipulation, process management, and communication.
-
+--------------------------------------------------------------------------------------------------------------
 4.Interrupt Handling:
     - The OS handles interrupts (signals indicating that a process needs immediate attention),
       ensuring that the CPU responds to critical tasks or events.
-
+--------------------------------------------------------------------------------------------------------------
 5.Scheduler:
     - Part of the OS responsible for deciding which process should execute next.
     - Types of Schedulers:
@@ -118,15 +118,15 @@ ________________________________________________________________________________
 1.Throughput:
     - Measures the number of processes completed in a given time period. 
     - A higher throughput indicates better OS performance.
-
+--------------------------------------------------------------------------------------------------------------
 2.Latency:
     - The time it takes for a process to start executing after it’s scheduled.
     - Lower latency is ideal.
-
+--------------------------------------------------------------------------------------------------------------
 3.CPU Utilization:
     - The percentage of time the CPU is actively processing tasks. 
     - The OS should strive to keep the CPU as busy as possible without overloading it.
-
+--------------------------------------------------------------------------------------------------------------
 4.Fairness:
     - Ensures that all processes are given an equitable share of resources, preventing starvation or monopolization of CPU time.
 _______________________________________________________________________________________________________________________________________
@@ -136,24 +136,24 @@ ________________________________________________________________________________
 1.Batch Operating System:
     - Processes are executed in batches without any user interaction.
     - Common in early computing systems, where jobs are collected, processed, and output in bulk.
-
+--------------------------------------------------------------------------------------------------------------
 2.Time-Sharing Operating System:
     - Multiple users can interact with the computer at the same time, each having a time slice on the CPU.
     - Example: UNIX, Linux, macOS.
-
+--------------------------------------------------------------------------------------------------------------
 3.Real-Time Operating System (RTOS):
     - Provides immediate response to external events.
     - Essential for systems where timing is critical (e.g., embedded systems, aerospace, medical devices).
     - Examples: VxWorks, FreeRTOS.
-
+--------------------------------------------------------------------------------------------------------------
 4.Distributed Operating System:
     - Manages a collection of independent computers to appear as a single system to users.
     - Example: Google’s Android OS on smartphones or a distributed file system like Hadoop.
-
+--------------------------------------------------------------------------------------------------------------
 5.Network Operating System (NOS):
     - Manages resources on a network, providing network services such as file sharing, communication, and access control.
     - Examples: Windows Server, Novell NetWare.
-
+--------------------------------------------------------------------------------------------------------------
 6.Mobile Operating Systems:
     - Designed for mobile devices like smartphones and tablets.
     - Examples: Android, iOS, Windows Phone.
