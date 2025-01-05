@@ -2,7 +2,6 @@ ________________________________________________________________________________
                                                     Computer Networks
                                     https://en.wikipedia.org/wiki/Computer_network#                
                                 ===========================================================
-
 Definition:
     -> It is a collection of interconnected devices (computers, servers, routers, switches, etc.) 
        that communicate with each other to share resources, data, and applications.
@@ -21,5 +20,6 @@ Network Protocols
 Network Virtualization
 Network Security
 Network Commands
+Network Addresses
 
 _______________________________________________________________________________________________________________________________________

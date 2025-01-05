@@ -85,9 +85,9 @@ Definition:
 --------------------------------------------------------------------------------------------------------------
 2.Synchronization Mechanisms:
        - Mutexes (Mutual Exclusion): Prevent multiple processes from accessing a critical section simultaneously.
-       - Semaphores: Signaling mechanism to control access to shared resources.
-       - Monitors: High    -level synchronization construct that encapsulates shared variables and their operations.
-       - Condition Variables: Allow processes to wait until a specific condition is met.
+       - Semaphores                : Signaling mechanism to control access to shared resources.
+       - Monitors                  : High-level synchronization construct that encapsulates shared variables and their operations.
+       - Condition Variables       : Allow processes to wait until a specific condition is met.
 _________________________________________________________________________________________________________________________________
                                                 Inter-Process Communication (IPC)
                                                 ---------------------------------
@@ -95,11 +95,11 @@ Definition:
        - Processes may need to communicate with each other to exchange data or coordinate actions.
 --------------------------------------------------------------------------------------------------------------
 1.Methods of IPC:
-       - Shared Memory: Processes share a segment of memory for communication.
+       - Shared Memory  : Processes share a segment of memory for communication.
        - Message Passing: Processes send and receive messages via the OS.
-       - Pipes: Unidirectional communication channel between processes.
-       - Sockets: Communication between processes over a network.
-       - Signals: Asynchronous notifications sent to a process to indicate events.
+       - Pipes          : Unidirectional communication channel between processes.
+       - Sockets        : Communication between processes over a network.
+       - Signals        : Asynchronous notifications sent to a process to indicate events.
        - Named Pipes (FIFO): Similar to pipes but support bidirectional communication and can be used by unrelated processes.
 --------------------------------------------------------------------------------------------------------------
 2.IPC Mechanisms in Linux:
@@ -125,7 +125,7 @@ ________________________________________________________________________________
                                                 ------------------------------------
 1.Viewing Processes:
        - `ps`: Displays information about running processes.
-       - `top`: Shows real    -time process activity.
+       - `top`: Shows real-time process activity.
        - `htop`: Interactive version of `top`.
        - `pidof`: Finds the PID of a running process.
 --------------------------------------------------------------------------------------------------------------

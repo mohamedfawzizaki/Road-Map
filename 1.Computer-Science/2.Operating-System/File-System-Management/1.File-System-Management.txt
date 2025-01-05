@@ -61,16 +61,16 @@ ________________________________________________________________________________
 The OS provides the following operations to manage files and directories:
 --------------------------------------------------------------------------------------------------------------
 1.File Operations:
-       - Create: Allocate space and metadata for a new file.
-       - Open: Load file metadata into memory for use.
+       - Create    : Allocate space and metadata for a new file.
+       - Open      : Load file metadata into memory for use.
        - Read/Write: Access or modify file content.
-       - Close: Release resources associated with an open file.
-       - Delete: Remove the file and its metadata from the system.
+       - Close     : Release resources associated with an open file.
+       - Delete    : Remove the file and its metadata from the system.
 --------------------------------------------------------------------------------------------------------------
 2.Directory Operations:
        - Create/Delete: Add or remove directories.
-       - List: Display contents of a directory.
-       - Traverse: Navigate the directory hierarchy.
+       - List         : Display contents of a directory.
+       - Traverse     : Navigate the directory hierarchy.
 --------------------------------------------------------------------------------------------------------------
 3.Metadata Operations:
        - Retrieve or modify file attributes like size, permissions, and timestamps.
@@ -119,11 +119,11 @@ Common file systems include:
 --------------------------------------------------------------------------------------------------------------
 1.Windows:
        - FAT32: Simple, compatible with many devices.
-       - NTFS: Advanced features (permissions, journaling, encryption).
+       - NTFS : Advanced features (permissions, journaling, encryption).
 --------------------------------------------------------------------------------------------------------------
 2.Linux:
        - ext3/ext4: Popular Linux file systems with journaling.
-       - XFS: High-performance journaling file system.
+       - XFS      : High-performance journaling file system.
 --------------------------------------------------------------------------------------------------------------
 3.macOS:
        - APFS: Optimized for SSDs, supports snapshots.
@@ -156,9 +156,9 @@ Permission Types
       Execute  (x) : Permission to run the file as a program.
 --------------------------------------------------------------------------------------------------------------
 User Categories
-      Owner: The user who created the file.
-      Group: A group of users with shared permissions.
-      Others: All other users on the system.
+      Owner   : The user who created the file.
+      Group   : A group of users with shared permissions.
+      Others  : All other users on the system.
 --------------------------------------------------------------------------------------------------------------
 Access Control Lists (ACLs)
       Provide finer-grained control over file permissions by specifying access rights for individual users or groups.
@@ -221,17 +221,17 @@ ________________________________________________________________________________
                                           Tools for File System Management
                                           ================================ 
 1.Linux Commands:
-       - `ls`: List directory contents.
-       - `cp`, `mv`, `rm`: Copy, move, or delete files.
-       - `chmod`, `chown`: Change file permissions and ownership.
-       - `df`, `du`: Display disk usage.
-       - `mount`, `umount`: Mount and unmount file systems.
+       - `ls`                : List directory contents.
+       - `cp`, `mv`, `rm`    : Copy, move, or delete files.
+       - `chmod`, `chown`    : Change file permissions and ownership.
+       - `df`, `du`          : Display disk usage.
+       - `mount`, `umount`   : Mount and unmount file systems.
 --------------------------------------------------------------------------------------------------------------
 2.Windows Commands:
-       - `dir`: List directory contents.
+       - `dir`                : List directory contents.
        - `copy`, `move`, `del`: Manage files.
-       - `attrib`: Change file attributes.
-       - Disk Management: GUI tool for managing disks and partitions.
+       - `attrib`             : Change file attributes.
+       - Disk Management      : GUI tool for managing disks and partitions.
 
 
 ______________________________________________________________________________________________________________________________
@@ -314,80 +314,6 @@ ________________________________________________________________________________
                - A bit set to `0` indicates a free block, while a bit set to `1` indicates an allocated block.
       2.Free Block List:  
                - A linked list of free blocks.Each free block contains a pointer to the next free block.
-      3.Types of File Allocation
-______________________________________________________________________________________________________________________________
-The way the OS allocates data blocks to files significantly impacts performance and storage efficiency.
---------------------------------------------------------------------------------------------------------------
-1.Contiguous Allocation
-       - Each file is stored in consecutive blocks.
-       - Advantages:  
-         - Fast sequential access.
-       - Disadvantages:  
-         - External fragmentation (free space becomes scattered). 
-         - Hard to resize files.
---------------------------------------------------------------------------------------------------------------
-2.Linked Allocation
-       - Each block contains a pointer to the next block.
-       - Advantages:  
-         - Easy to grow files dynamically. 
-         - No external fragmentation.
-       - Disadvantages:  
-         - Slow random access (must traverse the list). 
-         - Additional space required for pointers.
---------------------------------------------------------------------------------------------------------------
-3.Indexed Allocation
-       - An index block contains pointers to all data blocks of a file.
-       - Advantages:  
-         - Fast random access. 
-         - No external fragmentation.
-       - Disadvantages:  
-         - Overhead of maintaining index blocks.
---------------------------------------------------------------------------------------------------------------
-4.Directory Implementation
-
-      1.Linear List
-            - A simple list of file names and inode numbers.
-            - Easy to implement but slow for large directories (O(n) lookup time).
-
-      2.Hash Table
-            - Maps file names to inode numbers using a hash function.
-            - Faster lookups compared to a linear list (O(1) average time).
---------------------------------------------------------------------------------------------------------------
-5.File System Mounting
-      - The OS mounts a file system by reading the superblock and creating an in-memory data structure to manage the file system.
-      - The mount operation associates the root of the file system with a mount point in the directory hierarchy.
---------------------------------------------------------------------------------------------------------------
-6.Journaling in File Systems
-      - Journaling is a technique used to maintain consistency by recording changes before they are applied.
-      - If a crash occurs during a file system operation, the journal can be used to replay or roll back changes.
-      - Journaling file systems include:
-         - EXT3, EXT4 (Linux).
-         - NTFS (Windows).
-         - APFS (macOS).
---------------------------------------------------------------------------------------------------------------
-7.File System Caching
-
-      - To improve performance, file systems use caching techniques to store frequently accessed data in memory.
-      - Types of caching:
-            1.Buffer Cache:  
-               Stores disk blocks in memory.
-            2.Page Cache:  
-               Stores file contents in memory pages.
---------------------------------------------------------------------------------------------------------------
-8.Advanced File System Features
-
-      1.Snapshots  
-            - A snapshot captures the state of the file system at a specific point in time.
-            - Useful for backups and recovery.
-
-      2.Quota Management  
-            - Quotas limit the amount of disk space or the number of files a user or group can use.
-
-      3.File System Encryption  
-            - Provides data security by encrypting files on disk.
-
-      4.File System Compression  
-            - Compresses files to save disk space.
 ______________________________________________________________________________________________________________________________
                                                    File System Journaling
                                                    ======================
@@ -419,8 +345,8 @@ How Journaling Works:
                           any operations that were in progress, ensuring that the system can recover to a consistent state.
 --------------------------------------------------------------------------------------------------------------
 Advantages of Journaling:
-      -
-       Data Integrity    : The journal ensures that changes are recorded before they are applied, 
+      
+      - Data Integrity    : The journal ensures that changes are recorded before they are applied, 
                               preventing partial writes and ensuring the file system can recover gracefully.
       
       - Faster Recovery   : In case of a crash, only the journal needs to be checked and replayed 

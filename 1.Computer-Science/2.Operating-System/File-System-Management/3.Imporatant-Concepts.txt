@@ -1,5 +1,5 @@
 _________________________________________________________________________________________________________________________________
-                     Disc  -  Drive  -  Driver  -  Partition  -  SDA  -  SDB  -  SDC  -  SDA1  -  SDA2 
+                     Disc/Drive (SDA  -  SDB  -  SDC) -  Driver  -  Partition (SDA1  -  SDA2)
                      =================================================================================                 
 1.Disc:
       - A disk (or disk drive) refers to a physical storage device used for storing data.
@@ -35,9 +35,9 @@ ________________________________________________________________________________
       - A disk can be partitioned into multiple sections (partitions), each of which can have its own file system.
       - Partitions allow a disk to be used for different purposes (e.g., one partition for system files, another for data).
 
-      - Primary Partition: A main partition that can hold a file system.
-      - Extended Partition: A partition used to hold logical partitions (useful for creating more than four partitions on a disk).
-      - Logical Partition: A partition created within an extended partition.
+      - Primary Partition  :  A main partition that can hold a file system.
+      - Extended Partition :  A partition used to hold logical partitions (useful for creating more than four partitions on a disk).
+      - Logical Partition  :  A partition created within an extended partition.
 
       - In Linux, partitions are named like `/dev/sda1`, `/dev/sda2`, `/dev/sdb1`, etc.
       - where the number after the `sda` refers to the partition number.
@@ -76,11 +76,11 @@ Partitioning Example in Linux:
                                   bash
                                   sudo fdisk /dev/sda
 
-   In this case, `/dev/sda` is the first disk.This command opens an interactive session to modify the partitions of the disk.
+   In this case, `/dev/sda` is the first disk.
+   This command opens an interactive session to modify the partitions of the disk.
 --------------------------------------------------------------------------------------------------------------
 2.Listing Partitions:
    You can list the partitions on a disk using the `lsblk` command:
-
                 bash
                 lsblk
    Example output:
@@ -103,9 +103,9 @@ Partitioning Example in Linux:
    This command formats `/dev/sda1` with the `ext4` file system.
 --------------------------------------------------------------------------------------------------------------
 Partition Types (Extended/Logical/Primary):
-       - Primary Partition: The main partition type.A disk can have up to 4 primary partitions.
-       - Extended Partition: A special partition that contains logical partitions.It allows you to have more than 4 partitions.
-       - Logical Partition: A partition inside an extended partition.You can have many logical partitions on a disk.
+       - Primary Partition  : The main partition type. A disk can have up to 4 primary partitions.
+       - Extended Partition : A special partition that contains logical partitions.It allows you to have more than 4 partitions.
+       - Logical Partition  : A partition inside an extended partition.You can have many logical partitions on a disk.
 --------------------------------------------------------------------------------------------------------------
 Key Points:
        - SDA refers to the first disk on your system.

@@ -1,5 +1,5 @@
 _________________________________________________________________________________________________________________________________
-                                              Device Managemen
+                                              Device Management
                                               ----------------
 Definition:
        - Device management is a critical function of an operating system (OS)
@@ -30,7 +30,6 @@ ________________________________________________________________________________
 _________________________________________________________________________________________________________________________________
                                         Components of Device Management
                                         -------------------------------
-
 1.Device Drivers:
        - Software modules that abstract hardware complexities.
        - Act as an intermediary between the OS and hardware.
@@ -157,8 +156,8 @@ Linux Commands:
     - `udevadm`: Manage device events and rules.
 --------------------------------------------------------------------------------------------------------------
 Windows Tools:
-    - Device Manager: GUI to manage device drivers and settings.
+    - Device Manager : GUI to manage device drivers and settings.
     - Disk Management: GUI tool to partition and format drives.
-    - `driverquery`: CLI to list installed drivers.
-    - `wmic`: Query system devices and components.
+    - `driverquery`  : CLI to list installed drivers.
+    - `wmic`         : Query system devices and components.
 _________________________________________________________________________________________________________________________________

@@ -5,7 +5,8 @@ Command Breakdown:
             ''  ` sudo mount /dev/sdb1 /mnt/user  `  ''
 
 The command you provided mounts a device (in this case, a partition) to a specific directory,
- which allows the operating system to access the contents of that device.Let's break it down step by step:
+ which allows the operating system to access the contents of that device.
+ Let's break it down step by step:
 --------------------------------------------------------------------------------------------------------------
  1.`sudo` (Superuser Do)
 
@@ -33,10 +34,10 @@ The command you provided mounts a device (in this case, a partition) to a specif
        - Purpose: 
                - `/dev/sdb1` refers to the first partition of the second disk (`/dev/sdb`).
                - In Linux, devices are represented as files in the `/dev/` directory, and the naming convention is:
-         - `/dev/sda`: First disk
-         - `/dev/sdb`: Second disk
-         - `/dev/sdb1`: First partition on the second disk
-         - `/dev/sdb2`: Second partition on the second disk, and so on.
+                     - `/dev/sda`: First disk
+                     - `/dev/sdb`: Second disk
+                     - `/dev/sdb1`: First partition on the second disk
+                     - `/dev/sdb2`: Second partition on the second disk, and so on.
 
        - What It Means: 
                - `/dev/sdb1` represents the actual storage device
@@ -49,9 +50,10 @@ The command you provided mounts a device (in this case, a partition) to a specif
                - The mount point must exist before you can mount a device to it.
   
        - Why It’s Important: 
-         - A mount point is simply a directory on the file system where the contents of the device will appear after mounting.
-         - The mount point can be any empty directory.Common directories used as mount points are under `/mnt/` or `/media/`.
-         - For example, after the command runs successfully, the files from the `/dev/sdb1` partition will appear under `/mnt/user`.
+               - A mount point is simply a directory on the file system where the contents of the device will appear after mounting.
+               - The mount point can be any empty directory.
+               - Common directories used as mount points are under `/mnt/` or `/media/`.
+               - For example, after the command runs successfully, the files from the `/dev/sdb1` partition will appear under `/mnt/user`.
 
        - What It Means: 
                - The command mounts the `/dev/sdb1` partition to the `/mnt/user` directory,

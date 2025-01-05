@@ -9,7 +9,6 @@ Definition:
 _________________________________________________________________________________________________________________________________
                                           Key Functions of Memory Management
                                           ----------------------------------
-
 1.Memory Allocation:
        - Allocate memory to processes dynamically when needed and free it after use.
        - Support multitasking by efficiently dividing memory among multiple processes.
@@ -56,7 +55,7 @@ ________________________________________________________________________________
 --------------------------------------------------------------------------------------------------------------
 5.Memory Protection Mechanisms:
        - Base and Limit Registers:
-         - Base register: Stores the starting address of a process's memory.
+         - Base register : Stores the starting address of a process's memory.
          - Limit register: Defines the size of the memory block.
        - Access Control:
          - Specifies whether memory can be read, written, or executed.
@@ -91,7 +90,7 @@ ________________________________________________________________________________
 3.Dynamic Memory Allocation:
        - Allocates memory during runtime using algorithms like:
          - First Fit: Allocates the first block large enough.
-         - Best Fit: Allocates the smallest block large enough.
+         - Best Fit : Allocates the smallest block large enough.
          - Worst Fit: Allocates the largest available block.
 _________________________________________________________________________________________________________________________________
                                                       Paging 
@@ -118,7 +117,7 @@ ________________________________________________________________________________
 1.Segment Table:
        - Maps segment numbers to physical addresses.
        - Contains:
-         - Base: Starting address of the segment.
+         - Base : Starting address of the segment.
          - Limit: Length of the segment.
 --------------------------------------------------------------------------------------------------------------
 2.Advantages of Segmentation:
@@ -145,13 +144,13 @@ ________________________________________________________________________________
                                                    Memory Management
                                                    -----------------
 1.Viewing Memory Usage:
-       - `free`: Displays free and used memory.
+       - `free`         : Displays free and used memory.
        - `top` or `htop`: Real-time memory usage by processes.
        - `/proc/meminfo`: Detailed memory statistics.
 --------------------------------------------------------------------------------------------------------------
 2.Managing Swap Space:
        - `swapon` / `swapoff`: Enable or disable swap space.
-       - `mkswap`: Create a swap space.
+       - `mkswap`            : Create a swap space.
 --------------------------------------------------------------------------------------------------------------
 3.Shared Memory:
        - Managed using system calls like `shmget`, `shmat`, and `shmdt`.
@@ -178,13 +177,14 @@ ________________________________________________________________________________
                                                 --------------------------
 Definition:
        - The memory layout of a process in a typical operating system 
-          is divided into distinct segments, each serving a specific purpose.These segments include:
+          is divided into distinct segments, each serving a specific purpose.
+          These segments include:
 
-       1.Text Segment
-       2.Data Segment
-       3.BSS Segment
-       4.Heap
-       5.Stack
+                     1.Text Segment
+                     2.Data Segment
+                     3.BSS Segment
+                     4.Heap
+                     5.Stack
 
        - These segments are laid out in the process's virtual address space, 
           which is managed by the operating system.
@@ -214,8 +214,8 @@ Definition:
       - Content is loaded from the executable file when the program starts.
 
     - Example:
-  c
-  int globalVar = 42;  // Allocated in the data segment
+              c
+              int globalVar = 42;  // Allocated in the data segment
 --------------------------------------------------------------------------------------------------------------  
 3.BSS Segment (Block Started by Symbol)
 
@@ -228,8 +228,8 @@ Definition:
       - Typically follows the data segment in memory layout.
 
     - Example:
-  c
-  static int uninitializedVar;  // Allocated in the BSS segment
+              c
+              static int uninitializedVar;  // Allocated in the BSS segment
 --------------------------------------------------------------------------------------------------------------
 4.Heap
 
@@ -242,9 +242,9 @@ Definition:
       - Failure to free memory can cause memory leaks.
 
     - Usage:
-  c
-  int ptr = malloc(sizeof(int)  10);  // Allocates memory in the heap
-  free(ptr);  // Frees allocated memory
+              c
+              int ptr = malloc(sizeof(int)  10);  // Allocates memory in the heap
+              free(ptr);  // Frees allocated memory
 --------------------------------------------------------------------------------------------------------------
 5.Stack
 
@@ -263,10 +263,10 @@ Definition:
       - Frames are popped off when the function call ends.
 
     - Example:
-  c
-  void func() {
-      int localVar = 5;  // Allocated in the stack
-  }
+              c
+              void func() {
+              int localVar = 5;  // Allocated in the stack
+              }
 --------------------------------------------------------------------------------------------------------------
                                    Typical Memory Layout of a Process
                  -----------------------------------------------------------------------------

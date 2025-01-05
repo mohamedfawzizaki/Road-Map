@@ -13,7 +13,7 @@ Key Components of Computer Architecture:
         3.Buffers.       
         4.Input/Output Devices.
         5.Storage.
-        6.Bus Systems
+        6.Bus Systems.
 _________________________________________________________________________________________________________________________________
                                                         1.CPU:
                                                 =====================
@@ -54,8 +54,10 @@ Execution Lifecycle:
     --------------------------------------------------------------------------------------------------------------
     Instruction Set Architecture (ISA):
             Defines the set of instructions a CPU can understand and execute.
-            Examples include x86 (used in Intel and AMD processors),
-            ARM (used in smartphones and tablets), and MIPS (used in academic settings).    
+            Examples:
+                    - x86  (used in Intel and AMD processors).
+                    - ARM  (used in smartphones and tablets).
+                    - MIPS (used in academic settings).    
 _________________________________________________________________________________________________________________________________
 Concepts:
     1.Single-Core vs. Multi-Core
@@ -193,9 +195,9 @@ Types:
     Characteristics:
             Speed: Determines the rate of data transfer between I/O devices and the CPU.
             Modes:
-            Programmed I/O: CPU actively manages data transfer.
-            Interrupt-Driven I/O: Devices signal the CPU when ready for data exchange.
-            Direct Memory Access (DMA): Transfers data directly between devices and memory, bypassing the CPU.
+                   Programmed I/O            : CPU actively manages data transfer.
+                   Interrupt-Driven I/O      : Devices signal the CPU when ready for data exchange.
+                   Direct Memory Access (DMA): Transfers data directly between devices and memory, bypassing the CPU.
 _________________________________________________________________________________________________________________________________
                                                     5.Storage
                                                 =======================
@@ -215,7 +217,7 @@ Types:
             Used for archiving and backup.
             Examples: Tape drives, cloud storage.
     Volatile vs. Non-Volatile:
-            Volatile: Loses data when power is off (e.g., RAM).
+            Volatile    : Loses data when power is off (e.g., RAM).
             Non-Volatile: Retains data (e.g., SSD, HDD).
 
 _________________________________________________________________________________________________________________________________
@@ -232,8 +234,8 @@ Types of Buses:
             Carries memory addresses specifying data locations.
             Determines the maximum memory capacity the CPU can address.
     Control Bus:
-            Sends control signals to coordinate operations (e.g., read/write signals).
---------------------------------------------------------------------------------------------------------------
+            Sends control signals to coordinate operations (e-.g., read/write signals).
+-------------------------------------------------------------------------------------------------------------
 Bus Architecture:
     Single Bus:
             Shared by all components; simpler but can become a bottleneck.

@@ -1,4 +1,7 @@
-Networking
+_______________________________________________________________________________________________________________________________________
+                                               Network  Commands
+                                              ===================
+
                 hostname                    – Show or set the system’s hostname 'the name of the device on the network'.
                 hostname new-hostname       
                 
@@ -34,3 +37,4 @@ Networking
                 dig                         – DNS lookup utility.
                 
                 nmap                        – Network scanner.
+_______________________________________________________________________________________________________________________________________
