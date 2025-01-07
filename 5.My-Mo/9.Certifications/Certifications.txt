@@ -1,0 +1,21 @@
+_______________________________________________________________________________________________________________________________________
+                                                AWS Certifications                
+                                              ====================== 
+1.AWS-Cloud-Practioner-Foundation.
+
+2.AWS-Cloud-Developer-Associate. 
+3.AWS-Cloud-SysOps----Administrator-Associate.
+4.AWS-Cloud-DevOps----Engineer------Professional.
+
+5.AWS-Cloud-Solution-Architect-Associate.
+6.AWS-Cloud-Solutuin-Architect-Professional.
+_______________________________________________________________________________________________________________________________________
+                                                               
+_______________________________________________________________________________________________________________________________________
+                                                CKAD/KCNA/PCA Certifications                
+                                               ==============================
+1.Certified--Kubernetes-Administrator.              CKA    => https://www.cncf.io/training/certification/cka/
+2.Certified--Kubernetes-Application-Developer.      CKAD   => https://www.cncf.io/training/certification/ckad/ 
+3.Kubernetes-and-Cloud--Native------Associate.      KCNA   => https://www.cncf.io/training/certification/kcna/
+4.Prometheus-Certified--Associate.                  PCA    => https://www.cncf.io/training/certification/pca/
+_______________________________________________________________________________________________________________________________________

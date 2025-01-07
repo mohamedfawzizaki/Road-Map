@@ -1,8 +1,11 @@
 _______________________________________________________________________________________________________________________________________
                                                  Network protocols
                                               =======================
-Network protocols are standardized rules and conventions that govern how data is transmitted, received, and interpreted across networks.
+Network protocols are standardized rules and conventions that govern
+ how data is transmitted, received, and interpreted across networks.
+
 They ensure that devices can communicate efficiently, securely, and without errors.
+
 Below is a detailed exploration of network protocols, 
 categorized based on their functionality and OSI layer association:
 _______________________________________________________________________________________________________________________________________
@@ -12,7 +15,7 @@ a.Application Layer Protocols (Layer 7):
 
       - HTTP/HTTPS (Hypertext Transfer Protocol/Secure):
             - Used for web browsing and transferring hypertext (HTML) documents.
-            - HTTP: Transmits data in plaintext.
+            - HTTP : Transmits data in plaintext.
             - HTTPS: Adds encryption via SSL/TLS for secure communication.
 
       - FTP (File Transfer Protocol):
@@ -27,7 +30,7 @@ a.Application Layer Protocols (Layer 7):
             - IMAP: Synchronizes emails between the server and multiple devices.
 
       - DNS (Domain Name System):
-            - Resolves human    -readable domain names (e.g., www.example.com) into IP addresses.
+            - Resolves human-readable domain names (e.g., www.example.com) into IP addresses.
 
       - DHCP (Dynamic Host Configuration Protocol):
             - Automatically assigns IP addresses and other network settings to devices.
@@ -58,7 +61,7 @@ a.Application Layer Protocols (Layer 7):
       - These protocols ensure reliable data delivery and control data flow.
 
       - TCP (Transmission Control Protocol):
-            - Provides reliable, ordered, and error    -checked delivery of data.
+            - Provides reliable, ordered, and error-checked delivery of data.
             - Used by protocols like HTTP and FTP.
 
       - UDP (User Datagram Protocol):
@@ -67,11 +70,12 @@ a.Application Layer Protocols (Layer 7):
 --------------------------------------------------------------------------------------------------------------
  e.Network Layer Protocols (Layer 3)
       - These protocols determine how data packets are routed across networks.
+      - Append the IP address to the packet.
 
       - IP (Internet Protocol):
             - Provides addressing and routing.
-            - IPv4: Uses 32    -bit addresses.
-            - IPv6: Uses 128    -bit addresses for a larger address space.
+            - IPv4: Uses 32 -bit addresses.
+            - IPv6: Uses 128-bit addresses for a larger address space.
 
       - ICMP (Internet Control Message Protocol):
             - Sends error messages and operational information.
@@ -89,11 +93,12 @@ a.Application Layer Protocols (Layer 7):
       - Ethernet:
             - Standard for wired LAN communication.
             - Defines how devices on a network access and share data.
+            - Append the MAC address to the packet.
 
-      - PPP (Point    -to    -Point Protocol):
+      - PPP (Point-to-Point Protocol):
             - Used in direct communication between two nodes, like over a modem.
 
-      - Wi    -Fi (802.11 standards):
+      - Wi-Fi (802.11 standards):
             - Defines wireless LAN communication protocols.
 --------------------------------------------------------------------------------------------------------------
  g.Physical Layer Protocols (Layer 1)
@@ -105,7 +110,7 @@ a.Application Layer Protocols (Layer 7):
       - ISDN (Integrated Services Digital Network):
             - Transmits voice, video, and data over digital lines.
 
-      - Ethernet Standards (e.g., 100Base    -T, 1000Base    -T):
+      - Ethernet Standards (e.g., 100Base-T, 1000Base-T):
             - Define speed and cabling types.
 _______________________________________________________________________________________________________________________________________
                                           2.Protocols by Functionality
@@ -129,14 +134,14 @@ ________________________________________________________________________________
       - IPSec (Internet Protocol Security):
             - Encrypts and authenticates IP packets.
       - Kerberos:
-          - Provides secure authentication for client    -server models.
+          - Provides secure authentication for client-server models.
 _______________________________________________________________________________________________________________________________________
  3.Protocol Suites
       - Combinations of protocols working together to handle various aspects of networking.
 --------------------------------------------------------------------------------------------------------------
  a.TCP/IP Suite
       - TCP: Ensures reliable delivery.
-      - IP: Handles addressing and routing.
+      - IP : Handles addressing and routing.
       - UDP: Provides fast, connectionless delivery.
       - DNS, DHCP: Handle naming and IP management.
 --------------------------------------------------------------------------------------------------------------

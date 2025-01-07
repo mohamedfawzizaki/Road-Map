@@ -11,17 +11,17 @@ ________________________________________________________________________________
       - A NIC is a hardware component that connects a computer to a network,
          allowing it to communicate with other devices.
 - Types:
-      1.Ethernet NIC: Used for wired networks.
-      2.Wireless NIC: Uses Wi    -Fi to connect to networks.
-      3.Fiber Optic NIC: Uses fiber optics for high    -speed connections.
+      1.Ethernet NIC    : Used for wired networks.
+      2.Wireless NIC    : Uses Wi-Fi to connect to networks.
+      3.Fiber Optic NIC : Uses fiber optics for high-speed connections.
 - Functions:
       - Converts data into signals (electrical or wireless) for transmission.
       - Supports network protocols like Ethernet and TCP/IP.
       - Provides unique MAC (Media Access Control) addresses for identification.
 - Components:
-      - Controller Chip: Processes network data.
-      - Ports: Ethernet or optical connectors.
-      - LED Indicators: Show activity and connectivity status.
+      - Controller Chip : Processes network data.
+      - Ports           : Ethernet or optical connectors.
+      - LED Indicators  : Show activity and connectivity status.
 - Usage:
       - Desktop computers, laptops, servers, and embedded systems.
 _______________________________________________________________________________________________________________________________________
@@ -32,23 +32,24 @@ ________________________________________________________________________________
 - Types:
       1.Twisted Pair:
                - Types: 
-               - Shielded Twisted Pair (STP): Has shielding to reduce interference.
-               - Unshielded Twisted Pair (UTP): Common in Ethernet networks.
+                        - Shielded   Twisted Pair (STP): Has shielding to reduce interference.
+                        - Unshielded Twisted Pair (UTP): Common in Ethernet networks.
                - Categories:
-               - Cat5e: Supports speeds up to 1 Gbps.
-               - Cat6/Cat6a: Supports higher speeds (up to 10 Gbps).
+                        - Cat5e     : Supports speeds up to 1 Gbps.
+                        - Cat6/Cat6a: Supports higher speeds (up to 10 Gbps).
       2.Coaxial Cable:
                - Used in broadband and older Ethernet networks.
                - Consists of a central conductor, insulating layer, and shielding.
       3.Fiber Optic Cable:
                - Transmits data as light signals.
                - Types:
-               - Single    -mode: For long distances.
-               - Multi    -mode: For shorter distances.
-               - Advantages: High speed, long distance, and immunity to interference.
+                        - Single-mode: For long distances.
+                        - Multi -mode: For shorter distances.
+               - Advantages:
+                        - High speed, long distance, and immunity to interference.
 - Usage:
       - Twisted pair for LANs.
-      - Fiber optics for high    -speed internet and backbone networks.
+      - Fiber optics for high-speed internet and backbone networks.
 _______________________________________________________________________________________________________________________________________
                                                       3.Hub
                                                       ------
@@ -74,8 +75,8 @@ ________________________________________________________________________________
       - A network device that connects devices and intelligently forwards
          data to the correct destination based on MAC addresses.
 - Types:
-      1.Managed Switch: Provides configuration options and monitoring.
-      2.Unmanaged Switch: Simple plug    -and    -play with no configuration.
+      1.Managed   Switch: Provides configuration options and monitoring.
+      2.Unmanaged Switch: Simple plug-and-play with no configuration.
 - Functions:
       - Operates at the data link layer (Layer 2) of the OSI model.
       - Uses MAC address tables to forward data only to the intended recipient.
@@ -98,10 +99,10 @@ ________________________________________________________________________________
       - Assigns IP addresses through DHCP.
       - Provides NAT (Network Address Translation) for secure private networks.
 - Types:
-      1.Wired Routers: Connect using Ethernet cables.
-      2.Wireless Routers: Provide Wi    -Fi connectivity.
-      3.Edge Routers: Connect enterprise networks to the internet.
-      4.Core Routers: Operate within the backbone of a large network.
+      1.Wired Routers   : Connect using Ethernet cables.
+      2.Wireless Routers: Provide Wi-Fi connectivity.
+      3.Edge Routers    : Connect enterprise networks to the internet.
+      4.Core Routers    : Operate within the backbone of a large network.
 - Advantages:
       - Enables internet access.
       - Ensures efficient data routing.
@@ -141,12 +142,12 @@ Types of Access Points
             - Operate independently without requiring a central controller.
             - Suitable for small networks.
 
-      2.Controller    -Based Access Points:
+      2.Controller-Based Access Points:
             - Require a central controller for configuration and management.
             - Ideal for large networks with multiple APs.
 
-      3.Cloud    -Managed Access Points:
-            - Managed through cloud    -based platforms.
+      3.Cloud -Managed Access Points:
+            - Managed through cloud-based platforms.
             - Provide scalability and easy remote management.
 
       4.Mesh Access Points:
@@ -154,11 +155,11 @@ Types of Access Points
             - Ensure seamless connectivity over a large area.
 --------------------------------------------------------------------------------------------------------------
 Key Features
-      1.Dual    -Band Support:
+      1.Dual -Band Support:
             - Operates on 2.4 GHz and 5 GHz frequency bands.
             - Allows better load balancing and reduced interference.
 
-      2.MU    -MIMO (Multi    -User, Multiple    -Input, Multiple    -Output):
+      2.MU-MIMO (Multi-User, Multiple-Input, Multiple-Output):
             - Supports simultaneous communication with multiple devices.
 
       3.Beamforming:
@@ -181,11 +182,11 @@ Advantages of Access Points
             - Modern APs support advanced encryption protocols and user authentication mechanisms.
          
       4.Centralized Management:
-            - Controller    -based and cloud    -managed APs simplify network administration.
+            - Controller-based and cloud-managed APs simplify network administration.
 --------------------------------------------------------------------------------------------------------------
 Disadvantages of Access Points
       1.Cost:
-            - Higher    -end APs and controller systems can be expensive.
+            - Higher-end APs and controller systems can be expensive.
          
       2.Configuration Complexity:
             - Requires proper setup to avoid security risks and performance issues.
@@ -195,7 +196,7 @@ Disadvantages of Access Points
 --------------------------------------------------------------------------------------------------------------
 Use Cases
       1.Home Networks:
-            - Provide Wi    -Fi coverage for households with multiple devices.
+            - Provide Wi-Fi coverage for households with multiple devices.
          
       2.Corporate Offices:
             - Ensure connectivity for employees and visitors across large office spaces.
@@ -204,7 +205,7 @@ Use Cases
             - Facilitate internet access for students and staff in campuses.
          
       4.Retail and Hospitality:
-            - Offer Wi    -Fi for customers and staff in stores, hotels, and cafes.
+            - Offer Wi-Fi for customers and staff in stores, hotels, and cafes.
          
       5.Industrial Environments:
             - Enable wireless communication for IoT devices in factories and warehouses.
@@ -221,6 +222,7 @@ Use Cases
 
 _______________________________________________________________________________________________________________________________________
                                                    7.Firewall
+                                                   ==========
 
 Definition:
       - A firewall is a security system that monitors and controls network traffic based on predetermined security rules.
@@ -239,8 +241,8 @@ Types of Firewalls
             - Examples: Windows Defender Firewall, ZoneAlarm.
 
       3.Cloud Firewall:
-            - Also known as a firewall    -as    -a    -service (FWaaS).
-            - Deployed in cloud environments to protect cloud    -based systems.
+            - Also known as a firewall-as-a-service (FWaaS).
+            - Deployed in cloud environments to protect cloud-based systems.
             - Examples: Zscaler, Palo Alto Prisma Cloud.
 
       4.Network Firewall:
@@ -292,11 +294,11 @@ Use Cases
       - Cloud environments for protecting virtual servers.
 _______________________________________________________________________________________________________________________________________
                                                       8.Gateway
-                                                      ---------
- Definition  
+                                                      =========
+Definition  
       - A gateway is a network device that connects two different networks, often using 
-        different protocols, and enables communication between them.It acts as a 
-        translator, allowing incompatible systems to communicate seamlessly.
+        different protocols, and enables communication between them.
+        It acts as a translator, allowing incompatible systems to communicate seamlessly.
 
 Functions of a Gateway
       1.Protocol Translation:
@@ -312,7 +314,7 @@ Functions of a Gateway
       4.Firewall and Security:
             - Some gateways also include firewall features to enhance security.
 
-      5.Application    -Level Services:
+      5.Application-Level Services:
             - Gateways like proxy servers provide caching, content filtering, and authentication.
 
       6.VoIP Gateways:
@@ -342,7 +344,7 @@ Types of Gateways
 Advantages of Gateways
       - Facilitates communication between incompatible systems.
       - Provides additional security by isolating networks.
-      - Enables access to cloud    -based resources from private networks.
+      - Enables access to cloud-based resources from private networks.
       - Enhances scalability by connecting diverse systems.
 
 Disadvantages of Gateways

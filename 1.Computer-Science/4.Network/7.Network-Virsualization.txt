@@ -15,7 +15,32 @@ Here’s a detailed breakdown of network virtualization:
       - Virtual Networks: 
                 - Virtual networks consist of virtual switches, routers, firewalls,
                    and other network components, which are independent of the physical hardware they are based on.
-      
+                - PC[vm1-vm2-vm3-vNIT-vRouter-vSwitch-vFirwall]
+
+                                                       [PC2]             ----- NIC -------[PC3]
+                                                         |              -                      
+                                                        NIC           -                      
+                                                         |           -                         
+                                                   ______|________ -
+                                                  | Router/Switch | --------------- NIC  
+                                                  |_______________|                   \
+                                                         |                             \      
+                                                         |                              \     
+                                                        NIC                              \   
+                                                         |                                \
+                                                       [PC1]                               [PC4]  
+                                                         |                                   |
+                                                        / \                                 / \
+                                                       /   \                               /   \
+                                                    VM1     VM2                         VM1     VM2
+                                                     |       |                           |       |
+                                                   V-NIC1   V-NIC2                    V-NIC1   V-NIC2
+                                                     |       |                           |       |
+                                                      \     /                             \     /
+                                                       \   /                               \   /
+                                                   V-Router/Switch                     V-Router/Switch
+                                                         
+                                                          
       - Virtual Network Interface Cards (vNICs): 
                 - These virtualized interfaces connect virtual machines (VMs) or 
                    other devices to virtual networks, similar to how physical NICs are used in physical machines.
@@ -51,7 +76,7 @@ Here’s a detailed breakdown of network virtualization:
 
       - Network Service Virtualization (NSV): 
                 - Virtualizes individual network services, such as DNS, DHCP, or firewall policies,
-                   allowing them to be deployed as software components instead of hardware    -based appliances.
+                   allowing them to be deployed as software components instead of hardware-based appliances.
 
       - Full Network Virtualization: 
                 - The creation of a complete virtualized environment in which all aspects 
@@ -117,7 +142,7 @@ Here’s a detailed breakdown of network virtualization:
                    such as VMware vSwitch or Open vSwitch (OVS), allow virtual machines to communicate over the virtual network.
 
                 - OVS: 
-                          - A widely used virtual switch in SDN environments that supports various tunneling protocols such as VXLAN.
+                      - A widely used virtual switch in SDN environments that supports various tunneling protocols such as VXLAN.
 --------------------------------------------------------------------------------------------------------------
  5.Use Cases of Network Virtualization
 

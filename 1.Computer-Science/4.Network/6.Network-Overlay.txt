@@ -187,5 +187,14 @@ Here’s a detailed explanation of network overlays:
     - VMware NSX: 
           - A commercial solution for network virtualization in VMware environments, which uses VXLAN for overlay networking.
 _______________________________________________________________________________________________________________________________________
-Network overlays are a fundamental technology in modern data centers, cloud computing, and telecom networks.By abstracting and virtualizing network resources, overlays provide flexibility, scalability, and enhanced security for virtualized environments.They allow for the efficient management of network traffic, simplified segmentation, and the creation of isolated virtual networks within a shared physical infrastructure.Despite the challenges associated with performance and complexity, network overlays are an essential part of the evolving landscape of network virtualization.
+Network overlays are a fundamental technology in modern data centers, cloud computing, and telecom networks.
+
+By abstracting and virtualizing network resources, overlays provide 
+ flexibility, scalability, and enhanced security for virtualized environments.
+
+They allow for the efficient management of network traffic, simplified segmentation, 
+ and the creation of isolated virtual networks within a shared physical infrastructure.
+
+Despite the challenges associated with performance and complexity, 
+ network overlays are an essential part of the evolving landscape of network virtualization.
 _______________________________________________________________________________________________________________________________________

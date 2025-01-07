@@ -1,7 +1,10 @@
 _______________________________________________________________________________________________________________________________________
                                                  Network Topologies
                                               =======================
-Network topologies refer to the arrangement or layout of various elements (nodes, links, devices) in a computer network.It can be described physically, based on the actual hardware connections, or logically, based on how data flows.Below is a detailed explanation of the types of network topologies:
+Network topologies refer to the arrangement or layout of various elements (nodes, links, devices) in a computer network.
+It can be described physically, based on the actual hardware connections, or logically, based on how data flows.
+
+Below is a detailed explanation of the types of network topologies:
 _______________________________________________________________________________________________________________________________________
  1.Physical Topologies:
         Physical topology refers to the actual placement of network devices and how they are connected via cables or wireless links.
@@ -12,7 +15,7 @@ ________________________________________________________________________________
                     - Communication is broadcast, and each device listens to the transmission.
               - Advantages:
                     - Easy to set up and extend.
-                    - Cost    -effective for small networks.
+                    - Cost-effective for small networks.
               - Disadvantages:
                     - A failure in the central bus disrupts the entire network.
                     - Limited cable length and number of nodes.

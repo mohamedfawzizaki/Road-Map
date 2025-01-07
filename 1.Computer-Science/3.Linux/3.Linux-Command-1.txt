@@ -1,0 +1,310 @@
+____________________________________________________________________________________________________________________________________________________________
+                                                                        Linux Commands
+____________________________________________________________________________________________________________________________________________________________
+                                                                        nano ~/.bashrc
+                                                                        source ~/.bashrc
+............................................................................................................................................................
+man  -  bash  -    sh  -    code . -     sudo  -     su  -     clear  -     pwd  -     ls  -     which  -     whoami  -     who     
+............................................................................................................................................................
+informations :           who    whoami   which     hostname       info      man       --help     type      ip address      history   
+............................................................................................................................................................
+Part 1: 
+        1. System: 
+                - Informationn :                                    
+                - Monitoring.
+                - Performance.
+                - Boot.
+                - Shutdown.
+        2. Process Management.
+        3. User and Group Management.
+        4. Environment and Shell Management.
+        5. Time and Date Management.
+        6. Disk and Storage Management.
+        7. File and Directory Management.
+        8. File Content and Text Processing.
+        9. File Sharing and Remote Access.
+        10.Networking.
+        11.Security and Permissions.
+Part 2:
+        12.Package Management.
+        13.Services Management.
+        14.Archive and Compression.
+        15.Log Management.
+        16.Backup and Recovery.
+        17.Remote Access Management.
+............................................................................................................................................................
+............................................................................................................................................................
+
+1. System :
+                    ---------------------------------------------------
+        -           -  Informationn  -  Monitoring   -  Performance   -
+                    ---------------------------------------------------
+
+                uname                       – Print system information.
+                hostname                    – Show or set the system’s hostname.
+                uptime                      – Show how long the system has been running.
+                top                         – Display real-time system resource usage.
+                htop                        – Enhanced version of top (interactive process viewer).
+                dstat                       – Versatile resource statistics.
+
+                lsb_release -a
+
+                systemd-analyze             – Analyze system boot-up performance.
+                systemctl                   – Start, stop, or manage systemd services.
+                
+                dmesg                       – Print or control the kernel ring buffer.
+                
+                lscpu                       – Display CPU architecture information.
+                iostat                      – Report CPU and I/O statistics.
+                ps                          – Report a snapshot of current processes.
+                strace                      – Trace system calls and signals.
+                
+                free                        – Display memory usage.
+                vmstat                      – Report virtual memory statistics.
+
+                lsblk                       – List information about block devices.
+                lsusb                       – List USB devices.
+                lspci                       – List PCI devices.
+                lsscsi                      – List SCSI devices.
+                lsof                        – List open files.
+
+                df                          – Show disk space usage.
+                du                          – Estimate file space usage.
+
+                netstat                     – Network statistics.
+                ss                          – Socket statistics (alternative to netstat).
+
+                whoami                      – Show the current logged-in user.
+                who                         – Show who is logged into the system.
+
+
+
+                         ------------------------------
+        -                - Boot      -    Shutdown   -
+                         ------------------------------
+                shutdown                    – Shut down the system.
+                reboot                      – Reboot the system.
+                poweroff                    – Turn off the system.
+                halt                        – Halt the system (stops all processes).
+                systemctl reboot            – Reboot the system using systemd.
+                systemctl poweroff          – Power off the system using systemd.         
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Process Management :
+
+                ps                          – Display information about active processes.
+                top                         – Display dynamic real-time information about running processes.
+                htop                        – Interactive process viewer.
+                pstree                      – Display the processes in a tree format.
+                jobs                        – List active jobs.
+                
+                fork 
+                exec
+                
+                kill                        – Terminate processes by PID.
+                killall                     – Terminate processes by name.
+                pkill                       – Kill processes by name, user, or other criteria.
+                
+                pgrep                       – Find processes by name.
+                
+                nice                        – Start a process with a given priority.
+                renice                      – Change the priority of an already running process.
+
+                [Command]  &                - to run the process in the background.
+                [Command]  $$               - to get the PID of the current process.
+
+                
+
+                bg                          – Resume a paused job in the background.
+                fg                          – Bring a background job to the foreground.
+                disown                      – Remove a job from the job list.
+                
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. User and Group Management
+                useradd                     – Add a new user.
+                usermod                     – Modify a user account.
+                userdel                     – Delete a user account.
+                groupadd                    – Add a new group.
+                groupdel                    – Delete a group.
+                passwd                      – Change user password.
+                chage                       – Change user password expiry information.
+                chown                       – Change file owner and group.
+                chmod                       – Change file permissions.
+                groups                      – Show user’s groups.
+                id                          – Show user and group IDs.
+                whoami                      – Show the current user.
+                su                          – Switch user.
+                sudo                        – Execute a command as another user (usually root).
+                w                           – Show who is logged in and what they are doing.
+                last                        – Show the last logins of users.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Environment and Shell Management
+                env                         – Show environment variables.
+                export                      – Set environment variables.
+
+                declare     
+                set                         – Display or set shell variables.
+                unset                       – Remove shell variables.
+
+                alias                       – Create command shortcuts.
+                unalias                     – Remove command aliases.
+                source                      – Execute commands from a file in the current shell.
+
+                bash                        – Start a new Bash shell session.
+                sh                          – Start a new POSIX shell session.
+                zsh                         – Start a new Zsh shell session.
+                fish                        – Start a new Fish shell session.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Time and Date Management :
+                date                        – Display or set the system date and time.
+                timedatectl                 – Query and change the system clock and time zone.
+                hwclock                     – Show or set the hardware clock.
+                tzselect                    – Select a time zone interactively.
+                chrony                      – Network time synchronization service (alternative to NTP).
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Disk and Storage Management
+                df                          – Report disk space usage.
+                du                          – Estimate file and directory space usage.
+                fdisk                       – Partition table manipulator for Linux.
+                parted                      – Command-line tool to manage disk partitions.
+                mkfs                        – Create a file system on a device.
+                mount                       – Mount a file system.
+                umount                      – Unmount a file system.
+                fsck                        – File system consistency check and repair.
+                lvcreate                    – Create a logical volume.
+                lvextend                    – Extend the size of a logical volume.
+
+                vgcreate                    – Create a volume group.
+                vgextend                    – Add physical volume to a volume group.
+                pvcreate                    – Create a physical volume.
+                lsblk                       – List block devices.
+                lsblk                       – List information about block devices.
+
+                iotop                       - Monitor disk I/O operations
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+7. File and Directory Management
+                cd                          – Change directory.
+
+                mkdir                       – Create a new directory.
+                rmdir                       – Remove an empty directory.
+                rm                          – Remove files or directories.
+                cp                          – Copy files or directories.
+                mv                          – Move or rename files or directories.
+
+                ls                          – List directory contents.
+                pwd                         – Print working directory.
+                stat                        – Display file or file system status.
+
+                find                        – Search for files in a directory hierarchy.
+                locate                      – Find files by name (using a database).
+                updatedb                    – Update the database for locate.
+                grep                        – Search text using patterns.
+
+                dpkg -L apache2             - Find All Related Files.
+
+                chmod                       – Change file permissions.
+                chown                       – Change file owner and group.
+                chgrp                       – Change group ownership of files.
+
+                ln                          – Create hard and symbolic links.
+                file                        – Determine file type.
+                
+                touch
+                echo 
+                cat
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+8. File Content and Text Processing:
+
+                echo                        – Output text to the standard output.
+                cat                         – Concatenate and display file content.
+               
+                more                        – View file content page by page.
+                less                        – View file content with backward and forward navigation.
+                head                        – Output the first part of a file.
+                tail                        – Output the last part of a file.
+               
+                grep                        – Search text using patterns.
+                awk                         – Pattern scanning and processing language.
+                
+                cut                         – Remove sections from each line of files.
+                sort                        – Sort lines in a file.
+                uniq                        – Report or omit repeated lines.
+                wc                          – Word, line, character, and byte count.
+                tr                          – Translate or delete characters.
+                diff                        – Compare files line by line.
+                cmp                         – Compare two files byte by byte.
+                tee                         – Read from standard input and write to standard output and files.
+
+                Text Editor:
+                        sed                         – Stream editor for text manipulation.
+                        nano                        – Simple text editor.
+                        vim                         – Advanced text editor.
+                        code                        -
+
+                Code Editor:
+
+                        code .                      - To open VS Code for the current directory.
+                        code ..                     - To open VS Code for the parent  directory.
+                        code /path                  - To open VS Code for the specified path.
+                        code directory              - To open VS Code in the specified directory.
+                        code file                   - To open VS Code in the specified file.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+9. File Sharing and Remote Access
+                ssh                         – Secure shell for remote login.
+                scp                         – Secure copy for file transfer over SSH.
+                rsync                       – Remote synchronization of files and directories.
+                ftp                         – File Transfer Protocol (unsecure).
+                sftp                        – Secure File Transfer Protocol (secure FTP).
+
+                nfs                         – Network File System (mount remote directories).
+                samba                       – SMB/CIFS protocol to share files between Linux and Windows systems.
+                mount                       – Mount network file systems or devices.
+                umount                      – Unmount file systems or devices.
+                netcat (or nc)              – Network utility to read and write data across network connections.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+10. Networking
+                hostname                    – Show or set the system’s hostname.
+                
+                ping                        – Send ICMP echo requests to a host.
+                traceroute                  – Trace the route packets take to a network host.
+                
+                ipconfig                    – Configure network interfaces (deprecated, replaced by ip).
+                ip                          – Show/manipulate network interfaces and routing.
+                ip link                     – Show or manipulate network devices.
+                iptables                    – Configure firewall rules.
+                netstat                     – Show network connections, routing tables, interface statistics, etc.
+                
+                ss                          – Display socket statistics.
+                tcpdump                     – Capture and analyze network packets.
+                route                       – Show or manipulate the IP routing table.
+                
+                curl                        – Transfer data from or to a server (supports many protocols).
+                wget                        – Download files from the web.
+                dpkg                        - Install  downloaded files.
+
+                ssh                         – Secure shell (remote login).
+                scp                         – Secure copy (file transfer between hosts over SSH).
+                
+                ftp                         – File transfer protocol client.
+                sftp                        – Secure FTP.
+                
+                nslookup                    – Query Internet domain name servers.
+                dig                         – DNS lookup utility.
+                
+                nmap                        – Network scanner.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+11. Security and Permissions
+                sudo                        – Execute commands as another user (typically root).
+                su                          – Switch user.
+                passwd                      – Change user password.
+                sg                          – Execute commands with a different group ID.
+
+                chmod                       – Change file permissions.
+                chown                       – Change file owner and group.
+                chgrp                       – Change group ownership.
+
+                umask                       – Set default file creation permissions.
+____________________________________________________________________________________________________________________________________________________________
