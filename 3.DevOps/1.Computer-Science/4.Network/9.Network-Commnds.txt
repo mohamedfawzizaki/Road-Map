@@ -1,0 +1,51 @@
+_______________________________________________________________________________________________________________________________________
+                                               Network  Commands
+                                              ===================
+
+                hostname                    – Show or set the system’s hostname 'the name of the device on the network'.
+                hostname new-hostname       
+                
+                ping                        – Send ICMP echo requests to a host.
+                traceroute                  – Trace the route packets take to a network host.
+                
+                ip                          – Show/manipulate network interfaces and routing 
+                                              A more modern replacement for ifconfig and ipconfig for manipulating network interfaces and routing.
+                
+                ip addr
+                ip link show                – Show or manipulate network devices.
+                ipconfig                    – Configure network interfaces (deprecated, replaced by ip).
+                iptables                    – Configure firewall rules.
+                
+                route                       – Show or manipulate the IP routing table.
+                traceroute
+                netstat                     – Show network connections, routing tables, interface statistics, etc.
+        
+                ss                          – Display socket statistics.
+                tcpdump                     – Capture and analyze network packets.
+                nslookup                    – Query Internet domain name servers.
+                
+                curl                        – Transfer data from or to a server (supports many protocols).
+                wget                        – Download files from the web.
+                dpkg                        - Install  downloaded files.
+
+                ssh                         – Secure shell (remote login).
+                scp                         – Secure copy (file transfer between hosts over SSH).
+                
+                ftp                         – File transfer protocol client.
+                sftp                        – Secure FTP.
+                
+                dig                         – DNS lookup utility.
+                
+                nmap                        – Network scanner.
+
+
+Remote Access :
+==================
+ssh-keygen                   – Generate public/private SSH keys.
+ssh-copy-id                  – Copy your local host's identity to the remote host's authorized_keys file.
+ssh-agent                    – Start the secure shell agent.
+ssh-add                      – Add identities to the agent.
+ssh-passwd                   – Change the password of the user on the remote host.
+ssh                             – Secure shell (remote login).
+
+_______________________________________________________________________________________________________________________________________

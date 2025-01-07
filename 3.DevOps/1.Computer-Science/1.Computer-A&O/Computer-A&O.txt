@@ -1,4 +1,4 @@
-_______________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________
                                             Computer Architecture & Organization
                                 ===========================================================
 # Definition:
@@ -6,20 +6,20 @@ ________________________________________________________________________________
          to create a functioning device capable of performing computations and tasks. 
       -> It focuses on how the hardware and software interact and includes considerations of performance, 
          efficiency, scalability, and power consumption.
-
+--------------------------------------------------------------------------------------------------------------
 Key Components of Computer Architecture:
         1.Central Processing Unit (CPU):
         2.Memory.
         3.Buffers.       
         4.Input/Output Devices.
         5.Storage.
-        6.Bus Systems
-_______________________________________________________________________________________________________________________________________
+        6.Bus Systems.
+_________________________________________________________________________________________________________________________________
                                                         1.CPU:
                                                 =====================
 Definition:
      The CPU is the brain of the computer, responsible for executing instructions and processing data.
-
+--------------------------------------------------------------------------------------------------------------
 Key Components:
     
     Control Unit (CU):
@@ -44,19 +44,21 @@ Key Components:
     
     Execution Units:
             In modern CPUs, execution units handle specialized tasks like floating-point operations or vector processing.
-
+_________________________________________________________________________________________________________________________________
 Execution Lifecycle:
     Fetch-Decode-Execute Cycle:
             Fetch  :  The CPU fetches an instruction from memory (the address is stored in the Program Counter).
             Decode :  The Control Unit decodes the fetched instruction to understand what operation to perform.
             Execute:  The CPU executes the decoded instruction using the ALU or other parts of the processor.
             Store  :  The result of the execution might be stored back in memory or registers.
-
+    --------------------------------------------------------------------------------------------------------------
     Instruction Set Architecture (ISA):
             Defines the set of instructions a CPU can understand and execute.
-            Examples include x86 (used in Intel and AMD processors),
-            ARM (used in smartphones and tablets), and MIPS (used in academic settings).    
-
+            Examples:
+                    - x86  (used in Intel and AMD processors).
+                    - ARM  (used in smartphones and tablets).
+                    - MIPS (used in academic settings).    
+_________________________________________________________________________________________________________________________________
 Concepts:
     1.Single-Core vs. Multi-Core
         Single-Core:
@@ -72,7 +74,7 @@ Concepts:
         Key Difference: 
                 Single-core has one execution unit, 
                 while multi-core has multiple execution units within a single processor.
-
+    --------------------------------------------------------------------------------------------------------------    
     2.Single-Processor vs. Multi-Processors
         Single-Processor:
                 A system with only one physical CPU.
@@ -84,7 +86,7 @@ Concepts:
         Key Difference: 
                 Single-processor systems use one CPU, 
                 whereas multi-processor systems have multiple CPUs.
-
+    --------------------------------------------------------------------------------------------------------------
     3.Single-Threading vs. Multi-Threading
         Single-Threading:
                 Executes one thread (sequence of instructions) per core at a time.
@@ -96,7 +98,7 @@ Concepts:
         Key Difference: 
                 Single-threading handles one thread per core, 
                 while multi-threading allows multiple threads per core.
-
+    --------------------------------------------------------------------------------------------------------------
     4.Synchronous vs. Asynchronous
         Synchronous:
                 Tasks are executed one at a time in a sequential order.
@@ -109,24 +111,25 @@ Concepts:
         Key Difference: 
                 Synchronous operations are sequential, 
                 while asynchronous operations can overlap.
-
+    -------------------------------------------------------------------------------------------------------------- 
     5.Parallelism vs. Concurrency vs. Pipelining
         Parallelism:
                 Execution of multiple tasks simultaneously, often on multiple cores or processors.
         Concurrency:
                 Execution of multiple tasks, but not necessarily at the same time; tasks are interleaved.
         Pipelining:
-                Breaking down a task into smaller, independent stages, allowing for efficient processing of multiple tasks in a sequence.
+                Breaking down a task into smaller, independent stages, 
+                 allowing for efficient processing of multiple tasks in a sequence.
         Key Difference:
                 Parallelism involves simultaneous execution, 
                 concurrency involves interleaved execution, 
                 and pipelining involves staged execution
-_______________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________
                                                         2.Memory
                                                 =======================        
 Defifnition:
     -> Memory is the component where data and instructions are stored.
-
+--------------------------------------------------------------------------------------------------------------
 Types of Memory:
     
     Primary Memory (RAM):
@@ -134,51 +137,51 @@ Types of Memory:
             Types:
                     DRAM (Dynamic RAM): Needs frequent refreshing.
                     SRAM (Static RAM) : Faster but more expensive.
-   
+    -------------------------------------------------------------------------------------------------------------- 
     Cache Memory:
             Small, high-speed memory close to the CPU.
             Stores frequently used data to reduce latency.
             Levels:
                     L1 (smallest, fastest, closest to the CPU).
                     L2 and L3 (larger, slower, farther).
-    
+    --------------------------------------------------------------------------------------------------------------
     ROM (Read-Only Memory):
             Non-volatile memory storing firmware and system boot instructions.
             Types: PROM, EPROM, EEPROM.
-    
+    --------------------------------------------------------------------------------------------------------------
     Virtual Memory:
             Extends primary memory using storage (e.g., hard drive).
             Allows large programs to run by swapping data between RAM and storage.
-    
+    --------------------------------------------------------------------------------------------------------------
     Secondary Memory:
             Non-volatile storage devices like SSDs and HDDs.
             Used for long-term data storage.
 
-_______________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________
                                                         3.Buffers
                                                 =======================
 Defifnition:
     -> Buffers are temporary storage areas used to handle data transfer mismatches between devices.
-
+--------------------------------------------------------------------------------------------------------------
 Purpose:
     Accommodate differences in data transfer rates.
     Prevent data loss during I/O operations.
-
+--------------------------------------------------------------------------------------------------------------
 Types:
     Hardware Buffers:
             Located in I/O devices (e.g., printer buffers).
     Software Buffers:
             Implemented in system software for temporary data holding.
-
+--------------------------------------------------------------------------------------------------------------
 Example Usage:
     Streaming audio/video where data is buffered before playback.
     Printing where data is stored in a buffer before being sent to the printer.
-_______________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________
                                                 4.Input/Output Devices
                                                 =======================
 Defifnition:
     -> I/O devices facilitate communication between the computer and the outside world.
-
+--------------------------------------------------------------------------------------------------------------
 Types:
     Input Devices:
             Used to provide data to the computer.
@@ -192,15 +195,15 @@ Types:
     Characteristics:
             Speed: Determines the rate of data transfer between I/O devices and the CPU.
             Modes:
-            Programmed I/O: CPU actively manages data transfer.
-            Interrupt-Driven I/O: Devices signal the CPU when ready for data exchange.
-            Direct Memory Access (DMA): Transfers data directly between devices and memory, bypassing the CPU.
-_______________________________________________________________________________________________________________________________________
+                   Programmed I/O            : CPU actively manages data transfer.
+                   Interrupt-Driven I/O      : Devices signal the CPU when ready for data exchange.
+                   Direct Memory Access (DMA): Transfers data directly between devices and memory, bypassing the CPU.
+_________________________________________________________________________________________________________________________________
                                                     5.Storage
                                                 =======================
 Definition:
     -> Storage refers to data retention capabilities of a system.
-
+--------------------------------------------------------------------------------------------------------------
 Types:
     Primary Storage:
             RAM and cache memory for temporary data storage.
@@ -214,15 +217,15 @@ Types:
             Used for archiving and backup.
             Examples: Tape drives, cloud storage.
     Volatile vs. Non-Volatile:
-            Volatile: Loses data when power is off (e.g., RAM).
+            Volatile    : Loses data when power is off (e.g., RAM).
             Non-Volatile: Retains data (e.g., SSD, HDD).
 
-_______________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________
                                                         6.Bus
                                                 =======================
 Definition:
    -> A bus is a communication system that transfers data between components of a computer.
-
+--------------------------------------------------------------------------------------------------------------
 Types of Buses:
     Data Bus:
             Transfers actual data between components.
@@ -231,11 +234,12 @@ Types of Buses:
             Carries memory addresses specifying data locations.
             Determines the maximum memory capacity the CPU can address.
     Control Bus:
-            Sends control signals to coordinate operations (e.g., read/write signals).
+            Sends control signals to coordinate operations (e-.g., read/write signals).
+-------------------------------------------------------------------------------------------------------------
 Bus Architecture:
     Single Bus:
             Shared by all components; simpler but can become a bottleneck.
     Multiple Bus:
             Separate buses for specific tasks; reduces contention.
 
-_______________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________

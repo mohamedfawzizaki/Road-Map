@@ -1,0 +1,91 @@
+________________________________________________________________________________________________________________________________________________________________
+Storage/Volumes Management:
+    (Write "docker volume" to list all volume commands):
+    
+    # Listing:
+            docker volume ls
+    # Inspection:
+            docker volume inspect <volume_name>
+    # Creating:        
+            docker volume create [OPTIONS] <volume-name>                          : Without specifying options, Docker creates the volume in its default location.
+            docker volume create --driver <driver-name> <volume-name
+
+            
+    # Attaching to a container:
+            docker run -it --volume <volume-name> <image>
+            docker run -it --volume <volume-name:myCustomPathIntheVolumeDriver> <image>
+            
+            docker container run -it -v myVolume:/app/myCode    --name my-container python:latest              : volume
+            docker container run -it -v myDirectoryinHost:/app/myCode --name my-container python:latest        : bind mount
+    # Pruning:
+            docker volume prune
+    # Removing:
+            docker volume rm <volume-name>
+    ------------------------------------------------------------------------------------------------------------------------------
+    Volumes in Docker are a mechanism for persisting data generated and used by Docker containers. 
+    Unlike bind mounts or temporary container filesystems, volumes are managed directly by Docker and stored in Docker's filesystem. 
+    They are independent of the container's lifecycle, meaning data stored in a volume will persist even if the container is deleted.
+
+    Why Use Docker Volumes?
+        Data Persistence       : Volumes ensure that data remains available even after a container is removed.
+        Container Independence : Volumes are not tied to a specific container and can be shared across multiple containers.
+        Performance            : Volumes often perform better than bind mounts when used with Docker Desktop or on remote filesystems.
+        Backup & Migration     : Volumes can be easily backed up or moved between Docker hosts.
+    Types of Storage in Docker
+        Volumes       : Managed by Docker and stored in /var/lib/docker/volumes/.
+        Bind Mounts   : Link host directories/files directly into the container.
+        tmpfs Mounts  : Temporary storage in the host's RAM.
+        
+
+
+    Use Cases for Docker Volumes
+        1. Persistent Storage for Databases
+                Scenario: Running a MySQL database in a container.
+                Problem : Without a volume, database data will be lost if the container stops or is removed.
+                Solution:
+
+                        docker volume create mysql_data
+                        docker run -d --name db -v mysql_data:/var/lib/mysql mysql:latest
+
+                This ensures all database data is stored in the mysql_data volume.
+                Even if the container is deleted, the data remains intact.   
+
+        2. Shared Storage Between Containers
+                Scenario: Multiple containers need access to the same configuration or data files.
+                Solution: 
+
+                        docker volume create shared_data
+                        docker run -d --name app1 -v shared_data:/data app_image:latest
+                        docker run -d --name app2 -v shared_data:/data app_image:latest
+
+                Both app1 and app2 can now read and write to /data, sharing configurations or data.    
+
+        3. Backup and Restore of Critical Data
+                Scenario: Backing up a volume’s data for disaster recovery.
+                Solution:
+                    Backup: 
+                        docker run --rm -v mysql_data:/data -v $(pwd):/backup busybox tar cvf /backup/mysql_backup.tar /data
+                    Restore: 
+                        docker run --rm -v mysql_data:/data -v $(pwd):/backup busybox tar xvf /backup/mysql_backup.tar -C /data        
+
+        4. Temporary Storage with Anonymous Volumes
+                Scenario: Containers require temporary storage that is not persistent.
+                Solution:
+                        docker run -d -v /data my_image
+                Docker automatically creates an anonymous volume and mounts it to /data.
+                Once the container is removed, the volume becomes "dangling" and can be pruned.
+
+        5. Testing Applications
+                Scenario: Running multiple test environments with isolated data.
+                Solution: 
+                        docker volume create test_data
+                        docker run -d --name test_env -v test_data:/app/data app_image:latest  
+
+        6. Custom Volume Drivers
+                Scenario: Using cloud storage or network-based storage systems.
+                Solution:
+                With NFS: 
+                        docker volume create --driver local --opt type=nfs --opt o=addr=192.168.1.100,rw --opt device=:/path/to/dir my_nfs_volume
+                        docker run -d -v my_nfs_volume:/data my_image                      
+    ------------------------------------------------------------------------------------------------------------------------------
+________________________________________________________________________________________________________________________________________________________________

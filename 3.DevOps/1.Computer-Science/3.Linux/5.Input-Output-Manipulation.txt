@@ -1,0 +1,51 @@
+.Stream   -  Redirection  -  Pipes        -  Filters.
+   .Process  -  Threads      -  Fork         -  Exec.
+   .File     -  Directory    -  Permissions  -  Ownership.
+
+
+    1.Stream:
+            - stdin   :  
+                        - Input stream  (file descriptor 0).
+            - stdout  : 
+                       - Output stream  (file descriptor 1).
+                       - example:
+                                echo "Hello, World!" >   file.txt      override
+                                echo "Hello, World!" 1>  file.txt      override
+                                echo "Hello, World!" 1>> file.txt      append
+            - stderr  :  
+                       - Error stream  (file descriptor 2).
+                       - example:
+                                echo "Hello, World!" 2>  file.txt      override
+                                echo "Hello, World!" 2>> file.txt      append 
+    2.Redirection ('>'1>'>>'1>>'______'2>'2>>'______'<'):
+            - Redirecting input/output streams to files.
+            - Redirecting input/output streams to other processes.
+            - Redirecting input/output streams to devices.
+    3.Pipes('|'):
+            - Connecting processes through pipes.
+            - Pipes are unidirectional.
+            - Pipes are used for inter-process communication (IPC).
+    4.Filters('grep'):
+            - Filters are used to process data.
+            - Filters are used to transform data.
+
+
+    5.Process:
+            - A process is an instance of a program.
+            - A process has its own memory space
+            - A process has its own set of open files
+            - A process has its own set of open network connections
+    6.Threads:
+            - A thread is a lightweight process.
+            - A thread shares the same memory space as the parent process.
+            - A thread has its own stack.
+    7.Fork:
+            - Fork is a system call that creates a new process.
+            - The new process is a copy of the parent process.
+            - The new process has its own memory space
+            - The new process has its own set of open files
+            - The new process has its own set of open network connections
+    8.Exec:
+            - Exec is a system call that replaces the current process image with a new one
+            - The new process image is loaded from a file
+            - The new process image is executed in the same memory space as the parent process
