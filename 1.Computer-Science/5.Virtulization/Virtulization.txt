@@ -3,7 +3,7 @@ ________________________________________________________________________________
 
 Virtualization is the process of creating virtual versions of physical resources, such as servers, storage devices, networks, or operating systems.This technology allows multiple virtual environments to run on a single physical system, enabling efficient resource utilization, scalability, and flexibility.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Key Concepts of Virtualization
 
@@ -28,7 +28,7 @@ Virtualization is the process of creating virtual versions of physical resources
 5.Virtualization Layer:
        - Abstracts the physical hardware from the virtual machines.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Types of Virtualization
 
@@ -74,7 +74,7 @@ Virtualization is the process of creating virtual versions of physical resources
        - Shares the power of a GPU among multiple VMs.
        - Essential for high    -performance computing and graphics    -intensive applications.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Advantages of Virtualization
 
@@ -103,7 +103,7 @@ Virtualization is the process of creating virtual versions of physical resources
 7.Flexibility:
        - Supports multiple operating systems and applications on the same hardware.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Disadvantages of Virtualization
 
@@ -122,7 +122,7 @@ Virtualization is the process of creating virtual versions of physical resources
 5.Resource Contention:
        - Overloading a host with too many VMs can lead to degraded performance.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Virtualization Technologies
 
@@ -148,7 +148,7 @@ Virtualization is the process of creating virtual versions of physical resources
        - Lightweight virtualization using containers instead of full VMs.
        - Shares the host OS kernel.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Use Cases of Virtualization
 
@@ -170,7 +170,7 @@ Virtualization is the process of creating virtual versions of physical resources
 6.Gaming:
        - Enables running games and applications designed for different platforms.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Challenges in Virtualization
 
@@ -189,7 +189,7 @@ Virtualization is the process of creating virtual versions of physical resources
 5.Licensing Costs:
        - Licensing software for VMs can be expensive.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Future of Virtualization
 
@@ -208,7 +208,7 @@ Virtualization is the process of creating virtual versions of physical resources
 5.Hybrid and Multi    -Cloud Environments:
        - Seamless movement of workloads across public and private clouds.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
 Virtualization is a transformative technology that enables modern computing environments, empowering organizations to optimize resources, reduce costs, and increase flexibility in deploying applications and services.
 

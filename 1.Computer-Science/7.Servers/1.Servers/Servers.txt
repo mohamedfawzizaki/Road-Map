@@ -4,7 +4,7 @@ ________________________________________________________________________________
 
 A server is a computer or system that provides resources, data, services, or programs to other computers (clients) over a network.Servers are the backbone of the internet, hosting websites, applications, databases, and files.They operate in a client    -server architecture where they respond to requests from client devices.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Types of Servers
 
@@ -63,7 +63,7 @@ A server is a computer or system that provides resources, data, services, or pro
         - Examples: Wowza Streaming Engine, Plex.
         - Use Cases: Video on demand, live streaming.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Components of a Server
 
@@ -85,7 +85,7 @@ A server is a computer or system that provides resources, data, services, or pro
 4.Networking:
        - Configured with static IPs, firewalls, and DNS for accessibility.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  How Servers Work
 
@@ -98,7 +98,7 @@ A server is a computer or system that provides resources, data, services, or pro
 3.Response:
        - The server sends the requested data (e.g., web pages, files, or results) back to the client.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Server Deployment Models
 
@@ -122,7 +122,7 @@ A server is a computer or system that provides resources, data, services, or pro
        - Deployed closer to users for low    -latency applications.
        - Used in content delivery networks (CDNs).
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Server Management
 
@@ -141,7 +141,7 @@ A server is a computer or system that provides resources, data, services, or pro
 5.High Availability:
        - Redundancy and failover mechanisms ensure minimal downtime.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Advantages of Servers
 
@@ -160,7 +160,7 @@ A server is a computer or system that provides resources, data, services, or pro
 5.Customization:
        - Tailored configurations for specific use cases.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Challenges in Server Management
 
@@ -179,7 +179,7 @@ A server is a computer or system that provides resources, data, services, or pro
 5.Scalability Limitations:
        - Physical servers have limits; scaling beyond them requires virtualization or cloud solutions.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Modern Trends in Servers
 
@@ -198,7 +198,7 @@ A server is a computer or system that provides resources, data, services, or pro
 5.AI and Machine Learning:
        - Servers optimized for AI workloads using GPUs and TPUs.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Conclusion
 

@@ -2,7 +2,7 @@
 
 A proxy server is an intermediary server that sits between a client and the destination server.It acts as a gateway, routing requests from clients to servers and responses from servers back to clients.Proxy servers are used for a variety of purposes, such as improving performance, enhancing security, bypassing content restrictions, and more.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Types of Proxy Servers
 
@@ -50,7 +50,7 @@ A proxy server is an intermediary server that sits between a client and the dest
          - Speed Improvement: Reduces latency for end    -users by delivering cached content quickly.
        - Example: A caching proxy in a corporate network serving images and files from cache to improve browsing speed.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  How Proxy Servers Work
 
@@ -73,7 +73,7 @@ A proxy server is an intermediary server that sits between a client and the dest
        - Load Balancing: If it is a reverse proxy, it may distribute incoming requests to multiple backend servers.
        - Content Filtering: The proxy may filter out harmful content, block certain sites, or scan for viruses.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Benefits of Proxy Servers
 
@@ -97,7 +97,7 @@ A proxy server is an intermediary server that sits between a client and the dest
 5.Cost Efficiency:
        - By optimizing bandwidth usage and improving caching efficiency, proxy servers can reduce operational costs for organizations.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Challenges of Proxy Servers
 
@@ -116,7 +116,7 @@ A proxy server is an intermediary server that sits between a client and the dest
 5.Legal and Ethical Concerns:
        - Bypassing content restrictions or accessing restricted resources using proxy servers may violate legal or ethical guidelines in certain regions or industries.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Common Proxy Server Software
 
@@ -140,7 +140,7 @@ A proxy server is an intermediary server that sits between a client and the dest
        - Overview: CCProxy is a Windows    -based proxy server software that supports a range of protocols (HTTP, FTP, SOCKS, etc.).
        - Use Cases: Small to medium    -sized organizations needing proxy services on Windows environments.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Conclusion
 

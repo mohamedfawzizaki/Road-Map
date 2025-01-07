@@ -5,7 +5,7 @@ A web server is a software or hardware system that serves HTTP requests from cli
 
 Web servers can be physical hardware (dedicated or virtual) or software running on a machine, and they are key components in the client    -server model for delivering web content.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Types of Web Servers
 
@@ -73,7 +73,7 @@ Web servers can be physical hardware (dedicated or virtual) or software running 
          - Easily integrates with JavaScript and frameworks like Express.
        - Use Cases: Real    -time web applications, single    -page applications (SPAs), REST APIs.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  How Web Servers Work
 
@@ -90,7 +90,7 @@ Web servers can be physical hardware (dedicated or virtual) or software running 
 4.Sending the Response:
        - The server sends the response back to the client over the network.If the response is HTML, the browser renders the page for the user to see.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Important Components of a Web Server
 
@@ -123,7 +123,7 @@ Web servers can be physical hardware (dedicated or virtual) or software running 
 7.Load Balancing:
        - Web servers can be used in a load    -balanced architecture, distributing requests across multiple server instances to enhance performance and reliability.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Web Server Configuration
 
@@ -137,7 +137,7 @@ Web servers can be physical hardware (dedicated or virtual) or software running 
 
     - Security Settings: Configuration of SSL certificates, HTTP security headers, and access control rules to ensure the server is secure.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Advantages of Web Servers
 
@@ -156,7 +156,7 @@ Web servers can be physical hardware (dedicated or virtual) or software running 
 5.Security:
        - Web servers provide built    -in features to ensure secure communication, including SSL/TLS encryption and HTTP security headers.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Challenges of Web Servers
 
@@ -172,7 +172,7 @@ Web servers can be physical hardware (dedicated or virtual) or software running 
 4.Resource Consumption:
        - Web servers consume significant resources, especially when serving dynamic content or handling high traffic volumes.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Conclusion
 

@@ -2,7 +2,7 @@
 
 Containerization is a lightweight virtualization technology that allows applications and their dependencies to run in isolated environments called containers.Unlike traditional virtualization, which emulates entire hardware systems, containerization leverages the host operating system kernel and isolates processes at the application level.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Key Concepts in Containerization
 
@@ -27,7 +27,7 @@ Containerization is a lightweight virtualization technology that allows applicat
        - Container orchestration automates the deployment, scaling, and management of containers.
        - Tools like Kubernetes are widely used for orchestrating containerized applications.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  How Containerization Works
 
@@ -48,7 +48,7 @@ Containerization is a lightweight virtualization technology that allows applicat
 4.Storage:
        - Containers use volumes or bind mounts to persist data outside the container lifecycle.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Advantages of Containerization
 
@@ -73,7 +73,7 @@ Containerization is a lightweight virtualization technology that allows applicat
 7.Faster Deployment:
        - Containers are fast to start, enabling quicker deployments and updates.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Disadvantages of Containerization
 
@@ -93,7 +93,7 @@ Containerization is a lightweight virtualization technology that allows applicat
 5.Tool Dependency:
        - Containerization heavily relies on tools and ecosystems like Docker or Kubernetes, creating a learning curve.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Popular Containerization Tools
 
@@ -117,7 +117,7 @@ Containerization is a lightweight virtualization technology that allows applicat
        - A container orchestration platform for managing clusters of containers.
        - Automates deployment, scaling, and monitoring of containers.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Use Cases of Containerization
 
@@ -139,7 +139,7 @@ Containerization is a lightweight virtualization technology that allows applicat
 6.Development and Testing:
        - Developers can create isolated environments for testing without affecting the host system.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Future of Containerization
 
@@ -158,7 +158,7 @@ Containerization is a lightweight virtualization technology that allows applicat
 5.Container Networking Advancements:
        - Enhanced support for complex networking scenarios, such as service meshes.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Conclusion
 

@@ -4,7 +4,7 @@ Apache HTTP Server is not just a web server but can also be configured as a reve
 
 Apache achieves load balancing through the mod_proxy and mod_proxy_balancer modules, which allow Apache to forward requests to multiple backend servers (or clusters of servers).Apache supports both round    -robin load balancing and weighted load balancing, as well as other algorithms, to manage how traffic is distributed among the backend servers.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Key Concepts
 
@@ -22,7 +22,7 @@ Apache achieves load balancing through the mod_proxy and mod_proxy_balancer modu
 3.Backend Servers:
        - The backend servers are the actual servers that handle the requests forwarded by Apache.These servers can be web servers, application servers, or any other type of server that processes the request.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Apache Load Balancer Modules
 
@@ -47,7 +47,7 @@ To configure Apache as a load balancer, several modules are used:
 5.mod_headers (optional):
        - The mod_headers module can be used to manipulate HTTP headers before forwarding requests to backend servers, enabling more control over the requests.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Apache Load Balancing Configuration
 
@@ -114,7 +114,7 @@ To configure Apache as a load balancer, several modules are used:
 
          - The `status=+H` directive marks the server as healthy.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Load Balancing Algorithms in Apache
 
@@ -130,7 +130,7 @@ To configure Apache as a load balancer, several modules are used:
 4.IP Hash:
        - This method assigns clients to backend servers based on their IP address.It ensures that the same client is always directed to the same backend server (useful for session persistence).
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Performance Considerations
 
@@ -138,7 +138,7 @@ To configure Apache as a load balancer, several modules are used:
     - Connection Reuse: Configuring keep    -alive connections between Apache and backend servers can reduce latency and improve performance.
     - SSL Offloading: Offload SSL encryption/decryption tasks to Apache, so backend servers do not handle the resource    -intensive process.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Conclusion
 

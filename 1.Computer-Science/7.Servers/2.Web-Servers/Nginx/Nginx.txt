@@ -34,7 +34,7 @@ Nginx (pronounced "engine    -x") is a high    -performance, open    -source web
 8.Security:
        - Nginx can be used as an additional layer of security to protect backend servers by hiding their IP addresses and implementing features like rate limiting, connection throttling, and denial    -of    -service protection.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Architecture of Nginx
 
@@ -55,7 +55,7 @@ Nginx is designed around an asynchronous, event    -driven architecture, which a
          - Stream: For handling TCP and UDP protocols (e.g., for load balancing database traffic).
          - Mail: For proxying IMAP, SMTP, and POP3.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Common Nginx Use Cases
 
@@ -83,7 +83,7 @@ Nginx is designed around an asynchronous, event    -driven architecture, which a
 7.WebSocket Proxying:
        - Nginx supports WebSocket connections, allowing it to proxy real    -time communication between clients and backend services.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Basic Nginx Configuration
 
@@ -153,7 +153,7 @@ server {
     - ssl_certificate_key: Specifies the private key for the certificate.
     - This server block listens on port 443 for HTTPS requests, handles SSL termination, and forwards the decrypted traffic to backend servers.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Performance Considerations
 
@@ -170,7 +170,7 @@ server {
 4.Connection Limits and Timeouts:
        - Nginx allows fine    -grained control over connection limits, timeouts, and retries to optimize performance for high    -traffic websites.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Conclusion
 

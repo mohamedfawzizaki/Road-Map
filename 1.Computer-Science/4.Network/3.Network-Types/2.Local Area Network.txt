@@ -1,0 +1,13 @@
+_______________________________________________________________________________________________________________________________________
+2.Local Area Network (LAN)
+        - A Local Area Network connects devices within a limited geographical area, such as a home, office, or school.
+
+        Characteristics:
+            - High-speed (100 Mbps to 10 Gbps).
+            - Limited to a small area (up to a few kilometers).
+            - Can use wired (Ethernet) or wireless (Wi-Fi) connections.
+
+        Examples:
+            - Office network with printers, computers, and servers.
+            - Home Wi-Fi connecting laptops, smart TVs, and phones.
+_______________________________________________________________________________________________________________________________________

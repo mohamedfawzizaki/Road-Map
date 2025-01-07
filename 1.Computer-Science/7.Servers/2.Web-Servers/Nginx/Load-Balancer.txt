@@ -76,7 +76,7 @@ Nginx supports multiple load balancing algorithms to distribute traffic in diffe
    }
    ```
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Configuring Nginx as a Load Balancer
 
@@ -150,7 +150,7 @@ Nginx supports multiple load balancing algorithms to distribute traffic in diffe
    }
    ```
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Advanced Load Balancing Features in Nginx
 
@@ -200,7 +200,7 @@ Nginx supports multiple load balancing algorithms to distribute traffic in diffe
 3.Dynamic Load Balancing:
    With Nginx Plus (commercial version), you can add or remove backend servers dynamically.It supports active health checks and provides a dashboard for monitoring backend server status.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Advantages of Using Nginx as a Load Balancer
 
@@ -228,7 +228,7 @@ Nginx supports multiple load balancing algorithms to distribute traffic in diffe
 8.Session Persistence:
        - Nginx supports session persistence through both IP hash and cookie    -based methods, ensuring that users are always directed to the same backend server during their session.
 
-    -    -    -
+---------------------------------------------------------------------------------------------------------
 
  Conclusion
 

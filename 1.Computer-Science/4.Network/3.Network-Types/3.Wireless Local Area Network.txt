@@ -1,0 +1,12 @@
+_______________________________________________________________________________________________________________________________________
+3.Wireless Local Area Network (WLAN)
+        - A subset of LAN, WLAN uses wireless technology for connectivity.
+
+        Characteristics:
+            - Uses radio waves (Wi-Fi standards: 802.11a/b/g/n/ac/ax).
+            - Requires an access point or router for connectivity.
+
+        Examples:
+            - Public Wi-Fi in cafes and libraries.
+            - Wireless connectivity in a home network.
+_______________________________________________________________________________________________________________________________________
