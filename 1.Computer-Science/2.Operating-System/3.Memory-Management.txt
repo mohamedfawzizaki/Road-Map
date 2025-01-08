@@ -270,7 +270,7 @@ Definition:
 --------------------------------------------------------------------------------------------------------------
                                    Typical Memory Layout of a Process
                  -----------------------------------------------------------------------------
-                | Segment        | Purpose                                 | Growth Direction |
+                | Segment    | Purpose                                     | Growth Direction |
                 |------------------------------------------------------------------------------
                 | Text       | Program code (instructions)                 | N/A              |
                 | Data       | Initialized global/static variables         | N/A              |

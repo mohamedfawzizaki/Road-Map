@@ -1,14 +1,15 @@
 ______________________________________________________________________________________________________________________________________
+                                                    Kubernetes Files
+                                                    ================
 Kubernetes stores various configuration and data files on Linux systems, mainly under the following directories:
-
 ---------------------------------------------------------------------------------------------------------
-
- 1.`/etc/kubernetes/`
+1.`/etc/kubernetes/`
 
 This directory contains the primary configuration files for Kubernetes components on the control plane node:
 
 - `/etc/kubernetes/admin.conf`  
-  The configuration file for `kubectl` on the control plane.This file allows cluster administrators to manage the Kubernetes cluster.
+  The configuration file for `kubectl` on the control plane.
+  This file allows cluster administrators to manage the Kubernetes cluster.
   
 - `/etc/kubernetes/kubelet.conf`  
   The configuration file for the `kubelet` service, which runs on each node and communicates with the control plane.
@@ -20,11 +21,11 @@ This directory contains the primary configuration files for Kubernetes component
   Configuration for the `kube-scheduler` component of the control plane.
 
 - `/etc/kubernetes/manifests/`  
-  Contains static pod manifest files.These are pods that are directly managed by the `kubelet` without using the API server.
+  Contains static pod manifest files.
+  These are pods that are directly managed by the `kubelet` without using the API server.
 
 ---------------------------------------------------------------------------------------------------------
-
- 2.`/var/lib/kubelet/`
+2.`/var/lib/kubelet/`
 
 This directory is used by the `kubelet` service to store:
 
@@ -39,16 +40,13 @@ Common subdirectories include:
   
 - `/var/lib/kubelet/config.yaml`  
   Configuration file for the `kubelet`.
-
 ---------------------------------------------------------------------------------------------------------
+3.`/var/lib/etcd/`
 
- 3.`/var/lib/etcd/`
-
-This directory is used by etcd, the distributed key-value store that Kubernetes uses to store all cluster data (such as configuration, state, and secrets).
-
+This directory is used by etcd, the distributed key-value store 
+ that Kubernetes uses to store all cluster data (such as configuration, state, and secrets).
 ---------------------------------------------------------------------------------------------------------
-
- 4.`/var/log/`
+4.`/var/log/`
 
 Kubernetes logs are stored in the standard Linux log directory:
 
@@ -63,10 +61,8 @@ Kubernetes logs are stored in the standard Linux log directory:
   
 - `/var/log/kubelet.log`  
   Logs for the `kubelet` service on each node.
-
 ---------------------------------------------------------------------------------------------------------
-
- 5.`/usr/bin/`
+5.`/usr/bin/`
 
 This directory contains the Kubernetes binary files for the control plane and node components, such as:
 
@@ -76,13 +72,8 @@ This directory contains the Kubernetes binary files for the control plane and no
 - `kubectl`  
 - `kubelet`  
 - `kube-proxy`
-
 ---------------------------------------------------------------------------------------------------------
-
- 6.`/run/kubernetes/`
+6.`/run/kubernetes/`
 
 This directory contains runtime files, such as PID files and socket files, for various Kubernetes services.
-
----------------------------------------------------------------------------------------------------------
-
 ______________________________________________________________________________________________________________________________________

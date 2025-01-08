@@ -1,11 +1,11 @@
 ______________________________________________________________________________________________________________________________________
-Java Files in Linux: Locations and Purpose
+                                                Java Files in Linux 
+                                                ===================
 
-When Java is installed on a Linux system, various files are placed in specific directories.These files are part of the Java Development Kit (JDK) or the Java Runtime Environment (JRE), depending on the installation type.
-
+When Java is installed on a Linux system, various files are placed in specific directories.
+These files are part of the Java Development Kit (JDK) or the Java Runtime Environment (JRE), depending on the installation type.
 ---------------------------------------------------------------------------------------------------------
-
- Main Directories for Java Files
+Main Directories for Java Files
 
 1.`/usr/lib/jvm/`
    - This is the standard directory for storing installed Java versions on most Linux distributions.
@@ -33,8 +33,7 @@ When Java is installed on a Linux system, various files are placed in specific d
      Header files for JNI (Java Native Interface) development.
 
 ---------------------------------------------------------------------------------------------------------
-
- Java Configuration Files
+Java Configuration Files
 
 1.`/etc/alternatives/java`
    - A symlink that points to the currently active Java version. 
@@ -52,10 +51,8 @@ When Java is installed on a Linux system, various files are placed in specific d
      export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
      export PATH=$JAVA_HOME/bin:$PATH
      ```
-
 ---------------------------------------------------------------------------------------------------------
-
- Common Java Commands in Linux
+Common Java Commands in Linux
 
 1.Check Java Version
    ```bash
@@ -72,17 +69,12 @@ When Java is installed on a Linux system, various files are placed in specific d
    javac HelloWorld.java    Compile
    java HelloWorld          Run
    ```
-
 ---------------------------------------------------------------------------------------------------------
-
- Logs and Temporary Files
+Logs and Temporary Files
 
 1.Java application logs
    - Java applications often generate logs, typically stored in `/var/log/` or a custom directory specified by the application.
    
 2.Temporary files
    - Java applications may use the `/tmp/` directory for temporary files.
-
----------------------------------------------------------------------------------------------------------
-
 ______________________________________________________________________________________________________________________________________

@@ -12,25 +12,25 @@ ________________________________________________________________________________
                                              Key Concepts in Process Management
                                              ----------------------------------
 1.Process States:
-       - New: The process is being created.
-       - Ready: The process is waiting to be assigned to the CPU.
-       - Running: The process is currently being executed by the CPU.
+       - New              : The process is being created.
+       - Ready            : The process is waiting to be assigned to the CPU.
+       - Running          : The process is currently being executed by the CPU.
        - Waiting (Blocked): The process is waiting for an event (e.g., I/O completion).
-       - Terminated: The process has finished execution.
+       - Terminated       : The process has finished execution.
 
        -> Transition between these states is managed by the OS scheduler.
 --------------------------------------------------------------------------------------------------------------
 2.Process Control Block (PCB):
        - A data structure used by the OS to store information about a process.
        - Contains:
-         - Process ID (PID)
-         - Process state
-         - Program counter
-         - CPU registers
-         - Scheduling information
-         - Memory management information
-         - Accounting information
-         - I/O status
+              - Process ID (PID)
+              - Process state
+              - Program counter
+              - CPU registers
+              - Scheduling information
+              - Memory management information
+              - Accounting information
+              - I/O status
 --------------------------------------------------------------------------------------------------------------
 3.Types of Processes:
        - User Processes: Created by users to perform tasks, such as running applications.

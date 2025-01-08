@@ -1,10 +1,10 @@
- Containerization in Detail
+                                                 Containerization
+                                                 ================
 
 Containerization is a lightweight virtualization technology that allows applications and their dependencies to run in isolated environments called containers.Unlike traditional virtualization, which emulates entire hardware systems, containerization leverages the host operating system kernel and isolates processes at the application level.
 
 ---------------------------------------------------------------------------------------------------------
-
- Key Concepts in Containerization
+Key Concepts in Containerization
 
 1.Containers:
        - A container is a lightweight, portable, and self    -sufficient environment that includes everything needed to run an application:
@@ -28,8 +28,7 @@ Containerization is a lightweight virtualization technology that allows applicat
        - Tools like Kubernetes are widely used for orchestrating containerized applications.
 
 ---------------------------------------------------------------------------------------------------------
-
- How Containerization Works
+How Containerization Works
 
 1.OS    -Level Virtualization:
        - Containers rely on features like namespaces and control groups (cgroups) in the Linux kernel to achieve isolation and resource allocation.

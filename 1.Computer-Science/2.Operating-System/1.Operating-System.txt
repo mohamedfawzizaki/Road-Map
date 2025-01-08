@@ -109,8 +109,8 @@ ________________________________________________________________________________
 5.Scheduler:
     - Part of the OS responsible for deciding which process should execute next.
     - Types of Schedulers:
-            - Long-Term Scheduler: Decides which processes should be admitted to the ready queue.
-            - Short-Term Scheduler: Decides which process gets the CPU next.
+            - Long  -Term Scheduler: Decides which processes should be admitted to the ready queue.
+            - Short -Term Scheduler: Decides which process gets the CPU next.
             - Medium-Term Scheduler: Manages the swapping of processes in and out of memory.
 _______________________________________________________________________________________________________________________________________
                                             Operating System Performance Considerations
