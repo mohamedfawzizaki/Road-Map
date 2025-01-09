@@ -9,6 +9,7 @@ Container Management:
     ############################################################################################################################################################
 
 
+    --------------------------------------------------------------------------------------------------
     docker container run <image> <app/Command>                  : Runs a container from an image, 
                                                                  <app> it's the main app if exit from it the container will stop, 
                                                                  if i don't write it it will be the defualt in the image CMD.
@@ -19,6 +20,7 @@ Container Management:
     docker container run -d  -p <hostport:containerport> --name <my-container> <Image>       : Run a container in detached mode with custom name.
     docker container run -d -p 8080:80 nginx
 
+    --------------------------------------------------------------------------------------------------
     docker container run   -it -p 8080:80 --name my-server nginx:latest bash/sh                 : Case 1 :
     docker container start -it <container_name-or-id>  bash/sh                                     if you exit from the container's shell in this case the container will stopped
     
@@ -26,19 +28,31 @@ Container Management:
                                                                                                    Access the container's shell.
                                                                                                    if you exit from the container's shell in this case the container will not stopped   
     exit                                                                                        : exit from the container's shell
-
+    __________________________________________________________________________________________________
+    __________________________________________________________________________________________________
+    When running a Docker container, you can set resource limits, namespaces, and ulimits:
+    --------------------------------------------------------------------------------------------------
+    docker run -d --name mycontainer --memory="500m" --cpus="1.0" --ulimit nofile=4096:8192 myimage
+    --------------------------------------------------------------------------------------------------
+    This runs a container with:
+                - 500 MB of memory limit.
+                - 1 CPU core assigned.
+                - Ulimit set for open files (`nofile`) with a soft limit of 4096 and a hard limit of 8192.
+    __________________________________________________________________________________________________
 
     docker container ps                                                                      : Lists running containers.
     docker container ls                                                                      : Lists running containers.
     docker container ps -a                                                                   : Lists all containers, This will show all containers, including stopped ones.
     docker container ls -a                                                                   : Lists all containers, This will show all containers, including stopped ones.
     docker image inspect <container_name-or-id>
+    --------------------------------------------------------------------------------------------------
 
     docker container logs  <container_name-or-id>                                            : Fetch the logs of a container.
     docker container stats <container_name-or-id>                                            : Display a live stream of container(s) resource usage statistics.
     docker container port  <container_name-or-id>                                            : List port mappings or a specific mapping for the container.
     docker container top   <container_name-or-id>                                            : Display the running processes of a container.
 
+    --------------------------------------------------------------------------------------------------
     docker image pull <image>
     docker container create -it --name <my-container> <ImageNameOrID>  bash/sh               : create   a container.
     docker container start  -i <container_name-or-id>                                          : running  a container.
@@ -48,12 +62,15 @@ Container Management:
     docker container rename  <current-name-or-id> <new-name>                                 : rename   a container.
     docker container rm      <container1_name-or-id>   <container2_name-or-id>               : Remove   a   stopped container.
     docker container prune                                                                   : Remove   all stopped containers.  
+    --------------------------------------------------------------------------------------------------
 
     docker container cp <yourDirectoryOrFilePath>  <container-name>:/<path-to-container>     : from outside the container to the container.
     docker container cp <container-name>:/<path-to-container> <yourDirectoryOrFilePath>      : from the container to outside.
+    --------------------------------------------------------------------------------------------------
 
     docker container commit <container_id_or_name> <new_image_name>:<tag>                    : Building an image from a running container:
     docker container commit abcd1234 myapp:v1  
+    --------------------------------------------------------------------------------------------------
 
     ---------------------------------------------------------------------------------------------------------------------------
     # Restart-Policies 'self-healing containers':

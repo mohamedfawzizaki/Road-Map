@@ -1,9 +1,10 @@
 ______________________________________________________________________________________________________________________________________
                                     Cgroup  - Namespaces  -  Ulimits
+                                    ================================
 
 Linux provides powerful mechanisms for managing system resources and isolating processes.
-These are achieved through cgroups, namespaces, and ulimits.Each of these features
- is part of the broader Linux containerization technology,
+These are achieved through cgroups, namespaces, and ulimits.
+Each of these features is part of the broader Linux containerization technology,
  allowing for efficient management, isolation, and resource allocation.
 ---------------------------------------------------------------------------------------------------------
                                         Cgroups (Control Groups)
@@ -32,7 +33,7 @@ Example of Cgroup Usage:
         ```bash
         mkdir sysfscgroupmemorymy_cgroup
         echo 100M > sysfscgroupmemorymy_cgroupmemory.limit_in_bytes
-        echo $$ > sysfscgroupmemorymy_cgroupcgroup.procs   Add current process to cgroup
+        echo $$ > sysfscgroupmemorymy_cgroupcgroup.procs             Add current process to cgroup
         ```
 ---------------------------------------------------------------------------------------------------------
                                                     Namespaces
@@ -55,7 +56,7 @@ Types of Namespaces:
 Example of Using Namespaces:
         To create a new network namespace and start a process with it:
         ```bash
-        ip netns add mynamespace    Create a network namespace
+        ip netns add mynamespace                    Create a network namespace
         ip netns exec mynamespace ping google.com   Run a command in the new namespace
         ```
 

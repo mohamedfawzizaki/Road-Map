@@ -128,13 +128,13 @@ String Length
         You can find the length of a string using parameter expansion.
 
         ```bash
-        ${parameter}
+        ${#parameter}
         ```
 
         Example:
         ```bash
         str="Linux"
-        echo "Length: ${str}"
+        echo "Length: ${#str}"
         ```
         Output:
         ```
@@ -143,10 +143,10 @@ String Length
 ---------------------------------------------------------------------------------------------------------
 Substring Removal
 
- 1.Remove Shortest Match from the Front (``)
+ 1.Remove Shortest Match from the Front (`*`)
 
         ```bash
-        ${parameterpattern}
+        ${parameter*pattern}
         ```
 
         - Removes the shortest match of `pattern` from the beginning of `parameter`.
@@ -157,10 +157,10 @@ Substring Removal
         echo ${file/}   Output: home/user/document.txt
         ```
 
- 2.Remove Longest Match from the Front (``)
+ 2.Remove Longest Match from the Front (`*`)
 
         ```bash
-        ${parameterpattern}
+        ${parameter*pattern}
         ```
 
         - Removes the longest match of `pattern` from the beginning of `parameter`.

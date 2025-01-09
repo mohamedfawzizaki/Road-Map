@@ -1,0 +1,40 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Process Management :
+
+                ps                          – Display information about active processes.
+                ps -ef                      - list all running processes
+                
+                top                         – Display dynamic real-time information about running processes.
+                htop                        – Interactive process viewer.
+                pstree                      – Display the processes in a tree format.
+                jobs                        – List active jobs.
+                
+                
+                cat /proc/{PID}/status          # view specifics of a particular PID
+
+                fork 
+                exec
+                
+                kill  % PID                 – Terminate processes by PID.
+                kill [signal or option] PID
+                kill -SIGSTOP 12345
+                kill -9 %1
+                killall vim                 – Terminate processes by name.
+                pkill                       – Kill processes by name, user, or other criteria.
+                
+                pgrep                       – Find processes by name.
+                
+                nice                        – Start a process with a given priority.
+                renice                      – Change the priority of an already running process.
+                renice -5 -p [PID]          - Increase priority by 5 units for process ID [PID]
+
+               Managing bg (background) and fg (foreground) Processes:
+                [Command]  &                - to run the process in the background.
+                [Command]  $$               - to get the PID of the current process.
+
+                 bg                          – Resume a paused job in the background.
+                 fg                          – Bring a background job to the foreground.
+                 
+                 CTRL + Z                    - This will pause the process
+                 disown                      – Remove a job from the job list.
+------------------------------------------------------------------------------------------------------------------------------------------------------------

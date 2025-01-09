@@ -1,0 +1,56 @@
+............................................................................................................................................................
+
+1. System :
+                    ---------------------------------------------------
+        -           -  Informationn  -  Monitoring   -  Performance   -
+                    ---------------------------------------------------
+
+                uname                       – Print system information.
+                hostname                    – Show or set the system’s hostname.
+                uptime                      – Show how long the system has been running.
+                top                         – Display real-time system resource usage.
+                htop                        – Enhanced version of top (interactive process viewer).
+                dstat                       – Versatile resource statistics.
+
+                lsb_release -a
+
+                systemd-analyze             – Analyze system boot-up performance.
+                systemctl                   – Start, stop, or manage systemd services.
+                
+                dmesg                       – Print or control the kernel ring buffer.
+                
+                lscpu                       – Display CPU architecture information.
+                iostat                      – Report CPU and I/O statistics.
+                ps                          – Report a snapshot of current processes.
+                strace                      – Trace system calls and signals.
+                
+                free                        – Display memory usage.
+                vmstat                      – Report virtual memory statistics.
+
+                lsblk                       – List information about block devices.
+                lsusb                       – List USB devices.
+                lspci                       – List PCI devices.
+                lsscsi                      – List SCSI devices.
+                lsof                        – List open files.
+
+                df                          – Show disk space usage.
+                du                          – Estimate file space usage.
+
+                netstat                     – Network statistics.
+                ss                          – Socket statistics (alternative to netstat).
+
+                whoami                      – Show the current logged-in user.
+                who                         – Show who is logged into the system.
+
+
+
+                         ------------------------------
+        -                - Boot      -    Shutdown   -
+                         ------------------------------
+                shutdown                    – Shut down the system.
+                reboot                      – Reboot the system.
+                poweroff                    – Turn off the system.
+                halt                        – Halt the system (stops all processes).
+                systemctl reboot            – Reboot the system using systemd.
+                systemctl poweroff          – Power off the system using systemd.         
+------------------------------------------------------------------------------------------------------------------------------------------------------------

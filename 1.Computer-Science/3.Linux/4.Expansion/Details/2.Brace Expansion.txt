@@ -1,7 +1,8 @@
 ______________________________________________________________________________________________________________________________________
-                                                       Brace Expansion  
-                                                       =============== 
-
+                                                          Brace Expansion  
+                                                      ======================== 
+                                                      For Read-Write Commands
+                                                      ========================
 Brace expansion is a feature in Linux shells (like Bash) that allows you
  to generate multiple strings or filenames from a single pattern by specifying a
  set of comma-separated or sequential values enclosed in curly braces `{}`.
@@ -11,7 +12,8 @@ This feature is especially useful when dealing with repetitive tasks,
 Basic Syntax of Brace Expansion
 
       ```bash
-      echo {item1,item2,item3}
+      echo  {item1,item2,item3}
+      touch {item1,item2,item3}
       ```
 
 The shell expands the list inside the braces into separate words.
@@ -19,13 +21,13 @@ No files are matched; instead, the strings are generated literally.
 ---------------------------------------------------------------------------------------------------------
 Types of Brace Expansion
 
- 1.Comma-Separated Expansion
+1.Comma-Separated Expansion
 
       This type of brace expansion generates a list of values separated by commas `{}`.
 
       Example:
       ```bash
-      echo file_{A,B,C}.txt
+      touch file_{A,B,C}.txt
       ```
       Output:
       ```
@@ -155,6 +157,7 @@ Using Brace Expansion with Commands
 
       Example: Move multiple files
       ```bash
+
       mv file_{1..5}.txt /backup/
       ```
       Moves `file_1.txt`, `file_2.txt`, etc., to the `/backup/` directory.

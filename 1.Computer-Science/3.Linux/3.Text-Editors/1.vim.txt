@@ -10,10 +10,10 @@ Vim is known for its powerful editing capabilities, speed, and flexibility, espe
 Key Features of Vim
 
 1.Modes: Vim operates in different modes, each designed for specific tasks.
-      - Normal Mode : The default mode where you navigate and execute commands.
-      - Insert Mode : The mode for inserting and editing text.
-      - Command Mode: For executing commands like saving, quitting, searching, etc.
-      - Visual Mode : Used to select text for copy, cut, and paste operations.
+      - Normal  Mode : The default mode where you navigate and execute commands.
+      - Insert  Mode : The mode for inserting and editing text.
+      - Command Mode : For executing commands like saving, quitting, searching, etc.
+      - Visual  Mode : Used to select text for copy, cut, and paste operations.
 
 2.Keyboard Shortcuts: 
       - Vim makes extensive use of keyboard shortcuts for efficient navigation and editing.
@@ -70,12 +70,13 @@ Vim Modes
       - In Normal Mode, type `:` to enter Command Mode.
       - Command Mode allows you to execute commands for saving, quitting, searching, and more.
       - Example commands:
-           - `:w`: Save the file
-           - `:q`: Quit Vim
-           - `:wq`: Save and quit
-           - `:x`: Save and quit (same as `:wq`)
-           - `:set nu`: Show line numbers
-           - `:help`: Open the Vim help system
+           - `:w`              : Save the file
+           - `:w fileName`     : Save the file
+           - `:q`              : Quit Vim
+           - `:wq`             : Save and quit
+           - `:x`              : Save and quit (same as `:wq`)
+           - `:set nu`         : Show line numbers
+           - `:help`           : Open the Vim help system
 
 4.Visual Mode (Text Selection):
       - Used to select text for copying, cutting, or other operations.
@@ -97,39 +98,39 @@ Common Vim Commands
       - `w`: Move to the beginning of the next word.
       - `b`: Move to the beginning of the previous word.
       - `gg`: Go to the beginning of the document.
-      - `G`: Go to the end of the document.
+      - `G` : Go to the end of the document.
 
 2.Editing:
-      - `i`: Enter Insert Mode before the cursor.
-      - `a`: Enter Insert Mode after the cursor.
-      - `o`: Open a new line below the current line.
-      - `dd`: Delete the current line.
-      - `yy`: Copy the current line.
-      - `p`: Paste the copied text.
+      - `i`      : Enter Insert Mode before the cursor.
+      - `a`      : Enter Insert Mode after the cursor.
+      - `o`      : Open a new line below the current line.
+      - `dd`     : Delete the current line.
+      - `yy`     : Copy the current line.
+      - `p`      : Paste the copied text.
       - `r<char>`: Replace the current character with `<char>`.
 
 3.Searching:
-      - `/pattern`: Search for `pattern` forward in the file.
-      - `?pattern`: Search for `pattern` backward in the file.
-      - `n`: Move to the next occurrence of the search pattern.
-      - `N`: Move to the previous occurrence of the search pattern.
+      - `/pattern`      : Search for `pattern` forward in the file.
+      - `?pattern`      : Search for `pattern` backward in the file.
+      - `n`             : Move to the next occurrence of the search pattern.
+      - `N`             : Move to the previous occurrence of the search pattern.
 
 4.Undo/Redo:
-      - `u`: Undo the last change.
-      - `Ctrl + r`: Redo the undone change.
+      - `u`             : Undo the last change.
+      - `Ctrl + r`      : Redo the undone change.
 
 5.Saving and Quitting:
-      - `:w`: Save the file.
-      - `:q`: Quit Vim.
-      - `:wq`: Save and quit.
-      - `:x`: Save and quit (same as `:wq`).
-      - `ZZ`: Save and quit (same as `:wq`).
+      - `:w`            : Save the file.
+      - `:q`            : Quit Vim.
+      - `:wq`           : Save and quit.
+      - `:x`            : Save and quit (same as `:wq`).
+      - `ZZ`            : Save and quit (same as `:wq`).
 
 6.Other:
-      - `:set nu`: Show line numbers.
-      - `:set nonu`: Hide line numbers.
-      - `:syntax on`: Enable syntax highlighting.
-      - `:syntax off`: Disable syntax highlighting.
+      - `:set nu`       : Show line numbers.
+      - `:set nonu`     : Hide line numbers.
+      - `:syntax on`    : Enable syntax highlighting.
+      - `:syntax off`   : Disable syntax highlighting.
 ---------------------------------------------------------------------------------------------------------
 Vim Configuration (`~/.vimrc`)
 
@@ -139,7 +140,8 @@ Some common settings include:
 
 - Enable line numbers:
   ```vim
-  set number
+  
+  
   ```
 - Set auto-indentation:
   ```vim

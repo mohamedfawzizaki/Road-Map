@@ -53,7 +53,8 @@ Commonly Used Filtering Commands
         - `awk '{print NR, $0}'`: Displays line numbers along with the whole line.
       
 3.`sed` (Stream Editor)
-   - `sed` is used for filtering and transforming text in a stream.It can perform substitutions, deletions, and insertions.
+   - `sed` is used for filtering and transforming text in a stream.
+   - It can perform substitutions, deletions, and insertions.
 
    - Syntax:
         ```bash

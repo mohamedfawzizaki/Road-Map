@@ -1,0 +1,28 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        User and Group Management
+                                        =========================
+                useradd                     – Add a new user.
+                usermod                     – Modify a user account.
+                userdel                     – Delete a user account.
+                groups                      – Show user’s groups.
+                groupadd                    – Add a new group.
+                groupdel                    – Delete a group.
+                passwd                      – Change user password.
+                chage                       – Change user password expiry information.
+                chown                       – Change file owner and group.
+                chmod                       – Change file permissions.
+                chgrp                       – Change group ownership of files.
+                id                          – Show user and group IDs.
+                whoami                      – Show the current user.
+                su                          – Switch user.
+                sudo                        – Execute a command as another user (usually root).
+                w                           – Show who is logged in and what they are doing.
+                last                        – Show the last logins of users.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

@@ -64,9 +64,9 @@ Alternatively, you can use the shorthand operators:
 
         Example:
         ```bash
-        x=10
+        x=2
         x+=5
-        echo "x: $x"   Output: x: 15
+        echo "x: $x"   Output: x: 25
 
         y=4
         ((y++))

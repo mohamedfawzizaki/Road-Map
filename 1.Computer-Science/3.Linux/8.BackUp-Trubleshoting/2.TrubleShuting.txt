@@ -18,7 +18,8 @@ Steps for Troubleshooting in Linux
               - Pay attention to the symptoms such as performance issues,
                 software crashes, system freezes, or network connectivity problems.
       - Logs: 
-              - Logs are critical for identifying problems in Linux.Check various log files for error messages or warnings.
+              - Logs are critical for identifying problems in Linux.
+              - Check various log files for error messages or warnings.
 
  2.Check System Logs
       - Linux maintains logs in the `/var/log/` directory, which can provide insights into the issue.

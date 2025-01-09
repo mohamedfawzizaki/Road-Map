@@ -37,7 +37,8 @@ There are three main types of quotes in shell scripting:
 ---------------------------------------------------------------------------------------------------------
 When Does Quote Removal Happen?
 
-Quote removal happens after expansion and splitting.This means that the shell first performs:
+Quote removal happens after expansion and splitting.
+This means that the shell first performs:
 
 1.Tilde expansion (`~`)
 2.Variable expansion (`$VAR`)
@@ -141,5 +142,6 @@ Conclusion
 
 Quote removal is an essential step in the shell’s parsing process.
 It ensures that quotes used to control how the shell processes input are removed before the actual command is executed.
-Understanding how quote removal works helps in writing scripts that handle spaces, special characters, and expansions correctly.
+Understanding how quote removal works helps in writing scripts
+ that handle spaces, special characters, and expansions correctly.
 ______________________________________________________________________________________________________________________________________

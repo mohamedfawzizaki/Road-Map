@@ -13,7 +13,8 @@ There are several types of redirection that can be used in the shell:
 1.Output Redirection (>)
 
 The `>` operator is used to redirect the standard output (`stdout`) of
- a command to a file.If the file already exists, it will be overwritten.
+ a command to a file.
+If the file already exists, it will be overwritten.
 
 - Syntax:
   ```bash
@@ -88,11 +89,14 @@ Sometimes, you may want to redirect both standard output (`stdout`) and standard
 ---------------------------------------------------------------------------------------------------------
 6.Redirecting to /dev/null
 
-The `/dev/null` device is a special file that discards any data written to it.You can use it to ignore output or errors by redirecting them to `/dev/null`.
+The `/dev/null` device is a special file that discards any data written to it.
+You can use it to ignore output or errors by redirecting them to `/dev/null`.
 
 - Syntax:
   ```bash
-  command > /dev/null 2>&1
+  command >  /dev/null 2>&1
+  command >  /dev/null 
+  command 2> /dev/null 
   ```
 
 - Example:
@@ -103,7 +107,8 @@ The `/dev/null` device is a special file that discards any data written to it.Yo
 ---------------------------------------------------------------------------------------------------------
 7.Here Documents (<<)
 
-A Here Document (also known as Heredoc) is used to provide multi-line input to a command.It allows you to redirect a block of text as input to a command.
+A Here Document (also known as Heredoc) is used to provide multi-line input to a command.
+It allows you to redirect a block of text as input to a command.
 
 - Syntax:
   ```bash
@@ -123,7 +128,8 @@ A Here Document (also known as Heredoc) is used to provide multi-line input to a
 ---------------------------------------------------------------------------------------------------------
 8.Here Strings (<<<)
 
-A Here String is similar to a Here Document, but it's used for providing a single-line input to a command.It sends a string to the command’s `stdin`.
+A Here String is similar to a Here Document, but it's used for providing a single-line input to a command.
+It sends a string to the command’s `stdin`.
 
 - Syntax:
   ```bash
@@ -138,7 +144,8 @@ A Here String is similar to a Here Document, but it's used for providing a singl
 ---------------------------------------------------------------------------------------------------------
 9.Piping (|)
 
-Piping connects the output of one command to the input of another command.This allows you to chain commands together in a way that makes use of the output of one as the input for the next.
+Piping connects the output of one command to the input of another command.
+This allows you to chain commands together in a way that makes use of the output of one as the input for the next.
 
 - Syntax:
   ```bash
@@ -149,7 +156,8 @@ Piping connects the output of one command to the input of another command.This a
   ```bash
   echo "Hello, World!" | grep "Hello"
   ```
-  In this example, the output of `echo` ("Hello, World!") is passed as input to `grep`, which searches for the string "Hello" and prints the result.
+  In this example, the output of `echo` ("Hello, World!") is passed as input to `grep`,
+   which searches for the string "Hello" and prints the result.
 ---------------------------------------------------------------------------------------------------------
 Redirection Summary Table
  ________________________________________________________________________________________________________________________
