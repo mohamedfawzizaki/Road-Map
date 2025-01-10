@@ -52,7 +52,7 @@ Key Characteristics
          Example:  
             ```bash
             ls -ld /home/alice
-            drwx---  1 alice alice 4096 Jan 7 10:00 /home/alice
+            drwx------  1 alice alice 4096 Jan 7 10:00 /home/alice
             ```
             The permissions (`drwx---`) indicate that only the user `alice` has
             read, write, and execute permissions for their directory.

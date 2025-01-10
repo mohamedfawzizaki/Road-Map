@@ -3,7 +3,8 @@ ________________________________________________________________________________
                                             ========================================
 Let's break down each of these directories in detail.
 ---------------------------------------------------------------------------------------------------------
-`/init/` Directory
+                                                      `/init/` Directory
+                                                      ==================
 
 - Purpose: 
       - The `/init/` directory typically does not exist in most Linux distributions as a standalone directory.

@@ -21,15 +21,16 @@ Purpose of `/sys/`
 Structure of `/sys/`
 
 The contents of `/sys/` are organized hierarchically into directories and files,
- which represent various aspects of the kernel, devices, and system parameters.Here are the main components:
+ which represent various aspects of the kernel, devices, and system parameters.
+Here are the main components:
 
 1.`/sys/class/`
 
       - Purpose: 
             - Contains subdirectories for different device types (e.g., block devices, network interfaces, power management, etc.).
       - Example: 
-            - `/sys/class/net/` – Contains subdirectories for network interfaces like `eth0` and `wlan0`.
-            - `/sys/class/block/` – Contains subdirectories for block devices like hard drives (`sda`, `sdb`).
+            - `/sys/class/net/`          – Contains subdirectories for network interfaces like `eth0` and `wlan0`.
+            - `/sys/class/block/`        – Contains subdirectories for block devices like hard drives (`sda`, `sdb`).
             - `/sys/class/power_supply/` – Contains information related to battery and power supplies.
 ---------------------------------------------------------------------------------------------------------
 2.`/sys/devices/`

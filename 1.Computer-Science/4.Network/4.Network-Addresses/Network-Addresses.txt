@@ -581,7 +581,8 @@ Output Explanation
                                    and the broadcast address (`00:00:00:00:00:00`).
             - `inet 127.0.0.1/8 scope host lo`: 
                               ->> The IPv4 address assigned to the loopback interface is 
-                                  `127.0.0.1`, which is the localhost address.The `/8` indicates that the subnet mask is `255.0.0.0`.
+                                  `127.0.0.1`, which is the localhost address.
+                              ->> The `/8` indicates that the subnet mask is `255.0.0.0`.
               - `scope host`: 
                               ->> This means that this address is valid only within the host itself and not reachable externally.
             - `inet6 ::1/128 scope host`: 

@@ -47,7 +47,7 @@ Shell Script creation:
                                                 nano myscript.sh
                                                         !/bin/bash
         Write your script:                              echo "Hello, World!"
-                                                        your script
+                                                        <your script>
                                                         exit 0
         Make the Script Executable:             chmod +x myscript.sh
         Run the Script:                         ./myscript.sh

@@ -2,7 +2,10 @@ ________________________________________________________________________________
                                                  Virtualization  
                                                  ==============
 
-Virtualization is the process of creating virtual versions of physical resources, such as servers, storage devices, networks, or operating systems.This technology allows multiple virtual environments to run on a single physical system, enabling efficient resource utilization, scalability, and flexibility.
+Virtualization is the process of creating virtual versions of physical resources,
+ such as servers, storage devices, networks, or operating systems.
+This technology allows multiple virtual environments to
+ run on a single physical system, enabling efficient resource utilization, scalability, and flexibility.
 ---------------------------------------------------------------------------------------------------------
 Key Concepts of Virtualization
 
@@ -15,7 +18,7 @@ Key Concepts of Virtualization
        - A layer of software that enables virtualization by creating and managing VMs.
        - Provides the virtual hardware layer to VMs.
        - Two types:
-         - Type 1 (Bare    -metal): Runs directly on the hardware (e.g., VMware ESXi, Microsoft Hyper    -V, Xen).
+         - Type 1 (Bare-metal): Runs directly on the hardware (e.g., VMware ESXi, Microsoft Hyper    -V, Xen).
          - Type 2 (Hosted): Runs on a host OS (e.g., VMware Workstation, Oracle VirtualBox).
 
 3.Host Machine:
@@ -193,5 +196,7 @@ Future of Virtualization
 5.Hybrid and Multi    -Cloud Environments:
        - Seamless movement of workloads across public and private clouds.
 ---------------------------------------------------------------------------------------------------------
-Virtualization is a transformative technology that enables modern computing environments, empowering organizations to optimize resources, reduce costs, and increase flexibility in deploying applications and services.
+Virtualization is a transformative technology that enables modern computing environments,
+ empowering organizations to optimize resources, reduce costs, and increase flexibility 
+ in deploying applications and services.
 _______________________________________________________________________________________________________________________________________

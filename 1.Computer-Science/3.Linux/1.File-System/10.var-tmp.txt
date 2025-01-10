@@ -112,11 +112,11 @@ Use Cases for `/tmp/`
 Differences Between `/tmp/` and `/var/tmp/`
 
 - Persistence:
-      - `/tmp/`: Files are typically deleted after reboot.
+      - `/tmp/`    : Files are typically deleted after reboot.
       - `/var/tmp/`: Files are preserved between reboots, allowing applications to store longer-lasting temporary data.
   
 - Security:
-      - `/tmp/`: World-writable, but may have more aggressive cleaning.
+      - `/tmp/`    : World-writable, but may have more aggressive cleaning.
       - `/var/tmp/`: Similar to `/tmp/` but more likely to store important data for a longer duration.
 ______________________________________________________________________________________________________________________________________
                                                    Summary of `/var/` and `/tmp/`

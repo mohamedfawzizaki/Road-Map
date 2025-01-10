@@ -69,8 +69,8 @@ Here’s what the structure of the `/lib/` directory might look like:
 Common Libraries in `/lib/`
 
         1.`libc.so` (C Standard Library): 
-                - This library is the core of most Linux programs.It provides functions for memory 
-                  allocation, input/output, string manipulation, and much more.
+                - This library is the core of most Linux programs.
+                - It provides functions for memory allocation, input/output, string manipulation, and much more.
           
         2.`libm.so` (Mathematics Library): 
                 - This library provides mathematical functions like trigonometric functions, logarithms, etc.
@@ -99,10 +99,9 @@ Why `/lib/` Is Important
 Related Directories: `/usr/lib/` and `/lib64/`
 
         - `/usr/lib/`:
-                -  While `/lib/` contains essential shared libraries needed by core system
-                  binaries, `/usr/lib/` contains libraries for applications installed by the package
-                  manager (i.e., non-essential libraries).These libraries support applications and software 
-                  that are not needed for the system to run in single-user mode.
+                - While `/lib/` contains essential shared libraries needed by core system binaries, `/usr/lib/`
+                   contains libraries for applications installed by the package manager (i.e., non-essential libraries).
+                - These libraries support applications and software that are not needed for the system to run in single-user mode.
           
         - `/lib64/`: 
                 - On 64-bit systems, libraries that are specific to the 64-bit architecture are often found in `/lib64/`.

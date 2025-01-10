@@ -82,11 +82,11 @@ Relationship Between `/mnt/` and `/media/`
 - While `/mnt/` is traditionally used for manually mounting filesystems, the 
   `/media/` directory is used by modern Linux distributions to mount removable media such as
     USB drives, CD/DVDs, and other external devices automatically.
-  - `/mnt/`: For manually mounted filesystems.
+  - `/mnt/` : For manually mounted filesystems.
   - `/media/`: For automatically mounted devices like USB drives.
   
   Example:
-  - `/mnt/usbdrive/`: Manually mounted external storage.
+  - `/mnt/usbdrive/`            : Manually mounted external storage.
   - `/media/username/USB_Drive/`: Automatically mounted USB drive.
 ---------------------------------------------------------------------------------------------------------
 Temporary Mounts with `/mnt/`

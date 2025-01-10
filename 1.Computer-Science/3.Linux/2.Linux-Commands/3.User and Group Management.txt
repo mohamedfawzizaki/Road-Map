@@ -1,24 +1,52 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
                                         User and Group Management
                                         =========================
+                -------------------------------------------------------------------------------------------------------------
                 useradd                     – Add a new user.
                 usermod                     – Modify a user account.
                 userdel                     – Delete a user account.
-                groups                      – Show user’s groups.
+                -------------------------------------------------------------------------------------------------------------
                 groupadd                    – Add a new group.
                 groupdel                    – Delete a group.
+                -------------------------------------------------------------------------------------------------------------
                 passwd                      – Change user password.
                 chage                       – Change user password expiry information.
                 chown                       – Change file owner and group.
                 chmod                       – Change file permissions.
                 chgrp                       – Change group ownership of files.
+                -------------------------------------------------------------------------------------------------------------
                 id                          – Show user and group IDs.
+                groups                      – Show user’s groups.
                 whoami                      – Show the current user.
-                su                          – Switch user.
-                sudo                        – Execute a command as another user (usually root).
                 w                           – Show who is logged in and what they are doing.
                 last                        – Show the last logins of users.
+                -------------------------------------------------------------------------------------------------------------
+                sudo                        – Execute a command as another user (usually root).
+                -------------------------------------------------------------------------------------------------------------
+                su                          – Switch user.
+                sudo su                     - Switch you from the normal user to the root user and open the normal user home.
+                sudo su -                   - Switch you from the normal user to the root user and open the root user home.
+                sudo su UserName            - Switch you from one user to another user.          
+                su UserName                 - Switch you from the root user to another user.
+                -------------------------------------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                         sudo   
+                                                    ============
+                sudo  [opt] 
+                -------------------------------------------------------------------------------------------------------------
+                -l, --list               List the available commands.
+                -a, --always-set-home    Always set HOME environment variable to user’s home directory.
+                -c, --command=COMMAND    Execute COMMAND with superuser privilege.
+                -E, --preserve-env       Preserve environment variables.
+                -H, --home-dir           Set HOME environment variable to user’s home directory.
+                -i, --simulate           Simulate a run.
+                -n, --non-interactive    Run in non-interactive mode.
+                -p, --prompt=PROMPT      Prompt string to use.
+                -s, --shell=COMMAND      Run the command with an interactive shell.
+                -------------------------------------------------------------------------------------------------------------
+
+
 
 
 

@@ -93,7 +93,7 @@ Security Considerations
 
       3.Backup:  
          - Since `/root` might contain critical scripts or 
-         system configuration files, ensure it is included in regular system backups.
+           system configuration files, ensure it is included in regular system backups.
 ---------------------------------------------------------------------------------------------------------
 Conclusion
 

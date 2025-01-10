@@ -85,48 +85,7 @@ Common Subdirectories and Files in `/etc`
       | '/etc/ssl/private/'      | Directory containing SSL/TLS private keys.                                    |
       | '/etc/ssl/certs/ca-certificates.crt' | File containing a list of trusted SSL                             |
       |__________________________|_______________________________________________________________________________|
----------------------------------------------------------------------------------------------------------
-Key Configuration Files in `/etc`
-
-      1.`/etc/passwd`  
-            - Contains a list of all system users, each with the following format:  
-            ```plaintext
-            username:x:UID:GID:comment:home_directory:shell
-            ```
-            - Example entry:
-            ```plaintext
-            alice:x:1001:1001:Alice:/home/alice:/bin/bash
-            ```
-
-      2.`/etc/shadow`  
-            - Stores encrypted passwords for users.Access is restricted to the root user for security reasons.
-            - Example entry:
-            ```plaintext
-            alice:$6$randomsalt$hashedpassword:19000:0:99999:7:::
-            ```
-
-      3.`/etc/fstab`  
-            - Defines the filesystems and their mount points, including options like auto-mounting on boot.
-            - Example:
-            ```plaintext
-            /dev/sda1  /  ext4  defaults  0  1
-            ```
-
-      4.`/etc/hosts`  
-            - Provides a static mapping of IP addresses to hostnames, useful for local name resolution.
-            - Example:
-            ```plaintext
-            127.0.0.1  localhost
-            192.168.1.10  myserver.local
-            ```
-
-      5.`/etc/resolv.conf`  
-            - Specifies DNS servers for name resolution.
-            - Example:
-            ```plaintext
-            nameserver 8.8.8.8
-            nameserver 8.8.4.4
-            ```
+==================================================================================================================
 
 ---------------------------------------------------------------------------------------------------------
 Managing Files in `/etc`

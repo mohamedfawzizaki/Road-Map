@@ -30,7 +30,7 @@ Here are the main subdirectories you’ll find inside `/usr/`:
         - Purpose: 
                 - Contains most of the user commands (executables) that are available to all users.
                 - This includes command-line programs, utilities, and applications 
-                that aren't needed for booting but are essential for the system's functionality.
+                   that aren't needed for booting but are essential for the system's functionality.
         - Example: 
                 - Includes commands like `ls`, `cp`, `grep`, `vim`, `python3`, and most other user-level binaries.
 ---------------------------------------------------------------------------------------------------------
@@ -57,8 +57,8 @@ Here are the main subdirectories you’ll find inside `/usr/`:
 
         - Purpose: 
                 - Contains architecture-independent data that is shared by all users, 
-                such as documentation, man pages, icons, localization files, and other 
-                resources that don’t depend on the machine’s architecture.
+                  such as documentation, man pages, icons, localization files, and other 
+                  resources that don’t depend on the machine’s architecture.
         - Example: 
                 - Includes subdirectories like `/usr/share/doc/` for documentation,
                 `/usr/share/man/` for man pages, and `/usr/share/icons/` for system icons.
@@ -67,11 +67,11 @@ Here are the main subdirectories you’ll find inside `/usr/`:
 
         - Purpose: 
                 - Used for locally installed software and other resources that
-                are not managed by the system's package manager (like APT, YUM, or Pacman).
+                  are not managed by the system's package manager (like APT, YUM, or Pacman).
                 - Software installed by the system administrator or by custom processes often resides in this directory.
         - Example: 
                 - If you manually install software from source, it typically goes 
-                into `/usr/local/bin/`, `/usr/local/lib/`, or similar directories under `/usr/local/`.
+                  into `/usr/local/bin/`, `/usr/local/lib/`, or similar directories under `/usr/local/`.
 ---------------------------------------------------------------------------------------------------------
 6.`/usr/include/`
 
@@ -93,11 +93,11 @@ Key Characteristics of `/usr/`
 
         - Not Essential for Booting: 
                 - While `/bin/` and `/sbin/` contain essential system binaries required for
-                booting, `/usr/` is not required for booting the system.This directory holds user programs,
-                libraries, and data necessary after the system has been booted.
+                  booting, `/usr/` is not required for booting the system.
+                - This directory holds user programs, libraries, and data necessary after the system has been booted.
         - Shared by Multiple Machines: 
                 - The contents of `/usr/` are often shared across multiple machines
-                in networked environments (like NFS servers), which is why it is sometimes called "user shared resources."
+                  in networked environments (like NFS servers), which is why it is sometimes called "user shared resources."
         - Large Size: 
                 - The `/usr/` directory can become quite large, especially in systems with many installed applications.
                 - It can sometimes be mounted as a separate partition to make management easier.

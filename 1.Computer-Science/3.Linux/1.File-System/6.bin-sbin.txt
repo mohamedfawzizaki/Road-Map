@@ -2,10 +2,9 @@ ________________________________________________________________________________
                                                 `/bin/` and `/sbin/` 
                                                 ====================
 
-The `/bin/` and `/sbin/` directories are essential
- components of the Linux filesystem.They are primarily responsible for 
- holding important system binaries (executable files), but they differ in 
- their intended use and the types of programs they contain.
+The `/bin/` and `/sbin/` directories are essential components of the Linux filesystem.
+They are primarily responsible for holding important system binaries (executable files),
+ but they differ in their intended use and the types of programs they contain.
 ______________________________________________________________________________________________________________________________________
                                                         `/bin/`
                                                         ======= 
@@ -72,7 +71,7 @@ Common Commands in `/sbin/`
 |________________|_______________________________________________________________|
 
 ______________________________________________________________________________________________________________________________________
-Key Differences Between `/bin/` and `/sbin/`
+                                          Key Differences Between `/bin/` and `/sbin/`
 
  _______________________________________________________________________________________________________________________________________________________
 | Feature                    | `/bin/`                                               | `/sbin/`                                                         |
@@ -80,7 +79,7 @@ Key Differences Between `/bin/` and `/sbin/`
 | Purpose                    | Contains essential binaries for normal operation.     | Contains system administration binaries for system maintenance.  |
 | Users                      | Accessible to all users (regular and root).           | Primarily for root or superuser.                                 |
 | Examples                   | `ls`, `cp`, `rm`, `cat`, `bash`                       | `shutdown`, `reboot`, `fdisk`, `mount`, `fsck`                   |
-| Availability During Boot  | Needed for basic system boot, even in minimal mode.    | Used for system management, often needed after booting.          |
+| Availability During Boot   | Needed for basic system boot, even in minimal mode.   | Used for system management, often needed after booting.          |
 | Usage                      | Regular tasks like file manipulation and shell access.| Administrative tasks like system configuration and network setup.|
 |____________________________|_______________________________________________________|__________________________________________________________________|
 
