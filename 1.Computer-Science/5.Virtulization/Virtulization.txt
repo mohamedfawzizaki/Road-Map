@@ -124,7 +124,7 @@ Virtualization Technologies
        - Leading virtualization platform.
        - Products include VMware vSphere, VMware Workstation, and VMware Fusion.
 
-2.Microsoft Hyper    -V:
+2.Microsoft Hyper-V:
        - Hypervisor from Microsoft.
        - Integrates with Windows Server.
 

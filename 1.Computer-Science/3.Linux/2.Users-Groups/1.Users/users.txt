@@ -1,0 +1,222 @@
+______________________________________________________________________________________________________________________________________
+                                                          Users 
+                                                          =====
+Breif:
+        - In Linux, users are a fundamental part of the system's security and resource management.
+        - Every action performed on a Linux system is associated with a user, whether it's a person or a system process.
+        - This detailed guide covers the key concepts related to users in Linux.
+
+______________________________________________________________________________________________________________________________________
+                                                        1.User Types
+
+ a.Root User
+        - The root user is the superuser who has unlimited privileges on the system.
+        
+        - The root user can perform any administrative tasks such as managing
+          users, installing software, changing file permissions, and modifying system files.
+        
+        - The root user’s username is typically `root`, and their home directory is `/root`.
+
+ b.Regular Users
+        - Regular users are created by the system administrator (root).
+        - Each regular user has a unique UID (User ID) and home directory (usually `/home/username`).
+        
+        - Regular users have limited privileges—they can only modify 
+          files they own and perform actions within their permission levels.
+
+ c.System Users
+        - System users are non-human users created by the system for running services and background processes.
+        
+        - Examples include users like `www-data` (for web servers like Apache and Nginx),
+          `mail` (for mail services), and `nobody` (a minimal-privilege user for certain processes).
+        
+        - Their UID is usually less than 1000 (or 500, depending on the distribution).
+
+______________________________________________________________________________________________________________________________________
+                                                   2.User Management Files
+
+a.`/etc/passwd`
+      - The primary file that stores user account information.
+      - Each line represents a user and contains fields separated by colons (`:`):
+        `````````````````````````````````````````````````
+        username:x:UID:GID:comment:home_directory:shell
+        `````````````````````````````````````````````````
+        Example:
+        `````````````````````````````````````````````````
+        mohamed:x:1001:1001:Mohamed:/home/mohamed:/bin/
+        `````````````````````````````````````````````````
+        - username      : The name of the user.
+        - x             : Placeholder indicating that the password is stored in `/etc/shadow`.
+        - UID           : User ID.
+        - GID           : Group ID.
+        - comment       : An optional description of the user.
+        - home_directory: The user’s home directory.
+        - shell         : The default shell assigned to the user.
+
+b.`/etc/shadow`
+        - This file stores encrypted passwords and password-related information.
+        - It is readable only by the root user for security purposes.
+
+c.`/etc/group`
+        - This file defines the groups on the system.
+        - It maps group names to GIDs (Group IDs) and lists users belonging to each group.
+
+______________________________________________________________________________________________________________________________________
+                                                   3.User Commands
+
+a.`whoami`
+        Displays the current logged-in user:
+        `````````````````````````````````````````````````
+        whoami
+        `````````````````````````````````````````````````
+
+b.`id`
+        Displays user ID, group ID, and associated groups:
+        `````````````````````````````````````````````````
+        id username
+        `````````````````````````````````````````````````
+
+c.`who`
+        Displays all logged-in users:
+        `````````````````````````````````````````````````
+        who
+        `````````````````````````````````````````````````
+
+d.`adduser` / `useradd`
+        Used to create a new user.
+        - `adduser` is more user-friendly and interactive.
+        - Example:
+          `````````````````````````````````````````````````
+          sudo adduser mohamed
+          `````````````````````````````````````````````````
+
+        - `useradd` is a lower-level command.
+          Example:
+          `````````````````````````````````````````````````
+          sudo useradd -m -s /bin/ mohamed
+          `````````````````````````````````````````````````
+
+e.`passwd`
+        Used to set or change a user’s password.
+        `````````````````````````````````````````````````
+        sudo passwd mohamed
+        `````````````````````````````````````````````````
+
+f.`usermod`
+        Modifies user properties such as shell, home directory, and groups.
+        Example: Change the shell for a user:
+        `````````````````````````````````````````````````
+        sudo usermod -s /bin/zsh mohamed
+        `````````````````````````````````````````````````
+
+g.`deluser` / `userdel`
+        Used to delete a user.
+        `````````````````````````````````````````````````
+        sudo deluser mohamed
+        `````````````````````````````````````````````````
+        or
+        `````````````````````````````````````````````````
+        sudo userdel mohamed
+        `````````````````````````````````````````````````
+
+______________________________________________________________________________________________________________________________________
+                                                   4.User IDs and Groups
+
+- UID (User ID):  
+        Each user is assigned a unique ID number. 
+        - UID 0              : Reserved for the root user.
+        - UIDs 1–999         : Reserved for system users.
+        - UIDs 1000 and above: Used for regular users.
+
+- GID (Group ID):  
+        Each user belongs to a primary group, identified by a GID.
+        Additional groups can be assigned to a user for shared permissions.
+
+______________________________________________________________________________________________________________________________________
+                                                   5.Switching and Running Commands as Another User
+
+a.`su` (Substitute User)
+        - Allows switching to another user account.
+        - Example: Switch to the root user:
+          `````````````````````````````````````````````````
+          su -
+          `````````````````````````````````````````````````
+        - Example: Switch to a specific user:
+          `````````````````````````````````````````````````
+          su mohamed
+          `````````````````````````````````````````````````
+
+b.`sudo` (Superuser Do)
+        - Allows a regular user to run commands with superuser privileges.
+        - Example: Run a command as root:
+          `````````````````````````````````````````````````
+          sudo apt update
+          `````````````````````````````````````````````````
+
+        - To allow a user to use `sudo`, they must be added to the sudoers file or the sudo group:
+          `````````````````````````````````````````````````
+          sudo usermod -aG sudo mohamed
+          `````````````````````````````````````````````````
+
+______________________________________________________________________________________________________________________________________
+                                                   6.User Home Directory
+
+- Each user has a home directory under `/home/username`.
+- The home directory contains user-specific files and settings.
+- Important files in the home directory:
+        - `.rc`: Contains user-specific shell configurations.
+        - `.profile`: Contains user-specific environment variables.
+
+______________________________________________________________________________________________________________________________________
+                                                   7.User Groups
+
+Groups are used to manage permissions for multiple users.Each user can belong to one or more groups.
+
+Primary Group
+        - The group specified in `/etc/passwd` for the user.
+
+Supplementary Groups
+        - Additional groups the user belongs to.
+
+Group Management Commands
+
+        - Create a group:
+          `````````````````````````````````````````````````
+          sudo groupadd developers
+          `````````````````````````````````````````````````
+        - Add a user to a group:
+          `````````````````````````````````````````````````
+          sudo usermod -aG developers mohamed
+          `````````````````````````````````````````````````
+        - List groups for a user:
+          `````````````````````````````````````````````````
+          groups mohamed
+          `````````````````````````````````````````````````
+
+______________________________________________________________________________________________________________________________________
+                                                   8.User Permission and Ownership
+
+- File ownership:  
+        Each file or directory is owned by a user and a group.
+        Use `ls -l` to display file ownership:
+        `````````````````````````````````````````````````
+        ls -l file.txt
+        `````````````````````````````````````````````````
+        Example output:
+        `````````````````````````````````````````````````
+        -rw-r--r-- 1 mohamed developers 1024 Jan 10 12:00 file.txt
+        `````````````````````````````````````````````````
+
+        - The file is owned by user `mohamed` and group `developers`.
+
+- Change ownership:  
+        `````````````````````````````````````````````````
+        sudo chown mohamed:developers file.txt
+        `````````````````````````````````````````````````
+
+______________________________________________________________________________________________________________________________________
+                                                   Conclusion
+
+Understanding users in Linux is essential for managing system security and multi-user environments.
+Proper user management ensures that system resources are accessed appropriately, maintaining both security and efficiency.
+______________________________________________________________________________________________________________________________________
