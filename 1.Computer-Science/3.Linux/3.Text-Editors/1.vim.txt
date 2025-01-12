@@ -161,6 +161,8 @@ Some common settings include:
 ---------------------------------------------------------------------------------------------------------
 Vim Plugins
 
+visudo :   {/etc/sudoers} -> This file MUST be edited with the 'visudo' command as root.
+
 Vim has a rich ecosystem of plugins for extending its functionality.
 Some popular plugins include:
 

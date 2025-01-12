@@ -62,11 +62,11 @@ Here’s a breakdown of each field:
 
 7.`shell`  
         - The path to the user’s default shell. 
-        - Common shells include `/bin/`, `/bin/sh`, `/usr/bin/zsh`. 
+        - Common shells include `/bin/bash`, `/bin/sh`, `/usr/bin/zsh`. 
         - A user account with a shell set to `/sbin/nologin`
           or `/bin/false` is considered a non-login user (used for system services). 
         
-        - Example: `/bin/`
+        - Example: `/bin/bash`
 
 ______________________________________________________________________________________________________________________________________
                                               Example Entry in `/etc/passwd`

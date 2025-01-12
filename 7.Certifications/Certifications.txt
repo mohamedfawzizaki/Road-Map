@@ -1,4 +1,12 @@
 _______________________________________________________________________________________________________________________________________
+                                               Red Hat Certifications
+                                               ======================
+1.Red-Hat-Certified-System-Administrator.                               RHCSA     => https://www.redhat.com/en/services/certification/rhcsa
+2.Red-Hat-Certified-Engineer.                                           RHCE      => https://www.redhat.com/en/services/certification/rhce
+3.Red-Hat-Certified-Specialist-in-Containers.                           RHCS      => https://www.redhat.com/en/services/certification/rhcs-container
+4.Red-Hat-Certified-Specialist-in-Ansible-Automation.                   RHCSAA    => https://www.redhat.com/en/services/certification/rhcs-ansible-automation 
+
+_______________________________________________________________________________________________________________________________________
                                                 AWS Certifications                
                                               ====================== 
 1.AWS-Cloud-Practioner-Foundation.                                      AWS-CPF   =>  
@@ -10,13 +18,6 @@ ________________________________________________________________________________
 5.AWS-Cloud-Solution-Architect-Associate.                               AWS-CSAA  =>
 6.AWS-Cloud-Solutuin-Architect-Professional.                            AWS-CSAP  =>
 
-_______________________________________________________________________________________________________________________________________
-                                               Red Hat Certifications
-                                               ======================
-1.Red-Hat-Certified-System-Administrator.                               RHCSA     => https://www.redhat.com/en/services/certification/rhcsa
-2.Red-Hat-Certified-Engineer.                                           RHCE      => https://www.redhat.com/en/services/certification/rhce
-3.Red-Hat-Certified-Specialist-in-Containers.                           RHCS      => https://www.redhat.com/en/services/certification/rhcs-container
-4.Red-Hat-Certified-Specialist-in-Ansible-Automation.                   RHCSAA    => https://www.redhat.com/en/services/certification/rhcs-ansible-automation 
 
 _______________________________________________________________________________________________________________________________________
                                     Cloud Native Computing Foundation Certifications                

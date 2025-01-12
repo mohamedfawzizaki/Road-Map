@@ -37,18 +37,18 @@ Here’s a breakdown of each field:
 
 2.`password_hash`  
          - The hashed password of the user. 
-         - If this field contains a single character (`` or `!`),
-           it indicates that the account is locked (the user cannot log in). 
+         - If this field contains a single character (`*` or `!`),
+            it indicates that the account is locked (the user cannot log in). 
          - An empty field means the account has no password, which is a significant security risk. 
          - Example of a hashed password:  
          `````````````````````````````````````````````````
          $6$gU9aTLJb$2zA74QlF/cqkPLgvd5jUxD8ENY93ojGRBxDpFexf4Py8Z2H1OnBsYV1EgZr9NiA4kEF6KnzI0NdxfpMgdAwIQ1
          `````````````````````````````````````````````````
          - The hash format starts with `$id$`, where `id` indicates the hashing algorithm:
-                              - `$1$` → MD5
+                              - `$1$`  → MD5
                               - `$2a$` → Blowfish
-                              - `$5$` → SHA-256
-                              - `$6$` → SHA-512 (most common in modern systems)
+                              - `$5$`  → SHA-256
+                              - `$6$`  → SHA-512 (most common in modern systems)
 
 3.`last_change`  
          - The number of days since January 1, 1970 (the Unix epoch) when the password was last changed. 

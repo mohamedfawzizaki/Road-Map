@@ -23,7 +23,7 @@ ________________________________________________________________________________
         - The UID is used by the system to identify and manage user permissions.
         - Example entry in `/etc/passwd`:
                 `````````````````````````````````````````````````
-                alice:x:1001:1001:Alice:/home/alice:/bin/
+                alice:x:1001:1001:Alice:/home/alice:/bin/bash
                 `````````````````````````````````````````````````
                 - Username: `alice`
                 - UID: `1001`
@@ -47,7 +47,7 @@ A regular user can be created using the `useradd` or `adduser` command:
         sudo passwd john
         `````````````````````````````````````````````````
         - `-m`: Creates the user’s home directory.
-        - `-s /bin/`: Sets the user’s default shell to `/bin/`.
+        - `-s /bin/bash`: Sets the user’s default shell to `/bin/bash`.
         - `passwd john`: Sets a password for the user.
 
 ______________________________________________________________________________________________________________________________________

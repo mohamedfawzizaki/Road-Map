@@ -23,7 +23,7 @@ ________________________________________________________________________________
           modifying kernel parameters, and configuring hardware require root privileges.
 
 4.UID 0:  
-        - The root user always has a User ID (UID) of `0`.This distinguishes it from other users.
+        - The root user always has a User ID (UID) of `0`, This distinguishes it from other users.
 
 ______________________________________________________________________________________________________________________________________
                                               2.Root User Account Files
@@ -117,7 +117,8 @@ ________________________________________________________________________________
         - If the root password is weak or compromised, an attacker can gain full control of the system.
 
 3.No Confirmation Prompts  
-        Commands executed by the root user often do not require confirmation.For example:
+        Commands executed by the root user often do not require confirmation.
+        For example:
         `````````````````````````````````````````````````
         rm -rf /
         `````````````````````````````````````````````````

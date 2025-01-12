@@ -1,5 +1,6 @@
 ______________________________________________________________________________________________________________________________________
                                                  `/etc/sudoers`
+                                                 `/etc/sudoers.d/`
                                                  =============
 Breif:
          - The `/etc/sudoers` file is a critical configuration file in Linux and
@@ -32,7 +33,8 @@ Instead, use the `visudo` command, which provides syntax checking to prevent err
 ______________________________________________________________________________________________________________________________________
                                             Structure of `/etc/sudoers`
 
-The syntax of the `sudoers` file follows a specific format.Below are the key components:
+The syntax of the `sudoers` file follows a specific format.
+Below are the key components:
 
 1.Defaults
          These lines set general options and behaviors for `sudo`.
@@ -177,7 +179,7 @@ ________________________________________________________________________________
 2.User not in `sudoers` file  
          If a user is not listed in the `sudoers` file, they will see an error like:
          `````````````````````````````````````````````````
-         username is not in the sudoers file.This incident will be reported.
+         username is not in the sudoers file, This incident will be reported.
          `````````````````````````````````````````````````
          To fix this, add the user to the `sudo` group or grant them specific privileges in the `sudoers` file.
 ______________________________________________________________________________________________________________________________________

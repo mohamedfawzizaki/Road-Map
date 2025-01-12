@@ -90,7 +90,8 @@ To create a system user, use the `useradd` command
 ______________________________________________________________________________________________________________________________________
                                               5.File Ownership and Permissions
 
-System users often own specific directories and files used by their associated services.For example:
+System users often own specific directories and files used by their associated services.
+For example:
 
         - The Apache web server (`www-data` user) may own web content in `/var/www`.
         - The MySQL server (`mysql` user) owns database files in `/var/lib/mysql`.
@@ -133,7 +134,7 @@ ________________________________________________________________________________
 | Login Access     | Usually no login (using `/bin/false` or `/sbin/nologin`) | Interactive login enabled (using `/bin/` or similar shells) |
 | Purpose          | Runs system services and daemons                         | Used by human users for daily tasks                             |
 | Home Directory   | May not have a home directory                            | `/home/<username>`                                              |
-| Shell            | Typically `/bin/false` or `/usr/sbin/nologin`            | `/bin/`, `/bin/zsh`, etc.                                   |
+| Shell            | Typically `/bin/false` or `/usr/sbin/nologin`            | `/bin/bash`, `/bin/zsh`, etc.                                   |
 |__________________|__________________________________________________________|_________________________________________________________________|
 
 ______________________________________________________________________________________________________________________________________
