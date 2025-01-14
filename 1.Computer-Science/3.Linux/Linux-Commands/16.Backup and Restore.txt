@@ -1,0 +1,13 @@
+#_________________________________________________________________________________________________________________________________________________________________________# 
+                                                    Backup and RestoreManagement 
+                                                    ============================
+#_________________________________________________________________________________________________________________________________________________________________________# 
+
+
+16.
+                    tar                         – Archive and compress files (often used for backups).
+                    rsync                       – Synchronize files and directories (useful for backup).
+                    dd                          – Copy and convert raw data (useful for creating disk images).
+                    cp                          – Copy files and directories.
+                    dump                        – Backup a file system.
+                    restore                     – Restore a file system from a dump.   

@@ -1,0 +1,60 @@
+#_________________________________________________________________________________________________________________________________________________________________________# 
+                                                     Services Management 
+                                                     ===================
+#_________________________________________________________________________________________________________________________________________________________________________# 
+
+
+13. Management:
+
+
+    A.systemctl (systemd-based systems)
+                - Systemctl is the command-line tool used to interact with systemd, 
+                the default service manager in most modern Linux distributions like Ubuntu, Fedora, and CentOS.
+
+                    sudo systemctl start   <service_name>	        Starts the specified service.
+                    sudo systemctl stop    <service_name>	        Stops the specified service.
+                    sudo systemctl restart <service_name>	        Restarts the service (stop and then start).
+                    sudo systemctl reload  <service_name>	        Reloads the configuration without stopping the service.
+                    sudo systemctl enable  <service_name>	        Enables the service to start on boot.
+                    sudo systemctl disable <service_name>	        Disables the service from starting on boot.
+
+                    sudo systemctl is-active  <service_name>	    Checks if the service is active.
+                    sudo systemctl is-enabled <service_name>	    Checks if the service is enabled.
+                    
+                    sudo systemctl list-units --type=service	    Lists all loaded services.
+                    systemctl list-dependencies <service_name>      List all dependencies of a service
+
+                    sudo systemctl status  <service_name>	        Displays the running status of the service.
+                    sudo journalctl -u <service_name>               Use journalctl with systemd to view logs for a specific service
+                    systemctl --failed                              List failed services                              
+
+    B.service (SysVinit/Upstart-based systems)
+                - This tool is commonly used for older Linux distributions,
+                but is compatible with systemd for backward compatibility.
+
+                    sudo service <service_name> start	            Starts the service.
+                    sudo service <service_name> stop	            Stops the service.
+                    sudo service <service_name> restart	            Restarts the service.
+                    sudo service <service_name> reload	            Reloads the configuration without stopping.
+                    sudo service <service_name> status	            Displays the service status.
+                    sudo service --status-all	                    Lists all services and their statuses.
+
+
+    Examples of Common Services
+
+                Service Name        	     Purpose
+
+                    apache2	           Apache HTTP server
+                    nginx	           Nginx web server
+                    mysql	           MySQL database server
+                    docker	           Docker container runtime.
+
+                    ssh	               Secure Shell (SSH) server
+                    cron	           Cron job scheduler
+                    networking	       Network configuration
+                    ufw	               Uncomplicated Firewall
+                    cups	           Print service
+
+
+
+

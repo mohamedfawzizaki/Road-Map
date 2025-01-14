@@ -1,0 +1,92 @@
+#_________________________________________________________________________________________________________________________________________________________________________# 
+                                                    Remote Access Management 
+                                                    ========================
+#_________________________________________________________________________________________________________________________________________________________________________# 
+
+
+ Management:
+
+    # Concepts:    
+
+        1.openssh-client:
+                        - It is a command-line tool for SSH-based remote access and file management.
+                        - It is a package that allows users to connect securely to remote machines using SSH.
+        2.openssh-server:
+                        - It is a package that enables a machine to act as an SSH server, accepting secure connections from SSH clients.
+                        - It is a service that allows remote access to a system using SSH.
+        3.ssh:
+                        - ssh user@remote-host                /   ssh user@remote-host [command]        
+                        - It is a command-line tool for secure remote access to a system.
+                        - It is used to connect to a remote system using SSH.
+                        - It is used to execute commands on a remote system.
+                        - It uses a cryptographic network protocol "SSH" for secure communication, remote login, and command execution.
+        4.scp:
+                        - scp file.txt user@remote-host:/path/to/destination
+                        - It is a command-line tool for securely copying files to and from a remote system.
+                        - It is used to copy files to and from a remote system using SSH.
+        5.sftp:
+                        - sftp user@remote-host
+                        - It is a command-line tool for securely transferring files to and from a remote system.
+                        - It is used to transfer files to and from a remote system using SSH.
+        6.rsync:
+                        - rsync -avz source/ destination/
+                        - It is a command-line tool for synchronizing files and directories between two systems.
+                        - It is used to synchronize files and directories between two systems using SSH.
+        7.ssh-keygen:
+                        - ssh-keygen -t rsa -b 4096
+                        - It is a command-line tool for generating public and private SSH keys.
+                        - It is used to generate public and private SSH keys for secure authentication.
+        8.ssh-agent:
+                        - ssh-agent:
+                        - It is a command-line tool for securely storing and managing SSH keys.
+                        - It is used to securely store and manage SSH keys for authentication.
+        9.ssh-add:
+                        - ssh-add
+                        - It is a command-line tool for adding SSH keys to the SSH agent.
+                        - It is used to add SSH keys to the SSH agent for authentication.
+        10.ssh-copy-id:
+                        - ssh-copy-id user@remote-host
+                        - It is a command-line tool for securely copying the local host's SSH keys to the remote.
+                        - It is used to securely copy the local host's SSH keys to the remote host for authentication.
+        
+        11.'~/.ssh' directory:
+                        - It is a directory that stores SSH-related files and configuration.
+                        - It is used to store SSH keys, configuration files, and other SSH-related files.
+                        - It is typically located in the user's home directory.
+                        - A hidden folder in a user's home directory used to store SSH-related files, such as keys and configuration.
+                        - Contents:
+                                   A.On the Client:
+                                                                                
+                                                1.Public Key "id_rsa.pub":
+                                                                - It is a file that contains the public key used for SSH authentication.
+                                                                - It is used to authenticate the user on the remote system.
+                                                                - It is typically located in the "~/.ssh" directory on the client side.
+                                                2.Private Key "id_rsa":
+                                                                - It is a file that contains the private key used for SSH authentication.
+                                                                - It is used to authenticate the user on the remote system.
+                                                                - It is typically located in the "~/.ssh" directory on the client side.
+                                                3.'known_hosts' file:
+                                                                - It is a file that stores the public keys of the remote systems that the user has connected to using SSH.
+                                                                - It is used to verify the identity of the remote system.
+                                                                - It is typically located in the "~/.ssh" directory on the client side.
+                                                4.'config' file:
+                                                                - It is a file for client-side that stores the SSH configuration settings.
+                                                                - It is used to customize the SSH connection settings.
+                                                                - It is typically located in the "~/.ssh" directory on the client side.       
+ 
+                                   B.On the Server:
+
+                                                1.'authorized_keys:
+                                                                - A file on the server containing public keys of clients allowed to connect.
+                                                                - It is a file that stores the public keys of the users who are allowed to connect to the remote system using SSH.
+                                                                - It is used to authenticate the users on the remote system.
+                                                                - It is typically located in the "~/.ssh" directory on the server side.
+                                                2.'sshd_config':
+                                                                - A file on the server containing SSH server configuration settings.
+                                                                - It is a file that stores the SSH server configuration settings.
+                                                                - It is used to customize the SSH server settings.
+                                                                - It is typically located in the "/etc/ssh" directory on the server side.
+
+
+
+

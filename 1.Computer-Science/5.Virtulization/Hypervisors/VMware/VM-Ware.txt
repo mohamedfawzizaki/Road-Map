@@ -21,14 +21,15 @@ VMware provides various products for server virtualization, desktop virtualizati
    - A desktop virtualization application designed for macOS users.  
    - Enables running Windows, Linux, and other operating systems on a Mac without rebooting.
 
-3. **VMware ESXi (vSphere Hypervisor)**  
-   - A bare-metal hypervisor (Type 1 hypervisor) that runs directly on the server hardware.  
-   - Provides high performance, scalability, and reliability for enterprise data centers.  
-   - Part of the **VMware vSphere** suite, which includes tools for managing virtualized environments.
 
 4. **VMware vSphere**  
    - A suite of products for creating and managing virtualized infrastructures.  
    - Includes **ESXi**, **vCenter Server**, and additional tools for backup, recovery, and automation.
+
+3. **VMware ESXi (vSphere Hypervisor)**  
+   - A bare-metal hypervisor (Type 1 hypervisor) that runs directly on the server hardware.  
+   - Provides high performance, scalability, and reliability for enterprise data centers.  
+   - Part of the **VMware vSphere** suite, which includes tools for managing virtualized environments.
 
 5. **VMware vCenter Server**  
    - A centralized management platform for VMware environments.  
