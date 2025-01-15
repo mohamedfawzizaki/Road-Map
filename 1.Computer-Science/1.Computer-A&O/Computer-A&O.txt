@@ -1,16 +1,16 @@
 _________________________________________________________________________________________________________________________________
                                             Computer Architecture & Organization
                                 ===========================================================
-# Definition:
+ Definition:
       -> Computer architecture is the design and organization of a computer's components and systems
-         to create a functioning device capable of performing computations and tasks. 
+         to create a functioning device capable of performing computations and tasks.
       -> It focuses on how the hardware and software interact and includes considerations of performance, 
          efficiency, scalability, and power consumption.
 --------------------------------------------------------------------------------------------------------------
 Key Components of Computer Architecture:
         1.Central Processing Unit (CPU):
         2.Memory.
-        3.Buffers.       
+        3.Buffers.      
         4.Input/Output Devices.
         5.Storage.
         6.Bus Systems.
@@ -57,10 +57,10 @@ Execution Lifecycle:
             Examples:
                     - x86  (used in Intel and AMD processors).
                     - ARM  (used in smartphones and tablets).
-                    - MIPS (used in academic settings).    
+                    - MIPS (used in academic settings).   
 _________________________________________________________________________________________________________________________________
 Concepts:
-    1.Single-Core vs. Multi-Core
+    1.Single-Core vs.Multi-Core
         Single-Core:
                 A CPU with only one processing unit (core).
                 Can execute one instruction at a time.
@@ -75,7 +75,7 @@ Concepts:
                 Single-core has one execution unit, 
                 while multi-core has multiple execution units within a single processor.
     --------------------------------------------------------------------------------------------------------------    
-    2.Single-Processor vs. Multi-Processors
+    2.Single-Processor vs.Multi-Processors
         Single-Processor:
                 A system with only one physical CPU.
                 Handles tasks sequentially unless it has multiple cores.
@@ -87,7 +87,7 @@ Concepts:
                 Single-processor systems use one CPU, 
                 whereas multi-processor systems have multiple CPUs.
     --------------------------------------------------------------------------------------------------------------
-    3.Single-Threading vs. Multi-Threading
+    3.Single-Threading vs.Multi-Threading
         Single-Threading:
                 Executes one thread (sequence of instructions) per core at a time.
                 Simpler but can underutilize CPU resources.
@@ -99,7 +99,7 @@ Concepts:
                 Single-threading handles one thread per core, 
                 while multi-threading allows multiple threads per core.
     --------------------------------------------------------------------------------------------------------------
-    4.Synchronous vs. Asynchronous
+    4.Synchronous vs.Asynchronous
         Synchronous:
                 Tasks are executed one at a time in a sequential order.
                 The next task waits until the current task is complete.
@@ -112,7 +112,7 @@ Concepts:
                 Synchronous operations are sequential, 
                 while asynchronous operations can overlap.
     -------------------------------------------------------------------------------------------------------------- 
-    5.Parallelism vs. Concurrency vs. Pipelining
+    5.Parallelism vs.Concurrency vs.Pipelining
         Parallelism:
                 Execution of multiple tasks simultaneously, often on multiple cores or processors.
         Concurrency:
@@ -216,7 +216,7 @@ Types:
     Tertiary Storage:
             Used for archiving and backup.
             Examples: Tape drives, cloud storage.
-    Volatile vs. Non-Volatile:
+    Volatile vs.Non-Volatile:
             Volatile    : Loses data when power is off (e.g., RAM).
             Non-Volatile: Retains data (e.g., SSD, HDD).
 
@@ -243,3 +243,64 @@ Bus Architecture:
             Separate buses for specific tasks; reduces contention.
 
 _________________________________________________________________________________________________________________________________
+
+
+A 64-bit system refers to a computing architecture that uses 64 bits to represent data and addresses, which impacts various aspects of computing, such as memory usage, performance, and compatibility.The term "64-bit" is commonly used to describe both the processor architecture (CPU) and the operating system (OS), and they are interconnected.
+
+ Key Features of a 64-Bit System:
+
+1.Larger Addressable Memory:
+   - A 64-bit system can theoretically address up to 18.4 million TB of RAM (16 exabytes), though practically, most systems are far below this limit.This is a significant improvement over 32-bit systems, which can only address up to 4 GB of RAM.
+   - The ability to use more than 4 GB of RAM allows for better performance, particularly in memory-intensive applications (e.g., databases, video editing, and gaming).
+
+2.Enhanced Performance:
+   - 64-bit CPUs can process 64 bits of data in a single clock cycle, which improves computational efficiency, especially for tasks involving large datasets or complex calculations.
+   - 64-bit instructions enable better optimization, which is why 64-bit processors typically outperform 32-bit processors in terms of speed for certain types of workloads (e.g., heavy multitasking, high-performance computing).
+
+3.Improved Security:
+   - 64-bit operating systems often come with additional security features, such as Kernel Patch Protection (KPP), Data Execution Prevention (DEP), and Address Space Layout Randomization (ASLR), which are harder to implement on 32-bit systems.
+   - These security features help protect against malware, making 64-bit systems more secure than their 32-bit counterparts.
+
+4.Compatibility with 32-Bit Applications:
+   - 64-bit operating systems typically support 32-bit applications through compatibility layers (e.g., WoW64 in Windows, multiarch in Linux).However, 32-bit systems cannot run 64-bit applications because of the limitations of the architecture.
+   - Some software may still be compiled for 32-bit systems, but running such applications on a 64-bit system is more efficient, and most modern software is compiled for 64-bit.
+
+5.Instruction Set:
+   - A 64-bit CPU uses a 64-bit instruction set, which means it can handle larger data types directly in the hardware.This is especially useful for scientific computing, video editing, and other resource-intensive tasks.
+   - For example, a 64-bit register can store larger integer values than a 32-bit register, making certain calculations faster and more efficient.
+
+6.Operating System:
+   - A 64-bit operating system is designed to run on 64-bit processors and take advantage of the full capabilities of 64-bit hardware.
+   - Examples of popular 64-bit operating systems include:
+     - Windows 10/11 (64-bit)
+     - macOS (64-bit)
+     - Linux distributions (Ubuntu, Fedora, etc.in 64-bit versions)
+
+ Advantages of 64-Bit Systems:
+
+- Higher Memory Capacity: A 64-bit system can use much more RAM than a 32-bit system, allowing for better multitasking and the ability to run memory-heavy applications like video editing software, databases, or large-scale simulations.
+- Performance Boost: 64-bit processors handle more data per clock cycle, improving performance in tasks like video rendering, 3D modeling, and scientific computations.
+- Enhanced Security: Many modern 64-bit systems implement stronger security features, which help prevent certain types of exploits, malware, and hacking attempts.
+- Better Software Support: As more software moves to 64-bit, using a 64-bit OS ensures better compatibility and performance with the latest applications, drivers, and hardware.
+
+ Disadvantages of 64-Bit Systems:
+
+- Compatibility Issues: Some older 32-bit software or hardware may not work with 64-bit systems without additional compatibility layers or emulation.
+- Higher Resource Usage: A 64-bit OS and applications can use more memory than their 32-bit counterparts, although the difference is usually negligible unless you are working with massive data sets or very high-performance needs.
+- Increased Development Complexity: Software developers must manage both 32-bit and 64-bit versions of their programs, which can increase development time and complexity.
+
+ 64-Bit CPUs and Their Architecture:
+
+1.AMD64 / x86-64:
+   - The architecture commonly used by both AMD and Intel processors is AMD64 (also called x86-64).It is a 64-bit extension to the 32-bit x86 architecture that allows for more efficient handling of data and larger memory addressing.
+
+2.ARM64 (AArch64):
+   - ARM processors, commonly used in smartphones, tablets, and some servers, also use a 64-bit architecture known as ARM64 or AArch64.
+   - Many modern mobile devices and embedded systems are based on ARM64 architecture.
+
+ Transitioning from 32-bit to 64-bit:
+
+- Software: When upgrading to a 64-bit system, you may need to install 64-bit versions of your applications.Some 64-bit operating systems can run 32-bit applications using compatibility modes, but performance is optimized when using 64-bit versions of both the OS and applications.
+- Hardware: You also need to have 64-bit compatible hardware.Most modern processors (both AMD and Intel) are 64-bit, but some older processors only support 32-bit.
+
+ 

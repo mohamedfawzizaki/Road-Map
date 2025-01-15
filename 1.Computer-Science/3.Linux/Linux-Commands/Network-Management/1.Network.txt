@@ -20,9 +20,9 @@
                 sudo tcpdump -i eth0
                 route                       – Show or manipulate the IP routing table.
                 
-                curl                        – Transfer data from or to a server (supports many protocols).
-                wget                        – Download files from the web.
-                dpkg                        - Install  downloaded files.
+               curl                        – Transfer data from or to a server (supports many protocols).
+                wget                        – Do wnload files from the web.
+                
 
               
                 

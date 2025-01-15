@@ -1,60 +1,50 @@
 #_________________________________________________________________________________________________________________________________________________________________________# 
-                                                     Services Management 
-                                                     ===================
+                                                 Services Management 
+                                                 ===================
+ 
+                                                    sudo systemctl
+                                                    ===============
+ _____________________________________________________________________________________________________________________________________________________________
+|          Command                          |                 Example                    |             Description                                            |
+|___________________________________________|____________________________________________|____________________________________________________________________|
+| sudo systemctl start      <service>       | sudo systemctl start      apache2          | Starts the specified service.                                      |
+| sudo systemctl restart    <service>       | sudo systemctl restart    apache2          | Restarts the specified service.                                    |
+| sudo systemctl stop       <service>       | sudo systemctl stop       apache2          | Stops the specified service.                                       |
+| sudo systemctl reload     <service>       | sudo systemctl reload     apache2          | Reloads the configuration files for a running service.             |
+|-------------------------------------------|--------------------------------------------|--------------------------------------------------------------------|
+| sudo systemctl status     <service>       | sudo systemctl status     apache2          | Displays the current status of the specified service.              |
+| sudo systemctl show       <service>       | sudo systemctl show       apache2          | Displays detailed information about the service.                   |
+|-------------------------------------------|--------------------------------------------|--------------------------------------------------------------------|
+| sudo systemctl enable     <service>       | sudo systemctl enable     apache2          | Enables the service to start on boot.                              |
+| sudo systemctl disable    <service>       | sudo systemctl disable    apache2          | Disables the service from starting on boot.                        |
+| sudo systemctl is-enabled <service>       | sudo systemctl is-enabled apache2          | Checks if the service is enabled to start on boot.                 |
+| sudo systemctl is-active  <service>       | sudo systemctl is-active  apache2          | Checks if the service is active.                                   |
+|-------------------------------------------|--------------------------------------------|--------------------------------------------------------------------|
+| sudo systemctl mask       <service>       | sudo systemctl mask       apache2          | Disables a service completely by preventing it from being started. |
+| sudo systemctl unmask     <service>       | sudo systemctl unmask     apache2          | Reverses the effect of mask, allowing the service to start.        |
+|-------------------------------------------|--------------------------------------------|--------------------------------------------------------------------|
+| sudo systemctl --failed                   | sudo systemctl --failed                    | List failed services                                               |
+| sudo systemctl list-units --type=service  | sudo systemctl list-units --type=service   | Lists all active services.                                         |
+|___________________________________________|____________________________________________|____________________________________________________________________|
+
+
+
+
 #_________________________________________________________________________________________________________________________________________________________________________# 
+                                                     sudo service
+                                                    =============== 
 
+ ___________________________________________________________________________________________________________________________________________________
+|            Command                   |              Example                  |             Description                                            |
+|______________________________________|_______________________________________|____________________________________________________________________|
+| sudo service <service> start         | sudo service  apache2  start          | Starts the specified service.                                      |
+| sudo service <service> stop          | sudo service  apache2  stop           | Stops the specified service.                                       |
+|--------------------------------------|---------------------------------------|--------------------------------------------------------------------|
+| sudo service <service> restart       | sudo service  apache2  restart        | Restarts the specified service.                                    |
+| sudo service <service> reload        | sudo service  apache2  restart        | Reloads the configuration without stopping.                        |
+|--------------------------------------|---------------------------------------|--------------------------------------------------------------------|
+| sudo service <service> status        | sudo service  apache2  status         | Displays the current status of the specified service.              |
+|______________________________________|_______________________________________|____________________________________________________________________|
 
-13. Management:
-
-
-    A.systemctl (systemd-based systems)
-                - Systemctl is the command-line tool used to interact with systemd, 
-                the default service manager in most modern Linux distributions like Ubuntu, Fedora, and CentOS.
-
-                    sudo systemctl start   <service_name>	        Starts the specified service.
-                    sudo systemctl stop    <service_name>	        Stops the specified service.
-                    sudo systemctl restart <service_name>	        Restarts the service (stop and then start).
-                    sudo systemctl reload  <service_name>	        Reloads the configuration without stopping the service.
-                    sudo systemctl enable  <service_name>	        Enables the service to start on boot.
-                    sudo systemctl disable <service_name>	        Disables the service from starting on boot.
-
-                    sudo systemctl is-active  <service_name>	    Checks if the service is active.
-                    sudo systemctl is-enabled <service_name>	    Checks if the service is enabled.
-                    
-                    sudo systemctl list-units --type=service	    Lists all loaded services.
-                    systemctl list-dependencies <service_name>      List all dependencies of a service
-
-                    sudo systemctl status  <service_name>	        Displays the running status of the service.
-                    sudo journalctl -u <service_name>               Use journalctl with systemd to view logs for a specific service
-                    systemctl --failed                              List failed services                              
-
-    B.service (SysVinit/Upstart-based systems)
-                - This tool is commonly used for older Linux distributions,
-                but is compatible with systemd for backward compatibility.
-
-                    sudo service <service_name> start	            Starts the service.
-                    sudo service <service_name> stop	            Stops the service.
-                    sudo service <service_name> restart	            Restarts the service.
-                    sudo service <service_name> reload	            Reloads the configuration without stopping.
-                    sudo service <service_name> status	            Displays the service status.
-                    sudo service --status-all	                    Lists all services and their statuses.
-
-
-    Examples of Common Services
-
-                Service Name        	     Purpose
-
-                    apache2	           Apache HTTP server
-                    nginx	           Nginx web server
-                    mysql	           MySQL database server
-                    docker	           Docker container runtime.
-
-                    ssh	               Secure Shell (SSH) server
-                    cron	           Cron job scheduler
-                    networking	       Network configuration
-                    ufw	               Uncomplicated Firewall
-                    cups	           Print service
-
-
-
-
+ 
+#_________________________________________________________________________________________________________________________________________________________________________# 
