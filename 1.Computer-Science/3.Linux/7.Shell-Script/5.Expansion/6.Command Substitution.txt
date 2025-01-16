@@ -1,0 +1,72 @@
+______________________________________________________________________________________________________________________________________
+                                                   Command Substitution
+                                                       $(command) 
+                                                   ====================
+Command substitution in Linux allows you to capture the output of a command and use it as input for another command.
+This feature is commonly used in shell scripting to
+ assign command output to variables or to dynamically generate parts of a command.
+---------------------------------------------------------------------------------------------------------
+
+   ```bash
+   result=$(command)
+   ```
+
+---------------------------------------------------------------------------------------------------------
+   ```bash
+   current_date=$(date)
+   echo "Today's date is: $current_date"
+   ```
+---------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+Using Command Substitution in Commands
+
+Command substitution can be used as part of other commands.For example:
+
+   ```bash
+   echo "There are $(ls | wc -l) files in the current directory."
+   ```
+
+---------------------------------------------------------------------------------------------------------
+Nesting Command Substitution
+
+   ```bash
+   result=$(echo "The current user is $(whoami) and the date is $(date)")
+   echo "$result"
+   ```
+---------------------------------------------------------------------------------------------------------
+Using Command Substitution in Loops
+
+   ```bash
+   for file in $(ls .txt); do
+      echo "Processing $file"
+   done
+   ```
+---------------------------------------------------------------------------------------------------------
+Capturing Multiline Output
+
+   ```bash
+   files=$(ls)
+   echo "List of files:"
+   echo "$files"
+   ```
+---------------------------------------------------------------------------------------------------------
+Common Use Cases
+
+1.Getting the number of running processes:
+      ```bash
+      process_count=$(ps -e | wc -l)
+      echo "There are $process_count processes running."
+      ```
+
+2.Checking disk usage:
+      ```bash
+      disk_usage=$(df -h / | awk 'NR==2 {print $5}')
+      echo "Disk usage: $disk_usage"
+      ```
+
+3.Reading a file and using its content:
+      ```bash
+      first_line=$(head -n 1 myfile.txt)
+      echo "First line of the file: $first_line"
+      ```
+______________________________________________________________________________________________________________________________________

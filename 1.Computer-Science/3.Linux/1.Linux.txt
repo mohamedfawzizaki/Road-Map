@@ -6,7 +6,7 @@ ________________________________________________________________________________
                                                      ============= 
 ______________________________________________________________________________________________________________________________________
                                                 Distributions - Derivatives
-                                                =============================
+                                              ===============================
 
 A Linux distribution (distro) is a complete operating system built around the Linux kernel.
 It includes the kernel, system libraries, utilities, software, a package manager, and a user interface.
