@@ -39,47 +39,41 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________________
                                                         Example Scenario: Connecting Containers
 
- Step 1: Run two containers on different networks
-bash
-docker container run -d --name my-db-server -p 8000:80 nginx:latest
-docker container run -d --name my-app-server -p 8080:80 nginx:latest
+Step 1: Run two containers on different networks
+        bash
+        docker container run -d --name my-db-server -p 8000:80 nginx:latest
+        docker container run -d --name my-app-server -p 8080:80 nginx:latest
+
+Step 2: Disconnect the containers from the default bridge network
+        bash
+        docker network disconnect bridge my-db-server
+
+Step 3: Connect the containers to a custom network
+        bash
+        docker network connect my-internal-network my-db-server
+        docker network connect my-internal-network my-app-server
 
 
- Step 2: Disconnect the containers from the default bridge network
-bash
-docker network disconnect bridge my-db-server
-
-
- Step 3: Connect the containers to a custom network
-bash
-docker network connect my-internal-network my-db-server
-docker network connect my-internal-network my-app-server
-
-
-This setup ensures both containers are isolated from the default bridge network and can communicate through the my-internal-network.
+This setup ensures both containers are isolated from the default
+ bridge network and can communicate through the my-internal-network.
 
 Create:
-            docker network create my_custom_network
-            docker network create --driver bridge my_bridge_network
-            docker network create --driver host   my_bridge_network
-            docker network create --driver none   my_bridge_network
-            docker network create --subnet=192.168.1.0/24 my_subnet_network
-            docker network create --internal      my_internal_network          
-                     : the containers only connected to this network can communicate 
-                       with each other but cannot communicate with the outside and the outside cannot communicate to them.
-                       this useful in testing and Database.
-                       """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
-                       docker container run -d --name my-db-server -p 8000:80 nginx:latest
-                       docker container run -d --name my-app-server -p 8080:80 nginx:latest
-                       docker network disconnect bridge my-db-server
-                       docker network connect my-internal-network my-db-server
-                       docker network connect my-internal-network my-app-server         
-________________________________________________________________________________________________________________________________________________________________
+        docker network create my_custom_network
+        docker network create --driver bridge my_bridge_network
+        docker network create --driver host   my_bridge_network
+        docker network create --driver none   my_bridge_network
+        docker network create --subnet=192.168.1.0/24 my_subnet_network
+        docker network create --internal      my_internal_network   
 
+the containers only connected to this network can communicate 
+ with each other but cannot communicate with the outside and the outside cannot communicate to them.
+ this useful in testing and Database.
 
-
-      
-
+        docker container run -d --name my-db-server -p 8000:80 nginx:latest
+        docker container run -d --name my-app-server -p 8080:80 nginx:latest
+        docker network disconnect bridge my-db-server
+        docker network connect my-internal-network my-db-server
+        docker network connect my-internal-network my-app-server         
 
 ________________________________________________________________________________________________________________________________________________________________
                                                                         Network
@@ -165,28 +159,5 @@ Notes:
     - Containers in different host machines can't see each other by their names.
     - Containers in different host machines can see each other by 
       their IP address if they are in the same network, and they are in the same network if they are in the same Docker network.
-
-    
-
-
-
-
-    
-
-
-
-
-
-- Docker uses a virtual network to connect containers together.
-- You can create a network using the docker network create command.
-- You can connect a container to a network using the docker run command with the --net option.
-- You can list all networks using the docker network ls command.
-
-
-
-
-
-
-
-
+ 
 _______________________________________________________________________________________________________________________________________

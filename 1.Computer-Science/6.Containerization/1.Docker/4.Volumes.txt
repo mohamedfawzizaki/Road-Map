@@ -26,6 +26,22 @@ ________________________________________________________________________________
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     ------------------------------------------------------------------------------------------------------------------------------
     Volumes in Docker are a mechanism for persisting data generated and used by Docker containers. 
     Unlike bind mounts or temporary container filesystems, volumes are managed directly by Docker and stored in Docker's filesystem. 
