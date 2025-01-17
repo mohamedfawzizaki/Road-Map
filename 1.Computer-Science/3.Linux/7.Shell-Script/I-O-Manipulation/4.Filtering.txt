@@ -7,13 +7,13 @@ Commonly Used Filtering Commands
 
 1.`grep` (Global Regular Expression Print)
 
-        ```bash
+        ``````````````````````````````````````````bash
         command | grep "pattern"
-        ```
+        ``````````````````````````````````````````
    
-        ```bash
+        ``````````````````````````````````````````bash
         cat file.txt | grep "error"
-        ```
+        ``````````````````````````````````````````
 
    - Common options:
         - `-i`: Ignore case.
@@ -23,13 +23,13 @@ Commonly Used Filtering Commands
 
 2.`awk` (Pattern Scanning and Processing Language)
 
-        ```bash
+        ``````````````````````````````````````````bash
         command | awk '{print $1, $2}'
-        ```
+        ``````````````````````````````````````````
    
-        ```bash
+        ``````````````````````````````````````````bash
         cat file.txt | awk '{print $1}'
-        ```
+        ``````````````````````````````````````````
 
    - Common usage:
         - `awk '{print $1, $2}'`: Prints the first and second columns of each line.
@@ -37,17 +37,17 @@ Commonly Used Filtering Commands
       
 3.`sed` (Stream Editor)
 
-        ```bash
+        ``````````````````````````````````````````bash
         command | sed 's/old/new/g'
-        ```
+        ``````````````````````````````````````````
 
-        ```bash
+        ``````````````````````````````````````````bash
         echo "Hello World" | sed 's/World/Linux/'
-        ```
+        ``````````````````````````````````````````
         This will replace the word "World" with "Linux", outputting:
-        ```
+        ``````````````````````````````````````````
         Hello Linux
-        ```
+        ``````````````````````````````````````````
 
    - Common usage:
         - `sed 's/old/new/g'`: Replaces all occurrences of "old" with "new".
@@ -56,13 +56,13 @@ Commonly Used Filtering Commands
 
 4.`sort` 
 
-        ```bash
+        ``````````````````````````````````````````bash
         command | sort
-        ```
+        ``````````````````````````````````````````
 
-        ```bash
+        ``````````````````````````````````````````bash
         cat file.txt | sort
-        ```
+        ``````````````````````````````````````````
         This sorts the lines in `file.txt` alphabetically.
 
    - Common options:
@@ -73,13 +73,13 @@ Commonly Used Filtering Commands
 
 5.`uniq` (Unique)
 
-        ```bash
+        ``````````````````````````````````````````bash
         command | uniq
-        ```
+        ``````````````````````````````````````````
 
-        ```bash
+        ``````````````````````````````````````````bash
         cat file.txt | sort | uniq
-        ```
+        ``````````````````````````````````````````
         This command first sorts the content of `file.txt` and then filters out duplicate lines.
 
    - Common options:
@@ -89,56 +89,56 @@ Commonly Used Filtering Commands
 
 6.`head` and `tail`
 
-        ```bash
+        ``````````````````````````````````````````bash
         command | head
         command | tail
-        ```
+        ``````````````````````````````````````````
 
-        ```bash
+        ``````````````````````````````````````````bash
         cat file.txt | head -n 10
-        ```
+        ``````````````````````````````````````````
         
-        ```bash
+        ``````````````````````````````````````````bash
         cat file.txt | tail -n 10
-        ```
+        ``````````````````````````````````````````
 
 7.`cut`
 
-        ```bash
+        ``````````````````````````````````````````bash
         command | cut -d "delimiter" -f field_number
-        ```
+        ``````````````````````````````````````````
 
-        ```bash
+        ``````````````````````````````````````````bash
         cat file.csv | cut -d "," -f 2
-        ```
+        ``````````````````````````````````````````
 
 8.`tr` (Translate or Delete Characters)
 
-        ```bash
+        ``````````````````````````````````````````bash
         command | tr 'set1' 'set2'
-        ```
+        ``````````````````````````````````````````
 
-        ```bash
+        ``````````````````````````````````````````bash
         echo "hello world" | tr 'a-z' 'A-Z'
-        ```
-        ```
+        ``````````````````````````````````````````
+        ``````````````````````````````````````````
         HELLO WORLD
-        ```
+        ``````````````````````````````````````````
 
 9.`find` (File Finder with Filtering)
 
-        ```bash
+        ``````````````````````````````````````````bash
         find /path/to/directory -name "filename"
-        ```
+        ``````````````````````````````````````````
 
-        ```bash
+        ``````````````````````````````````````````bash
         find /home/user -name ".txt"
-        ```
+        ``````````````````````````````````````````
 
 ---------------------------------------------------------------------------------------------------------
 Combining Filters
 
-      ```bash
+      ``````````````````````````````````````````bash
       cat file.txt | grep "error" | sort | uniq
-      ```
+      ``````````````````````````````````````````
 ______________________________________________________________________________________________________________________________________

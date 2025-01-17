@@ -1,48 +1,39 @@
-________________________________________________________________________________________________________________________________________________________________
-Image Management:
-    (Write "docker image" to list all image commands)
+________________________________________________________________________________________________________________________________________________________________________________
+                                                        Image Management:
+                                         (Write "docker image" to list all image commands)
 
-    docker search <ImageNameOrID>
-    docker image ls                   : Lists all images.
-    docker image ls -q                : Lists all images' IDs.
-    docker image inspect <ImageNameOrID>
-    ---------------------------------------------------------------------------------------------------------------
-    # Builds an image from docker init in your root directory of your project:
-    docker init                          
+ ________________________________________________________________________________________________________________________________________________________________________
+|                                   Command                                                     |                                     Description                        |
+|_______________________________________________________________________________________________|________________________________________________________________________|
+| docker search <ImageNameOrID>                                                                 | Searches for images in Docker Hub.                                     |
+| docker image ls                                                                               | Lists all images.                                                      |
+| docker image ls -q                                                                            | Lists all images' IDs.                                                 |
+| docker image inspect <ImageNameOrID>                                                          | Displays detailed information about an image.                          |
+|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| docker init                                                                                   | Builds an image from docker init in the root directory of your project.|
+| docker image build -t <name>:<tag> .                                                          | Builds an image from a Dockerfile.                                     |
+| docker image build -t myapp:v1 -f MyDockerfile .                                              | Builds an image using a specific Dockerfile.                           |
+| docker image build -t myapp:v1 --no-cache .                                                   | Builds an image without using cache.                                   |
+| docker container commit <container_id_or_name> <new_image_name>:<tag>                         | Creates an image from a running container.                             |
+| docker container commit abcd1234 myapp:v1                                                     | Example of committing a container to an image.                         |
+| docker commit -m "Added necessary configurations" -a "Your Name" <container_id_or_name> <tag> | Adds metadata and author info while committing a container to an image.|
+| docker commit -m "Updated app dependencies" -a "Mohamed Fawzi Zaki" abcd1234 myapp:updated    | Example of a commit with metadata.                                     |
+|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| docker image tag <Image-nameOrRepo-name:ImageTag> <username>/<Image-nameOrRepo-name:ImageTag> | Tags an image to prepare it for pushing to a registry.                 |
+| docker tag myapp:latest mohamedfawzizaki/myapp:latest                                         | Example of tagging an image.                                           |
+| docker image push <username>/<Image-nameOrRepo-name:ImageTag>                                 | Uploads an image to a registry.                                        |
+| docker image push mohamedfawzizaki/myapp:latest                                               | Example of pushing an image to Docker Hub.                             |
+| docker image pull <image>                                                                     | Pulls an official image from Docker Hub.                               |
+| docker image pull nginx:latest                                                                | Example of pulling an official image.                                  |
+| docker image pull <username>/<Image-nameOrRepo-name:ImageTag>                                 | Pulls a non-official image from Docker Hub.                            |
+| docker image pull mohamedfawzizaki/myapp:latest                                               | Example of pulling a non-official image.                               |
+| docker image rmi <image_id> -f                                                                | Removes a specific image.                                              |
+| docker image rm $(docker image ls -q) -f                                                      | Removes all images.                                                    |
+| docker image prune                                                                            | Removes unused images to free up space.                                |
+|_______________________________________________________________________________________________|________________________________________________________________________|
 
-    ---------------------------------------------------------------------------------------------------------------
-    # Builds an image from a Dockerfile.
-    
-    docker image build -t <name>:<tag> .
-    docker image build -t myapp:v1 -f MyDockerfile .
-    docker image build -t myapp:v1 --no-cache .
-    ---------------------------------------------------------------------------------------------------------------
-    # Building an image from a running container:
 
-    docker container commit <container_id_or_name> <new_image_name>:<tag>
-    docker container commit abcd1234 myapp:v1
-    
-    docker commit -m "Added necessary configurations" -a "Your Name" <container_id_or_name> <new_image_name>:<tag>
-    docker commit -m "Updated app dependencies" -a "Mohamed Fawzi Zaki" abcd1234 myapp:updated
-    ---------------------------------------------------------------------------------------------------------------
 
-    # you should tag the image like this to be able to push it:
-    
-    docker image tag <Image-nameOrRebo-name:ImageTag> <username>/<Image-nameOrRebo-name:ImageTag> 
-    docker tag myapp:latest mohamedfawzizaki/myapp:latest
-    ---------------------------------------------------------------------------------------------------------------
 
-    docker image push <username>/<Image-nameOrRebo-name:ImageTag>         : Upload an image to a registry
-    docker image push mohamedfawzizaki/myapp:latest
-    ---------------------------------------------------------------------------------------------------------------
-    # Pull an image from the Docker-Hub registry to your local registry:
-    docker image pull <image>                                             : Pull an official image from Docker Hub.
-    docker image pull nginx:latest
 
-    docker image pull <username>/<Image-nameOrRebo-name:ImageTag>         : Pull a  non official image from Docker Hub.
-    docker image pull mohamedfawzizaki/myapp:latest
-
-    docker image rmi <image_id> -f               : Remove an image.
-    docker image rm $(docker image ls -q) -f     : Remove all images.
-    docker image prune                           : Remove unused images.
-________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________________________

@@ -5,7 +5,7 @@ The `/etc/crontab` file is a system-wide cron configuration file used to schedul
 It is different from the user-specific crontab files (accessible via `crontab -e`),
  as it allows scheduling tasks that are run as specific users and can be managed by administrators.
 
--------------------------------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Purpose of `/etc/crontab`
 
 - It allows administrators to schedule cron jobs for any user on the system (not just the user who creates the cron job).
@@ -13,7 +13,7 @@ Purpose of `/etc/crontab`
 - The `/etc/crontab` file is used for tasks that require system-wide
   scheduling or tasks that need to run as specific users other than the cron daemon’s default user.
 
--------------------------------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Format of `/etc/crontab`
 
 The `/etc/crontab` file uses the following structure:
@@ -32,7 +32,7 @@ Where:
 - User: The user to execute the command as (this is unique to `/etc/crontab` and differs from individual crontab files).
 - Command: The command to run (can be a script, a binary, or a complex command).
 
--------------------------------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Detailed Example of `/etc/crontab`
 
 Here is an example of a typical `/etc/crontab` file:
@@ -55,7 +55,7 @@ In this example:
 3. `0 6 * * * root /usr/sbin/rotate_logs`
    - Every day at 6:00 AM (`0 6`), the `root` user will execute the command `/usr/sbin/rotate_logs`.
 
--------------------------------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Special Strings in `/etc/crontab`
 
 There are several special strings that can be used in place of specific time/date values to make scheduling easier. 
@@ -82,7 +82,7 @@ These are equivalent to:
 @reboot root /usr/bin/start_daemon
 ```````````````````````````````````````
 
--------------------------------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Managing `/etc/crontab`
 
 1. Editing `/etc/crontab`
@@ -111,7 +111,7 @@ Managing `/etc/crontab`
      ```````````````````````````````````````
    - This command will display logs related to cron jobs, including those from `/etc/crontab`.
 
--------------------------------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Permissions and Security Considerations
 
 - File Ownership and Permissions:
@@ -126,7 +126,7 @@ Permissions and Security Considerations
   - In some systems, you can control user access to cron jobs using `/etc/cron.allow` and `/etc/cron.deny`.
   -  These files are typically used in conjunction with `/etc/crontab` to manage cron job access.
 
--------------------------------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Summary of Key Points
 - The `/etc/crontab` file is used to schedule system-wide cron jobs for any user.
 - The file specifies the user who will run the cron job.

@@ -1,26 +1,31 @@
 ________________________________________________________________________________________________________________________________________________________________
-Storage/Volumes Management:
-    (Write "docker volume" to list all volume commands):
+                                                                        Storage/Volumes Management
+                                                          (Write "docker volume" to list all volume commands):
     
-    # Listing:
-            docker volume ls
-    # Inspection:
-            docker volume inspect <volume_name>
-    # Creating:        
-            docker volume create [OPTIONS] <volume-name>                          : Without specifying options, Docker creates the volume in its default location.
-            docker volume create --driver <driver-name> <volume-name
+ ____________________________________________________________________________________________________________________________________________________________________________________________________________
+|                               Command                                                      |                                     Description                                                               |
+|____________________________________________________________________________________________|_______________________________________________________________________________________________________________|
+| docker volume ls                                                                           | Lists all volumes available on the Docker host.                                                               |
+| docker volume inspect <volume_name>                                                        | Provides detailed information about a specific volume, such as mount paths and usage by containers.           |
+|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| docker volume create <volume-name>                                                         | Creates a new volume. Without options, Docker stores it in its default location.                              |
+| docker volume create --driver <driver-name> <volume-name>                                  | Creates a volume using a specific volume driver.                                                              |
+|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| docker run -it --volume <volume-name> <image>                                              | Runs a container and attaches an existing volume to it.                                                       |
+| docker run -it --volume <volume-name:myCustomPathIntheVolumeDriver> <image>                | Runs a container and mounts the volume to a custom path inside the container.                                 |
+|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| docker container run -it -v myVolume:/app/myCode --name my-container python:latest         | Attaches a volume (myVolume) to /app/myCode inside the container.                                             |
+| docker container run -it -v myDirectoryinHost:/app/myCode --name my-container python:latest| Uses a bind mount to attach a directory from the host (myDirectoryinHost) to /app/myCode inside the container.|
+|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| docker volume prune                                                                        | Removes all unused volumes.                                                                                   |
+| docker volume rm <volume-name>                                                             | Deletes a specific volume. Make sure no container is using it, or the removal will fail.                      |
+|____________________________________________________________________________________________|_______________________________________________________________________________________________________________|
 
-            
-    # Attaching to a container:
-            docker run -it --volume <volume-name> <image>
-            docker run -it --volume <volume-name:myCustomPathIntheVolumeDriver> <image>
-            
-            docker container run -it -v myVolume:/app/myCode    --name my-container python:latest              : volume
-            docker container run -it -v myDirectoryinHost:/app/myCode --name my-container python:latest        : bind mount
-    # Pruning:
-            docker volume prune
-    # Removing:
-            docker volume rm <volume-name>
+ 
+
+
+
+
     ------------------------------------------------------------------------------------------------------------------------------
     Volumes in Docker are a mechanism for persisting data generated and used by Docker containers. 
     Unlike bind mounts or temporary container filesystems, volumes are managed directly by Docker and stored in Docker's filesystem. 

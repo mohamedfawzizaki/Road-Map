@@ -16,7 +16,7 @@ Apache HTTP Server, one of the most widely used web servers, can also function a
 
 Apache can be used as an API Gateway by leveraging its reverse proxy capabilities, robust configuration, and extensibility through modules.Apache provides many features that make it suitable for handling high volumes of API traffic and securing microservices.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  1.Routing Requests to Microservices
 
@@ -47,7 +47,7 @@ In this configuration:
 
 This allows Apache to act as a central entry point to the microservices.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  2.Load Balancing
 
@@ -76,7 +76,7 @@ In this configuration:
     - `user_service_cluster` is a load balancer that distributes requests to multiple instances of `user_service`.
     - This ensures high availability and scalability by balancing the load across the backend services.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  3.Authentication and Security
 
@@ -123,7 +123,7 @@ Apache can be configured to pass the JWT token from the client in the request he
 In this configuration:
     - The JWT token is added to the `Authorization` header for requests to the `/user` endpoint, which is routed to the backend service.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  4.Caching
 
@@ -148,7 +148,7 @@ In this configuration:
     - Responses for `/user` are cached using Apache's disk cache.
     - Cached data will be served to clients until it expires, reducing backend load and improving performance.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  5.Rate Limiting and Throttling
 
@@ -172,7 +172,7 @@ Example Configuration:
 In this configuration:
     - Rate limiting is applied, restricting each client to 100 requests per minute to the `/user` route.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  6.Monitoring and Logging
 
@@ -197,7 +197,7 @@ In this setup:
     - Logs are written in JSON format, capturing the time, status code, and requested URL.
     - Logs can be analyzed to track API usage, detect errors, and monitor service health.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  7.Fault Tolerance and Circuit Breaking
 
@@ -219,7 +219,7 @@ Example Configuration:
 In this configuration:
     - If `user_service` fails, requests will automatically be routed to `backup_user_service`, ensuring continuous availability.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  Advantages of Using Apache as an API Gateway
 
@@ -238,7 +238,7 @@ In this configuration:
 5.Customizability:
        - Apache’s configuration language is flexible, allowing for complex routing logic, authentication handling, and fine    -grained access control.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  Conclusion
 

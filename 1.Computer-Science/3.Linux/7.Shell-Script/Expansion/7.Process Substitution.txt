@@ -5,30 +5,30 @@ ________________________________________________________________________________
 Process substitution in Linux allows you to treat the output or input of a process as a file.
 This is useful in scenarios where a command expects a file as an argument,
  but you want to provide dynamically generated data from another command.
----------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Syntax of Process Substitution
 
 There are two forms of process substitution:
 
 1.For reading (`<()` syntax):  
    This creates a temporary file-like object that holds the output of a command.
-   ```bash
+   ``````````````````````````````````````````bash
    command <(process)
-   ```
+   ``````````````````````````````````````````
 
 2.For writing (`>() syntax):  
    This creates a temporary file-like object that can be written to by a command.
-   ```bash
+   ``````````````````````````````````````````bash
    command >(process)
-   ```
----------------------------------------------------------------------------------------------------------
+   ``````````````````````````````````````````
+______________________________________________________________________________________________________________________________________
 How Process Substitution Works
 
 - The shell creates a temporary named pipe (FIFO) or file descriptor to handle the data stream.
 - The command inside `()` runs asynchronously,
   and its output or input is connected to the main command via the file descriptor.
 - This allows commands to communicate without using intermediate files.
----------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Examples of Process Substitution
 
  1.Using Process Substitution for Comparing Files
@@ -36,52 +36,52 @@ Examples of Process Substitution
 If you want to compare the output of two commands without
  saving them to temporary files, you can use process substitution:
 
-   ```bash
+   ``````````````````````````````````````````bash
    diff <(ls dir1) <(ls dir2)
-   ```
+   ``````````````````````````````````````````
 
 Here:
    - `ls dir1` lists the contents of `dir1`.
    - `ls dir2` lists the contents of `dir2`.
    - `diff` compares the outputs as if they were files.
----------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 2.Using Process Substitution for Reading Input
 
 You can use process substitution to provide dynamically
  generated input to commands that expect files:
 
-   ```bash
+   ``````````````````````````````````````````bash
    cat <(echo "Hello, World!")
-   ```
+   ``````````````````````````````````````````
 
    This is equivalent to:
-   ```bash
+   ``````````````````````````````````````````bash
    echo "Hello, World!" | cat
-   ```
----------------------------------------------------------------------------------------------------------
+   ``````````````````````````````````````````
+______________________________________________________________________________________________________________________________________
 3.Using Process Substitution for Writing Output
 
 You can also use process substitution to direct a command’s output to another process:
 
-   ```bash
+   ``````````````````````````````````````````bash
    tee >(grep "error" > errors.log) >(grep "warning" > warnings.log)
-   ```
+   ``````````````````````````````````````````
 
 Here:
    - `tee` writes its output to both `grep` processes.
    - One `grep` process filters lines containing "error" and writes them to `errors.log`.
    - The other `grep` process filters lines containing "warning" and writes them to `warnings.log`.
----------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Nested Process Substitution
 
 Process substitution can be nested to handle more complex tasks:
 
-   ```bash
+   ``````````````````````````````````````````bash
    diff <(sort file1) <(sort file2)
-   ```
+   ``````````````````````````````````````````
 
 In this example, the outputs of `sort` on both files are compared using `diff`.
----------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Use Cases of Process Substitution
 
 1.Piping into commands that don't support pipes directly:
@@ -90,7 +90,7 @@ Use Cases of Process Substitution
 2.Simultaneously handling multiple outputs:
    You can use process substitution to direct different
    parts of the output to different processes, as shown in the `tee` example.
----------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Behind the Scenes: File Descriptors and Named Pipes
 
 - Process substitution works by creating special files (like `/dev/fd/63`) or 
@@ -98,15 +98,15 @@ Behind the Scenes: File Descriptors and Named Pipes
 - You can view these files by using `ls` on `/dev/fd` while running a process substitution command.
 
    Example:
-   ```bash
+   ``````````````````````````````````````````bash
    ls <(echo "test")
-   ```
+   ``````````````````````````````````````````
 
    Output:
-   ```
+   ``````````````````````````````````````````
    /dev/fd/63
-   ```
----------------------------------------------------------------------------------------------------------
+   ``````````````````````````````````````````
+______________________________________________________________________________________________________________________________________
 Limitations of Process Substitution
 
 1.Portability:  
@@ -114,7 +114,7 @@ Limitations of Process Substitution
 
 2.FIFO behavior:  
    When using process substitution, data might be lost if the reading process consumes the output before it's fully written.
----------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________________________
 Conclusion
 
 Process substitution is a powerful shell feature that simplifies complex data handling tasks.

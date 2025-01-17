@@ -5,7 +5,7 @@ The Apache HTTP Server, often simply referred to as Apache, is one of the most w
 
 Apache is highly extensible, offering various modules for additional functionality, such as security features, URL rewriting, and caching.Its popularity can be attributed to its long history, security features, extensive documentation, and active community support.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  Key Features of Apache
 
@@ -41,7 +41,7 @@ Apache is highly extensible, offering various modules for additional functionali
         - Apache can work with various programming languages like PHP, Python, Perl, and Ruby via modules like mod_php or using the CGI mechanism.
         - mod_proxy allows Apache to function as a reverse proxy to forward requests to backend application servers.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  Apache Architecture
 
@@ -68,7 +68,7 @@ Apache is highly extensible, offering various modules for additional functionali
        - Request Processing: Apache processes the request by routing it through its modules.It may perform tasks like authentication, URL rewriting, and dynamic content processing (e.g., PHP, CGI).
        - Response Handling: After processing the request, Apache sends a response (e.g., HTML, image, or JSON) to the client.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  Apache Configuration Files
 
@@ -94,7 +94,7 @@ Apache is highly extensible, offering various modules for additional functionali
        - sites    -available: Contains configuration files for individual sites or applications.
        - sites    -enabled: Contains symbolic links to configurations in sites    -available that are active.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  Common Apache Modules
 
@@ -119,7 +119,7 @@ Apache is highly extensible, offering various modules for additional functionali
 7.mod_cache:
        - Enables caching mechanisms to store content in memory or on disk, reducing server load and improving response times.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  Apache Security Features
 
@@ -150,7 +150,7 @@ Apache is highly extensible, offering various modules for additional functionali
        - mod_security: Provides intrusion detection and protection against common web attacks.
        - mod_evasive: Protects against DoS (Denial of Service) and DDoS (Distributed Denial of Service) attacks.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  Apache Performance Optimization
 
@@ -166,7 +166,7 @@ Apache is highly extensible, offering various modules for additional functionali
 4.Load Balancing:
        - For high    -traffic applications, Apache can distribute traffic across multiple backend servers using mod_proxy_balancer or reverse proxy configurations.
 
----------------------------------------------------------------------------------------------------------
+_______________________________________________________________________________________________________________________________________
 
  Conclusion
 
