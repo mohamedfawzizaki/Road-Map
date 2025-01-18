@@ -1,0 +1,77 @@
+___________________________________________________________________________________________________________________________________________________________________________________________________
+                                                                   Vagrant CLI
+                                                                   ============ 
+
+
+ ________________________________________________________________________________________________________________________________________________________________________________________________________________
+|         Command          |                 Options               |                             Description                                        |                        Example                             |
+|__________________________|_______________________________________|________________________________________________________________________________|____________________________________________________________|
+| vagrant init             | --box [box_name]                      |   Creates a Vagrantfile in the current directory.                              | vagrant init ubuntu/bionic64                               |
+|                          | --minimal                             |   Creates a minimal Vagrantfile.                                               | vagrant init --minimal                                     |
+| vagrant up               | --provision                           |   Starts the VM and runs provisioning.                                         | vagrant up --provision                                     |
+|                          | --provider [provider_name]            |   Starts the VM with a specific provider.                                      | vagrant up --provider virtualbox                           |
+|                          | --no-provision                        |   Starts the VM without running provisioning.                                  | vagrant up --no-provision                                  |
+| vagrant ssh              | --[command]                           |   Logs into the running VM via SSH.                                            | vagrant ssh                                                |
+|                          | --plain                               |   Disables advanced terminal features.                                         | vagrant ssh --plain                                        |
+| vagrant halt             | --force                               |   Stops the VM.                                                                | vagrant halt                                               |
+|                          | --force                               |   Forces the VM to shut down immediately.                                      | vagrant halt --force                                       |
+| vagrant reload           | --provision                           |   Restarts the VM and applies Vagrantfile changes.                             | vagrant reload --provision                                 |
+|                          | --no-provision                        |   Restarts the VM without provisioning.                                        | vagrant reload --no-provision                              |
+| vagrant destroy          | --force                               |   Stops and deletes the VM.                                                    | vagrant destroy                                            |
+|                          | --force                               |   Skips confirmation and deletes the VM directly.                              | vagrant destroy --force                                    |
+| vagrant status           | --machine-readable                    |   Displays the status of the VM in a machine-readable format.                  | vagrant status --machine-readable                          |
+| vagrant provision        | --provision-with [provisioner_names]  |   Runs provisioning scripts on the running VM.                                 | vagrant provision --provision-with shell                   |
+| vagrant box add          | --name [name]                         |   Adds a box to the local system.                                              | vagrant box add ubuntu/bionic64                            |
+|                          | --force                               |   Re-downloads the box even if it exists locally.                              | vagrant box add ubuntu/bionic64 --force                    |
+|                          | --clean                               |   Cleans up temporary files from a failed box download.                        | vagrant box add ubuntu/bionic64 --clean                    |
+| vagrant box list         |                                       |   Lists all installed boxes.                                                   | vagrant box list                                           |
+| vagrant box remove       | --box [box_name]                      |   Removes a box from the local system.                                         | vagrant box remove ubuntu/bionic64                         |
+| vagrant box outdated     |                                       |   Checks if boxes are outdated.                                                | vagrant box outdated                                       |
+| vagrant plugin install   | [plugin_name]                         |   Installs a Vagrant plugin.                                                   | vagrant plugin install vagrant-vbguest                     |
+| vagrant plugin uninstall | [plugin_name]                         |   Uninstalls a Vagrant plugin.                                                 | vagrant plugin uninstall vagrant-vbguest                   |
+| vagrant plugin list      |                                       |   Lists all installed plugins.                                                 | vagrant plugin list                                        |
+| vagrant snapshot save    | [snapshot_name]                       |   Saves the current state of the VM as a snapshot.                             | vagrant snapshot save initial                              |
+| vagrant snapshot list    |                                       |   Lists all snapshots for the VM.                                              | vagrant snapshot list                                      |
+| vagrant snapshot restore | [snapshot_name]                       |   Restores a saved snapshot.                                                   | vagrant snapshot restore initial                           |
+| vagrant snapshot delete  | [snapshot_name]                       |   Deletes a snapshot.                                                          | vagrant snapshot delete initial                            |
+| vagrant global-status    |                                       |   Shows the status of all Vagrant environments on the system.                  | vagrant global-status                                      |
+| vagrant validate         |                                       |   Validates the Vagrantfile syntax.                                            | vagrant validate                                           |
+| vagrant version          |                                       |   Displays the installed Vagrant version.                                      | vagrant version                                            |
+| vagrant package          |                                       |   Packages the VM into a reusable box.                                         | vagrant package                                            |
+| vagrant resume           |                                       |   Resumes a paused VM.                                                         | vagrant resume                                             |
+| vagrant suspend          |                                       |   Pauses the running VM.                                                       | vagrant suspend                                            |
+|--------------------------|---------------------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------|
+|--------------------------|---------------------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------|
+| vagrant up               | --parallel                            |   Boots multiple machines defined in the Vagrantfile in parallel.              | vagrant up --parallel                                      |
+|                          | --destroy-on-error                    |   Destroys the VM if an error occurs during startup.                           | vagrant up --destroy-on-error                              |
+| vagrant halt             | --provider [provider_name]            |   Stops the VM associated with a specific provider.                            | vagrant halt --provider virtualbox                         |
+| vagrant port             |                                       |   Displays the guest machine's forwarded ports.                                | vagrant port                                               |
+| vagrant connect          |                                       |   Connects to a shared Vagrant environment.                                    | vagrant connect                                            |
+| vagrant share            | --http [port]                         |   Shares a running environment over HTTP.                                      | vagrant share --http 8080                                  |
+|                          | --name [name]                         |   Specifies a custom name for the shared environment.                          | vagrant share --name my_shared_env                         |
+| vagrant box update       |                                       |   Updates an outdated box.                                                     | vagrant box update                                         |
+|                          | --box [box_name]                      |   Updates a specific box.                                                      | vagrant box update --box ubuntu/bionic64                   |
+| vagrant plugin repair    |                                       |   Repairs installed plugins by re-installing any corrupted or missing plugins  | vagrant plugin repair                                      |
+| vagrant plugin update    |                                       |   Updates all installed plugins.                                               | vagrant plugin update                                      |
+| vagrant reload           | --provider [provider_name]            |   Restarts the VM with a specified provider.                                   | vagrant reload --provider virtualbox                       |
+|                          | --[machine_name]                      |   Restarts a specific machine in a multi-machine environment.                  | vagrant reload web                                         |
+| vagrant push             |                                       |   Pushes the application or environment defined in the Vagrantfile to a confi  | vagrant push                                               |
+| vagrant package          | --output [file_name]                  |   Creates a reusable box and names the output file.                            | vagrant package --output custom_box.box                    |
+|                          | --include [file_paths]                |   Includes additional files in the box.                                        | vagrant package --include scripts/setup.sh                 |
+| vagrant ssh-config       |                                       |   Outputs SSH configuration for the running VM.                                | vagrant ssh-config                                         |
+|                          | --host [host_name]                    |   Shows SSH configuration for a specific host.                                 | vagrant ssh-config --host web                              |
+| vagrant rsync            |                                       |   Syncs files to the guest machine using rsync.                                | vagrant rsync                                              |
+| vagrant rsync-auto       |                                       |   Continuously syncs files to the guest machine.                               | vagrant rsync-auto                                         |
+| vagrant rdp              |                                       |   Starts an RDP (Remote Desktop Protocol) connection to the guest machine.     | vagrant rdp                                                |
+| vagrant debug            |                                       |   Outputs detailed debug information for troubleshooting.                      | vagrant debug                                              |
+| vagrant provision        | --[machine_name]                      |   Runs provisioning on a specific machine in a multi-machine environment.      | vagrant provision web                                      |
+| vagrant ssh              | --extra-args [arguments]              |   Passes additional arguments to the SSH command.                              | vagrant ssh --extra-args "-L 8080:localhost:80"            |
+| vagrant validate         | --ignore-provider                     |   Ignores the provider validation check.                                       | vagrant validate --ignore-provider                         |
+| vagrant global-status    | --prune                               |   Removes invalid entries from the global status list.                         | vagrant global-status --prune                              |
+| vagrant mutate (plugin)  | --input [provider] --output [provider]|   Converts a box to work with a different provider.                            | vagrant mutate --input virtualbox --output libvirt         |
+| vagrant vbguest (plugin) |                                       |   Installs or updates the VirtualBox Guest Additions in the VM.                | vagrant vbguest                                            |
+| vagrant cloud auth       | --token [token]                       |   Authenticates to Vagrant Cloud using a token.                                | vagrant cloud auth --token your-token                      |
+| vagrant cloud search     | [box_name]                            |   Searches Vagrant Cloud for boxes matching the query.                         | vagrant cloud search ubuntu                                |
+| vagrant cloud publish    | --description [desc] --release        |   Publishes a box to Vagrant Cloud with an optional description and release s  | vagrant cloud publish --description "Ubuntu Box" --release |
+|__________________________|_______________________________________|________________________________________________________________________________|____________________________________________________________|
+ 
