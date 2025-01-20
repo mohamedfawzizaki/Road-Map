@@ -396,7 +396,8 @@ Ethernet adapter Bluetooth Network Connection 3:
 
     - Description:  
           `Hyper-V Virtual Ethernet Adapter 2`  
-          This interface is used by Windows Subsystem for Linux (WSL) to provide network connectivity for Linux-based applications running inside WSL.
+          This interface is used by Windows Subsystem for Linux (WSL) to provide network
+           connectivity for Linux-based applications running inside WSL.
 
     - Physical Address:  
           `00-15-5D-AB-22-BA`  
@@ -634,7 +635,8 @@ Output Explanation
           
           - `inet6 fe80::215:5dff:feab:3d8c/64 scope link`:
                         - The IPv6 address assigned to the interface is `fe80::215:5dff:feab:3d8c`, with a subnet mask of `/64`.
-                        - `scope link`: This means that the address is link-local, and it is only valid within the local network and cannot be routed across networks.
+                        - `scope link`: This means that the address is link-local,
+                          and it is only valid within the local network and cannot be routed across networks.
 ---------------------------------------------------------------------------------------------------------------------------------------
  Key Points
           - `lo`   (Loopback interface):

@@ -41,7 +41,8 @@ ________________________________________________________________________________
                             -> Tracks the state of active connections and makes decisions based on the context of packets.
               
               - Proxy Firewall: 
-                            -> Acts as an intermediary between the client and server, inspecting and forwarding packets based on rules.
+                            -> Acts as an intermediary between the client and server,
+                               inspecting and forwarding packets based on rules.
               
               - Next-Generation Firewall (NGFW): 
                             -> Offers more advanced features like application awareness, 
@@ -110,7 +111,8 @@ ________________________________________________________________________________
                      - Often used for connecting multiple sites with dedicated lines and can support both Layer 2 and Layer 3 VPNs.
 
        VPN Protocols
-              A VPN protocol defines the set of rules that determine how the VPN will establish a secure connection and encrypt data.
+              A VPN protocol defines the set of rules that determine how the VPN will 
+               establish a secure connection and encrypt data.
               Below are the most commonly used VPN protocols:
               --------------------------------------------------------------------------------------------------------------
               1.PPTP (Point-to-Point Tunneling Protocol):
@@ -128,7 +130,8 @@ ________________________________________________________________________________
               --------------------------------------------------------------------------------------------------------------
               4.SSL/TLS (Secure Sockets Layer/Transport Layer Security):
                      - Used for secure connections over the web, SSL is the protocol behind HTTPS.
-                     - SSL VPNs use SSL/TLS for encrypted tunnels and do not require specific VPN client software, making them easier to use for remote access.
+                     - SSL VPNs use SSL/TLS for encrypted tunnels and do not require
+                        specific VPN client software, making them easier to use for remote access.
               --------------------------------------------------------------------------------------------------------------
               5.OpenVPN:
                      - An open-source protocol known for being highly secure and flexible.
@@ -136,7 +139,9 @@ ________________________________________________________________________________
               --------------------------------------------------------------------------------------------------------------
               6.IKEv2/IPsec (Internet Key Exchange version 2):
                      - A modern, highly secure protocol that offers fast connection speeds.
-                     - It is widely considered one of the most secure and stable VPN protocols and is particularly good for mobile devices because it supports automatic reconnection when switching between networks.
+                     - It is widely considered one of the most secure and
+                        stable VPN protocols and is particularly good for mobile devices
+                        because it supports automatic reconnection when switching between networks.
               --------------------------------------------------------------------------------------------------------------
               7.WireGuard:
                      - A relatively new open-source VPN protocol that is fast, secure, and easier to configure.
@@ -172,7 +177,8 @@ ________________________________________________________________________________
               6.Preventing Bandwidth Throttling:
                      - VPNs can help bypass bandwidth throttling, where your 
                        ISP intentionally slows down certain types of internet traffic (e.g., streaming or gaming).
-                     - By encrypting your traffic, VPNs can prevent your ISP from identifying and throttling specific traffic types.
+                     - By encrypting your traffic, VPNs can prevent your ISP from identifying
+                       and throttling specific traffic types.
       
        VPN Risks and Challenges
               1.Reduced Speed:
@@ -196,12 +202,14 @@ ________________________________________________________________________________
               --------------------------------------------------------------------------------------------------------------
               5.Legal and Compliance Issues:
                      - Some countries and businesses may have policies or regulations that restrict the use of VPNs.
-                     - Employees or individuals using a VPN should be aware of legal restrictions or risks in their jurisdiction or industry.
+                     - Employees or individuals using a VPN should be aware of legal restrictions
+                        or risks in their jurisdiction or industry.
        Common Use Cases for VPNs
 
               1.Remote Work:
                      - Many businesses use VPNs to allow employees to securely connect to 
-                       the company’s private network from remote locations, ensuring secure access to internal resources and systems.
+                       the company’s private network from remote locations, ensuring secure 
+                        access to internal resources and systems.
               --------------------------------------------------------------------------------------------------------------
               2.Secure Online Banking:
                      - VPNs protect your data when accessing financial services online,
@@ -235,9 +243,12 @@ ________________________________________________________________________________
        - Network Access Control (NAC) policies enforce security by verifying devices before they can access the network.
        - Identity and Access Management (IAM): Ensures users are properly authenticated and authorized to access network resources.
        - Common methods of authentication include:
-              - Two-Factor Authentication (2FA): A security process that requires two forms of verification (e.g., password and phone    -based code).
-              - Biometric Authentication: Uses physical characteristics like fingerprints or retina scans.
-              - Single Sign-On (SSO): Allows users to authenticate once and gain access to multiple systems.
+              - Two-Factor Authentication (2FA): 
+                            - A security process that requires two forms of verification (e.g., password and phone-based code).
+              - Biometric Authentication: 
+                            - Uses physical characteristics like fingerprints or retina scans.
+              - Single Sign-On (SSO): 
+                            - Allows users to authenticate once and gain access to multiple systems.
 _______________________________________________________________________________________________________________________________________
 6.Anti-Malware and Antivirus Software:
        - Anti-Malware programs are designed to detect, prevent, and 
@@ -249,7 +260,8 @@ ________________________________________________________________________________
        - Network Segmentation divides a network into smaller sub-networks or segments,
          making it harder for attackers to move laterally within the network.
        - Micro-Segmentation is a more granular approach, segmenting the network even 
-         further into individual workloads or devices, usually enforced through firewalls, to isolate sensitive applications or data.
+         further into individual workloads or devices, usually enforced through firewalls,
+         to isolate sensitive applications or data.
 _______________________________________________________________________________________________________________________________________
 8.Network Monitoring and Logging:
        - Continuous monitoring of network traffic and system logs is crucial 
@@ -282,7 +294,8 @@ ________________________________________________________________________________
               - Training employees about phishing, social engineering, and secure usage practices is critical.
        
        4.Secure Remote Access:
-              -  Use secure VPNs and enforce multi-factor authentication for remote workers to prevent unauthorized access to the network.
+              -  Use secure VPNs and enforce multi-factor authentication for remote workers
+                 to prevent unauthorized access to the network.
        
        5.Secure Endpoints: 
               - Ensure all devices connected to the network, including IoT
@@ -298,5 +311,6 @@ Conclusion
        - A multi-layered security approach involving firewalls, encryption, access control, intrusion detection 
           systems, and regular monitoring helps protect against a wide range of threats.
        - By combining best practices, robust policies, and effective tools, organizations 
-          can defend their networks against cyberattacks and unauthorized access, while ensuring network performance and availability.
+          can defend their networks against cyberattacks and unauthorized access,
+          while ensuring network performance and availability.
 _______________________________________________________________________________________________________________________________________

@@ -49,7 +49,7 @@ ________________________________________________________________________________
        - Combines hardware and software network resources into a single, manageable entity.
        - Examples:
          - Virtual LANs (VLANs)
-         - Software    -Defined Networking (SDN)
+         - Software-Defined Networking (SDN)
 
 4.Storage Virtualization:
        - Combines multiple physical storage devices into a single virtual storage pool.

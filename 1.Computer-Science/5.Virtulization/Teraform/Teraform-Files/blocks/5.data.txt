@@ -2,17 +2,22 @@ ________________________________________________________________________________
                                                       To-Document-Terraform
                                                       =====================
 
-The `data` block in Terraform is used to retrieve or fetch information from an external source without creating or modifying resources.It serves as a way to query data that is already available, such as existing infrastructure details, outputs from other configurations, or provider-specific data.
+The `data` block in Terraform is used to retrieve or fetch
+ information from an external source without creating or modifying resources.
+ 
+It serves as a way to query data that is already available,
+ such as existing infrastructure details, outputs from other configurations, or provider-specific data.
 
 _________________________________________________________________________________________________________________________________________________
                                                  Key Features of the `data` Block
-
-| Feature                | Description                                                                                   |
-|--||
-| Data Source             | The specific source from which data is fetched (e.g., `aws_ami`, `azurerm_resource_group`).     |
-| Arguments               | Input parameters required by the data source to perform the query.                              |
-| Read-Only Nature        | `data` blocks do not create or modify resources; they only fetch information.                   |
-| Dynamic Usage           | Often used in conjunction with `resource` blocks to dynamically pass values.                   |
+ _______________________________________________________________________________________________________________________
+|      Feature        |                                     Description                                                 |
+|_____________________|_________________________________________________________________________________________________|
+| Data Source         | The specific source from which data is fetched (e.g., `aws_ami`, `azurerm_resource_group`).     |
+| Arguments           | Input parameters required by the data source to perform the query.                              |
+| Read-Only Nature    | `data` blocks do not create or modify resources; they only fetch information.                   |
+| Dynamic Usage       | Often used in conjunction with `resource` blocks to dynamically pass values.                    |
+|_____________________|_________________________________________________________________________________________________|
 
 _________________________________________________________________________________________________________________________________________________
                                                   Structure of a `data` Block
@@ -99,68 +104,70 @@ resource "google_compute_instance" "example" {
 
 _________________________________________________________________________________________________________________________________________________
                                                  Components of the `data` Block
-
-| Component       | Description                                                                                         |
-|-||
-| `data` keyword  | Indicates that the block is a `data` source query.                                                     |
-| `provider`       | The provider from which data is being fetched (e.g., `aws`, `azurerm`, `google`).                     |
-| `data source`   | The specific type of data being queried (e.g., `aws_ami`, `azurerm_resource_group`).                   |
-| Arguments        | Inputs to refine the query, such as filters, names, or IDs.                                           |
-| Attributes       | Outputs retrieved from the data source query, such as `id`, `name`, `location`, etc.                  |
+                   _______________________________________________________________________________________________________
+                  |    Component    |                                     Description                                     |
+                  |_________________|_____________________________________________________________________________________|
+                  | `data` keyword  | Indicates that the block is a `data` source query.                                  |
+                  | `provider`      | The provider from which data is being fetched (e.g., `aws`, `azurerm`, `google`).   |
+                  | `data source`   | The specific type of data being queried (e.g., `aws_ami`, `azurerm_resource_group`).|
+                  | Arguments       | Inputs to refine the query, such as filters, names, or IDs.                         |
+                  | Attributes      | Outputs retrieved from the data source query, such as `id`, `name`, `location`, etc.|
+                  |_________________|_____________________________________________________________________________________|
 
 _________________________________________________________________________________________________________________________________________________
                                                 Common Data Sources by Provider
-
-| Provider   | Data Source Example                 | Description                                                       |
-|--|--|-|
-| AWS        | `aws_ami`                               | Fetches AMI details.                                                  |
-| Azure      | `azurerm_resource_group`                | Fetches Azure Resource Group details.                                 |
-| Google     | `google_compute_image`                  | Fetches compute image details from GCP.                               |
-| Kubernetes | `kubernetes_namespace`                  | Fetches details of a Kubernetes namespace.                            |
-| HashiCorp  | `terraform_remote_state`                | Retrieves outputs from a remote Terraform state file.                 |
+                   _______________________________________________________________________________________________
+                  | Provider   |    Data Source Example    |                 Description                          |
+                  |____________|___________________________|______________________________________________________|
+                  | AWS        | `aws_ami`                 | Fetches AMI details.                                 |
+                  | Azure      | `azurerm_resource_group`  | Fetches Azure Resource Group details.                |
+                  | Google     | `google_compute_image`    | Fetches compute image details from GCP.              |
+                  | Kubernetes | `kubernetes_namespace`    | Fetches details of a Kubernetes namespace.           |
+                  | HashiCorp  | `terraform_remote_state`  | Retrieves outputs from a remote Terraform state file.|
+                  |____________|___________________________|______________________________________________________|
 
 _________________________________________________________________________________________________________________________________________________
                                                       Advanced Examples
 -----------------------------------------------------------------------------------------------------------------------------
 # 1.Filter AWS AMIs by Multiple Criteria
-````````````````````````````````````````````````````````````````````hcl
-data "aws_ami" "filtered_ami" {
-  most_recent = true
-  owners      = ["123456789012"]
+      ````````````````````````````````````````````````````````````````````hcl
+      data "aws_ami" "filtered_ami" {
+        most_recent = true
+        owners      = ["123456789012"]
 
-  filter {
-    name   = "name"
-    values = ["custom-ami-"]
-  }
+        filter {
+          name   = "name"
+          values = ["custom-ami-"]
+        }
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-}
-````````````````````````````````````````````````````````````````````
+        filter {
+          name   = "virtualization-type"
+          values = ["hvm"]
+        }
+      }
+      ````````````````````````````````````````````````````````````````````
 
 - Filters AMIs by owner, name pattern, and virtualization type.
 
 -----------------------------------------------------------------------------------------------------------------------------
 
 # 2.Using `terraform_remote_state`
-````````````````````````````````````````````````````````````````````hcl
-data "terraform_remote_state" "vpc" {
-  backend = "s3"
-  config = {
-    bucket = "my-terraform-state"
-    key    = "vpc/terraform.tfstate"
-    region = "us-west-2"
-  }
-}
+      ````````````````````````````````````````````````````````````````````hcl
+      data "terraform_remote_state" "vpc" {
+        backend = "s3"
+        config = {
+          bucket = "my-terraform-state"
+          key    = "vpc/terraform.tfstate"
+          region = "us-west-2"
+        }
+      }
 
-resource "aws_instance" "web_server" {
-  ami           = "ami-12345678"
-  instance_type = "t2.micro"
-  subnet_id     = data.terraform_remote_state.vpc.outputs.subnet_id
-}
-````````````````````````````````````````````````````````````````````
+      resource "aws_instance" "web_server" {
+        ami           = "ami-12345678"
+        instance_type = "t2.micro"
+        subnet_id     = data.terraform_remote_state.vpc.outputs.subnet_id
+      }
+      ````````````````````````````````````````````````````````````````````
 
 - Fetches the `subnet_id` from a remote Terraform state file to use in resource creation.
 -----------------------------------------------------------------------------------------------------------------------------
@@ -184,6 +191,8 @@ Common errors and solutions when using `data` blocks:
 
 _________________________________________________________________________________________________________________________________________________
                                                            Summary
-The `data` block is a powerful tool in Terraform for retrieving existing information without altering infrastructure.It enhances the flexibility of your configuration by allowing dynamic data usage, making it essential for scalable and modular setups.
+The `data` block is a powerful tool in Terraform for retrieving existing information without altering infrastructure.
+
+It enhances the flexibility of your configuration by allowing dynamic data usage, making it essential for scalable and modular setups.
 _________________________________________________________________________________________________________________________________________________
 
