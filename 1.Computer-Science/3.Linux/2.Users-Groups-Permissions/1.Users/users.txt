@@ -43,7 +43,7 @@ a.`/etc/passwd`
         `````````````````````````````````````````````````
         Example:
         ````````````````````````````````````````````````````
-        mohamed:x:1001:1001:Mohamed:/home/mohamed:/bin/bash
+        mohamed:x:1001:1001:my name is Mohamed:/home/mohamed:/bin/bash
         ````````````````````````````````````````````````````
         - username      : The name of the user.
         - x             : Placeholder indicating that the password is stored in `/etc/shadow`.
@@ -194,6 +194,9 @@ Group Management Commands
           `````````````````````````````````````````````````
           sudo usermod -aG developers mohamed
           `````````````````````````````````````````````````
+          sudo chown mohamed:developers file.txt
+          `````````````````````````````````````````````````
+          `````````````````````````````````````````````````
         - List all groups:
           `````````````````````````````````````````````````
           groups
@@ -225,6 +228,14 @@ ________________________________________________________________________________
         `````````````````````````````````````````````````
 
         - The file is owned by user `mohamed` and group `developers`.
+        - The first character `-` indicates that the file is a regular file.
+        - The next three characters `rw-` indicate the permissions for the owner (read and write).
+        - The next three characters `r--` indicate the permissions for the group (read only).
+        - The last three characters `r--` indicate the permissions for others (read only).
+        - The number `1` indicates that the file is owned by a single user.
+        - The number `1024` indicates the file size in bytes.
+        - The date `Jan 10 12:00` indicates the last modification time.
+
 
 - Change ownership:  
         `````````````````````````````````````````````````
@@ -233,30 +244,37 @@ ________________________________________________________________________________
 
 
 ______________________________________________________________________________________________________________________________________
-### **Login vs Non-login Accounts in Linux**
+                                                 Login vs Non-login Accounts in Linux
 
-In Linux, user accounts can be broadly categorized into **login accounts** and **non-login accounts** based on how they are intended to be used and whether they are allowed to directly log into the system.
+In Linux, user accounts can be broadly categorized into login accounts
+ and non-login accounts based on how they are intended to be used and whether they are allowed to directly log into the system.
 
----
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       1. Login Accounts
 
-## **1. Login Accounts**
+A login account is a user account created for a human user to log in and interact with the system. 
+These accounts are designed for people who need direct access to the system, either via a terminal, SSH, or GUI.
 
-A **login account** is a user account created for a human user to log in and interact with the system. These accounts are designed for people who need direct access to the system, either via a terminal, SSH, or GUI.
+### Characteristics of Login Accounts
+- Home Directory: 
+        - Each login account typically has a home directory under `/home/username`.
+- Shell Access: 
+        - Login accounts are assigned a valid interactive shell (like `/bin/bash`, `/bin/zsh`, etc.)
+           that allows users to execute commands.
+- Password Authentication: 
+        - Login accounts require passwords for authentication, which are stored in a secure, encrypted format in `/etc/shadow`.
+- UID Range: 
+        - In most Linux distributions, login accounts have UIDs (User IDs) starting from 1000 and above.
+        - These UIDs are reserved for human users by convention.
+- Purpose: 
+        - Primarily used by human users who need access to the system for tasks such as file management,
+           software development, and system administration.
 
-### **Characteristics of Login Accounts**
-- **Home Directory**: Each login account typically has a home directory under `/home/username`.
-- **Shell Access**: Login accounts are assigned a valid interactive shell (like `/bin/bash`, `/bin/zsh`, etc.) that allows users to execute commands.
-- **Password Authentication**: Login accounts require passwords for authentication, which are stored in a secure, encrypted format in `/etc/shadow`.
-- **UID Range**: 
-  - In most Linux distributions, login accounts have **UIDs** (User IDs) starting from **1000** and above.
-  - These UIDs are reserved for human users by convention.
-- **Purpose**: Primarily used by human users who need access to the system for tasks such as file management, software development, and system administration.
-
-### **Examples**
+### Examples
 - A developer with the username `john` who logs in to work on a project.
 - A system administrator who uses the account `admin` for system maintenance.
 
-### **How to Create a Login Account**
+### How to Create a Login Account
 You can create a login account using the `adduser` or `useradd` command:
 ```bash
 sudo adduser john
@@ -267,28 +285,44 @@ This command:
 - Prompts for a password.
 - Adds the user to necessary groups (like `john` and `sudo`, if specified).
 
----
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                        2. Non-login Accounts
 
-## **2. Non-login Accounts**
+A non-login account is a system account that does not permit direct login by a human user. 
+These accounts are primarily used by system services and applications that need to run processes
+ under a specific user identity but do not require interactive access.
 
-A **non-login account** is a system account that does not permit direct login by a human user. These accounts are primarily used by system services and applications that need to run processes under a specific user identity but do not require interactive access.
+### Characteristics of Non-login Accounts
+- No Home Directory: 
+        - Non-login accounts may not have a home directory, or if they do,
+           it is typically a generic directory like `/var/lib/service-name`.
+- Shell: 
+        - Non-login accounts are assigned a non-interactive shell, usually `/usr/sbin/nologin` or `/bin/false`. 
+        - This prevents users from logging in interactively via a terminal or SSH.
+- No Password: 
+        - Non-login accounts do not require a password, and their entries in `/etc/shadow` often have
+           a placeholder (`*` or `!`) indicating that the account is locked and cannot be used for login.
+- UID Range: 
+        - Non-login accounts typically have UIDs in the range of 1–999 (or 1–499 on some older systems),
+        -  which are reserved for system users and services.
+- Purpose: 
+        - These accounts are used for running specific services or daemons,
+           ensuring that processes have the necessary permissions while limiting potential security risks.
 
-### **Characteristics of Non-login Accounts**
-- **No Home Directory**: Non-login accounts may not have a home directory, or if they do, it is typically a generic directory like `/var/lib/service-name`.
-- **Shell**: Non-login accounts are assigned a **non-interactive shell**, usually `/usr/sbin/nologin` or `/bin/false`. This prevents users from logging in interactively via a terminal or SSH.
-- **No Password**: Non-login accounts do not require a password, and their entries in `/etc/shadow` often have a placeholder (`*` or `!`) indicating that the account is locked and cannot be used for login.
-- **UID Range**: 
-  - Non-login accounts typically have UIDs in the range of **1–999** (or **1–499** on some older systems), which are reserved for system users and services.
-- **Purpose**: These accounts are used for running specific services or daemons, ensuring that processes have the necessary permissions while limiting potential security risks.
+### Examples
+- `root`: 
+        - The superuser account with UID 0, used for administrative tasks. 
+        - While it is a login account by default, it can be disabled for direct login on many systems for security reasons.
+- `daemon`: 
+        - A system account used by various background services.
+- `nobody`: 
+        - A special system account used by processes that require minimal privileges.
+- `www-data`: 
+        - A non-login account used by web servers like Apache and Nginx.
+- `mysql`: 
+        - A non-login account used by the MySQL database server.
 
-### **Examples**
-- `root`: The superuser account with UID 0, used for administrative tasks. While it is a login account by default, it can be disabled for direct login on many systems for security reasons.
-- `daemon`: A system account used by various background services.
-- `nobody`: A special system account used by processes that require minimal privileges.
-- `www-data`: A non-login account used by web servers like Apache and Nginx.
-- `mysql`: A non-login account used by the MySQL database server.
-
-### **How to Create a Non-login Account**
+### How to Create a Non-login Account
 To create a non-login account, you can use the `useradd` command with specific options:
 ```bash
 sudo useradd -r -s /usr/sbin/nologin -d /var/lib/myapp myapp
@@ -300,38 +334,43 @@ Explanation:
 
 ---
 
-## **3. Summary Table**
-
-| **Feature**               | **Login Accounts**                      | **Non-login Accounts**                  |
-|---------------------------|----------------------------------------|----------------------------------------|
-| **Purpose**                | Used by human users for direct login   | Used by system services and daemons    |
-| **Home Directory**         | Typically under `/home/username`       | Often not required or generic (`/var/...`) |
-| **Shell**                  | Interactive (`/bin/bash`, `/bin/zsh`)  | Non-interactive (`/usr/sbin/nologin`, `/bin/false`) |
-| **Password**               | Required                               | Not required or locked (`*`, `!`)      |
-| **UID Range**              | 1000 and above                         | 1–999 (or 1–499 on older systems)      |
-| **Login Allowed**          | Yes                                    | No                                     |
-| **Example Users**          | `john`, `admin`, `student`             | `root`, `nobody`, `www-data`, `mysql`  |
+## 3. Summary Table
+ ________________________________________________________________________________________________________________________
+| Feature                | Login Accounts                         | Non-login Accounts                     
+|________________________|________________________________________|______________________________________________________
+| Purpose                | Used by human users for direct login   | Used by system services and daemons    
+| Home Directory         | Typically under `/home/username`       | Often not required or generic (`/var/...`) 
+| Shell                  | Interactive (`/bin/bash`, `/bin/zsh`)  | Non-interactive (`/usr/sbin/nologin`, `/bin/false`) 
+| Password               | Required                               | Not required or locked (`*`, `!`)      
+| UID Range              | 1000 and above                         | 1–999 (or 1–499 on older systems)      
+| Login Allowed          | Yes                                    | No                                     
+| Example Users          | `john`, `admin`, `student`             | `root`, `nobody`, `www-data`, `mysql`  
+|________________________|________________________________________|______________________________________________________
 
 ---
 
-## **4. Why Use Non-login Accounts?**
+## 4. Why Use Non-login Accounts?
 
-Non-login accounts are essential for security and resource isolation. Instead of running all services as `root` (which has full system privileges), each service runs under its own limited-privilege account. This approach provides several benefits:
+Non-login accounts are essential for security and resource isolation. 
+Instead of running all services as `root` (which has full system privileges),
+ each service runs under its own limited-privilege account. 
 
-1. **Security**: 
+This approach provides several benefits:
+
+1. Security: 
    - If a service is compromised, the attacker gains access only to that service's account, minimizing damage to the system.
    - Non-login accounts often have no shell and no password, preventing unauthorized logins.
 
-2. **Isolation**:
+2. Isolation:
    - Services run independently of each other, each with its own set of permissions.
    - This limits the risk of one service interfering with another.
 
-3. **Accountability**:
+3. Accountability:
    - By running services under specific accounts, it becomes easier to track which service performed a given action in system logs.
 
 ---
 
-### **5. Checking Existing Non-login Accounts**
+### 5. Checking Existing Non-login Accounts
 
 You can list system (non-login) accounts using the following command:
 ```bash

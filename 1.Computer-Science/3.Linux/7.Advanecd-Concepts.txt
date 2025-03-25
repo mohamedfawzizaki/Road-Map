@@ -94,7 +94,7 @@ Example of Setting Ulimits:
                                 Integration of Cgroups, Namespaces, and Ulimits
                                 ===============================================
 
-In containerized environments like Docker, cgroups, namespaces,
+In containerized environments like Docker: cgroups, namespaces,
  and ulimits work together to ensure that containers run in isolated environments with controlled resource usage.
 
 - Cgroups are used to allocate and limit resources (e.g., memory, CPU).

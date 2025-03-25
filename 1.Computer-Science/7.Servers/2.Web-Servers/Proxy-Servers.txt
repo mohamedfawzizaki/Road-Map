@@ -1,6 +1,6 @@
 _______________________________________________________________________________________________________________________________________
-                                                        Proxy Server 
-                                                        ============
+                                                     Proxy Server 
+                                                     ============
 
 A proxy server is an intermediary server that sits between a client and the destination server.
 
@@ -59,7 +59,7 @@ ________________________________________________________________________________
               - An anonymous proxy hides the client’s IP address,
                 allowing users to surf the internet with a greater level of privacy.
        - Use Cases:
-              - Privacy Protection: Helps users maintain anonymity when browsing the web.
+              - Privacy Protection  : Helps users maintain anonymity when browsing the web.
               - Bypassing Censorship: Allows users to access content that is restricted in their region or country.
        - Example: A user accessing a website using an anonymous proxy to prevent the website from tracking their location and identity.
 
@@ -78,7 +78,7 @@ ________________________________________________________________________________
               - A caching proxy stores frequently requested content locally to reduce access time for subsequent requests.
        - Use Cases:
               - Bandwidth Optimization: Reduces bandwidth usage by serving cached copies of previously requested resources.
-              - Speed Improvement: Reduces latency for end    -users by delivering cached content quickly.
+              - Speed Improvement     : Reduces latency for end-users by delivering cached content quickly.
        - Example: A caching proxy in a corporate network serving images and files from cache to improve browsing speed.
 
 _______________________________________________________________________________________________________________________________________
@@ -162,30 +162,32 @@ ________________________________________________________________________________
 _______________________________________________________________________________________________________________________________________
                                                  Common Proxy Server Software
 
-1.Squid:
-       - Overview: 
-              - Squid is a popular open-source proxy server software that provides caching, access control, and proxy services.
-              - It supports HTTP, HTTPS, FTP, and other protocols.
-       - Use Cases: 
-              - Web caching, content filtering, and load balancing.
-
-2.HAProxy:
-       - Overview: 
-              - HAProxy is a high-performance reverse proxy and load balancer.
-              - It is commonly used for HTTP and TCP load balancing and offers high scalability and reliability.
-       - Use Cases: 
-              - Load balancing for web applications, ensuring high availability.
-
-3.Nginx:
+1.Nginx:
        - Overview: 
               - While NGINX is primarily a web server, it can also function as a reverse proxy and load balancer.
               - It is highly efficient and widely used in modern architectures.
        - Use Cases: 
               - Reverse proxying, caching, load balancing, and securing web traffic.
 
+2.Squid:
+       - Overview: 
+              - Squid is a popular open-source proxy server software that provides caching, access control, and proxy services.
+              - It supports HTTP, HTTPS, FTP, and other protocols.
+       - Use Cases: 
+              - Web caching, content filtering, and load balancing.
+
+3.HAProxy:
+       - Overview: 
+              - HAProxy is a high-performance reverse proxy and load balancer.
+              - It is commonly used for HTTP and TCP load balancing and offers high scalability and reliability.
+       - Use Cases: 
+              - Load balancing for web applications, ensuring high availability.
+
+
 4.Varnish:
        - Overview: 
-              - Varnish is a powerful HTTP accelerator and reverse proxy.It caches content to improve website performance.
+              - Varnish is a powerful HTTP accelerator and reverse proxy.
+              - It caches content to improve website performance.
        - Use Cases: 
               - Caching and accelerating dynamic web content, optimizing response times.
 

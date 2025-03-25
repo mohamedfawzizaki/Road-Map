@@ -33,11 +33,12 @@ ________________________________________________________________________________
               - I/O status
 --------------------------------------------------------------------------------------------------------------
 3.Types of Processes:
-       - User Processes: Created by users to perform tasks, such as running applications.
-       - System Processes: Background processes managed by the OS for system functionality.
-       - Interactive Processes: Require user interaction.
-       - Batch Processes: Execute without user intervention.
-
+       - User Processes            : Created by users to perform tasks, such as running applications.
+       - System Processes          : Background processes managed by the OS for system functionality.
+       
+       - Interactive Processes     : Require user interaction.
+       - Batch Processes           : Execute without user intervention.
+--------------------------------------------------------------------------------------------------------------
 4.Process vs.Thread:
        - A process is an independent program in execution, 
          while a thread is a lightweight unit of execution within a process.
@@ -61,12 +62,12 @@ Definition:
                 - Temporarily removes processes from memory (swapping) to reduce load and improve performance.
 --------------------------------------------------------------------------------------------------------------
 2.Scheduling Algorithms:
-       - First-Come, First-Served (FCFS): Processes are executed in the order they arrive.
-       - Shortest Job Next (SJN): Executes the shortest process first.
-       - Priority Scheduling: Executes processes based on priority.
-       - Round Robin (RR): Each process gets a fixed time slice (quantum) in a cyclic order.
-       - Multilevel Queue Scheduling: Divides processes into queues with different priority levels.
-       - Multilevel Feedback Queue Scheduling: Processes can move between queues based on behavior.
+       - First-Come, First-Served (FCFS)         : Processes are executed in the order they arrive.
+       - Shortest Job Next (SJN)                 : Executes the shortest process first.
+       - Priority Scheduling                     : Executes processes based on priority.
+       - Round Robin (RR)                        : Each process gets a fixed time slice (quantum) in a cyclic order.
+       - Multilevel Queue Scheduling             : Divides processes into queues with different priority levels.
+       - Multilevel Feedback Queue Scheduling    : Processes can move between queues based on behavior.
 --------------------------------------------------------------------------------------------------------------
 3.Context Switching:
        - The act of saving the state of a currently running process and loading the state of the next process.
@@ -106,6 +107,7 @@ Definition:
        - `fork()`: Creates a child process.
        - `exec()`: Replaces a process’s memory space with a new program.
        - `wait()`: Makes the parent process wait for the child to finish.
+       - `exit()`: ermination system calls.
        - `kill()`: Sends signals to processes.
 _________________________________________________________________________________________________________________________________
                                                 Process Creation and Termination

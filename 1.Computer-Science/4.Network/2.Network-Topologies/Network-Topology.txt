@@ -87,7 +87,6 @@ ________________________________________________________________________________
             - Use Cases:
                     - Large enterprises with multiple departments.
 _______________________________________________________________________________________________________________________________________
-
  2.Logical Topologies:
         - Logical topology refers to how data flows in a network, regardless of its physical connections.
         --------------------------------------------------------------------------------------------------------------
@@ -120,6 +119,7 @@ ________________________________________________________________________________
  Comparison of Topologies
                ______________________________________________________________________________________
               | Topology     | Fault Tolerance    | Cost       | Scalability     | Ease of Setup     |
+               ______________________________________________________________________________________
               | Bus          | Low                | Low        | Limited         | Easy              |
               | Star         | Medium             | Medium     | High            | Moderate          |
               | Ring         | Medium             | Low        | Limited         | Complex           |

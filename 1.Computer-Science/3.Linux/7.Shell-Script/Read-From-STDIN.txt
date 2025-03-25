@@ -1,7 +1,6 @@
-
 ____________________________________________________________________________________________________________________________________________________________
-                                                        Shell Script 
-                                                        ============
+                                                    Reading from stdin
+                                                    ==================
 In Linux and shell scripting, reading from stdin (standard input) allows a
  script or command to accept input from the user, a file, or even another command. 
  
@@ -123,7 +122,7 @@ ________________________________________________________________________________
       #!/bin/bash
       echo "Enter multiple words:"
       read -a words
-      echo "You entered: ${words[]}"
+      echo "You entered: ${words[@]}"
       ``````````````````````````````````````````
 
 - Usage:

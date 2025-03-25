@@ -1,0 +1,25 @@
+_______________________________________________________________________________________________________________________________________
+
+                         _____________________________________________________________________________
+                        |         Command                |                Description                 |
+                        |________________________________|____________________________________________|
+                        | `nginx`                        | Starts Nginx.                              |
+                        | `nginx -v`                     | Shows the version of Nginx.                |
+                        | `nginx -V`                     | Shows detailed version info with modules.  |
+                        | `nginx -t`                     | Tests configuration syntax.                |
+                        | `nginx -T`                     | Displays the full configuration file.      |
+                        | `nginx -s stop`                | Immediately stops Nginx.                   |
+                        | `nginx -s quit`                | Gracefully stops Nginx.                    |
+                        | `nginx -s reload`              | Reloads Nginx configuration.               |
+                        | `nginx -s reopen`              | Reopens log files.                         |
+                        | `nginx -c /path/to/nginx.conf` | Uses a custom configuration file.          |
+                        | `nginx -g "directive;"`        | Overrides configuration directives.        |
+                        | `nginx -p /path/to/prefix`     | Uses a different directory prefix.         |
+                        | `systemctl start nginx`        | Starts Nginx via systemd.                  |
+                        | `systemctl restart nginx`      | Restarts Nginx.                            |
+                        | `systemctl reload nginx`       | Reloads configuration via systemd.         |
+                        | `ps aux | grep nginx`          | Finds running Nginx processes.             |
+                        | `kill -9 <PID>`                | Forcefully stops a process.                |
+                        |_____________________________________________________________________________|
+                        
+_______________________________________________________________________________________________________________________________________

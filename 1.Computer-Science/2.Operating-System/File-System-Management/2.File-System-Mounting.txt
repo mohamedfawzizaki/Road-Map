@@ -134,8 +134,8 @@ Additional Options
 --------------------------------------------------------------------------------------------------------------   
 Conclusion
       The command `sudo mount /dev/sdb1 /mnt/user` mounts the first partition of the second 
-      disk (`/dev/sdb1`) to the `/mnt/user` directory.This makes the files and
-      directories on `/dev/sdb1` accessible under `/mnt/user`, 
+      disk (`/dev/sdb1`) to the `/mnt/user` directory.
+      This makes the files and directories on `/dev/sdb1` accessible under `/mnt/user`, 
       and any subsequent file operations can be performed on it as if it were part of the local file system.
 _______________________________________________________________________________________________________________________________________
 _______________________________________________________________________________________________________________________________________

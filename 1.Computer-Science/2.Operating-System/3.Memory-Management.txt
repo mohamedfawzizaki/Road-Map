@@ -271,12 +271,13 @@ Definition:
                                    Typical Memory Layout of a Process
                  -----------------------------------------------------------------------------
                 | Segment    | Purpose                                     | Growth Direction |
-                |------------------------------------------------------------------------------
+                |-----------------------------------------------------------------------------|
                 | Text       | Program code (instructions)                 | N/A              |
                 | Data       | Initialized global/static variables         | N/A              |
                 | BSS        | Uninitialized global/static variables       | N/A              |
                 | Heap       | Dynamically allocated memory                | Grows upwards    |
                 | Stack      | Function call frames, local variables       | Grows downwards  |
+                |-----------------------------------------------------------------------------|
 _________________________________________________________________________________________________________________________________
                                              Detailed Example
                                              ----------------

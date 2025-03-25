@@ -22,7 +22,7 @@ ________________________________________________________________________________
             - `/proc/[pid]/`: 
                     - Contains directories for each running process (where `[pid]` is the process ID).
                     - Inside each of these directories, you’ll find information about the process,
-                    such as memory usage, status, and open file descriptors.
+                       such as memory usage, status, and open file descriptors.
             
             - `/proc/sys/`: 
                     - Allows the kernel parameters to be modified at runtime.For example, 

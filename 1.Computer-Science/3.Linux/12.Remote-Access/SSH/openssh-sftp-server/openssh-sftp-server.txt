@@ -90,8 +90,8 @@ Basic Usage of SFTP:
         Example:
         ````````````````````````````````````bash
         sftp user@host
-        sftp> get remote_file.txt local_file.txt
-        sftp> put local_file.txt remote_file.txt
+        sftp> get    /path/remote_file.txt     /path/local_file.txt
+        sftp> put    /path/local_file.txt      /path/remote_file.txt
         sftp> ls
         ````````````````````````````````````
 

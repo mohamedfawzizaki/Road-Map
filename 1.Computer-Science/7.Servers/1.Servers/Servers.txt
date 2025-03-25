@@ -52,7 +52,7 @@ ________________________________________________________________________________
 
 9.Virtualization Servers:
        - Function: Host virtual machines (VMs) using hypervisors.
-       - Examples: VMware ESXi, Microsoft Hyper    -V, KVM.
+       - Examples: VMware ESXi, Microsoft Hyper-V, KVM.
        - Use Cases: Running multiple operating systems or environments on a single physical server.
 
 10.Game Servers:
@@ -105,7 +105,7 @@ ________________________________________________________________________________
 
 2.Shared Servers:
        - Multiple clients share server resources.
-       - Cost    -effective but less customizable.
+       - Cost-effective but less customizable.
 
 3.Virtual Servers:
        - Virtual machines hosted on physical servers.
@@ -116,7 +116,7 @@ ________________________________________________________________________________
        - Scalable and highly available.
 
 5.Edge Servers:
-       - Deployed closer to users for low    -latency applications.
+       - Deployed closer to users for low-latency applications.
        - Used in content delivery networks (CDNs).
 _______________________________________________________________________________________________________________________________________
                                                  Server Management

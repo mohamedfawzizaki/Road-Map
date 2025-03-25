@@ -111,21 +111,21 @@ Commands Related to Libraries in `/lib/`
 
         - List shared libraries for a command:
                 Use `ldd` to list the shared libraries that a particular executable relies on.
-                ```bash
+                ````````````````bash
                 ldd /bin/ls
-                ```
+                ````````````````````
 
         - Find a library:
                 Use `find` to search for a specific library in the `/lib/` directory.
-                ```bash
+                `````````````````````````bash
                 find /lib -name "libc.so"
-                ```
+                `````````````````````````````
 
         - Check which package a library belongs to:
                 If you are using a package manager like `dpkg` (Debian-based systems), you can use:
-                ```bash
+                `````````````````````````````````````bash
                 dpkg -S /lib/x86_64-linux-gnu/libc.so
-                ```
+                `````````````````````````````````````````
 ---------------------------------------------------------------------------------------------------------
 Summary of `/lib/`:
 

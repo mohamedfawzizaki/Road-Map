@@ -53,10 +53,12 @@ Key Apache Directories and Files
 
 3.`/var/www/` (Web Content Directory)
    - Location: 
-          - This directory is used for storing the web content served by Apache.The default location for the root of web files is `/var/www/` or `/var/www/html/`.
+          - This directory is used for storing the web content served by Apache.
+          - The default location for the root of web files is `/var/www/` or `/var/www/html/`.
    - Files:
           - `/var/www/html/`: 
-                                  - This is the default directory where the web server serves the content for websites.Files such as `index.html`, PHP scripts, and other static content are placed here.
+                                  - This is the default directory where the web server serves the content for websites.
+                                  - Files such as `index.html`, PHP scripts, and other static content are placed here.
           - `/var/www/html/index.html`: 
                                   - A default placeholder page that Apache may serve on a fresh installation to indicate that the web server is running correctly.
 

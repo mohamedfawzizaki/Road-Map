@@ -1,10 +1,23 @@
 ____________________________________________________________________________________________________________________________________________________________
-                                                        Shell Script 
-                                                        ============
+                                                         Loops
+                                                        ======= 
 Loops in shell scripting are used to execute a block of code multiple times. 
 They are essential for automating repetitive tasks. 
 Shell scripting supports various types of loops, including `for`, `while`, and `until`.
 
+Items:
+
+1. `for` loop: 
+                - This loop is used to iterate over a list of items. 
+                - It can be used to iterate over arrays, strings, and other data types.
+2. `while` loop: 
+                
+                - This loop is used to execute a block of code as long as a certain condition is met. 
+                - It can be used to iterate over a list of items 
+                  or to execute a block of code repeatedly until a certain condition is met.
+3. `until` loop: 
+                - This loop is used to execute a block of code until a certain condition is met.
+                - It is similar to the `while` loop but with a different syntax.
 ________________________________________________________________________________________________________________________________
                                                        Types of Loops
                                                        ==============
@@ -194,7 +207,7 @@ Example: Iterating Over Files
 
 Example: Find and Process Specific Files
         ``````````````````````````````````````````bash
-        for file in .txt
+        for file in *.txt
         do
             echo "Processing $file"
             # Add your processing commands here

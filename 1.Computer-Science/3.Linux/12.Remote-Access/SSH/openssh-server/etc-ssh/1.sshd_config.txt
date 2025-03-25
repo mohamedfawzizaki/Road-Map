@@ -1,14 +1,18 @@
 _________________________________________________________________________________________________________________________________________________________________________
                                              `/etc/ssh/sshd_config`
                                               ====================
-The `/etc/ssh/sshd_config` file is the configuration file for the OpenSSH SSH server daemon (`sshd`).It controls the behavior of the SSH server, including settings for authentication, logging, connection management, and security.This file is critical for securing and customizing how SSH connections are handled on a system.
+The `/etc/ssh/sshd_config` file is the configuration file for the OpenSSH SSH server daemon (`sshd`).
+It controls the behavior of the SSH server, including settings for authentication,
+ logging, connection management, and security.
+ 
+This file is critical for securing and customizing how SSH connections are handled on a system.
 
 Key Sections and Directives in `/etc/ssh/sshd_config`:
 -------------------------------------------------------------------------------------------------------------------------------
 1.Authentication Settings:
 
 - `PermitRootLogin`:
-  - Controls whether the root user can log in via SSH.This is a critical security setting.
+  - Controls whether the root user can log in via SSH, This is a critical security setting.
   - Options: `yes`, `no`, `without-password`, `forced-commands-only`.
   - Example: 
     ````````````````````````````````````````````````bash
@@ -85,7 +89,7 @@ Key Sections and Directives in `/etc/ssh/sshd_config`:
   - Example:
     ````````````````````````````````````````````````bash
     AllowUsers user1 user2
-    DenyUsers user3
+    DenyUsers  user3
     ````````````````````````````````````````````````
 
 -------------------------------------------------------------------------------------------------------------------------------
@@ -230,39 +234,39 @@ Key Sections and Directives in `/etc/ssh/sshd_config`:
             ````````````````````````````````````````````````bash
             SSH Server Configuration
 
-            Port to listen on
+            #Port to listen on
             Port 22
 
-            Allow root login only with public key
+            #Allow root login only with public key
             PermitRootLogin prohibit-password
 
-            Use public key authentication
+            #Use public key authentication
             PubkeyAuthentication yes
 
-            Disable password authentication
+            #Disable password authentication
             PasswordAuthentication no
 
-            Enable X11 forwarding
+            #Enable X11 forwarding
             X11Forwarding yes
 
-            Disable empty passwords
+            #Disable empty passwords
             PermitEmptyPasswords no
 
-            Log level
+            #Log level
             LogLevel INFO
 
-            Timeout settings
+            #Timeout settings
             ClientAliveInterval 300
             ClientAliveCountMax 3
 
-            Banner file
+            #Banner file
             Banner /etc/issue.net
 
-            Host keys
+            #Host keys
             HostKey /etc/ssh/ssh_host_rsa_key
             HostKey /etc/ssh/ssh_host_ecdsa_key
 
-            Subsystem for SFTP
+            #Subsystem for SFTP
             Subsystem sftp /usr/lib/openssh/sftp-server
             ````````````````````````````````````````````````
 

@@ -1,7 +1,6 @@
 ____________________________________________________________________________________________________________________________________________________________
-                                                        Shell Script 
-                                                        ============
-Positional Parameters in Linux Shell Scripting
+                                                      Positional Parameters 
+                                                      =====================
 
 Positional parameters are special variables in a shell script used to pass and manage command-line arguments. 
 These are essential for creating dynamic scripts that can handle different inputs.
@@ -16,7 +15,7 @@ ________________________________________________________________________________
 | `$1, $2, ...` | Arguments passed to the script or function, starting from the first argument.                              |
 | `$#`          | The number of arguments passed to the script or function.                                                  |
 | `$@`          | All the arguments passed to the script or function, treated as separate quoted strings.                    |
-| `$`           | All the arguments passed to the script or function, treated as a single string (subject to word splitting).|
+| `$*`          | All the arguments passed to the script or function, treated as a single string (subject to word splitting).|
 |_______________|____________________________________________________________________________________________________________|
 
 ________________________________________________________________________________________________________________________________
@@ -80,13 +79,13 @@ ________________________________________________________________________________
       All arguments: arg 1 arg 2
       ``````````````````````````````````````````
 
-5. `$`
+5. `$*`
 
 - Expands to all arguments as a single string (subject to word splitting).
 - Example:
       ``````````````````````````````````````````bash
       #!/bin/bash
-      echo "All arguments as a single string: $"
+      echo "All arguments as a single string: $*"
       ``````````````````````````````````````````
   Command: `./myscript.sh "arg 1" "arg 2"`
   Output:
@@ -95,13 +94,13 @@ ________________________________________________________________________________
       ``````````````````````````````````````````
 
 ________________________________________________________________________________________________________________________________
-                                                     Comparison: `$@` vs. `$`
+                                                     Comparison: `$@` vs. `$*`
  ___________________________________________________________________________________________________________________________________________________________
-|           Aspect      |                     $@                                                       |                  $                                 |
+|           Aspect      |                     $@                                                       |                  $*                                 |
 |_______________________|______________________________________________________________________________|____________________________________________________|
 | Behavior              | Treats each argument as a separate string.                                   | Combines all arguments into a single string.       |
 | Use Case              | Useful for passing arguments to other commands or scripts without splitting. | Less common, used for single-string concatenation. |
-| Example Script Output | `$@` outputs: `arg1 arg2`.                                                   | `$` outputs: `arg1 arg2`.                          |
+| Example Script Output | `$@` outputs: `arg1 arg2`.                                                   | `$*` outputs: `arg1 arg2`.                          |
 |_______________________|______________________________________________________________________________|____________________________________________________|
 
 ________________________________________________________________________________________________________________________________
@@ -188,8 +187,8 @@ Output:
 ________________________________________________________________________________________________________________________________
                                                      Best Practices
                                                      ==============
-1. Quote `$@` and `$`:  
-                            - Always use double quotes (`"$@"` and `"$"`) to handle arguments with spaces correctly.
+1. Quote `$@` and `$*`:  
+                            - Always use double quotes (`"$@"` and `"$*"`) to handle arguments with spaces correctly.
 2. Use `$@` for Iteration:  
                             - Prefer `$@` over `$` in scripts to handle arguments as individual items.
 3. Check Argument Count:  

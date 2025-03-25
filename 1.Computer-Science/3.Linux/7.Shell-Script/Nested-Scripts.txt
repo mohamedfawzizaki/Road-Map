@@ -1,6 +1,6 @@
 ____________________________________________________________________________________________________________________________________________________________
-                                                        Shell Script 
-                                                        ============
+                                                        Nested Script 
+                                                        =============
 
 Including one script inside another in shell scripting is 
  a common way to reuse code or share functions and variables between scripts. 
@@ -112,7 +112,8 @@ ________________________________________________________________________________
                                                          Error Handling
                                                          ==============
 
-- If the included file doesn't exist or is not executable, the script will throw an error. You can check for the file's existence before including it.
+- If the included file doesn't exist or is not executable, the script will throw an error. 
+- You can check for the file's existence before including it.
   
 #Example
         ``````````````````````````````````````````bash

@@ -92,7 +92,10 @@ ________________________________________________________________________________
                                 User - Terminal ->  Shell  -> Kernel  ->  Hardware.   
                                                            -> System Calls ->  Kernel  ->  Hardware.     
                                 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 1.Kernel
+ 1.Hardware : 
+        - It refers to the physical components of a computer system, 
+          such as the CPU, memory, storage devices, and input/output devices.
+ 2.Kernel
         - Definition: The kernel is the core of the operating system, It acts as a bridge between the hardware and software.
         - Role:
                - Manages hardware resources (CPU, memory, devices).
@@ -102,7 +105,7 @@ ________________________________________________________________________________
                - Linux uses a monolithic kernel, meaning all core functions
                 (file systems, device drivers, memory management) run in kernel space.
  
- 2.System Calls in Linux
+ 3.System Calls in Linux
         - A system call is a mechanism that allows user-level programs to request services from the operating system’s kernel.
         - Since user programs cannot directly interact with hardware,
           they rely on the kernel to handle low-level tasks like accessing files, memory, and devices.
@@ -112,7 +115,7 @@ ________________________________________________________________________________
                - They ensure security and stability by preventing user programs from executing privileged operations directly.     
          
  
- 2.Shell
+ 4.Shell
         - Definition: 
                - A shell is a command-line interpreter that provides an interface between the user and the kernel.
         - Role:
@@ -124,7 +127,7 @@ ________________________________________________________________________________
                - Fish (Friendly Interactive Shell) – focuses on user-friendliness.
                - sh, csh, ksh, etc.
 
- 3.Terminal
+ 5.Terminal
         - Definition: 
                - A terminal (or terminal emulator) is a program that provides a graphical interface for interacting with the shell.
         - Role:
@@ -133,9 +136,6 @@ ________________________________________________________________________________
         - Examples:
                - GNOME Terminal, Konsole, xterm, Alacritty, Terminator.
 
- 5.Hardware : 
-        - It refers to the physical components of a computer system, 
-          such as the CPU, memory, storage devices, and input/output devices.
  
  How They Work Together:
         1.User interacts with the terminal (the graphical program).
@@ -198,3 +198,79 @@ Command: `ls`
             7.The kernel interacts with the filesystem and hardware to retrieve directory information.
             8.The kernel sends the output back to the shell, which is displayed by the terminal.
 ______________________________________________________________________________________________________________________________________
+                                       Login Shells vs. Non-Login Shells 
+
+In Bash (and other shells), a login shell and a non-login shell behave differently,
+ especially in terms of which startup scripts they execute.
+
+---
+ 1️⃣ Login Shell
+A login shell is a shell session that starts when a user logs into the system directly, such as:
+- Logging in via TTY (Ctrl+Alt+F1...F6)
+- Logging in via SSH (`ssh user@server`)
+- Using `su - username` (note the `-`, which starts a new login shell)
+- Opening a terminal emulator with `--login` (e.g., `bash --login`)
+
+ Files Executed by a Login Shell
+
+| File                  | Scope                       | Notes |
+|-----------------------|-----------------------------|--------------------------------------|
+| `/etc/profile`        | System-wide                 | Runs scripts in `/etc/profile.d/`    |
+| `~/.bash_profile`     | User-specific               | Preferred for login setup            |
+| `~/.bash_login`       | User-specific (alternative) | Used if `~/.bash_profile` is missing |
+| `~/.profile`          | User-specific (fallback)    | Used if neither of the above exist   |
+
+---
+ 2️⃣ Non-Login Shell
+A non-login shell is any interactive shell session that does not require authentication. This typically includes:
+- Opening a new terminal window in a GUI (GNOME Terminal, Konsole, etc.)
+- Running a new shell inside another shell (`bash`, `zsh`, etc.)
+- Using `su username` (without `-`, which does not start a login shell)
+- Running shell scripts (`bash script.sh`)
+
+                     Files Executed by a Non-Login Shell
+                     
+| File               | Scope           | Notes                                    |
+|--------------------|-----------------|------------------------------------------|
+| `/etc/bash.bashrc` | System-wide     | Runs for all non-login shells            |
+| `~/.bashrc`        | User-specific   | Used for aliases, functions, and settings|
+
+---
+
+ How to Check if Your Shell is a Login Shell
+Run:
+```bash
+shopt -q login_shell && echo "Login Shell" || echo "Non-Login Shell"
+```
+or check with:
+```bash
+echo $0
+```
+- If it shows `-bash`, it’s a login shell.
+- If it shows just `bash`, it’s a non-login shell.
+
+---
+
+ Practical Example
+Suppose you add this to your `~/.bash_profile`:
+```bash
+echo "This is a login shell!"
+```
+And this to your `~/.bashrc`:
+```bash
+echo "This is a non-login shell!"
+```
+- If you log in via SSH → You’ll see `This is a login shell!`
+- If you open a new terminal → You’ll see `This is a non-login shell!`
+
+---
+
+                   Conclusion: When to Modify Which File?
+
+|               Task                      |             Modify                  |
+|-----------------------------------------|-------------------------------------|
+| Set environment variables (PATH)        | `~/.bash_profile` or `/etc/profile` |
+| Define aliases/functions                | `~/.bashrc`                         |
+| Change prompt (PS1)                     | `~/.bashrc`                         |
+| Run startup commands on login           | `~/.bash_profile`                   |
+| Run scripts when opening a new terminal | `~/.bashrc`                         |

@@ -1,13 +1,16 @@
 #_________________________________________________________________________________________________________________________________________________________________________# 
                                                      System Management 
                                                      =================
+
  _______________________________________________________________________________________________________________________________________________________
 |        Command         |              Example                             |                        Usage                                              |                                                                                
 |________________________|__________________________________________________|___________________________________________________________________________|
 |   hostnam e            |    `hostname -I`                                 | Display or set the hostname of the system.                                |
+|   hostnamectl          |     hostnamectl                                  |   Shows or changes the system's hostname and related information.         |
 |   uname                |    `uname -a`                                    | Display system information (kernel name, version, architecture).          |
 |   whoami               |    `whoami`                                      | Display the current user’s name.                                          |
 |   who                  |    `who`                                         | Show who is currently logged in.                                          |
+|   last                 |     last                                         |   Lists login history for all users.                                      |
 |   which                |    `which command`                               | Show the path to the command.                                             |
 |   id                   |    `id username`                                 | Display UID, GID, and groups of a user.   
 |   lsb_release          |     lsb_release -a                               | Disable information about the Operating System.
@@ -21,9 +24,14 @@
 |   iostat               |    `iostat -c 5`                                 | Reports CPU statistics every 5 seconds.          
 |   tload	             |     tload	                                    | Display a graph of system load averages in the terminal.
 |   iostat               |    `iostat -x 2`                                 | Shows extended I/O statistics every 2 seconds.  
+|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   free                 |    `free -h`                                     | Display memory usage.                                                     |
+|   /proc/meminfo        |                                                  | Detailed memory statistics.
+|   mkswap               |                                                  | Create a swap space.
 |   swapoff              |    `swapoff /swapfile`                           | Disable swap space.                                                       |
 |   swapon               |    `swapon /swapfile`                            | Enable swap space.
+|   /proc/vmstat         |                                                  | Provides detailed VM statistics.
+|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   netstat	             |     netstat -tulnp	                            | Display active network connections and listening services.
 |   ss                   |    `ss -tulnp`                                   | Display socket statistics (alternative to netstat).                       |                                                                                      
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,8 +42,8 @@
 |   df                   |    `df -h`                                       | Display disk space usage by file system.                                  |
 |   du                   |    `du -sh /var/log`                             | Estimate file and directory space usage.                                  |
 |   lsblk                |    `lsblk`                                       | List information about block devices.                                     |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   blkid                |    `blkid /dev/sdb1`                             | Display information about block devices (UUID, type).                     |
+|   `lsusb`              |                                                  | List USB devices.
 |   mount                |    `mount /dev/sdb1 /mnt`                        | Mount a file system.                                                      |
 |   umount               |    `umount /mnt`                                 | Unmount a file system.                                                    |
 |   parted               |    `parted /dev/sda`                             | Partition management tool.                                                |
@@ -45,6 +53,7 @@
 |   fsck                 |    `fsck /dev/sda1`                              | Check and repair a file system.                                           |
 |   mkfs                 |    `mkfs.ext4 /dev/sdb1`                         | Create a file system on a device.                                         |
 |   tune2fs              |    `tune2fs -l /dev/sda1`                        | Adjust tunable parameters on ext2/ext3/ext4 file systems.                 |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   sysctl               |    `sysctl -a`                                   | Display or modify kernel parameters at runtime.                           |
 |   dmesg                |    `dmesg | tail`                                | Display kernel message buffer (useful for debugging hardware issues).     |

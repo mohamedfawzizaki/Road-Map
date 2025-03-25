@@ -1,5 +1,5 @@
 _______________________________________________________________________________________________________________________________________
-1.Personal Area Network (PAN)
+Personal Area Network (PAN)
         - A Personal Area Network is a network for a single person or a small group of devices.
 
         Characteristics:

@@ -244,63 +244,60 @@ Bus Architecture:
 
 _________________________________________________________________________________________________________________________________
 
+-------------------------------------------------------------------------------------------------------------
+                                                        1. 32-bit and 64-bit
+- 32-bit:
+  - Refers to a CPU architecture that processes data in 32-bit chunks.
+  - Limited to addressing up to 4 GB of RAM (2^32 memory addresses).
+  - Common in older systems and some embedded devices.
+  - Examples: Intel 80386, Pentium 4 (in 32-bit mode).
 
-A 64-bit system refers to a computing architecture that uses 64 bits to represent data and addresses, which impacts various aspects of computing, such as memory usage, performance, and compatibility.The term "64-bit" is commonly used to describe both the processor architecture (CPU) and the operating system (OS), and they are interconnected.
+- 64-bit:
+  - Refers to a CPU architecture that processes data in 64-bit chunks.
+  - Can address significantly more memory (theoretically up to 16 exabytes, though practical limits are much lower).
+  - Provides better performance for applications that require large amounts of memory or complex calculations.
+  - Examples: Modern CPUs like Intel Core i7, AMD Ryzen, and ARM Cortex-A series.
+-------------------------------------------------------------------------------------------------------------
+                                                        2. AMD64
+- AMD64:
+  - A 64-bit instruction set architecture developed by AMD.
+  - Also known as x86-64 or x64.
+  - Extends the older 32-bit x86 architecture to support 64-bit processing.
+  - Backward-compatible with 32-bit x86 software.
+  - Widely adopted by Intel and other manufacturers.
+  - Used in most modern desktop, laptop, and server processors.
+-------------------------------------------------------------------------------------------------------------
+                                                        3. x86-64
+- x86-64:
+  - Another name for the 64-bit extension of the x86 architecture.
+  - Essentially the same as AMD64.
+  - Commonly used in Intel and AMD processors.
+  - Supports both 32-bit and 64-bit operating systems and applications.
+-------------------------------------------------------------------------------------------------------------
+                                                        4. ARM64 (AArch64)
+- ARM64:
+  - Refers to the 64-bit version of the ARM architecture.
+  - Also known as AArch64.
+  - Designed for energy efficiency, making it popular in mobile devices, embedded systems, and increasingly in laptops and servers.
+  - Not compatible with x86 or AMD64 architectures.
+  - Examples: Apple Silicon (M1, M2), Qualcomm Snapdragon, and ARM Cortex-A series processors.
+-------------------------------------------------------------------------------------------------------------
+                                                        Key Differences
+                        ______________________________________________________________________________________________________
+                        | Feature      | 32-bit (x86)       | 64-bit (x86-64/AMD64)               | ARM64 (AArch64)            |
+                        |--------------|--------------------|-------------------------------------|----------------------------|
+                        | Data Width   | 32-bit             | 64-bit                              | 64-bit                     |
+                        |--------------|--------------------|-------------------------------------|----------------------------|
+                        | Memory Limit | 4 GB               | 16+ exabytes (theoretical)          | 16+ exabytes (theoretical) |
+                        |--------------|--------------------|-------------------------------------|----------------------------|
+                        | Compatibility| Older software     | Backward-compatible with 32-bit x86 | Not compatible with x86    |
+                        |--------------|--------------------|-------------------------------------|----------------------------|
+                        | Use Cases    | Legacy systems, embedded devices | Modern desktops, laptops, servers | Mobile devices, embedded systems, Apple Silicon |
+                        |______________|__________________________________|___________________________________|_________________________________________________|
 
- Key Features of a 64-Bit System:
-
-1.Larger Addressable Memory:
-   - A 64-bit system can theoretically address up to 18.4 million TB of RAM (16 exabytes), though practically, most systems are far below this limit.This is a significant improvement over 32-bit systems, which can only address up to 4 GB of RAM.
-   - The ability to use more than 4 GB of RAM allows for better performance, particularly in memory-intensive applications (e.g., databases, video editing, and gaming).
-
-2.Enhanced Performance:
-   - 64-bit CPUs can process 64 bits of data in a single clock cycle, which improves computational efficiency, especially for tasks involving large datasets or complex calculations.
-   - 64-bit instructions enable better optimization, which is why 64-bit processors typically outperform 32-bit processors in terms of speed for certain types of workloads (e.g., heavy multitasking, high-performance computing).
-
-3.Improved Security:
-   - 64-bit operating systems often come with additional security features, such as Kernel Patch Protection (KPP), Data Execution Prevention (DEP), and Address Space Layout Randomization (ASLR), which are harder to implement on 32-bit systems.
-   - These security features help protect against malware, making 64-bit systems more secure than their 32-bit counterparts.
-
-4.Compatibility with 32-Bit Applications:
-   - 64-bit operating systems typically support 32-bit applications through compatibility layers (e.g., WoW64 in Windows, multiarch in Linux).However, 32-bit systems cannot run 64-bit applications because of the limitations of the architecture.
-   - Some software may still be compiled for 32-bit systems, but running such applications on a 64-bit system is more efficient, and most modern software is compiled for 64-bit.
-
-5.Instruction Set:
-   - A 64-bit CPU uses a 64-bit instruction set, which means it can handle larger data types directly in the hardware.This is especially useful for scientific computing, video editing, and other resource-intensive tasks.
-   - For example, a 64-bit register can store larger integer values than a 32-bit register, making certain calculations faster and more efficient.
-
-6.Operating System:
-   - A 64-bit operating system is designed to run on 64-bit processors and take advantage of the full capabilities of 64-bit hardware.
-   - Examples of popular 64-bit operating systems include:
-     - Windows 10/11 (64-bit)
-     - macOS (64-bit)
-     - Linux distributions (Ubuntu, Fedora, etc.in 64-bit versions)
-
- Advantages of 64-Bit Systems:
-
-- Higher Memory Capacity: A 64-bit system can use much more RAM than a 32-bit system, allowing for better multitasking and the ability to run memory-heavy applications like video editing software, databases, or large-scale simulations.
-- Performance Boost: 64-bit processors handle more data per clock cycle, improving performance in tasks like video rendering, 3D modeling, and scientific computations.
-- Enhanced Security: Many modern 64-bit systems implement stronger security features, which help prevent certain types of exploits, malware, and hacking attempts.
-- Better Software Support: As more software moves to 64-bit, using a 64-bit OS ensures better compatibility and performance with the latest applications, drivers, and hardware.
-
- Disadvantages of 64-Bit Systems:
-
-- Compatibility Issues: Some older 32-bit software or hardware may not work with 64-bit systems without additional compatibility layers or emulation.
-- Higher Resource Usage: A 64-bit OS and applications can use more memory than their 32-bit counterparts, although the difference is usually negligible unless you are working with massive data sets or very high-performance needs.
-- Increased Development Complexity: Software developers must manage both 32-bit and 64-bit versions of their programs, which can increase development time and complexity.
-
- 64-Bit CPUs and Their Architecture:
-
-1.AMD64 / x86-64:
-   - The architecture commonly used by both AMD and Intel processors is AMD64 (also called x86-64).It is a 64-bit extension to the 32-bit x86 architecture that allows for more efficient handling of data and larger memory addressing.
-
-2.ARM64 (AArch64):
-   - ARM processors, commonly used in smartphones, tablets, and some servers, also use a 64-bit architecture known as ARM64 or AArch64.
-   - Many modern mobile devices and embedded systems are based on ARM64 architecture.
-
- Transitioning from 32-bit to 64-bit:
-
-- Software: When upgrading to a 64-bit system, you may need to install 64-bit versions of your applications.Some 64-bit operating systems can run 32-bit applications using compatibility modes, but performance is optimized when using 64-bit versions of both the OS and applications.
-- Hardware: You also need to have 64-bit compatible hardware.Most modern processors (both AMD and Intel) are 64-bit, but some older processors only support 32-bit.
-
- 
+-------------------------------------------------------------------------------------------------------------
+                                                        Summary
+- 32-bit and 64-bit refer to the width of data a CPU can process.
+- AMD64 and x86-64 are essentially the same, referring to the 64-bit extension of the x86 architecture.
+- ARM64 (AArch64) is a 64-bit architecture designed by ARM, used in mobile and energy-efficient devices.
+_________________________________________________________________________________________________________________________________

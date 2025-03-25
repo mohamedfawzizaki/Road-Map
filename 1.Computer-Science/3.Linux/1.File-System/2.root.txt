@@ -1,10 +1,10 @@
+
 ______________________________________________________________________________________________________________________________________
                                                       `/root` Directory
                                                       =================
 
 The `/root` directory is the home directory of the superuser or root user.
 It is distinct from `/home`, where regular users have their personal directories.
-
 ---------------------------------------------------------------------------------------------------------
 Purpose of the `/root` Directory
 

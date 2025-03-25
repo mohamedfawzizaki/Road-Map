@@ -1,6 +1,6 @@
 _______________________________________________________________________________________________________________________________________
-                                                 Web Servers 
-                                                 ===========
+                                                     Web Servers 
+                                                     ===========
 
 A web server is a software or hardware system that serves HTTP requests
  from clients (typically web browsers) and delivers web content,
@@ -12,11 +12,12 @@ Web servers can be physical hardware (dedicated or virtual) or
  software running on a machine, and they are key components in the client-server model for delivering web content.
 
 _______________________________________________________________________________________________________________________________________
-                                            Types of Web Servers
+                                                 Types of Web Servers
 
 1.Apache HTTP Server (Apache):
        - Overview: 
-              - Apache is one of the most widely used web servers.It is open-source and highly customizable.
+              - Apache is one of the most widely used web servers.
+              - It is open-source and highly customizable.
        - Features:
               - Supports HTTP, HTTPS, and other protocols.
               - Extensible with modules (e.g., mod_rewrite for URL rewriting).
@@ -95,8 +96,8 @@ ________________________________________________________________________________
          a specific resource, such as a webpage or an image, by entering a URL.
    
 2.Processing the Request:
-       - The web server receives the request and processes it.If it's a
-         static resource (e.g., HTML file), it is retrieved from the server's file system.
+       - The web server receives the request and processes it.
+       - If it's a static resource (e.g., HTML file), it is retrieved from the server's file system.
        - If the request is for dynamic content (e.g., a PHP file),
          the web server passes the request to an interpreter (e.g., PHP-FPM for PHP files, Java application server for JSP) for processing.
 
@@ -147,17 +148,19 @@ ________________________________________________________________________________
                                                     Web Server Configuration
 
 - Document Root: 
-       - The directory where the web server looks for content to serve.For example, `/var/www/html` in Apache.
+       - The directory where the web server looks for content to serve.
+       - For example, `/var/www/html` in Apache.
 
 - Virtual Hosts: 
        - Configuration to host multiple websites on a single server, based on domain names or IP addresses.
        - This is crucial for shared hosting.
 
+- Server Blocks (NGINX): 
+       - Similar to Apache’s virtual hosts, but more flexible and performance-oriented.
+
 - Rewrite Rules:
        -  Directives for modifying URLs, often used for SEO-friendly URLs, or redirecting HTTP to HTTPS.
 
-- Server Blocks (NGINX): 
-       - Similar to Apache’s virtual hosts, but more flexible and performance-oriented.
 
 - Security Settings: 
        - Configuration of SSL certificates, HTTP security headers, and access control rules to ensure the server is secure.
@@ -188,8 +191,11 @@ ________________________________________________________________________________
        - Configuring web servers, especially with additional modules or custom requirements, can be complex.
 
 2.Security Vulnerabilities:
-       - Web servers can be vulnerable to attacks like DDoS, SQL injection,
-         cross-site scripting (XSS), and more, requiring proper hardening and regular updates.
+       - Web servers can be vulnerable to attacks like:
+                     - DDoS.
+                     - SQL injection.
+                     - cross-site scripting (XSS),
+                      and more, requiring proper hardening and regular updates.
 
 3.High Traffic Load:
        - Handling sudden surges in traffic can lead to server overload

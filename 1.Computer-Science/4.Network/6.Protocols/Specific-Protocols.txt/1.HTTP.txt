@@ -192,3 +192,9 @@ With the introduction of HTTP/2 and HTTP/3, significant performance improvements
  particularly for mobile and high-latency networks, while security features
   like HTTPS and modern headers help ensure data privacy and integrity.
 _______________________________________________________________________________________________________________________________________
+
+
+All Headers:
+- Accept
+- Accept-Charset
+- Accept-Encoding

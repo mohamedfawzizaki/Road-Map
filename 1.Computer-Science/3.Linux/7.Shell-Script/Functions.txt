@@ -7,6 +7,17 @@ In shell scripting, functions allow you to encapsulate
 Functions in shell scripts work similarly to functions in other programming languages,
  providing a way to group commands under a single name.
 
+Items:
+        - Defining and Using Functions.
+        - Simple Function.
+        - Function with Multiple Arguments.
+        - Function Returning a Value.
+        - Function with Local Variables.
+        - Passing Arrays to Functions.
+        - Recursive Functions.
+        - Function Scope.
+        - Function Libraries.
+        - Debugging Functions.
 ________________________________________________________________________________________________________________________________
                                                 Defining and Using Functions
                                                 ============================
@@ -19,6 +30,7 @@ Basic Syntax
         ``````````````````````````````````````````
 
 OR (less common but valid):
+
         ``````````````````````````````````````````bash
         function function_name {
             commands
@@ -113,7 +125,7 @@ You can use the `local` keyword to define variables that are only accessible wit
         calculate_area() {
             local length=$1
             local width=$2
-            echo $(( length  width ))
+            echo $(( length * width ))
         }
 
         area=$(calculate_area 5 10)
@@ -187,7 +199,7 @@ Example: Factorial
                 echo 1
             else
                 prev=$(factorial $(( $1 - 1 )))
-                echo $(( $1  prev ))
+                echo $(( $1 * prev ))
             fi
         }
 

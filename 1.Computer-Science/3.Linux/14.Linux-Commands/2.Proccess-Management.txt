@@ -11,7 +11,9 @@
 |  htop                  |   htop                                         | Interactive process viewer with user-friendly interface.                  |
 |  pstree                |   pstree                                       | Display a tree of processes, showing parent-child relationships.          |
 |  cat /proc/{PID}/status|   cat /proc/1234/status                        | Display detailed status information about a specific process.             |
-|  lsof                  |   lsof -p 1234                                 | List open files by a process.                                             |
+|  lsof                  |   lsof -p 1234                                 | List open files by a process.
+|  lsof                  |   lsof -i :80                                  | find out which process is occupying port 80;
+|                        |   sudo netstat -tulnp | grep ':80'
 |-----------------------------------------------------------------------------------------------------------------------------------------------------|
 |  pgrep                 |   pgrep -u username sshd                       | Search for processes by name or attributes.                               |
 |  pidof                 |   pidof apache2                                | Find the process ID (PID) of a running program.                           |

@@ -1,7 +1,6 @@
 ____________________________________________________________________________________________________________________________________________________________
-                                                        Shell Script 
-                                                        ============
-Environment Variables in Linux
+                                                     Environment Variables
+                                                     =====================
 
 Environment variables are key-value pairs used by the operating 
  system and applications to store configuration settings and system information.

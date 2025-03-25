@@ -16,10 +16,10 @@ ________________________________________________________________________________
 | `$1`, `$2`, ... | `echo $1 $2`            | Positional parameters for the script or function arguments.                          |
 | `$#`            | `echo $#`               | The number of positional parameters passed to the script or function.                |
 | `$@`            | `echo $@`               | All positional parameters as separate quoted strings.                                |
-| `$`             | `echo $`                | All positional parameters as a single string (unquoted, subject to word splitting).  |
+| `$*`            | `echo $*`               | All positional parameters as a single string (unquoted, subject to word splitting).  |
 | `$?`            | `ls && echo $?`         | Exit status of the last executed command (0 for success, non-zero for failure).      |
 | `$$`            | `echo $$`               | Process ID (PID) of the current shell.                                               |
-| `$_`            | `echo $_`               | The last argument of the last executed command.                                      |
+| `$_`            | `echo $_`               | The last argument or option of the last executed command.                                      |
 | `$!`            | `sleep 10 & echo $!`    | PID of the last background job.                                                      |
 | `$-`            | `echo $-`               | Current shell options, as set by the `set` command.                                  |
 | `$LINENO`       | `echo $LINENO`          | Current line number in the script.                                                   |
@@ -83,17 +83,17 @@ ________________________________________________________________________________
         Background job PID: 12346
         ``````````````````````````````````````````
 
-4. `$@` vs. `$`
+4. `$@` vs. `$*`
         ``````````````````````````````````````````bash
         #!/bin/bash
         echo "Using \$@: $@"
-        echo "Using \$: $"
+        echo "Using \$*: $*"
         ``````````````````````````````````````````
 - Run: `./script.sh "arg1" "arg2"`
 - Output:
         ``````````````````````````````````````````
         Using $@: arg1 arg2
-        Using $: arg1 arg2
+        Using $*: arg1 arg2
         ``````````````````````````````````````````
 
 5. Random Number with `$RANDOM`

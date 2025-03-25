@@ -50,15 +50,16 @@ vary depending on the services running on the system, the FHS suggests the follo
 FHS Standardization
 
 The use of `/srv/` helps maintain a clean and organized directory structure by
- segregating service-specific data from other types of files.This helps in:
-
-- Separation of Concerns: Keeping service files isolated from system configuration files and other general-purpose data.
-- Ease of Management    : Service files are easy to locate and manage when placed in a dedicated directory like `/srv/`.
+ segregating service-specific data from other types of files.
+ 
+This helps in:
+    - Separation of Concerns: Keeping service files isolated from system configuration files and other general-purpose data.
+    - Ease of Management    : Service files are easy to locate and manage when placed in a dedicated directory like `/srv/`.
 ---------------------------------------------------------------------------------------------------------
 Example: Web Server Data
 
-Assume you're running an Apache web server.The server's content might
- be stored under `/srv/www/`, where the main website directory could be `/srv/www/html/`.
+Assume you're running an Apache web server.
+The server's content might be stored under `/srv/www/`, where the main website directory could be `/srv/www/html/`.
 
 ```bash
 /srv/

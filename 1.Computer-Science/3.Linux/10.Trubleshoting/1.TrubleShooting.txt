@@ -33,7 +33,7 @@ Steps for Troubleshooting in Linux
             ```bash
             tail -f /var/log/syslog    View latest entries in syslog
             less /var/log/auth.log     View authentication logs
-            journalctl -xe            Check systemd logs
+            journalctl -xe             Check systemd logs
             ```
 
  3.Diagnose Hardware Issues
@@ -57,7 +57,7 @@ Steps for Troubleshooting in Linux
             ```
       - Ping Test: Ping the local gateway, external sites, and DNS servers to check network connectivity.
             ```bash
-            ping 8.8.8.8    Ping Google's DNS server
+            ping 8.8.8.8       Ping Google's DNS server
             ping google.com    Ping a domain name
             ```
       - Check DNS Resolution: If the system can’t resolve domain names, check `/etc/resolv.conf` for correct DNS server entries.
@@ -153,7 +153,7 @@ Additional Troubleshooting Tools
   
 - `lsof`: List open files and processes associated with them.
   ```bash
-  lsof   List all open files
+  lsof      List all open files
   lsof -i   List open network connections
   ```
 

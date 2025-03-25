@@ -1,7 +1,7 @@
 ______________________________________________________________________________________________________________________________________
                                                           Brace Expansion  
                                                       ======================== 
-                                                      For Read-Write Commands
+                                                      echo - touch - mkdir
                                                       ========================
 Brace expansion is a feature in Linux shells (like Bash) that allows you
  to generate multiple strings or filenames from a single pattern by specifying a

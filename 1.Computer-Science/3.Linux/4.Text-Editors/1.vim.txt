@@ -6,14 +6,37 @@ Vim (Vi IMproved) is a highly configurable and efficient text editor for Unix-ba
 It is an enhanced version of the original `vi` editor,
  with many features added to improve usability and extend functionality.
 Vim is known for its powerful editing capabilities, speed, and flexibility, especially in programming and scripting tasks.
+
+
+                                             vim [option] <script-name>
+             ________________________________________________________________________________________________________
+            |     Option     |                Description                          |          Example                |
+            |________________|_____________________________________________________|_________________________________|
+            | `-r`           | Recover a crashed session using a swap file.        | `vim -r script.sh`              |
+            | `-R`           | Open file in read-only mode (cannot edit).          | `vim -R script.sh`              |
+            | `-o`           | Open multiple files in horizontal splits.           | `vim -o file1 file2`            |
+            | `-O`           | Open multiple files in vertical splits.             | `vim -O file1 file2`            |
+            | `-b`           | Open file in binary mode.                           | `vim -b binaryfile`             |
+            | `-m`           | Disable file modifications (like view-only mode)    | `vim -m script.sh`              |
+            | `-y`           | Start Vim in easy mode (simplified interface).      | `vim -y script.sh`              |
+            | `-x`           | Encrypt a file while saving.                        | `vim -x secrets.txt`            |
+            | `-d`           | Open files in diff mode to compare changes.         | `vim -d file1 file2`            |
+            | `-n`           | Disable swap file creation (useful for temp edits). | `vim -n temp.txt`               |
+            | `-e`           | Start Vim in Ex mode (command-line editing).        | `vim -e`                        |
+            |----------------|-----------------------------------------------------|---------------------------------|
+            | `-u filename`  | Use a specific vimrc configuration file.            | `vim -u myvimrc`                |
+            | `-c 'command'` | Run a Vim command after opening a file.             | `vim -c 'set number' script.sh` |
+            | `-s script`    | Execute a script file inside Vim.                   | `vim -s commands.vim script.sh` |
+            | `-M`           | Open file in strongly read-only mode (even `:w` is disabled). | `vim -M script.sh`    |
+            |________________|_____________________________________________________|_________________________________|
 ---------------------------------------------------------------------------------------------------------
 Key Features of Vim
 
 1.Modes: Vim operates in different modes, each designed for specific tasks.
       - Normal  Mode : The default mode where you navigate and execute commands.
+                       - Command Mode : For executing commands like saving, quitting, searching, etc.
+                       - Visual  Mode : Used to select text for copy, cut, and paste operations.
       - Insert  Mode : The mode for inserting and editing text.
-      - Command Mode : For executing commands like saving, quitting, searching, etc.
-      - Visual  Mode : Used to select text for copy, cut, and paste operations.
 
 2.Keyboard Shortcuts: 
       - Vim makes extensive use of keyboard shortcuts for efficient navigation and editing.
@@ -47,13 +70,16 @@ Vim Modes
       - The default mode when you open Vim.
       - In this mode, you can navigate the document, delete or copy text, search, and more.
       - Example commands:
+           - `dd` : Delete the current line
+           - `yy` : Copy the current line
+           - `p`  : Paste the copied text
+           - `gg` : Go to the beginning of the document.
+           - `G`  : Go to the end of the document.
+
            - `h`: Move left
            - `j`: Move down
            - `k`: Move up
            - `l`: Move right
-           - `dd`: Delete the current line
-           - `yy`: Copy the current line
-           - `p`: Paste the copied text
 
 2.Insert Mode (Editing Mode):
       - Press `i` to enter Insert Mode, where you can type text directly into the document.

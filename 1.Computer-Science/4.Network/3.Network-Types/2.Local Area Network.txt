@@ -1,5 +1,5 @@
 _______________________________________________________________________________________________________________________________________
-2.Local Area Network (LAN)
+Local Area Network (LAN)
         - A Local Area Network connects devices within a limited geographical area, such as a home, office, or school.
 
         Characteristics:
@@ -10,4 +10,16 @@ ________________________________________________________________________________
         Examples:
             - Office network with printers, computers, and servers.
             - Home Wi-Fi connecting laptops, smart TVs, and phones.
+_______________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________
+Wireless Local Area Network (WLAN)
+        - A subset of LAN, WLAN uses wireless technology for connectivity.
+
+        Characteristics:
+            - Uses radio waves (Wi-Fi standards: 802.11a/b/g/n/ac/ax).
+            - Requires an access point or router for connectivity.
+
+        Examples:
+            - Public Wi-Fi in cafes and libraries.
+            - Wireless connectivity in a home network.
 _______________________________________________________________________________________________________________________________________

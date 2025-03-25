@@ -28,7 +28,8 @@ SMTP is used by email clients (like Outlook, Thunderbird, or web-based services 
 
 4. Email Delivery:
    - SMTP servers communicate with each other in a store-and-forward manner. 
-   - If the recipient’s server is unavailable, the sending SMTP server will queue the message and try to resend it after a delay. Once the email reaches the recipient’s mail server, the message can be retrieved using POP3 or IMAP.
+   - If the recipient’s server is unavailable, the sending SMTP server will queue the message and try to resend it after a delay. 
+   - Once the email reaches the recipient’s mail server, the message can be retrieved using POP3 or IMAP.
 _______________________________________________________________________________________________________________________________________
                                                       SMTP Commands
 
@@ -131,7 +132,9 @@ ________________________________________________________________________________
                                                          SMTP Use Cases
 
 SMTP is primarily used for sending email messages from a client to a server,
- but it also plays a key role in server-to-server communication. Some common use cases include:
+ but it also plays a key role in server-to-server communication. 
+ 
+Some common use cases include:
 
 1. Sending Email: 
    - The most obvious use case is sending email messages from an email client (e.g., Outlook, Thunderbird, or Gmail) to an email server.

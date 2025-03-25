@@ -36,7 +36,8 @@ Here are the main components:
 2.`/sys/devices/`
 
       - Purpose: 
-            - Provides a tree-like structure for physical devices on the system.Each device is represented as a subdirectory.
+            - Provides a tree-like structure for physical devices on the system.
+            - Each device is represented as a subdirectory.
       - Example: 
             - `/sys/devices/system/cpu/` – Contains information and parameters related to CPU cores and their states.
             - `/sys/devices/pci0000:00/` – Contains information about PCI devices attached to the system.
@@ -47,7 +48,7 @@ Here are the main components:
             - Contains files related to virtual filesystems and kernel options that affect the way the kernel manages filesystems.
       - Example:
             - `/sys/fs/cgroup/` – Contains directories for control groups (cgroups) that manage resource allocation for processes.
-            - `/sys/fs/ext4/` – Contains information about ext4 filesystems.
+            - `/sys/fs/ext4/`   – Contains information about ext4 filesystems.
 ---------------------------------------------------------------------------------------------------------
 4.`/sys/kernel/`
 
@@ -55,7 +56,7 @@ Here are the main components:
             - Contains files that expose information about the kernel itself, such as parameters and capabilities.
       - Example: 
             - `/sys/kernel/osrelease` – Contains the kernel version string.
-            - `/sys/kernel/hostname` – Contains the system’s hostname.
+            - `/sys/kernel/hostname`  – Contains the system’s hostname.
 ---------------------------------------------------------------------------------------------------------
 5.`/sys/module/`
 
@@ -64,7 +65,7 @@ Here are the main components:
             - It allows you to query, configure, or unload kernel modules.
       - Example: 
             - `/sys/module/<module_name>/` – Contains information about each 
-            loaded module, such as parameters, version, and dependencies.
+               loaded module, such as parameters, version, and dependencies.
 ---------------------------------------------------------------------------------------------------------
 6.`/sys/firmware/`
 
@@ -119,38 +120,38 @@ Common Tasks Using `/sys/`
 Here are a few practical examples of how `/sys/` can be used:
 
 1.View Kernel Version:
-   ```bash
+   ```````````````````````````````````````````````````````````````````````````````bash
    cat /sys/kernel/osrelease
-   ```
+   ```````````````````````````````````````````````````````````````````````````````
 
 2.View CPU Frequency Scaling Information:
-   ```bash
+   ```````````````````````````````````````````````````````````````````````````````bash
    cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
-   ```
+   ``````````````````````````````````````````````````````````````````````````````` 
 
 3.Set CPU Frequency Governor (e.g., Performance Mode):
-   ```bash
+   ```````````````````````````````````````````````````````````````````````````````bash
    echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-   ```
+   ```````````````````````````````````````````````````````````````````````````````
 
 4.View Battery Information:
-   ```bash
+   ```````````````````````````````````````````````````````````````````````````````bash
    cat /sys/class/power_supply/BAT0/capacity
-   ```
+   ```````````````````````````````````````````````````````````````````````````````
 
 5.View Network Interfaces:
-   ```bash
+   ```````````````````````````````````````````````````````````````````````````````bash
    ls /sys/class/net/
-   ```
+   ```````````````````````````````````````````````````````````````````````````````
 ---------------------------------------------------------------------------------------------------------
 Differences Between `/sys/` and `/proc/`
- _____________________________________________________________________________________________________________________________________________________________________________
-| Feature                    | `/sys/`                                                              | `/proc/`                                                                |
-|____________________________|______________________________________________________________________|_________________________________________________________________________|
-| Purpose                    | Provides information and settings related to the kernel and hardware.| Provides information about processes and system stats.                  |
-| Content                    | Files related to devices, kernel parameters, modules, firmware, etc. | Files related to active processes, memory, CPU stats, etc.              |
-| Structure                  | Hierarchical, representing devices and kernel settings.              | Flat structure, each file corresponds to a process or a system statistic|
-|____________________________|______________________________________________________________________|_________________________________________________________________________|
+ _____________________________________________________________________________________________________________________________________________________________
+| Feature    | `/sys/`                                                              | `/proc/`                                                                |
+|____________|______________________________________________________________________|_________________________________________________________________________|
+| Purpose    | Provides information and settings related to the kernel and hardware.| Provides information about processes and system stats.                  |
+| Content    | Files related to devices, kernel parameters, modules, firmware, etc. | Files related to active processes, memory, CPU stats, etc.              |
+| Structure  | Hierarchical, representing devices and kernel settings.              | Flat structure, each file corresponds to a process or a system statistic|
+|____________|______________________________________________________________________|_________________________________________________________________________|
 
 ---------------------------------------------------------------------------------------------------------
 Conclusion

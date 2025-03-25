@@ -86,6 +86,7 @@ sudo passwd  [options] <user-name>
                 __________________________________________________________________________________________________________________________________________________
                | Options  |              Example                                 |                                        Usage                                                               
                |__________|______________________________________________________|________________________________________________________________________________  
+               |      	  | passwd                           <user-name>         | Set the password to the user.
                |   -a	  | passwd -a                       	                 | Displays password information for all users (when used with --status).
                |   -d	  | passwd -d                        <user-name>	     | Deletes the user’s password, allowing login without a password (if PAM allows it).
                |   -e	  | passwd -e                        <user-name>	     | Forces the user to change their password at the next login.

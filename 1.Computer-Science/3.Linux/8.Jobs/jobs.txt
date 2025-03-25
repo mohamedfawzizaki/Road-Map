@@ -1,6 +1,6 @@
 _________________________________________________________________________________________________________________________________________________________________________
                                                  Job Scheduling
-                                              =================== 
+                                               =================== 
 Linux provides multiple tools for scheduling and managing jobs to automate tasks at specific times.
 These include at, cron, and anacron for time-based scheduling,
  and batch or systemd timers for event-driven or load-aware scheduling.
@@ -30,7 +30,7 @@ a.Cron Jobs
 
         Example usage:
                 ```````````````````````````````````bash
-                Schedule a job to run at 2:30 PM
+                # Schedule a job to run at 2:30 PM
                 echo "bash /path/to/script.sh" | at 14:30
                 ```````````````````````````````````
 
@@ -50,14 +50,15 @@ c.Anacron Jobs
 -------------------------------------------------------------------------------------------------------------------------------
 d.Batch Jobs
         
-        Batch jobs run tasks when system load permits.They are queued and executed by the system when it's less busy.
+        Batch jobs run tasks when system load permits.
+        They are queued and executed by the system when it's less busy.
 
         - Tool: `batch`
 
         Example:
-                ```````````````````````````````````bash
+                `````````````````````````````````````````````bash
                 echo "bash /path/to/heavy-script.sh" | batch
-                ```````````````````````````````````
+                `````````````````````````````````````````````
 
 -------------------------------------------------------------------------------------------------------------------------------
 e.Systemd Timers

@@ -16,8 +16,10 @@ ________________________________________________________________________________
 
 1. Framing:
    - The Data Link Layer breaks data into smaller manageable units known as frames. 
-   - A frame consists of a header (containing addressing and control information),
-     the payload (data being transmitted), and a trailer (used for error detection).
+   - A frame consists of :
+            - header (containing addressing and control information).
+            - payload (data being transmitted).
+            - trailer (used for error detection).
    - Framing helps segment the data into manageable units that can be transmitted over the physical medium,
      ensuring that data is sent efficiently and can be reassembled at the destination.
 

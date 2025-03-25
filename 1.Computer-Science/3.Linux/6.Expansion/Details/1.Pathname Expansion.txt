@@ -1,17 +1,20 @@
 ______________________________________________________________________________________________________________________________________
                                                 Pathname Expansion (Globbing)
                                                 ============================= 
+                                                      
+                                                =============================
 Pathname expansion, commonly known as globbing, refers to a mechanism
  where the shell expands a pattern containing special characters into matching filenames or directories.
 This allows users to specify multiple files or directories
  with a single pattern instead of listing each one individually.
 ---------------------------------------------------------------------------------------------------------
 Globbing Characters
+===================
 
-The primary characters used for pathname expansion are known as wildcards.
+The primary (characters) used for pathname expansion are known as wildcards.
 They help match filenames or directories based on patterns.
 
-1.Asterisk `*`
+1.Asterisk `*`                -> match more than one character. 
       ---------------------------------------------------------------- 
        ls *.txt
        ls f*
@@ -33,9 +36,9 @@ They help match filenames or directories based on patterns.
       ```
       Matches all files and directories starting with `file`, such as `file1`, `file2.txt`, and `file_backup`.
 ---------------------------------------------------------------------------------------------------------
-2.Question Mark `?`
+2.Question Mark `?`           -> match one character. 
 
-      - Matches exactly one character in a filename or directory name.
+      - Matches exactly (one character) in a filename or directory name.
       - Useful when you need to match files or directories with specific patterns of characters.
 
       Examples:
@@ -166,7 +169,7 @@ If you want to disable pathname expansion (globbing) temporarily,
       set -f
       ```
       This disables pathname expansion.
-      Now, `ls ` will literally output `` instead of listing files.
+      Now, `ls ` will literally output `*` instead of listing files.
 
       To re-enable pathname expansion, use:
       ```bash

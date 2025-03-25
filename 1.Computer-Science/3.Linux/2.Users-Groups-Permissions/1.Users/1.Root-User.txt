@@ -1,5 +1,5 @@
 ______________________________________________________________________________________________________________________________________
-                                                        Root User 
+                                                        Root User  sudo -i 
                                                         =========
 Breif:
         - In Linux and Unix-based systems, the root user is the superuser account

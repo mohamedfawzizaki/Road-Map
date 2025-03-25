@@ -68,9 +68,9 @@ Common Uses of `/mnt/`
     to mount filesystems manually for tasks like backups or data recovery.
   
   Example of mounting a device:
-  ```bash
+  ```````````````````````````````````````````bash
   sudo mount /dev/sdb1 /mnt
-  ```
+  ```````````````````````````````````````````
   This mounts the first partition of the second hard drive to `/mnt/`.
 
 - Subdirectories for Specific Mounts: Users often create subdirectories
@@ -119,27 +119,27 @@ ________________________________________________________________________________
 Common Commands for `/dev/` and `/mnt/`
 
 1.List devices in `/dev/`:
-   ```bash
+   ```````````````````````````````````````````bash
    ls /dev/
-   ```
+   ```````````````````````````````````````````
 
 2.Create a filesystem on a device (e.g., `/dev/sdb1`):
-   ```bash
+   ```````````````````````````````````````````bash
    sudo mkfs.ext4 /dev/sdb1
-   ```
+   ```````````````````````````````````````````
 
 3.Mount a device manually to `/mnt/`:
-   ```bash
+   ```````````````````````````````````````````bash
    sudo mount /dev/sdb1 /mnt/
-   ```
+   ```````````````````````````````````````````
 
 4.Unmount a device:
-   ```bash
+   ```````````````````````````````````````````bash
    sudo umount /mnt/
-   ```
+   ```````````````````````````````````````````
 
 5.View device information (e.g., `/dev/sda`):
-   ```bash
+   ```````````````````````````````````````````bash
    sudo fdisk -l /dev/sda
-   ```
+   ```````````````````````````````````````````
 ______________________________________________________________________________________________________________________________________

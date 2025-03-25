@@ -1,19 +1,30 @@
 ____________________________________________________________________________________________________________________________________________________________
-                                                        Shell Script 
+                                                        Control flow
                                                         ============
-Control flow in shell scripting refers to the order in which individual statements, instructions, or functions are executed or evaluated. It helps control the sequence of execution based on specific conditions or iterations, making scripts flexible and interactive. There are several types of control flow mechanisms in shell scripting: conditional statements, loops, and functions.
+Control flow in shell scripting refers to the order in which
+ individual statements, instructions, or functions are executed or evaluated. 
+ 
+It helps control the sequence of execution based
+ on specific conditions or iterations, making scripts flexible and interactive. 
+ 
+There are several types of control flow mechanisms in shell scripting: 
+                                                                        - conditional statements. 
+                                                                        - loops.
+                                                                        - functions.
 
 ________________________________________________________________________________________________________________________________
-                                                 1. Conditional Statements
+                                                 1.Conditional Statements
                                                  =========================
-Conditional statements allow you to execute different sections of code based on whether a condition is true or false. The most common conditional statements are `if`, `else`, `elif`, and `case`.
+Conditional statements allow you to execute different sections of code based on whether a condition is true or false. 
+The most common conditional statements are `if`, `else`, `elif`, and `case`.
 
 a. If-Else Statement
-The `if` statement evaluates a condition, and if it's true, it executes the commands inside the block. Otherwise, it may execute an optional `else` block.
+        The `if` statement evaluates a condition, and if it's true, it executes the commands inside the block. 
+        Otherwise, it may execute an optional `else` block.
 
 #Syntax
         ``````````````````````````````````````````bash
-        if [ condition ]
+        if [ condition ]                           ((condition))
         then
             commands
         else
@@ -54,7 +65,6 @@ The `elif` (else if) statement allows you to check multiple conditions sequentia
             commands3
         fi
         ``````````````````````````````````````````
-
 #Example
         ``````````````````````````````````````````bash
         number=10
@@ -72,11 +82,24 @@ Output:
         ``````````````````````````````````````````
         Greater than 5 but less than or equal to 15
         ``````````````````````````````````````````
+________________________________________________________________________________________________________________________________
+                                                Ternary Operator
 
+                                && executes the first command if the condition is true.
+                                || executes the second command if the condition is false.
+
+                                is_even 4 && echo "Even" || echo "Odd"
+                                (( num > 5 )) && echo "Greater than 5" || echo "Less than or equal to 5"
+
+                                num=10
+                                result=$(( num > 5 ? 100 : 50 ))          This works only for numerical expressions, not strings.
+                                echo "Result: $result"
+        
 ________________________________________________________________________________________________________________________________
                                                     c. Case Statement
                                                     =================
-The `case` statement allows you to check multiple conditions, similar to `switch` in other languages. It is useful when you have multiple possible values to match.
+The `case` statement allows you to check multiple conditions, similar to `switch` in other languages. 
+It is useful when you have multiple possible values to match.
 
 #Syntax
         ``````````````````````````````````````````bash
@@ -87,12 +110,12 @@ The `case` statement allows you to check multiple conditions, similar to `switch
             pattern2)
                 commands2
                 ;;
-            )
-                default_commands
+            *)
+                default_comman
+                ds
                 ;;
         esac
         ``````````````````````````````````````````
-
 #Example
         ``````````````````````````````````````````bash
         read -p "Enter a number: " num
@@ -101,10 +124,9 @@ The `case` statement allows you to check multiple conditions, similar to `switch
             1) echo "You entered One";;
             2) echo "You entered Two";;
             3) echo "You entered Three";;
-            ) echo "Unknown number";;
+            *) echo "Unknown number";;
         esac
         ``````````````````````````````````````````
-
 Output:
         ``````````````````````````````````````````
         Enter a number: 2
@@ -114,7 +136,9 @@ Output:
 ________________________________________________________________________________________________________________________________
                                                    2. Looping Statements
                                                    =====================
-Loops allow you to repeat a set of commands multiple times. Shell scripting supports three types of loops: `for`, `while`, and `until`.
+Loops allow you to repeat a set of commands multiple times. 
+
+Shell scripting supports three types of loops: `for`, `while`, and `until`.
 
 a. For Loop
 The `for` loop is used when you want to iterate over a list or a range of values.
@@ -179,7 +203,8 @@ Output:
 ________________________________________________________________________________________________________________________________
                                                     c. Until Loop
                                                     =============
-The `until` loop is the opposite of the `while` loop. It executes commands until the condition becomes true.
+The `until` loop is the opposite of the `while` loop. 
+It executes commands until the condition becomes true.
 
 #Syntax
         ``````````````````````````````````````````bash
@@ -307,7 +332,8 @@ Output:
 ________________________________________________________________________________________________________________________________
                                                     5. Exit Statement
                                                     =================
-The `exit` statement is used to terminate a script or function. It can also return an exit status.
+The `exit` statement is used to terminate a script or function. 
+It can also return an exit status.
 
 Syntax
         ``````````````````````````````````````````bash
@@ -328,7 +354,8 @@ Syntax
 ________________________________________________________________________________________________________________________________
                                                        6. Exit Status
                                                        ==============
-The exit status of a command or script is a numeric value that indicates success or failure. By convention:
+The exit status of a command or script is a numeric value that indicates success or failure. 
+By convention:
 - `0` means success.
 - Non-zero means failure.
 

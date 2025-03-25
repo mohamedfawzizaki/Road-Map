@@ -1,7 +1,7 @@
 ____________________________________________________________________________________________________________________________________________________________
                                                           Shebang
                                                         ============
-he `#!/bin/bash` line at the beginning of a script is called a shebang. 
+the `#!/bin/bash` line at the beginning of a script is called a shebang. 
 It specifies the interpreter to be used when executing the script. 
 In this case, `bash` (the Bourne Again Shell) is the specified interpreter.  
 

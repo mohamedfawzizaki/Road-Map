@@ -12,6 +12,7 @@ Syntax
         $((expression))
         ```
 
+
 - The shell evaluates the arithmetic expression inside `$(( ))` and substitutes the result.
 - It supports basic arithmetic operations (addition, subtraction, multiplication, division) and bitwise operations.
 
@@ -22,10 +23,10 @@ Basic Arithmetic Operations
 |________________|________|_______________________|________|
 | Addition       | `+`    | `echo $((5 + 3))`     | `8`    |
 | Subtraction    | `-`    | `echo $((5 - 3))`     | `2`    |
-| Multiplication | ``     | `echo $((5  3))`      | `15`   |
+| Multiplication | `*`    | `echo $((5 * 3))`     | `15`   |
 | Division       | `/`    | `echo $((6 / 3))`     | `2`    |
 | Modulus        | `%`    | `echo $((5 % 3))`     | `2`    |
-| Exponentiation | ``     | `echo $((2  3))`      | `8`    |
+| Exponentiation | `**`   | `echo $((2 ** 3))`    | `8`    |
 |________________|________|_______________________|________|
 ---------------------------------------------------------------------------------------------------------
 Example: Basic Usage

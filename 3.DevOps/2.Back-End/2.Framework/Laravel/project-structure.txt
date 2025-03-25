@@ -1,8 +1,0 @@
-API:
-    Restfull API.
-    GraphQL.
-
-    Polling.
-    Webhook.
-
-    WebSocket.

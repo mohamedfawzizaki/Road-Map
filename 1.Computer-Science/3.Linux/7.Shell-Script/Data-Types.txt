@@ -1,12 +1,9 @@
 ____________________________________________________________________________________________________________________________________________________________
-                                                        Shell Script 
-                                                        ============
-Data Types and Arrays in Bash
-
-________________________________________________________________________________________________________________________________
                                                      Data Types in Bash
                                                      ==================
-Bash does not have strict data types like other programming languages (e.g., Python, Java). All variables in Bash are treated as strings by default. However, you can manipulate them to behave like different types.
+Bash does not have strict data types like other programming languages (e.g., Python, Java). 
+All variables in Bash are treated as strings by default. 
+However, you can manipulate them to behave like different types.
 
 1. Types of Data in Bash
 - Strings: Default type for variables.
@@ -37,9 +34,10 @@ ________________________________________________________________________________
                                                        Arrays in Bash
                                                        ==============
 
-Bash arrays are indexed collections of elements. Bash supports two types of arrays:
-1. Indexed Arrays: Use numeric indices (default starting at `0`).
-2. Associative Arrays: Use strings as keys (requires Bash 4.0+).
+Bash arrays are indexed collections of elements. 
+Bash supports two types of arrays:
+        1. Indexed Arrays: Use numeric indices (default starting at `0`).
+        2. Associative Arrays: Use strings as keys (requires Bash 4.0+).
 
 ________________________________________________________________________________________________________________________________
                                                      1. Indexed Arrays
@@ -112,16 +110,18 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________
                                                     Key Operations on Arrays
                                                     ========================
-| Operation        | Indexed Array Example                                  | Associative Array Example                         |
-
-| Declare an array      | `declare -a my_array`                                     | `declare -A my_dict`                                 |
-| Add/Update an element | `my_array[1]="Bob"`                                       | `my_dict["city"]="Paris"`                            |
-| Access an element     | `echo "${my_array[1]}"`                                   | `echo "${my_dict["city"]}"`                          |
-| Length of array       | `echo "${#my_array[@]}"`                                  | `echo "${#my_dict[@]}"`                              |
-| All keys              | Not applicable                                           | `echo "${!my_dict[@]}"`                              |
-| Iterate               | `for item in "${my_array[@]}"; do echo $item; done`       | `for key in "${!my_dict[@]}"; do echo $key; done`    |
-| Remove an element     | `unset my_array[1]`                                      | `unset my_dict["city"]`                              |
-| Entire array          | `unset my_array`                                         | `unset my_dict`                                      |
+ ___________________________________________________________________________________________________________________________________
+|     Operation         |           Indexed Array Example                       |         Associative Array Example                 |
+|_______________________|_______________________________________________________|___________________________________________________|
+| Declare an array      | `declare -a my_array`                                 | `declare -A my_dict`                              |
+| Add/Update an element | `my_array[1]="Bob"`                                   | `my_dict["city"]="Paris"`                         |
+| Access an element     | `echo "${my_array[1]}"`                               | `echo "${my_dict["city"]}"`                       |
+| All keys              | Not applicable                                        | `echo "${!my_dict[@]}"`                           |
+| Length of array       | `echo "${#my_array[@]}"`                              | `echo "${#my_dict[@]}"`                           |
+| Iterate               | `for item in "${my_array[@]}"; do echo $item; done`   | `for key in "${!my_dict[@]}"; do echo $key; done` |
+| Remove an element     | `unset my_array[1]`                                   | `unset my_dict["city"]`                           |
+| Entire array          | `unset my_array`                                      | `unset my_dict`                                   |
+ ___________________________________________________________________________________________________________________________________|
 
 ________________________________________________________________________________________________________________________________
                                                          Examples

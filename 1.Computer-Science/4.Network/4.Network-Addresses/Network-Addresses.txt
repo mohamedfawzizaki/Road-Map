@@ -14,6 +14,7 @@ Definition
 
 Key Characteristics
         - Format    : A MAC address is 48 bits long, usually represented in hexadecimal, e.g., `00:1A:2B:3C:4D:5E` or `00-1A-2B-3C-4D-5E`.
+       
         - Uniqueness: Each device has a unique MAC address assigned by the NIC manufacturer.
         - Permanent : Typically hardcoded into the hardware (but can be spoofed in software).
 
@@ -44,7 +45,7 @@ Versions of IP Address
 
         2.IPv6:
                - 128 bits long, written in hexadecimal format, e.g., `2001:0db8:85a3:0000:0000:8a2e:0370:7334`.
-               - Vastly increases address space and introduces features like auto    -configuration and improved security.
+               - Vastly increases address space and introduces features like auto-configuration and improved security.
 
 Functions of an IP Address
         1.Global Identification: Uniquely identifies devices in a network.
@@ -65,7 +66,7 @@ Definition
         - It enables subnetting, which improves network management and efficiency.
 
 Key Characteristics
-        - Format: Written in dotted decimal notation, e.g., `255.255.255.0`.
+        - Format : Written in dotted decimal notation, e.g., `255.255.255.0`.
         - Purpose: Identifies the range of IP addresses in a subnet.
 
 How It Works
@@ -108,7 +109,7 @@ Characteristics of Loopback:
         
         3.Interface Name: Commonly named `lo`.
         
-        4.No physical hardware     : The loopback interface does not have a physical counterpart and is purely software    -based.
+        4.No physical hardware     : The loopback interface does not have a physical counterpart and is purely software-based.
         
         5.No External Communication: Traffic on the loopback interface cannot leave the local system or be routed externally.
         
@@ -126,11 +127,12 @@ Characteristics of Loopback:
                                 ```
                                 Example output:
                                 ```
-                                3: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
+                                    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+                                    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
                                     inet 127.0.0.1/8 scope host lo
-                                      valid_lft forever preferred_lft forever
+                                          valid_lft forever preferred_lft forever
                                     inet6 ::1/128 scope host
-                                      valid_lft forever preferred_lft forever
+                                          valid_lft forever preferred_lft forever
                                 ````````````````````````````````````````````````````````````````````
 _______________________________________________________________________________________________________________________________________
                                           Ethernet Interface (`eth0`)
@@ -164,11 +166,12 @@ Characteristics of Ethernet (`eth0`):
                             ```
                             Example output:
                             ```
-                            2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
-                                inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0
-                                  valid_lft forever preferred_lft forever
-                                inet6 fe80::a00:27ff:fe2b:939f/64 scope link
-                                  valid_lft forever preferred_lft forever
+                            2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+                                    link/ether 00:15:5d:ab:3a:a6 brd ff:ff:ff:ff:ff:ff
+                                    inet 172.20.140.221/20 brd 172.20.143.255 scope global eth0
+                                          valid_lft forever preferred_lft forever
+                                    inet6 fe80::215:5dff:feab:3aa6/64 scope link
+                                          valid_lft forever preferred_lft forever
                             ``````````````````````````````````````````````````````````````````````````````````````````````````````
 --------------------------------------------------------------------------------------------------------------------------------------
 Explanation:
@@ -199,7 +202,7 @@ Common Operations for Ethernet Interface (`eth0`):
             ```
               - To release DHCP lease:  
             ```
-            sudo dhclient     -r eth0
+            sudo dhclient -r eth0
             ```
 --------------------------------------------------------------------------------------------------------------------------------------
 Key Differences between Loopback (`lo`) and Ethernet (`eth0`):
@@ -224,6 +227,156 @@ Key Differences between Loopback (`lo`) and Ethernet (`eth0`):
           |____________________________________________________________________________________________________________________|
 
 _______________________________________________________________________________________________________________________________________
+
+=======================================================================================================================================
+=======================================================================================================================================
+                                                           Example
+                                                        ===============
+ubunto@myWinHostMachine:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:ab:3d:8c brd ff:ff:ff:ff:ff:ff
+    inet 172.20.140.221/20 brd 172.20.143.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:feab:3d8c/64 scope link
+       valid_lft forever preferred_lft forever
+=======================================================================================================================================
+                                                          Explanation
+                                                        ===============
+Let's break down the output of the `ip addr` command, 
+showing the details of the network interfaces `lo` (loopback) and `eth0` (Ethernet):
+
+Output Explanation
+---------------------------------------------------------------------------------------------------------------------------------------
+ 1.Loopback Interface (`lo`)
+```
+        1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+                link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+                inet 127.0.0.1/8 scope host lo
+                  valid_lft forever preferred_lft forever
+                inet6 ::1/128 scope host
+                  valid_lft forever preferred_lft forever
+        
+
+            - `1: lo:`: 
+                              ->> The `lo` interface is listed as the first interface (loopback interface).
+            - `<LOOPBACK,UP,LOWER_UP>`: 
+                              ->> This indicates that the interface is a loopback
+                                  interface and is both UP (active) and LOWER_UP
+                                  (physical connection is active, even though it is virtual).
+            - `mtu 65536`    : 
+                              ->> The Maximum Transmission Unit (MTU) is set to 65536 bytes.
+                              ->> The MTU defines the largest packet size the interface can handle.
+                              ->> For `lo`, it is typically very large since it is virtual and does not
+                                   deal with physical network constraints.
+            - `qdisc noqueue`: 
+                              ->> This shows that there is no queuing discipline set for the interface.
+            - `state UNKNOWN`: 
+                              ->> This means the state of the interface is unknown or cannot be determined,
+                                   which is typical for a loopback interface since it doesn't rely on a physical connection.
+            - `link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00`: 
+                              ->> This line shows the loopback MAC address (`00:00:00:00:00:00`)
+                                   and the broadcast address (`00:00:00:00:00:00`).
+            - `inet 127.0.0.1/8 scope host lo`: 
+                              ->> The IPv4 address assigned to the loopback interface is 
+                                  `127.0.0.1`, which is the localhost address.
+                              ->> The `/8` indicates that the subnet mask is `255.0.0.0`.
+              - `scope host`: 
+                              ->> This means that this address is valid only within the host itself and not reachable externally.
+            - `inet6 ::1/128 scope host`: 
+                              ->> The IPv6 address for the loopback interface is `::1`,
+                                   and the `/128` denotes a subnet mask of `128` bits.
+              - `scope host`: 
+                                ->> This is also only valid within the local system.
+---------------------------------------------------------------------------------------------------------------------------------------
+ 2.Ethernet Interface (`eth0`)
+```
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+        link/ether 00:15:5d:ab:3d:8c brd ff:ff:ff:ff:ff:ff
+        inet 172.20.140.221/20 brd 172.20.143.255 scope global eth0
+          valid_lft forever preferred_lft forever
+        inet6 fe80::215:5dff:feab:3d8c/64 scope link
+          valid_lft forever preferred_lft forever
+```
+
+          - `2: eth0:`: The second interface, `eth0`, is listed, representing an Ethernet network interface card.
+          
+          - `<BROADCAST,MULTICAST,UP,LOWER_UP>`: 
+                        - BROADCAST: The interface supports broadcasting.
+                        - MULTICAST: It can send multicast packets.
+                        - UP: The interface is active (up).
+                        - LOWER_UP: Indicates that the physical layer (Ethernet cable) is connected and functional.
+          
+          - `mtu 1500`: 
+                        - The Maximum Transmission Unit (MTU) is set to 1500 bytes, which is a standard size for Ethernet interfaces.
+          
+          - `qdisc mq`: 
+                        - This indicates that a multi-queue (mq) queuing discipline 
+                          is in use, which allows multiple queues for handling packets in parallel.
+          
+          - `state UP`: 
+                        - The interface is active and ready to transmit data.
+          
+          - `link/ether 00:15:5d:ab:3d:8c brd ff:ff:ff:ff:ff:ff`: 
+                        - The Ethernet MAC address for `eth0` is `00:15:5d:ab:3d:8c`,
+                          and the broadcast address is `ff:ff:ff:ff:ff:ff`.
+          
+          - `inet 172.20.140.221/20 brd 172.20.143.255 scope global eth0`:
+                        - The IPv4 address assigned to `eth0` is `172.20.140.221`, 
+                          with a subnet mask of `/20` (which corresponds to `255.255.240.0`).
+                        
+                        - The broadcast address for this subnet is `172.20.143.255`.
+                        
+                        - `scope global`: This means the address is globally routable
+                          (can be used across different machines within the same network or through routing).
+          
+          - `inet6 fe80::215:5dff:feab:3d8c/64 scope link`:
+                        - The IPv6 address assigned to the interface is `fe80::215:5dff:feab:3d8c`, with a subnet mask of `/64`.
+                        - `scope link`: This means that the address is link-local,
+                          and it is only valid within the local network and cannot be routed across networks.
+---------------------------------------------------------------------------------------------------------------------------------------
+ Key Points
+          - `lo`   (Loopback interface):
+                        - Used for internal communication within the same machine, 
+                          with the IP addresses `127.0.0.1` (IPv4) and `::1` (IPv6).
+          - `eth0` (Ethernet interface):
+                        - The physical network interface for connecting to an external 
+                          network (e.g., LAN or the internet), with assigned IP addresses like `172.20.140.221` (IPv4) 
+                          and `fe80::215:5dff:feab:3d8c` (IPv6).
+=======================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 _______________________________________________________________________________________________________________________________________
                                             Example
                                         ==============
@@ -239,12 +392,12 @@ Windows IP Configuration
 
 Ethernet adapter vEthernet (Default Switch):
 
-   Connection    -specific DNS Suffix  .:
+   Connection-specific DNS Suffix  .:
    Description ...........: Hyper-V Virtual Ethernet Adapter
    Physical Address.........: 00-15-5D-C0-74-23
    DHCP Enabled...........: No
    Autoconfiguration Enabled ....: Yes
-   Link    -local IPv6 Address .....: fe80::6ff8:2f6e:cff1:c041%38(Preferred)
+   Link-local IPv6 Address .....: fe80::6ff8:2f6e:cff1:c041%38(Preferred)
    IPv4 Address...........: 172.24.192.1(Preferred)
    Subnet Mask ...........: 255.255.240.0
    Default Gateway .........:
@@ -257,8 +410,8 @@ Ethernet adapter vEthernet (Default Switch):
 
 Ethernet adapter vEthernet (WSL):
 
-   Connection    -specific DNS Suffix  .: 
-   Description ...........: Hyper    -V Virtual Ethernet Adapter 2
+   Connection-specific DNS Suffix  .: 
+   Description ...........: Hyper-V Virtual Ethernet Adapter 2
    Physical Address.........: 00-15-5D-AB-22-BA
    DHCP Enabled...........: No
    Autoconfiguration Enabled ....: Yes
@@ -285,7 +438,7 @@ Wireless LAN adapter Local Area Connection 1:
 Wireless LAN adapter Local Area Connection 10:
 
    Media State ...........: Media disconnected
-   Connection    -specific DNS Suffix  .:
+   Connection-specific DNS Suffix  .:
    Description ...........: Microsoft Wi-Fi Direct Virtual Adapter 2
    Physical Address.........: C2-B8-83-A7-9 -A0
    DHCP Enabled...........: Yes
@@ -352,7 +505,7 @@ Ethernet adapter Bluetooth Network Connection 3:
     - Description:  
           `Hyper-V Virtual Ethernet Adapter`  
           This indicates that this adapter is part of a Hyper-V virtual machine setup,
-           providing networking functionality for virtual machines (VMs) created via Hyper    -V.
+           providing networking functionality for virtual machines (VMs) created via Hyper-V.
 
     - Physical Address:  
           `00-15-5D-C0-74-23`  
@@ -526,124 +679,4 @@ Ethernet adapter Bluetooth Network Connection 3:
             a valid IP address (`192.168.1.5`), and it has a default gateway
             (`192.168.1.1`), meaning it is connected to an external network.
           - Other virtual interfaces (for WSL, Default Switch) are configured but not connected to external networks.
-=======================================================================================================================================
-=======================================================================================================================================
-                                                           Example
-                                                        ===============
-ubunto@myWinHostMachine:~$ ip addr
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host
-       valid_lft forever preferred_lft forever
-2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
-    link/ether 00:15:5d:ab:3d:8c brd ff:ff:ff:ff:ff:ff
-    inet 172.20.140.221/20 brd 172.20.143.255 scope global eth0
-       valid_lft forever preferred_lft forever
-    inet6 fe80::215:5dff:feab:3d8c/64 scope link
-       valid_lft forever preferred_lft forever
-=======================================================================================================================================
-                                                          Explanation
-                                                        ===============
-Let's break down the output of the `ip addr` command, 
-showing the details of the network interfaces `lo` (loopback) and `eth0` (Ethernet):
-
-Output Explanation
 ---------------------------------------------------------------------------------------------------------------------------------------
- 1.Loopback Interface (`lo`)
-```
-        1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-                link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-                inet 127.0.0.1/8 scope host lo
-                  valid_lft forever preferred_lft forever
-                inet6 ::1/128 scope host
-                  valid_lft forever preferred_lft forever
-        
-
-            - `1: lo:`: 
-                              ->> The `lo` interface is listed as the first interface (loopback interface).
-            - `<LOOPBACK,UP,LOWER_UP>`: 
-                              ->> This indicates that the interface is a loopback
-                                  interface and is both UP (active) and LOWER_UP
-                                  (physical connection is active, even though it is virtual).
-            - `mtu 65536`    : 
-                              ->> The Maximum Transmission Unit (MTU) is set to 65536 bytes.
-                              ->> The MTU defines the largest packet size the interface can handle.
-                              ->> For `lo`, it is typically very large since it is virtual and does not
-                                   deal with physical network constraints.
-            - `qdisc noqueue`: 
-                              ->> This shows that there is no queuing discipline set for the interface.
-            - `state UNKNOWN`: 
-                              ->> This means the state of the interface is unknown or cannot be determined,
-                                   which is typical for a loopback interface since it doesn't rely on a physical connection.
-            - `link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00`: 
-                              ->> This line shows the loopback MAC address (`00:00:00:00:00:00`)
-                                   and the broadcast address (`00:00:00:00:00:00`).
-            - `inet 127.0.0.1/8 scope host lo`: 
-                              ->> The IPv4 address assigned to the loopback interface is 
-                                  `127.0.0.1`, which is the localhost address.
-                              ->> The `/8` indicates that the subnet mask is `255.0.0.0`.
-              - `scope host`: 
-                              ->> This means that this address is valid only within the host itself and not reachable externally.
-            - `inet6 ::1/128 scope host`: 
-                              ->> The IPv6 address for the loopback interface is `::1`,
-                                   and the `/128` denotes a subnet mask of `128` bits.
-              - `scope host`: 
-                                ->> This is also only valid within the local system.
----------------------------------------------------------------------------------------------------------------------------------------
- 2.Ethernet Interface (`eth0`)
-```
-2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
-        link/ether 00:15:5d:ab:3d:8c brd ff:ff:ff:ff:ff:ff
-        inet 172.20.140.221/20 brd 172.20.143.255 scope global eth0
-          valid_lft forever preferred_lft forever
-        inet6 fe80::215:5dff:feab:3d8c/64 scope link
-          valid_lft forever preferred_lft forever
-```
-
-          - `2: eth0:`: The second interface, `eth0`, is listed, representing an Ethernet network interface card.
-          
-          - `<BROADCAST,MULTICAST,UP,LOWER_UP>`: 
-                        - BROADCAST: The interface supports broadcasting.
-                        - MULTICAST: It can send multicast packets.
-                        - UP: The interface is active (up).
-                        - LOWER_UP: Indicates that the physical layer (Ethernet cable) is connected and functional.
-          
-          - `mtu 1500`: 
-                        - The Maximum Transmission Unit (MTU) is set to 1500 bytes, which is a standard size for Ethernet interfaces.
-          
-          - `qdisc mq`: 
-                        - This indicates that a multi-queue (mq) queuing discipline 
-                          is in use, which allows multiple queues for handling packets in parallel.
-          
-          - `state UP`: 
-                        - The interface is active and ready to transmit data.
-          
-          - `link/ether 00:15:5d:ab:3d:8c brd ff:ff:ff:ff:ff:ff`: 
-                        - The Ethernet MAC address for `eth0` is `00:15:5d:ab:3d:8c`,
-                          and the broadcast address is `ff:ff:ff:ff:ff:ff`.
-          
-          - `inet 172.20.140.221/20 brd 172.20.143.255 scope global eth0`:
-                        - The IPv4 address assigned to `eth0` is `172.20.140.221`, 
-                          with a subnet mask of `/20` (which corresponds to `255.255.240.0`).
-                        
-                        - The broadcast address for this subnet is `172.20.143.255`.
-                        
-                        - `scope global`: This means the address is globally routable
-                          (can be used across different machines within the same network or through routing).
-          
-          - `inet6 fe80::215:5dff:feab:3d8c/64 scope link`:
-                        - The IPv6 address assigned to the interface is `fe80::215:5dff:feab:3d8c`, with a subnet mask of `/64`.
-                        - `scope link`: This means that the address is link-local,
-                          and it is only valid within the local network and cannot be routed across networks.
----------------------------------------------------------------------------------------------------------------------------------------
- Key Points
-          - `lo`   (Loopback interface):
-                        - Used for internal communication within the same machine, 
-                          with the IP addresses `127.0.0.1` (IPv4) and `::1` (IPv6).
-          - `eth0` (Ethernet interface):
-                        - The physical network interface for connecting to an external 
-                          network (e.g., LAN or the internet), with assigned IP addresses like `172.20.140.221` (IPv4) 
-                          and `fe80::215:5dff:feab:3d8c` (IPv6).
-=======================================================================================================================================

@@ -1,5 +1,5 @@
 _________________________________________________________________________________________________________________________________
-                     Disc/Drive (SDA  -  SDB  -  SDC) -  Driver  -  Partition (SDA1  -  SDA2)
+                     Disc/Drive (SDA  -  SDB  -  SDC) -  Partition (SDA1  -  SDA2)  -  Driver  
                      =================================================================================                 
 1.Disc:
       - A disk (or disk drive) refers to a physical storage device used for storing data.

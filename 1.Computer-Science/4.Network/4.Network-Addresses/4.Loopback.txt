@@ -11,6 +11,7 @@ The most widely used loopback address is 127.0.0.1, which is often referred to a
 _______________________________________________________________________________________________________________________________________
                                                       Key Concepts
 
+
 1. Loopback Address Range (IPv4)
    - The loopback address range in IPv4 is defined by the IP address block 127.0.0.0/8.
    - This means any address from 127.0.0.0 to 127.255.255.255 is reserved for loopback communication.

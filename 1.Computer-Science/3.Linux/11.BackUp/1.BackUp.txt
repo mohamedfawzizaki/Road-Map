@@ -1,7 +1,6 @@
 ______________________________________________________________________________________________________________________________________
                                                             Backup 
                                                             ======
-
 A backup is a process of creating copies of data and storing
  them in a safe location, ensuring that data can be restored in case of data loss, corruption, or system failure.
 Backup strategies and tools in Linux are essential for safeguarding important files, system configurations, and databases.
@@ -55,7 +54,9 @@ ________________________________________________________________________________
                                                    =====================
 
 Linux provides a variety of tools for performing backups, ranging from
- simple file copying tools to complex backup software solutions.Below are some commonly used tools:
+ simple file copying tools to complex backup software solutions.
+ 
+Below are some commonly used tools:
 
 ---------------------------------------------------------------------------------------------------------
 1.`cp` (Copy):
@@ -74,7 +75,7 @@ Linux provides a variety of tools for performing backups, ranging from
          - It performs incremental backups, meaning it only transfers
             the differences between the source and the destination, saving time and bandwidth.
    - Example:
-            ```bash
+            ```bash             <source>   <destination>
             rsync -av --delete /home/user /backup/
             ```
             This command synchronizes the `/home/user` directory with the `/backup/` directory.
@@ -86,7 +87,7 @@ Linux provides a variety of tools for performing backups, ranging from
    - The `tar` command is used for creating compressed archive files, which can be a useful format for backups.
    - It is commonly used for full backups.
    - Example:
-            ```bash
+            ```bash           <destination>           <source>
             tar -czf /backup/home_user_backup.tar.gz /home/user
             ```
             This command creates a compressed `.tar.gz` archive of the `/home/user` directory and stores it in `/backup/`.
@@ -104,11 +105,11 @@ Linux provides a variety of tools for performing backups, ranging from
 
 ---------------------------------------------------------------------------------------------------------
 5.`tar` + `cron` (Automated Backup):
-   - For scheduled backups, `cron` can be used to run backup
-     tasks at specific times.Combining `tar` with `cron` can automate periodic full backups.
+   - For scheduled backups, `cron` can be used to run backup tasks at specific times.
+   - Combining `tar` with `cron` can automate periodic full backups.
    - Example (Cron job to back up every day at 2 AM):
             ```bash
-            0 2    tar -czf /backup/home_user_$(date +\%F).tar.gz /home/user
+            0 2 * * * tar -czf /backup/home_user_$(date +\%F).tar.gz /home/user
             ```
 
 ---------------------------------------------------------------------------------------------------------
@@ -130,7 +131,9 @@ ________________________________________________________________________________
                                                    Backup Strategies
                                                    =================
 
-To ensure the safety of your data, a good backup strategy is crucial.Here are some strategies you can adopt:
+To ensure the safety of your data, a good backup strategy is crucial.
+
+Here are some strategies you can adopt:
 
 ---------------------------------------------------------------------------------------------------------
 1.3-2-1 Backup Rule:

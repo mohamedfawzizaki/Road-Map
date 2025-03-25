@@ -19,7 +19,7 @@ ________________________________________________________________________________
 
 1. Session Establishment, Maintenance, and Termination:
    - Establishment: 
-         - he Session layer is responsible for initiating, managing, and
+         - the Session layer is responsible for initiating, managing, and
             terminating sessions between applications running on different devices. 
          - A session is created when both parties agree to start communication.
    - Maintenance: 

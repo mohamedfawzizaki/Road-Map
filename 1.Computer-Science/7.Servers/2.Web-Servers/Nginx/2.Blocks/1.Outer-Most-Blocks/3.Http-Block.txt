@@ -1,0 +1,149 @@
+_______________________________________________________________________________________________________________________________________
+                                        🔹 Outermost Blocks in the `http` Block  
+
+The `http` block in Nginx is the main configuration block for handling HTTP/HTTPS traffic. Inside it, there are several top-level (outermost) blocks that define different functionalities.
+
+ 📌 Outermost Blocks Inside `http {}`
+The `http` block contains these key outer blocks:
+1. `server {}` – Defines a virtual host for handling HTTP requests.  
+2. `upstream {}` – Defines a group of backend servers for load balancing.  
+3. `map {}` – Creates key-value mappings for variables.  
+4. `geo {}` – Defines geographical mappings based on IP addresses.  
+5. `limit_req_zone {}` – Configures request rate limiting.  
+6. `log_format {}` – Defines custom log formats.  
+7. `proxy_cache_path {}` – Configures cache storage locations.  
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 1️⃣ `server {}` Block (Virtual Host)
+Defines how Nginx should handle requests for a domain.  
+````````````````````````````````````````````````````````````````````nginx
+http {
+    server {
+        listen 80;
+        server_name example.com;
+
+        location / {
+            root /var/www/html;
+        }
+    }
+}
+````````````````````````````````````````````````````````````````````
+✅ This serves files from `/var/www/html` for `example.com`.
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 2️⃣ `upstream {}` Block (Load Balancing)
+Defines a group of backend servers.  
+````````````````````````````````````````````````````````````````````nginx
+http {
+    upstream backend {
+        server 192.168.1.100;
+        server 192.168.1.101;
+    }
+
+    server {
+        location / {
+            proxy_pass http://backend;
+        }
+    }
+}
+````````````````````````````````````````````````````````````````````
+✅ Requests to `/` are distributed across two backend servers.
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 3️⃣ `map {}` Block (Key-Value Mapping)
+Creates custom variables based on request conditions.  
+````````````````````````````````````````````````````````````````````nginx
+http {
+    map $http_user_agent $mobile {
+        default 0;
+        ~iphone|android 1;
+    }
+
+    server {
+        location / {
+            if ($mobile) {
+                return 302 /mobile-version.html;
+            }
+        }
+    }
+}
+````````````````````````````````````````````````````````````````````
+✅ Redirects mobile users to `/mobile-version.html`.
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 4️⃣ `geo {}` Block (Geographical IP Mapping)
+Assigns variables based on client IP address.  
+````````````````````````````````````````````````````````````````````nginx
+http {
+    geo $country {
+        default US;
+        192.168.1.0/24 EU;
+    }
+
+    server {
+        location / {
+            add_header X-Country $country;
+        }
+    }
+}
+````````````````````````````````````````````````````````````````````
+✅ Sets `$country` based on client IP.
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 5️⃣ `limit_req_zone {}` Block (Rate Limiting)
+Defines request rate limits.  
+````````````````````````````````````````````````````````````````````nginx
+http {
+    limit_req_zone $binary_remote_addr zone=mylimit:10m rate=5r/s;
+
+    server {
+        location /api/ {
+            limit_req zone=mylimit burst=10;
+        }
+    }
+}
+````````````````````````````````````````````````````````````````````
+✅ Limits clients to 5 requests per second.
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 6️⃣ `log_format {}` Block (Custom Logging)
+Defines custom log formats.  
+````````````````````````````````````````````````````````````````````nginx
+http {
+    log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+                     '$status $body_bytes_sent "$http_referer" '
+                     '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log /var/log/nginx/access.log main;
+}
+````````````````````````````````````````````````````````````````````
+✅ Stores logs in `/var/log/nginx/access.log`.
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 7️⃣ `proxy_cache_path {}` Block (Caching)
+Defines cache storage and rules.  
+````````````````````````````````````````````````````````````````````nginx
+http {
+    proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=my_cache:10m inactive=60m;
+}
+````````````````````````````````````````````````````````````````````
+✅ Caches content for 60 minutes.
+
+_______________________________________________________________________________________________________________________________________
+
+ 📌 Summary
+✔ Outermost blocks inside `http {}`:
+- `server {}` – Handles web requests.  
+- `upstream {}` – Defines backend servers.  
+- `map {}` – Key-value mappings.  
+- `geo {}` – Geolocation-based settings.  
+- `limit_req_zone {}` – Rate limiting.  
+- `log_format {}` – Custom logging.  
+- `proxy_cache_path {}` – Defines cache storage.  

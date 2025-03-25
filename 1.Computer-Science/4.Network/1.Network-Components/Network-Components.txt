@@ -146,7 +146,7 @@ Types of Access Points
             - Require a central controller for configuration and management.
             - Ideal for large networks with multiple APs.
 
-      3.Cloud -Managed Access Points:
+      3.Cloud-Managed Access Points:
             - Managed through cloud-based platforms.
             - Provide scalability and easy remote management.
 
@@ -155,7 +155,7 @@ Types of Access Points
             - Ensure seamless connectivity over a large area.
 --------------------------------------------------------------------------------------------------------------
 Key Features
-      1.Dual -Band Support:
+      1.Dual-Band Support:
             - Operates on 2.4 GHz and 5 GHz frequency bands.
             - Allows better load balancing and reduced interference.
 
@@ -228,6 +228,7 @@ Definition:
       - A firewall is a security system that monitors and controls network traffic based on predetermined security rules.
       - It acts as a barrier between trusted internal networks 
          and untrusted external networks, such as the internet, protecting systems from cyber threats.
+      - Acts on Network/Transport layer
 
 Types of Firewalls
       1.Hardware Firewall:
@@ -239,26 +240,26 @@ Types of Firewalls
             - Installed on individual devices, such as computers or servers.
             - Protects the specific device where it is installed.
             - Examples: Windows Defender Firewall, ZoneAlarm.
-
-      3.Cloud Firewall:
+Examples:
+      1.Cloud Firewall:
             - Also known as a firewall-as-a-service (FWaaS).
             - Deployed in cloud environments to protect cloud-based systems.
             - Examples: Zscaler, Palo Alto Prisma Cloud.
 
-      4.Network Firewall:
+      2.Network Firewall:
             - Protects an entire network and is deployed at the perimeter.
             - Monitors all inbound and outbound traffic for the network.
 
-      5.Next-Generation Firewall (NGFW):
+      3.Next-Generation Firewall (NGFW):
             - Includes advanced features like deep packet inspection,
               intrusion prevention systems (IPS), and application-level traffic analysis.
             - Capable of detecting modern threats, such as advanced persistent threats (APTs).
 
-      6.Web Application Firewall (WAF):
+      4.Web Application Firewall (WAF):
             - Specifically protects web applications from common vulnerabilities
               like SQL injection, cross-site scripting (XSS), and DDoS attacks.
 
-Functions of a Firewall
+Functions of a Firewall (rules):
       1.Packet Filtering:
             - Examines packets at the network layer and allows or blocks them based on IP addresses, ports, and protocols.
 

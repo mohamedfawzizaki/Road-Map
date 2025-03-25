@@ -86,33 +86,34 @@ ________________________________________________________________________________
                                                Classes of IP Addresses (IPv4)
 
 IPv4 addresses are traditionally divided into classes based on their use:
-
-1. Class A:
+-------------------------------------------------------------------------
+1. Class A:                                           (0-127)
    - Range: `0.0.0.0` to `127.255.255.255`
    - First octet: `0-127`
    - Used for large networks (up to 16 million hosts).
-   - Default Subnet Mask: `255.0.0.0`
-
-2. Class B:
+   - Default Subnet Mask:                             `255.0.0.0`
+-------------------------------------------------------------------------
+2. Class B:                                           (128-191)
    - Range: `128.0.0.0` to `191.255.255.255`
    - First octet: `128-191`
    - Used for medium-sized networks (up to 65,536 hosts).
-   - Default Subnet Mask: `255.255.0.0`
-
-3. Class C:
+   - Default Subnet Mask:                            `255.255.0.0`
+-------------------------------------------------------------------------
+3. Class C:                                           (192-223)
    - Range: `192.0.0.0` to `223.255.255.255`
    - First octet: `192-223`
    - Used for small networks (up to 254 hosts).
-   - Default Subnet Mask: `255.255.255.0`
-
-4. Class D (Multicast):
+   - Default Subnet Mask:                            `255.255.255.0`
+-------------------------------------------------------------------------
+4. Class D (Multicast):                               (224-239)
    - Range: `224.0.0.0` to `239.255.255.255`
    - Used for multicast communication (one-to-many communication).
    - No subnet mask associated.
-
-5. Class E (Reserved for Future Use):
+-------------------------------------------------------------------------
+5. Class E (Reserved for Future Use):                 (240-255)
    - Range: `240.0.0.0` to `255.255.255.255`
    - Reserved for experimental use.
+-------------------------------------------------------------------------
 
 _______________________________________________________________________________________________________________________________________
                                                            Subnetting

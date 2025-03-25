@@ -50,7 +50,6 @@ Filesystem Hierarchy Standard (FHS):
         The structure of the `/` directory and its subdirectories follows the Filesystem Hierarchy Standard (FHS), 
          which defines standard locations for files and directories in Unix-like operating systems.
 ---------------------------------------------------------------------------------------------------------
-
 Key Points
         1.Single Root Hierarchy: 
                 - Unlike Windows, Linux doesn’t use drive letters.

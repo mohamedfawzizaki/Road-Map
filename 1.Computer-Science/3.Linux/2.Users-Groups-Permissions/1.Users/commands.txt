@@ -14,6 +14,7 @@
                     |_______________________|_____________________________________________________________|
                     | `whoami`              | Show the current user.                                      |
                     | `id`                  | Show user and group IDs.                                    |
+                    | `who`                 |                                                             |
                     | `w`                   | Show who is logged in and what they are doing.              |
                     | `last`                | Show the last logins of users.                              |
                     |_______________________|_____________________________________________________________|
@@ -28,6 +29,7 @@ sudo [options] [command]
                |_____________________|_________________________________________________|_________________________________________________________________________________         
                |                     | sudo                              command       |              
                |  (no option)	     | sudo apt update	                               | Runs the command apt update with superuser (root) privileges.
+               |   -i	             | sudo -i	                                       | Starts a login shell as root, simulating a root login session.
                |   -b	             | sudo -b                           command	   | Runs the specified command in the background.
                |   -u	             | sudo -u username 	             command       | Runs the command as the specified user (default is root).
                |   -H	             | sudo -H  	                     command       | Sets the HOME environment variable to the target user's home directory (typically root) before executing the command.
@@ -40,7 +42,6 @@ sudo [options] [command]
                |   -l	             | sudo -l	                                       | Lists the allowed (and forbidden) commands for the current user based on the /etc/sudoers configuration.
                |   -v	             | sudo -v	                                       | Extends the time before the user's sudo password expires (validates the session without running a command).
                |   -k	             | sudo -k	                                       | Invalidates the current sudo timestamp, forcing a password prompt on the next sudo command.
-               |   -i	             | sudo -i	                                       | Starts a login shell as root, simulating a root login session.
                |   -s	             | sudo -s	                                       | Starts a shell with root privileges using the current shell environment.
                |   --version	     | sudo --version	                               | Displays version information about sudo.
                |   --help	         | sudo --help	                                   | Displays help information for the sudo command.
@@ -70,5 +71,11 @@ sudo su [options] [command]
                |  -m or --preserve-environment | su -m	                               | Same as -p; does not reset environment variables like PATH or HOME.
                |  -p or --preserve-environment | su -p	                               | Preserves the environment variables of the current user when switching to the target user.
                |_______________________________|_______________________________________|_________________________________________________________________________________         
+
+2.Logging Out  
+        Use the `exit` command to log out and return to the previous user session:
+        `````````````````````````````````````````````````
+        exit
+        `````````````````````````````````````````````````
 
 _________________________________________________________________________________________________________________________________________________________________________________________

@@ -39,10 +39,10 @@ Here are the main subdirectories you’ll find inside `/usr/`:
         - Purpose: 
                 - Contains system administration binaries that are intended to be run by the root user or administrators.
                 - These binaries are not needed for the system to boot, but they are
-                important for managing and maintaining the system once it is running.
+                   important for managing and maintaining the system once it is running.
         - Example: 
                 - Includes system management utilities like `useradd`, `mount`, `fsck`, `iptables`, 
-                and other commands used for system administration.
+                   and other commands used for system administration.
 ---------------------------------------------------------------------------------------------------------
 3.`/usr/lib/`
 
@@ -51,7 +51,7 @@ Here are the main subdirectories you’ll find inside `/usr/`:
                 - Many software programs in `/usr/bin/` and `/usr/sbin/` depend on libraries found here to operate properly.
         - Example: 
                 - Includes `.so` files (shared libraries) such as `libc.so`, which is 
-                essential for the majority of programs, and specific libraries for various applications.
+                   essential for the majority of programs, and specific libraries for various applications.
 ---------------------------------------------------------------------------------------------------------
 4.`/usr/share/`
 
@@ -87,7 +87,7 @@ Here are the main subdirectories you’ll find inside `/usr/`:
                 - It is commonly used to store kernel source code or source code for packages that need to be compiled.
         - Example: 
                 - Contains directories like `/usr/src/linux/` for kernel source
-                code or `/usr/src/<package>/` for source code of other installed packages.
+                   code or `/usr/src/<package>/` for source code of other installed packages.
 ---------------------------------------------------------------------------------------------------------
 Key Characteristics of `/usr/`
 

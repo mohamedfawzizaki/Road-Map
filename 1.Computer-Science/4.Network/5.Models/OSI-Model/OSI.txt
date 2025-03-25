@@ -145,7 +145,7 @@ OSI Model Summary
 | 5     | Session       | Manages sessions, dialogues between applications           | NetBIOS, RPC                  |
 | 4     | Transport     | Provides end-to-end communication and error handling       | TCP, UDP, TLS/SSL             |
 | 3     | Network       | Handles routing, logical addressing, and packet forwarding | IP, ICMP, Routing protocols   |
-| 2     | Data Link     | Organizes bits into frames and ensures error-free transfer | Ethernet, Wi-Fi, PPP          |
+| 2     | Data Link     | Organizes bits into frames and ensures error-free transfer | Ethernet, Wi-Fi, PPP, MAC     |
 | 1     | Physical      | Transmits raw bits over a physical medium                  | Ethernet cables, fiber optics |
 |_______|_______________|____________________________________________________________|_______________________________|
 ---------------------------------------------------------------------------------------------------------

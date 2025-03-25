@@ -6,6 +6,7 @@ Definition:
       - A firewall is a security system that monitors and controls network traffic based on predetermined security rules.
       - It acts as a barrier between trusted internal networks 
          and untrusted external networks, such as the internet, protecting systems from cyber threats.
+      - Acts on Network/Transport layer
 
 Types of Firewalls
       1.Hardware Firewall:

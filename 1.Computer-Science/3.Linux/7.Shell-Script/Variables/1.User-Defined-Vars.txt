@@ -1,7 +1,7 @@
 ____________________________________________________________________________________________________________________________________________________________
-                                                        Shell Script 
-                                                        ============
-User-Defined Variables in Linux             declare -p
+                                                     User-Defined Variables
+                                                     ======================
+            declare -p
 
 User-defined variables are custom variables that users
  can create to store and manipulate data within shell sessions or scripts. 
@@ -100,6 +100,15 @@ To make variables accessible to child processes, use the `export` command.
           export GREETING="Hello World"
           ``````````````````````````````````````````
   Now, the variable `GREETING` is available to subprocesses.
+
+
+- To export a function to child processes, use the -f option:
+          ``````````````````````````````````````````bash
+          my_function() {
+          echo "This is a function."
+          }
+          export -f my_function
+          ``````````````````````````````````````````bash
 
 ________________________________________________________________________________________________________________________________
                                             9. Persistent User-Defined Variables

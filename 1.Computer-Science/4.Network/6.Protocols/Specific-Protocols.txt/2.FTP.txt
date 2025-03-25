@@ -3,7 +3,7 @@ ________________________________________________________________________________
                                                 ============================
 
 FTP (File Transfer Protocol) is a standard network protocol used to transfer
- files between a client and a server over a TCP/IP network, such as the internet or an intranet. 
+ files between a client and a server over a TCP/IP network, such as the internet. 
  
 It allows users to upload, download, and manage files on a remote server,
  making it one of the oldest and most commonly used protocols for file transfers.
@@ -15,20 +15,27 @@ ________________________________________________________________________________
                                                       How FTP Works
 
 FTP uses two separate communication channels:
-1. Control Channel: Used to send commands and receive responses. This communication is typically done over port 21 (default).
-2. Data Channel: Used for transferring actual file data. The port used for this channel can vary based on the connection mode (Active or Passive).
+1. Control Channel:
+      - Used to send commands and receive responses. 
+      - This communication is typically done over port 21 (default).
+2. Data Channel: 
+      - Used for transferring actual file data. 
+      - The port used for this channel can vary based on the connection mode (Active or Passive).
 
  Active Mode (PORT Mode):
 - The client opens a random port (greater than 1024) and tells the server to connect to that port for the data transfer.
 - The server will establish the data connection from its port 20 to the client’s specified port.
 
  Passive Mode (PASV Mode):
-- The client initiates both the control and data connections. The server opens a random port (greater than 1024) for the data connection and tells the client to connect to it.
-- This mode is preferred when clients are behind firewalls or NAT (Network Address Translation) devices because it doesn't require inbound connections to the client's system.
+- The client initiates both the control and data connections. 
+- The server opens a random port (greater than 1024) for the data connection and tells the client to connect to it.
+- This mode is preferred when clients are behind firewalls
+   or NAT (Network Address Translation) devices because it doesn't require inbound connections to the client's system.
 _______________________________________________________________________________________________________________________________________
                                                       FTP Commands
 
-FTP clients send commands to FTP servers to interact with them. Some of the most common FTP commands include:
+FTP clients send commands to FTP servers to interact with them. 
+Some of the most common FTP commands include:
 
 1. USER: Specifies the username for authentication.
    - Example: `USER username`

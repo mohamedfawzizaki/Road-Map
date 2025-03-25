@@ -1,0 +1,77 @@
+_______________________________________________________________________________________________________________________________________
+                                    📌 List of All `server` Block Directives in Nginx
+
+The `server` block in Nginx defines a virtual host, specifying how the server should handle incoming requests. 
+It contains settings for listening ports, domain names, SSL, security, proxying, logging, and more.
+
+_______________________________________________________________________________________________________________________________________
+ 🔹 1️⃣ Basic Server Configuration
+| Directive     | Description | Syntax Example |
+| `listen`        | Specifies the port and protocol (HTTP/HTTPS) the server listens on. | `listen 80;` or `listen 443 ssl;` |
+| `server_name`   | Defines the domain(s) the server responds to. | `server_name example.com www.example.com;` |
+| `root`          | Sets the root directory for serving files. | `root /var/www/html;` |
+| `index`         | Defines the default index file. | `index index.html index.htm index.php;` |
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 2️⃣ Logging & Debugging
+| `access_log`   | Specifies the access log file and format. | `access_log /var/log/nginx/access.log main;` |
+| `error_log`    | Specifies the error log file and level. | `error_log /var/log/nginx/error.log warn;` |
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 3️⃣ Security & Access Control
+| `allow`           | Allows access from specific IPs. | `allow 192.168.1.100;` |
+| `deny`            | Denies access from specific IPs. | `deny all;` |
+| `ssl_certificate` | Specifies the SSL certificate file. | `ssl_certificate /etc/nginx/ssl/server.crt;` |
+| `ssl_certificate_key` | Specifies the private key file for SSL. | `ssl_certificate_key /etc/nginx/ssl/server.key;` |
+| `ssl_protocols`   | Defines allowed SSL/TLS versions. | `ssl_protocols TLSv1.2 TLSv1.3;` |
+| `ssl_ciphers`     | Specifies allowed encryption algorithms. | `ssl_ciphers HIGH:!aNULL:!MD5;` |
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 4️⃣ Location Handling
+| `location`   | Defines rules for handling requests based on URI. | `location /images/ { root /var/www/assets; }` |
+| `return`     | Redirects requests or sends HTTP status codes. | `return 301 https://example.com;` |
+| `rewrite`    | Rewrites request URIs using regex patterns. | `rewrite ^/oldpage$ /newpage permanent;` |
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 5️⃣ Proxy & Load Balancing
+| `proxy_pass`     | Forwards requests to a backend server. | `proxy_pass http://127.0.0.1:8080;` |
+| `proxy_set_header` | Modifies headers sent to the backend. | `proxy_set_header Host $host;` |
+| `proxy_redirect` | Modifies redirects received from the backend. | `proxy_redirect default;` |
+| `proxy_read_timeout` | Defines timeout for backend responses. | `proxy_read_timeout 60s;` |
+
+_______________________________________________________________________________________________________________________________________
+
+ 🔹 6️⃣ Static Content & Performance
+| `expires`    | Controls caching of static files. | `expires 30d;` |
+| `gzip`       | Enables gzip compression. | `gzip on;` |
+| `gzip_types` | Defines MIME types to compress. | `gzip_types text/plain text/css application/json;` |
+
+_______________________________________________________________________________________________________________________________________
+
+ 📌 Example: `server` Block
+````````````````````````````````````````````````````````````````````nginx
+server {
+    listen 80;
+    server_name example.com www.example.com;
+    
+    root /var/www/html;
+    index index.html index.htm;
+    
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log warn;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location /api/ {
+        proxy_pass http://backend;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+````````````````````````````````````````````````````````````````````

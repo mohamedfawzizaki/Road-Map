@@ -45,7 +45,7 @@ a.Syslog
                         - Logs events from the kernel, system services, and user processes.
                         - Supports remote logging.
       - Log Levels   :
-                              ___________________________________________________________
+                         ___________________________________________________________
                         |   Level |     Name       |       Description              |
                         |_________|________________|________________________________|
                         |    0    | Emergency      | System is unusable.            |

@@ -1,7 +1,8 @@
 ______________________________________________________________________________________________________________________________________
                                                  `/etc/gshadow`
                                                  =============
-The `/etc/gshadow` file in Linux is used to manage group passwords and group membership privileges.It works in conjunction with `/etc/group` to provide enhanced security for group management.
+The `/etc/gshadow` file in Linux is used to manage group passwords and group membership privileges.
+It works in conjunction with `/etc/group` to provide enhanced security for group management.
 
 ______________________________________________________________________________________________________________________________________
 
@@ -46,12 +47,13 @@ ________________________________________________________________________________
  Important Notes
 
 1.Group Password Usage:  
-   Group passwords are rarely used in modern systems because they pose security risks.Instead, group membership is typically managed by administrators.
+   Group passwords are rarely used in modern systems because they pose security risks.
+   Instead, group membership is typically managed by administrators.
 
 2.File Permissions:  
    The `/etc/gshadow` file should be readable and writable only by the root user for security reasons. 
    `````````````````````````````````````````````````````````````````bash
-   -rw____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________- 1 root root 800 Jan 10 12:00 /etc/gshadow
+   -rw------- 1 root root 800 Jan 10 12:00 /etc/gshadow
    `````````````````````````````````````````````````````````````````
 
 3.Commands Related to `/etc/gshadow`:
