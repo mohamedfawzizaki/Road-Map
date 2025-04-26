@@ -10,10 +10,10 @@ This process depends on:
 2️⃣ Service Discovery → To automatically detect and register new servers.  
 
 _____________________________________________________________________________________________________________________________________
+                                        1️⃣ Health Checks: Ensuring Servers Are Active  
 
- 1️⃣ Health Checks: Ensuring Servers Are Active  
-
-A health check is a periodic request sent by the load balancer to each backend server to determine if it's responsive and functioning correctly.
+A health check is a periodic request sent by the load balancer to
+ each backend server to determine if it's responsive and functioning correctly.
 
  How It Works:  
 1️⃣ Load Balancer pings each server at regular intervals (e.g., every 5 seconds).  
@@ -42,22 +42,21 @@ http {
 }
 ````````````````````````````````````````````````````````````
 📌 Key settings:  
-✅ `interval=5s` → Check every 5 seconds.  
-✅ `fails=3` → If a server fails 3 times in a row, it is removed.  
-✅ `passes=2` → If a failed server recovers twice, it is re-added.  
+✅ `interval=5s`    → Check every 5 seconds.  
+✅ `fails=3`        → If a server fails 3 times in a row, it is removed.  
+✅ `passes=2`       → If a failed server recovers twice, it is re-added.  
 
 _____________________________________________________________________________________________________________________________________
+                                            2️⃣ Service Discovery: Auto-Detecting New Servers  
 
- 2️⃣ Service Discovery: Auto-Detecting New Servers  
-
-A load balancer needs a way to know when new servers are added or removed dynamically. This is done using Service Discovery, which automatically updates the server list.
+A load balancer needs a way to know when new servers are added or removed dynamically. 
+This is done using Service Discovery, which automatically updates the server list.
 
  Types of Service Discovery  
-| Type | Description | Example |
-|__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________|____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________|_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________|
-| DNS-Based | Servers register with a DNS, and the LB queries it. | AWS Route 53, Consul DNS |
-| API-Based | Load balancer queries a service registry API. | AWS Auto Scaling, Kubernetes API |
-| Dynamic Configuration | Load balancer watches a file or database for changes. | HAProxy with Consul |
+|           Type        |                   Description                         |            Example                |
+| DNS-Based             | Servers register with a DNS, and the LB queries it.   | AWS Route 53, Consul DNS          |
+| API-Based             | Load balancer queries a service registry API.         | AWS Auto Scaling, Kubernetes API  |
+| Dynamic Configuration | Load balancer watches a file or database for changes. | HAProxy with Consul               |
 
  Example: Dynamic Service Discovery in Nginx (Using DNS)  
 Modify `nginx.conf`:
@@ -95,11 +94,11 @@ aws autoscaling create-auto-scaling-group \
 ✅ Health Check ensures only healthy servers are used.  
 
 _____________________________________________________________________________________________________________________________________
+                                        Summary: How Load Balancers Detect New Servers
 
- Summary: How Load Balancers Detect New Servers
-| Detection Method | How It Works | Example |
-| Health Checks | Load balancer pings servers to check if they are active. | Nginx, HAProxy, AWS ELB |
-| DNS Service Discovery | Load balancer queries DNS for updated server IPs. | AWS Route 53, Consul |
-| API-Based Discovery | Load balancer asks an API for the current server list. | Kubernetes API, AWS ASG |
-| Dynamic Configuration | Load balancer watches a config file for changes. | HAProxy with Consul |
+|   Detection Method    |                       How It Works                        |       Example             |
+| Health Checks         | Load balancer pings servers to check if they are active.  | Nginx, HAProxy, AWS ELB   |
+| DNS Service Discovery | Load balancer queries DNS for updated server IPs.         | AWS Route 53, Consul      |
+| API-Based Discovery   | Load balancer asks an API for the current server list.    | Kubernetes API, AWS ASG   |
+| Dynamic Configuration | Load balancer watches a config file for changes.          | HAProxy with Consul       |
 _____________________________________________________________________________________________________________________________________

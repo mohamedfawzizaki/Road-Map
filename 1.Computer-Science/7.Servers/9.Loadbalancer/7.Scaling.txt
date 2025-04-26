@@ -1,7 +1,8 @@
 _____________________________________________________________________________________________________________________________________
                                                         2. Scaling
 
-Scaling refers to the ability to increase or decrease system resources (servers, storage, etc.) to accommodate varying traffic loads. 
+Scaling refers to the ability to increase or decrease system
+ resources (servers, storage, etc.) to accommodate varying traffic loads. 
 
 There are two types of scaling:
 -------------------------------------------------------------------------------------------

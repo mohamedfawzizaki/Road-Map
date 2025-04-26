@@ -7,6 +7,8 @@
 |  ps                    |   ps aux                                       | Display information about running processes.                              |
 |  ps                    |   ps aux`                                      | Displays a snapshot of all running processes with detailed information (user, CPU usage, etc.). |
 |  ps                    |   ps -eo pid,%cpu,command --sort=-%cpu`        | Lists processes sorted by CPU usage.                                      |                         
+|  ps                    |   ps -fp $(cat /var/run/nginx.pid)             | Display information about processes by its id.                                      |                         
+|________________________|________________________________________________|___________________________________________________________________________|
 |  top                   |   top                                          | Interactive real-time view of system processes.                           |
 |  htop                  |   htop                                         | Interactive process viewer with user-friendly interface.                  |
 |  pstree                |   pstree                                       | Display a tree of processes, showing parent-child relationships.          |
@@ -23,6 +25,9 @@
 |  pkill                 |   pkill   -9 apache2                           | Kill processes by name (supports signal options).                         |
 |  killall               |   killall -9 apache2                           | Kill all processes by name.                                               |
 |  CTRL + C              |   (Press)                                      | Interrupt and terminate the current foreground process.                   |
+                            sudo kill -QUIT <PID>
+                            sudo kill -HUP  <PID>
+                            sudo kill -TERM <PID>
 |-----------------------------------------------------------------------------------------------------------------------------------------------------|
 |  nice                  |   nice -n 10 ./script.sh                       | Start a process with a specific priority (niceness value).                |
 |  renice                |   renice -n 5 -p 1234                          | Change the priority of a running process.                                 |

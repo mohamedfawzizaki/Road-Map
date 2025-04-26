@@ -13,9 +13,10 @@ ________________________________________________________________________________
 1.High Performance:
        - Nginx is designed to handle a large number of concurrent connections efficiently.
        - It uses an asynchronous, event-driven architecture that allows it to
-         serve thousands of clients simultaneously with minimal memory usage.
+          serve thousands of clients simultaneously with minimal memory usage.
        - Unlike traditional web servers (e.g., Apache), Nginx does not create a new thread for each request.
-       - Instead, it uses a non-blocking I/O model, which minimizes resource consumption.
+       - Instead, it uses a non-blocking I/O model, 
+          which minimizes resource consumption.
 
 2.Reverse Proxy Server:
        - Nginx can act as a reverse proxy, forwarding client requests
@@ -95,9 +96,10 @@ Here's an overview of its components:
        - The configuration is divided into several blocks:
               Global:   General settings, such as user and worker processes.
               Events:   Settings for handling connections.
-              HTTP:     Settings for HTTP protocol (including caching, proxy settings, etc.).
-              Server:   Defines individual virtual hosts (websites or services).
-              Location: Specifies how to handle specific URI patterns within a server block.
+              HTTP  :   Settings for HTTP protocol (including caching, proxy settings, etc.).
+                        Server:   Defines individual virtual hosts (websites or services).
+                                  Location: Specifies how to handle specific URI patterns within a server block.
+              Stream :  For handling TCP and UDP protocols (e.g., for load balancing database traffic).
 _____________________________________________________________________________________________________________________________________
                                            Common Nginx Use Cases
 
@@ -140,13 +142,13 @@ Here’s an example of a simple Nginx configuration for serving static content a
 1.Serve Static Content:
               ````````````````````````````````````nginx
               server {
-              listen 80;
-              server_name example.com;
-              
-              location / {
-                     root /var/www/html;
-                     index index.html;
-              }
+                     listen 80;
+                     server_name example.com;
+                     
+                     location / {
+                            root /var/www/html;
+                            index index.html;
+                     }
               }
               ````````````````````````````````````
 
@@ -186,15 +188,15 @@ Here’s an example of a simple Nginx configuration for serving static content a
  3.SSL Offloading:
               ````````````````````````````````````nginx
               server {
-              listen 443 ssl;
-              server_name example.com;
+                     listen 443 ssl;
+                     server_name example.com;
 
-              ssl_certificate /etc/nginx/ssl/example.crt;
-              ssl_certificate_key /etc/nginx/ssl/example.key;
-              
-              location / {
-                     proxy_pass http://backend_servers;
-              }
+                     ssl_certificate /etc/nginx/ssl/example.crt;
+                     ssl_certificate_key /etc/nginx/ssl/example.key;
+                     
+                     location / {
+                            proxy_pass http://backend_servers;
+                     }
               }
               ````````````````````````````````````
 

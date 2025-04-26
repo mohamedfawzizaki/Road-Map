@@ -24,7 +24,7 @@ To manipulate JSON responses dynamically, use the Lua module (`ngx_lua`):
 location /api/ {
     proxy_pass http://backend_service;
     
-     Enable Lua for response transformation
+    # Enable Lua for response transformation
     header_filter_by_lua_block {
         ngx.header["X-Processed-By"] = "API Gateway"
     }

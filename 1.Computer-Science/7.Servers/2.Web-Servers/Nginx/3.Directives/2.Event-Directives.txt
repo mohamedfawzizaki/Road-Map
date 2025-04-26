@@ -8,8 +8,8 @@ ________________________________________________________________________________
 Here’s the table with a Syntax column added:  
 
  🔹 1️⃣ Core Directives  
-| Directive         | Syntax                                      | Description |
-| `worker_connections`  | `worker_connections <number>;`                 | Defines maximum connections per worker process. |
+| Directive            | Syntax                                          | Description |
+| `worker_connections` | `worker_connections <number>;`                  | Defines maximum connections per worker process. |
 | `use`                | `use <event-model>;`                            | Specifies the event-driven model (e.g., `epoll`, `kqueue`). |
 | `multi_accept`       | `multi_accept on|off;`                          | If enabled, a worker accepts multiple connections at once. |
 | `accept_mutex`       | `accept_mutex on|off;`                          | Prevents multiple workers from accepting connections simultaneously. |
@@ -34,9 +34,3 @@ events {
 ````````````````````````````````````````````````````````````````````
 
 _______________________________________________________________________________________________________________________________________
-
- 🔹 Summary
-✔ Connection Handling → `worker_connections`, `multi_accept`  
-✔ Event Model Selection → `use`  
-✔ Synchronization & Optimization → `accept_mutex`, `accept_mutex_delay`  
-✔ Debugging → `debug_connection`  

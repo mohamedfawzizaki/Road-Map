@@ -2,7 +2,8 @@ ________________________________________________________________________________
                                         🔹 Understanding `/var/www/` Directory in Linux  
 
  1️⃣ What is `/var/www/`?  
-The `/var/www/` directory is the default web root for most web servers on Linux, including Nginx, Apache, and Lighttpd. It stores website files that are served to clients.  
+The `/var/www/` directory is the default web root for most web servers on Linux, including Nginx, Apache, and Lighttpd. 
+It stores website files that are served to clients.  
 
 📌 Location:  
 ````````````````````````````````````````````````````````````````````bash
@@ -35,10 +36,10 @@ A typical `/var/www/` setup:
 _______________________________________________________________________________________________________________________________________
 
  3️⃣ Default Web Root for Web Servers  
-| Web Server | Default Root Directory |
-| Apache | `/var/www/html/` |
-| Nginx | `/var/www/html/` (Debian-based) or `/usr/share/nginx/html/` (RHEL-based) |
-| Lighttpd | `/var/www/` |
+| Web Server    | Default Root Directory 
+| Apache        | `/var/www/html/`          
+| Nginx         | `/var/www/html/` (Debian-based) or `/usr/share/nginx/html/` (RHEL-based) 
+| Lighttpd      | `/var/www/` 
 
 _______________________________________________________________________________________________________________________________________
 
@@ -98,19 +99,19 @@ sudo chmod -R 775 /var/www/example.com/storage/
 _______________________________________________________________________________________________________________________________________
 
  6️⃣ Securing `/var/www/`  
-| Security Tip | Command/Action |
-| Disable directory listing | `autoindex off;` in Nginx config |
-| Use proper permissions | `chmod -R 755 /var/www/` |
-| Restrict file uploads | Set proper validation in PHP/Nginx |
-| Enable HTTPS | Use Let's Encrypt: `sudo certbot --nginx -d example.com` |
+| Security Tip              | Command/Action 
+| Disable directory listing | `autoindex off;` in Nginx config 
+| Use proper permissions    | `chmod -R 755 /var/www/` 
+| Restrict file uploads     | Set proper validation in PHP/Nginx 
+| Enable HTTPS              | Use Let's Encrypt: `sudo certbot --nginx -d example.com` 
 
 _______________________________________________________________________________________________________________________________________
 
  7️⃣ Troubleshooting Issues  
-| Issue | Solution |
-| `403 Forbidden` | Check permissions: `sudo chown -R www-data:www-data /var/www/` |
-| `404 Not Found` | Ensure Nginx config points to the correct `root` directory |
-| `nginx: [emerg] bind() failed` | Check if another service is using port 80/443 (`sudo netstat -tulnp`) |
+| Issue                         | Solution 
+| `403 Forbidden`               | Check permissions: `sudo chown -R www-data:www-data /var/www/` 
+| `404 Not Found`               | Ensure Nginx config points to the correct `root` directory 
+| `nginx: [emerg] bind() failed`| Check if another service is using port 80/443 (`sudo netstat -tulnp`) 
 
 _______________________________________________________________________________________________________________________________________
 
@@ -120,3 +121,5 @@ ________________________________________________________________________________
 - Ensure proper permissions (`chown www-data:www-data` and `chmod 755`).  
 - Configure Nginx or Apache to serve sites from this directory.  
 - Secure it by restricting access and enabling HTTPS.  
+
+_______________________________________________________________________________________________________________________________________

@@ -121,10 +121,10 @@ ________________________________________________________________________________
 
 3.Modules/Plugins:
        - Web servers often use additional modules or plugins for extended functionality:
-         - mod_rewrite (Apache) for URL manipulation.
-         - mod_ssl (Apache) for SSL/TLS encryption.
-         - ngx_http_rewrite_module (NGINX) for URL rewriting.
-         - PHP-FPM for executing PHP code.
+              - mod_rewrite (Apache) for URL manipulation.
+              - mod_ssl (Apache) for SSL/TLS encryption.
+              - ngx_http_rewrite_module (NGINX) for URL rewriting.
+              - PHP-FPM for executing PHP code.
 
 4.Security:
        - Web servers support security features like:
@@ -151,7 +151,7 @@ ________________________________________________________________________________
        - The directory where the web server looks for content to serve.
        - For example, `/var/www/html` in Apache.
 
-- Virtual Hosts: 
+- Virtual Hosts (Apache): 
        - Configuration to host multiple websites on a single server, based on domain names or IP addresses.
        - This is crucial for shared hosting.
 
@@ -160,7 +160,6 @@ ________________________________________________________________________________
 
 - Rewrite Rules:
        -  Directives for modifying URLs, often used for SEO-friendly URLs, or redirecting HTTP to HTTPS.
-
 
 - Security Settings: 
        - Configuration of SSL certificates, HTTP security headers, and access control rules to ensure the server is secure.
@@ -195,7 +194,7 @@ ________________________________________________________________________________
                      - DDoS.
                      - SQL injection.
                      - cross-site scripting (XSS),
-                      and more, requiring proper hardening and regular updates.
+                        and more, requiring proper hardening and regular updates.
 
 3.High Traffic Load:
        - Handling sudden surges in traffic can lead to server overload

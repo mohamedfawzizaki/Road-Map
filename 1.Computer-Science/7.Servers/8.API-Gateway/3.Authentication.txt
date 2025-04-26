@@ -34,7 +34,9 @@ ________________________________________________________________________________
                                     🔹 Token Validation in Nginx Using an External Auth Service  
 
 Instead of handling token validation inside Nginx,
- you can offload authentication to a dedicated authentication service (Auth-Service). This method is scalable and maintainable, especially in a microservices architecture.
+ you can offload authentication to a dedicated authentication service (Auth-Service). 
+ 
+This method is scalable and maintainable, especially in a microservices architecture.
 
 _____________________________________________________________________________________________________________________________________
                                                     🔹 How It Works
@@ -58,14 +60,14 @@ http {
         server_name api.example.com;
 
         location /api/ {
-            auth_request /auth;   Forward authentication request
+            auth_request /auth;  # Forward authentication request
             error_page 401 = @unauthorized;
 
-            proxy_pass http://backend_service;   Forward valid requests
+            proxy_pass http://backend_service; #  Forward valid requests
         }
 
         location /auth {
-            proxy_pass http://auth-service/validate;   Auth service URL
+            proxy_pass http://auth-service/validate;  # Auth service URL
             proxy_pass_request_body off;
             proxy_set_header Content-Length "";
             proxy_set_header X-Original-URI $request_uri;

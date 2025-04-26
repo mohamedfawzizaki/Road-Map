@@ -1,21 +1,24 @@
 _______________________________________________________________________________________________________________________________________
-                                        🔹 Outermost Blocks in the `http` Block  
+                                                     🔹 the `http` Block  
 
-The `http` block in Nginx is the main configuration block for handling HTTP/HTTPS traffic. Inside it, there are several top-level (outermost) blocks that define different functionalities.
+The `http` block in Nginx is the main configuration block for handling HTTP/HTTPS traffic. 
+Inside it, there are several top-level (outermost) blocks that define different functionalities.
+_______________________________________________________________________________________________________________________________________
+                                                 📌 Outermost Blocks Inside `http {}`
 
- 📌 Outermost Blocks Inside `http {}`
 The `http` block contains these key outer blocks:
-1. `server {}` – Defines a virtual host for handling HTTP requests.  
-2. `upstream {}` – Defines a group of backend servers for load balancing.  
-3. `map {}` – Creates key-value mappings for variables.  
-4. `geo {}` – Defines geographical mappings based on IP addresses.  
-5. `limit_req_zone {}` – Configures request rate limiting.  
-6. `log_format {}` – Defines custom log formats.  
-7. `proxy_cache_path {}` – Configures cache storage locations.  
+
+1. `server {}`              – Defines a virtual host for handling HTTP requests.  
+2. `upstream {}`            – Defines a group of backend servers for load balancing.  
+3. `map {}`                 – Creates key-value mappings for variables.  
+4. `geo {}`                 – Defines geographical mappings based on IP addresses.  
+5. `limit_req_zone {}`      – Configures request rate limiting.  
+6. `log_format {}`          – Defines custom log formats.  
+7. `proxy_cache_path {}`    – Configures cache storage locations.  
 
 _______________________________________________________________________________________________________________________________________
+                                            🔹 1️⃣ `server {}` Block (Virtual Host)
 
- 🔹 1️⃣ `server {}` Block (Virtual Host)
 Defines how Nginx should handle requests for a domain.  
 ````````````````````````````````````````````````````````````````````nginx
 http {
@@ -32,8 +35,8 @@ http {
 ✅ This serves files from `/var/www/html` for `example.com`.
 
 _______________________________________________________________________________________________________________________________________
+                                            🔹 2️⃣ `upstream {}` Block (Load Balancing)
 
- 🔹 2️⃣ `upstream {}` Block (Load Balancing)
 Defines a group of backend servers.  
 ````````````````````````````````````````````````````````````````````nginx
 http {
@@ -43,6 +46,9 @@ http {
     }
 
     server {
+        listen 80;
+        server_name example.com;
+
         location / {
             proxy_pass http://backend;
         }
@@ -52,8 +58,8 @@ http {
 ✅ Requests to `/` are distributed across two backend servers.
 
 _______________________________________________________________________________________________________________________________________
+                                            🔹 3️⃣ `map {}` Block (Key-Value Mapping)
 
- 🔹 3️⃣ `map {}` Block (Key-Value Mapping)
 Creates custom variables based on request conditions.  
 ````````````````````````````````````````````````````````````````````nginx
 http {
@@ -63,6 +69,9 @@ http {
     }
 
     server {
+        listen 80;
+        server_name example.com;
+
         location / {
             if ($mobile) {
                 return 302 /mobile-version.html;
@@ -74,8 +83,8 @@ http {
 ✅ Redirects mobile users to `/mobile-version.html`.
 
 _______________________________________________________________________________________________________________________________________
-
- 🔹 4️⃣ `geo {}` Block (Geographical IP Mapping)
+                                        🔹 4️⃣ `geo {}` Block (Geographical IP Mapping)
+                                        
 Assigns variables based on client IP address.  
 ````````````````````````````````````````````````````````````````````nginx
 http {
@@ -85,6 +94,9 @@ http {
     }
 
     server {
+        listen 80;
+        server_name example.com;
+
         location / {
             add_header X-Country $country;
         }
@@ -94,14 +106,17 @@ http {
 ✅ Sets `$country` based on client IP.
 
 _______________________________________________________________________________________________________________________________________
+                                            🔹 5️⃣ `limit_req_zone {}` Block (Rate Limiting)
 
- 🔹 5️⃣ `limit_req_zone {}` Block (Rate Limiting)
 Defines request rate limits.  
 ````````````````````````````````````````````````````````````````````nginx
 http {
     limit_req_zone $binary_remote_addr zone=mylimit:10m rate=5r/s;
 
     server {
+        listen 80;
+        server_name example.com;
+
         location /api/ {
             limit_req zone=mylimit burst=10;
         }
@@ -111,8 +126,8 @@ http {
 ✅ Limits clients to 5 requests per second.
 
 _______________________________________________________________________________________________________________________________________
+                                            🔹 6️⃣ `log_format {}` Block (Custom Logging)
 
- 🔹 6️⃣ `log_format {}` Block (Custom Logging)
 Defines custom log formats.  
 ````````````````````````````````````````````````````````````````````nginx
 http {
@@ -126,8 +141,8 @@ http {
 ✅ Stores logs in `/var/log/nginx/access.log`.
 
 _______________________________________________________________________________________________________________________________________
+                                            🔹 7️⃣ `proxy_cache_path {}` Block (Caching)
 
- 🔹 7️⃣ `proxy_cache_path {}` Block (Caching)
 Defines cache storage and rules.  
 ````````````````````````````````````````````````````````````````````nginx
 http {
@@ -137,13 +152,3 @@ http {
 ✅ Caches content for 60 minutes.
 
 _______________________________________________________________________________________________________________________________________
-
- 📌 Summary
-✔ Outermost blocks inside `http {}`:
-- `server {}` – Handles web requests.  
-- `upstream {}` – Defines backend servers.  
-- `map {}` – Key-value mappings.  
-- `geo {}` – Geolocation-based settings.  
-- `limit_req_zone {}` – Rate limiting.  
-- `log_format {}` – Custom logging.  
-- `proxy_cache_path {}` – Defines cache storage.  

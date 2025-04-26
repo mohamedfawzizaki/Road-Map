@@ -3,7 +3,9 @@ ________________________________________________________________________________
 
  1️⃣ What is `/etc/nginx/modules-enabled/`?  
 The `/etc/nginx/modules-enabled/` directory is used in Debian-based distributions
- (such as Ubuntu) to manage dynamically loaded modules for Nginx. It contains symbolic links to the actual module configuration files stored in `/etc/nginx/modules-available/`.
+ (such as Ubuntu) to manage dynamically loaded modules for Nginx. 
+ 
+It contains symbolic links to the actual module configuration files stored in `/etc/nginx/modules-available/`.
 
 🔹 Purpose:  
 - Allows enabling or disabling dynamic Nginx modules easily.  
@@ -13,10 +15,10 @@ The `/etc/nginx/modules-enabled/` directory is used in Debian-based distribution
 _______________________________________________________________________________________________________________________________________
 
  2️⃣ How Nginx Loads Modules
-By default, Nginx only includes modules specified in the `load_module` directive. The `modules-enabled` directory 
-is typically included in `nginx.conf`:
+By default, Nginx only includes modules specified in the `load_module` directive. 
+The `modules-enabled` directory is typically included in `nginx.conf`:
 ````````````````````````````````````````````````````````````````````nginx
-include /etc/nginx/modules-enabled/.conf;
+include /etc/nginx/modules-enabled/*.conf;
 ````````````````````````````````````````````````````````````````````
 This means all `.conf` files inside `/etc/nginx/modules-enabled/` will be loaded automatically when Nginx starts.
 
@@ -33,7 +35,7 @@ A typical Nginx module setup:
 │   ├── 50-mod-stream.conf
 │
 ├── modules-enabled/         # Contains only enabled modules (symlinks to modules-available)
-│   ├── 50-mod-http-geoip.conf -> /etc/nginx/modules-available/50-mod-http-geoip.conf
+│   ├── 50-mod-http-geoip.conf        -> /etc/nginx/modules-available/50-mod-http-geoip.conf
 │   ├── 50-mod-http-headers-more.conf -> /etc/nginx/modules-available/50-mod-http-headers-more.conf
 │
 └── conf.d/                  # Stores general settings (gzip, proxy, security, etc.)
@@ -42,12 +44,12 @@ A typical Nginx module setup:
 _______________________________________________________________________________________________________________________________________
 
  4️⃣ Common Nginx Modules
-| Module                      | Purpose |
-| `ngx_http_geoip_module`         | Enables GeoIP-based access control. |
-| `ngx_http_ssl_module`           | Enables SSL/TLS support. |
-| `ngx_http_headers_more_module`  | Allows modifying HTTP headers. |
-| `ngx_http_vhost_traffic_status` | Provides detailed traffic stats for virtual hosts. |
-| `ngx_stream_module`             | Enables TCP/UDP load balancing. |
+| Module                          | Purpose 
+| `ngx_http_geoip_module`         | Enables GeoIP-based access control. 
+| `ngx_http_ssl_module`           | Enables SSL/TLS support. 
+| `ngx_http_headers_more_module`  | Allows modifying HTTP headers. 
+| `ngx_http_vhost_traffic_status` | Provides detailed traffic stats for virtual hosts. 
+| `ngx_stream_module`             | Enables TCP/UDP load balancing. 
 
 _______________________________________________________________________________________________________________________________________
 
@@ -84,10 +86,10 @@ Look for `--with-` (built-in) and `--add-dynamic-module=` (dynamically loaded).
 _______________________________________________________________________________________________________________________________________
 
  7️⃣ Troubleshooting
-| Issue | Possible Cause | Solution |
-| `nginx: [emerg] module not found` | Module file is missing. | Ensure the `.so` file exists in `/usr/lib/nginx/modules/`. |
-| `nginx: [emerg] unknown directive "load_module"` | Using an old Nginx version. | Upgrade to Nginx 1.9.11+ (`sudo apt update && sudo apt upgrade`). |
-| `403 Forbidden` | GeoIP module blocks access. | Adjust GeoIP rules in `geoip.conf`. |
+| Issue                                                         | Possible Cause                    | Solution 
+| `nginx: [emerg] module not found`                             | Module file is missing.           | Ensure the `.so` file exists in `/usr/lib/nginx/modules/`. 
+| `nginx: [emerg] unknown directive "load_module"`              | Using an old Nginx version.       | Upgrade to Nginx 1.9.11+ (`sudo apt update && sudo apt upgrade`). 
+| `403 Forbidden` | GeoIP module blocks access.                 | Adjust GeoIP rules in `geoip.conf`|
 
 _______________________________________________________________________________________________________________________________________
 
@@ -96,3 +98,5 @@ ________________________________________________________________________________
 - `/etc/nginx/modules-enabled/` contains only enabled modules (symlinks).
 - Use `load_module` inside `.conf` files to activate modules.
 - Reload Nginx (`systemctl reload nginx`) after enabling or disabling modules.
+
+_______________________________________________________________________________________________________________________________________

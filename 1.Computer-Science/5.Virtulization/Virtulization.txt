@@ -18,7 +18,7 @@ ________________________________________________________________________________
        - A layer of software that enables virtualization by creating and managing VMs.
        - Provides the virtual hardware layer to VMs.
        - Two types:
-         - Type 1 (Bare-metal): Runs directly on the hardware (e.g., VMware ESXi, Microsoft Hyper    -V, Xen).
+         - Type 1 (Bare-metal): Runs directly on the hardware (e.g., VMware ESXi, Microsoft Hyper-V, Xen).
          - Type 2 (Hosted): Runs on a host OS (e.g., VMware Workstation, Oracle VirtualBox).
 
 3.Host Machine:

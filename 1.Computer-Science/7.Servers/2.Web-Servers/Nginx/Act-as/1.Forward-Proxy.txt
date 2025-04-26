@@ -55,17 +55,17 @@ Add the following configuration block to set up the forward proxy:
                     # Enable proxying
                     proxy_pass $scheme://$http_host$request_uri;
 
-                    Allow all requests
+                    # Allow all requests
                     proxy_set_header Host $http_host;
                     proxy_set_header X-Real-IP $remote_addr;
                     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
-                    Optional: Limit access to the proxy (replace with your IP range)
-                    allow 192.168.1.0/24;  Example: Allow local subnet
+                    # Optional: Limit access to the proxy (replace with your IP range)
+                    allow 192.168.1.0/24;  # Example: Allow local subnet
                     deny all;
                 }
 
-                Optional: Set timeouts
+                # Optional: Set timeouts
                 proxy_connect_timeout 5s;
                 proxy_read_timeout 10s;
             }
@@ -162,7 +162,7 @@ Improve performance by caching responses:
 Control bandwidth for outgoing traffic:
         `````````````````````````````````````````````````nginx
         http {
-            limit_rate 100k;  Limit to 100 KB/s per connection
+            limit_rate 100k;  # Limit to 100 KB/s per connection
         }
         `````````````````````````````````````````````````
 

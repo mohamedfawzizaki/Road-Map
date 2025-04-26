@@ -1,0 +1,106 @@
+Awesome — here's a **VirtualBox Cheat Sheet** for you! 🔥
+
+---
+
+# 📋 VirtualBox Cheat Sheet
+
+## 🛠 Basic Commands (VBoxManage)
+
+| Command | Description |
+|:-------|:------------|
+| `VBoxManage list vms` | List all registered VMs. |
+| `VBoxManage list runningvms` | List currently running VMs. |
+| `VBoxManage startvm "VM_Name"` | Start a VM by name. |
+| `VBoxManage controlvm "VM_Name" poweroff` | Force shutdown a VM (like pulling the power plug). |
+| `VBoxManage controlvm "VM_Name" acpipowerbutton` | Send ACPI shutdown signal (normal OS shutdown). |
+| `VBoxManage showvminfo "VM_Name"` | Show detailed information about a VM. |
+| `VBoxManage unregistervm "VM_Name" --delete` | Delete a VM and its files. |
+
+---
+
+## 🎛 Creating and Modifying VMs
+
+| Command | Description |
+|:--------|:------------|
+| `VBoxManage createvm --name "VM_Name" --register` | Create a new VM. |
+| `VBoxManage modifyvm "VM_Name" --memory 4096 --cpus 2` | Set memory (RAM) and CPU count. |
+| `VBoxManage modifyvm "VM_Name" --nic1 bridged --bridgeadapter1 "en0"` | Set network mode to Bridged. |
+| `VBoxManage modifyvm "VM_Name" --vrde on` | Enable Remote Desktop for VM. |
+
+---
+
+## 💾 Virtual Disks
+
+| Command | Description |
+|:--------|:------------|
+| `VBoxManage createhd --filename "path/to/disk.vdi" --size 20000` | Create a new virtual hard disk (20 GB). |
+| `VBoxManage clonehd "source.vdi" "clone.vdi"` | Clone a disk image. |
+| `VBoxManage modifymedium "disk.vdi" --resize 30000` | Resize an existing virtual disk to 30 GB. |
+| `VBoxManage storageattach "VM_Name" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "disk.vdi"` | Attach a disk to a VM. |
+
+---
+
+## 📡 Networking
+
+| Command | Description |
+|:--------|:------------|
+| `VBoxManage modifyvm "VM_Name" --nic1 nat` | Set network to NAT (default). |
+| `VBoxManage modifyvm "VM_Name" --nic1 bridged` | Set network to Bridged Adapter. |
+| `VBoxManage modifyvm "VM_Name" --nic1 hostonly` | Set network to Host-Only. |
+| `VBoxManage modifyvm "VM_Name" --natpf1 "guestssh,tcp,,2222,,22"` | Port forwarding from host (port 2222) to guest (port 22). |
+
+---
+
+## 📸 Snapshots
+
+| Command | Description |
+|:--------|:------------|
+| `VBoxManage snapshot "VM_Name" take "Snapshot_Name"` | Take a snapshot of the VM. |
+| `VBoxManage snapshot "VM_Name" list` | List all snapshots for a VM. |
+| `VBoxManage snapshot "VM_Name" restore "Snapshot_Name"` | Restore a VM to a snapshot. |
+| `VBoxManage snapshot "VM_Name" delete "Snapshot_Name"` | Delete a snapshot. |
+
+---
+
+## 🚀 Useful Settings
+
+| Command | Description |
+|:--------|:------------|
+| `VBoxManage modifyvm "VM_Name" --clipboard bidirectional` | Enable shared clipboard (host ⇄ guest). |
+| `VBoxManage modifyvm "VM_Name" --draganddrop bidirectional` | Enable drag-and-drop file sharing. |
+| `VBoxManage guestproperty enumerate "VM_Name"` | List all guest properties. |
+| `VBoxManage guestproperty set "VM_Name" "property_name" "value"` | Set a custom property. |
+
+---
+
+# 🧩 Common Shortcuts (GUI)
+
+| Shortcut | Action |
+|:---------|:-------|
+| **Right Ctrl** | Default Host Key (to release mouse/keyboard). |
+| **Ctrl + H** | Show VirtualBox Manager (main window). |
+| **Ctrl + R** | Reset the guest OS (reboot). |
+| **Ctrl + Q** | Close VirtualBox Manager. |
+| **Ctrl + S** | Settings for the selected VM. |
+
+---
+
+# 🛠 Quick VBoxManage Example
+```bash
+# Create and start a VM in 5 steps
+VBoxManage createvm --name "TestUbuntu" --register
+VBoxManage modifyvm "TestUbuntu" --memory 2048 --cpus 2 --nic1 nat
+VBoxManage createhd --filename ~/VirtualBox\ VMs/TestUbuntu/TestUbuntu.vdi --size 25000
+VBoxManage storagectl "TestUbuntu" --name "SATA Controller" --add sata --controller IntelAhci
+VBoxManage storageattach "TestUbuntu" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium ~/VirtualBox\ VMs/TestUbuntu/TestUbuntu.vdi
+VBoxManage startvm "TestUbuntu"
+```
+
+---
+
+# ⚡ Bonus Tips
+- Always **install Guest Additions** after setting up a VM for better performance.
+- Use **Snapshots** before risky operations (updates, experiments).
+- If your VM is **slow**, increase **video memory** and enable **3D Acceleration**.
+
+---

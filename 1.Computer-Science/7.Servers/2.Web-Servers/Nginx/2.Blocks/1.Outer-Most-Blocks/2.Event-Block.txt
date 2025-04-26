@@ -1,23 +1,22 @@
 _______________________________________________________________________________________________________________________________________
-                                        🔹 Event Block in Nginx (`events {}`) – Full Details  
+                                          🔹 Event Block in Nginx (`events {}`)
 
-The `events` block in Nginx controls how connections are handled at a low level. It defines how many clients can connect at the same time and how those connections are distributed across worker processes.
-
-_______________________________________________________________________________________________________________________________________
-
- 📌 Key Directives in the `events` Block  
-
-| Directive         | Description |
-| `worker_connections` | Defines the maximum number of simultaneous connections per worker process. |
-| `use`               | Specifies the event-driven connection handling method (e.g., `epoll`, `kqueue`). |
-| `multi_accept`      | Enables a worker to accept multiple connections at once. |
-| `accept_mutex`      | Ensures connections are evenly distributed across workers. |
-| `accept_mutex_delay` | Controls how long a worker waits before trying to accept a connection. |
-| `debug_connection`  | Logs debugging information for specific IPs. |
+The `events` block in Nginx controls how connections are handled at a low level. 
+It defines how many clients can connect at the same time and how those connections are distributed across worker processes.
 
 _______________________________________________________________________________________________________________________________________
+                                        📌 Key Directives in the `events` Block  
 
- 🔹 Explanation of Each Directive  
+|     Directive         |                              Description 
+| `worker_connections`  | Defines the maximum number of simultaneous connections per worker process. 
+| `use`                 | Specifies the event-driven connection handling method (e.g., `epoll`, `kqueue`). 
+| `multi_accept`        | Enables a worker to accept multiple connections at once. 
+| `accept_mutex`        | Ensures connections are evenly distributed across workers. 
+| `accept_mutex_delay`  | Controls how long a worker waits before trying to accept a connection. 
+| `debug_connection`    | Logs debugging information for specific IPs. 
+
+_______________________________________________________________________________________________________________________________________
+                                           🔹 Explanation of Each Directive  
 
  1️⃣ `worker_connections` (Max Connections per Worker)
 - Defines how many concurrent connections each worker can handle.
@@ -36,10 +35,10 @@ ________________________________________________________________________________
  2️⃣ `use` (Event Processing Method)
 - Specifies which event-driven model to use.
 - Different OS uses different methods:
-  - `epoll` → Linux (best for high performance)
-  - `kqueue` → BSD/macOS
-  - `select` → Older systems (not efficient)
-  - `poll` → Unix-based systems
+      - `epoll`   → Linux (best for high performance)
+      - `kqueue`  → BSD/macOS
+      - `select`  → Older systems (not efficient)
+      - `poll`    → Unix-based systems
 - Example:
   ````````````````````````````````````````````````````````````````````nginx
   events {
@@ -105,23 +104,25 @@ ________________________________________________________________________________
 - Logs will appear in `/var/log/nginx/error.log`.
 
 _______________________________________________________________________________________________________________________________________
+                                            🔹 Full Example: Optimized `events` Block
 
- 🔹 Full Example: Optimized `events` Block
 ````````````````````````````````````````````````````````````````````nginx
 events {
-    worker_connections 4096;  # Handle up to 4096 clients per worker
-    use epoll;  # Best method for Linux
-    multi_accept on;  # Accept multiple connections at once
-    accept_mutex on;  # Ensure even load distribution
-    accept_mutex_delay 100ms;  # Short delay for fast response
-    debug_connection 192.168.1.100;  # Debugging for specific IP
+    worker_connections 4096;          # Handle up to 4096 clients per worker
+    use epoll;                        # Best method for Linux
+    multi_accept on;                  # Accept multiple connections at once
+    accept_mutex on;                  # Ensure even load distribution
+    accept_mutex_delay 100ms;         # Short delay for fast response
+    debug_connection 192.168.1.100;   # Debugging for specific IP
 }
 ````````````````````````````````````````````````````````````````````
 
 _______________________________________________________________________________________________________________________________________
+                                                          🔹 Summary
 
- 🔹 Summary
 ✅ The `events` block fine-tunes connection handling for efficiency.  
 ✅ High-performance tuning depends on `worker_connections`, `multi_accept`, and `accept_mutex`.  
 ✅ Use `epoll` (Linux) or `kqueue` (macOS/BSD) for best performance.  
 ✅ Balance between faster connections (`multi_accept on`) and even load distribution (`accept_mutex on`).  
+
+_______________________________________________________________________________________________________________________________________

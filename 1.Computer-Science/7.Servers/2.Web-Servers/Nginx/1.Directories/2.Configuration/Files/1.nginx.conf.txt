@@ -17,7 +17,7 @@ worker_processes auto;
 pid /run/nginx.pid;
 
 # Load additional modules
-include /etc/nginx/modules-enabled/.conf;
+include /etc/nginx/modules-enabled/*.conf;
 
 # EVENTS BLOCK (Manages connections)
 events {
@@ -45,7 +45,7 @@ http {
 
     gzip on;
 
-    include /etc/nginx/conf.d/.conf;
+    include /etc/nginx/conf.d/*.conf;
     include /etc/nginx/sites-enabled/;
 }
 
@@ -73,7 +73,7 @@ include /etc/nginx/modules-enabled/.conf;
 - `user www-data;` → Runs Nginx processes as the `www-data` user (default in Ubuntu).
 - `worker_processes auto;` → Sets worker processes automatically based on CPU cores.
 - `pid /run/nginx.pid;` → Stores the process ID (PID) of the Nginx master process.
-- `include /etc/nginx/modules-enabled/.conf;` → Loads dynamic modules.
+- `include /etc/nginx/modules-enabled/*.conf;` → Loads dynamic modules.
 
 _______________________________________________________________________________________________________________________________________
 
@@ -138,11 +138,11 @@ ________________________________________________________________________________
 
 # (3.5) Including Extra Configurations
 ````````````````````````````````````````````````````````````````````nginx
-include /etc/nginx/conf.d/.conf;
+include /etc/nginx/conf.d/*.conf;
 include /etc/nginx/sites-enabled/;
 ````````````````````````````````````````````````````````````````````
 - Includes extra config files from:
-  - `/etc/nginx/conf.d/.conf` → Custom settings (e.g., security, caching).
+  - `/etc/nginx/conf.d/*.conf`  → Custom settings (e.g., security, caching).
   - `/etc/nginx/sites-enabled/` → Virtual host configurations (enabled websites).
 
 _______________________________________________________________________________________________________________________________________
@@ -204,13 +204,10 @@ sudo systemctl status nginx
 _______________________________________________________________________________________________________________________________________
 
  5. Common Issues & Fixes
-| Issue | Solution |
-| `nginx: [emerg] duplicate listen` | Ensure no duplicate `listen` directives. |
-| `nginx: [emerg] bind() to 0.0.0.0:80 failed` | Another service (Apache) might be using port 80. Stop it using `sudo systemctl stop apache2`. |
-| SSL errors | Check certificate paths and `ssl_certificate` settings. |
-| 403 Forbidden | Ensure correct file permissions (`chmod -R 755 /var/www/html`). |
+| Issue                                         | Solution 
+| `nginx: [emerg] duplicate listen`             | Ensure no duplicate `listen` directives. 
+| `nginx: [emerg] bind() to 0.0.0.0:80 failed`  | Another service (Apache) might be using port 80. Stop it using `sudo systemctl stop apache2`. |
+| SSL errors                                    | Check certificate paths and `ssl_certificate` settings. 
+| 403 Forbidden                                 | Ensure correct file permissions (`chmod -R 755 /var/www/html`). 
 
 _______________________________________________________________________________________________________________________________________
-
- Final Thoughts
-The `nginx.conf` file is highly customizable for performance, security, and reverse proxying. Would you like help optimizing it for your specific setup? 🚀

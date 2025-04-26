@@ -1,10 +1,12 @@
 _____________________________________________________________________________________________________________________________________
-
-
- Session Persistence in Load Balancing (Sticky Sessions) – Detailed Explanation  
+                            Session Persistence in Load Balancing (Sticky Sessions)
 
  What is Session Persistence?  
-Session persistence (sticky sessions) is a technique used in load balancing where a user's requests are consistently routed to the same backend server for the duration of a session. This is important for applications that store session-related data on individual servers (e.g., shopping carts, user authentication, video streaming).  
+Session persistence (sticky sessions) is a technique used in load balancing where
+ a user's requests are consistently routed to the same backend server for the duration of a session. 
+ 
+This is important for applications that store session-related data on
+ individual servers (e.g., shopping carts, user authentication, video streaming).  
 
  Why is Session Persistence Needed?
 - Stateful Applications: Some web apps rely on session data stored locally (e.g., PHP sessions, user authentication).
@@ -13,8 +15,7 @@ Session persistence (sticky sessions) is a technique used in load balancing wher
 - Payment Transactions: Ensures users remain on the same server during checkout.
 
 _____________________________________________________________________________________________________________________________________
-
- Types of Session Persistence Methods
+                                        Types of Session Persistence Methods
 
  1. Cookie-Based Persistence
 - Uses HTTP cookies to maintain user sessions.

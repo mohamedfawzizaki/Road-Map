@@ -4,7 +4,6 @@ ________________________________________________________________________________
 Load balancing is the process of distributing incoming network traffic
  across multiple servers or resources to ensure no single server is overwhelmed. 
  
-
 It helps improve the availability, scalability, and
  fault tolerance of applications by efficiently distributing the load across multiple servers or instances.
 
@@ -215,7 +214,8 @@ http {
 
     server {
         listen 80;
-
+        server_name example.com;
+        
         location / {
             # Forward requests to backend servers
             proxy_pass http://backend;

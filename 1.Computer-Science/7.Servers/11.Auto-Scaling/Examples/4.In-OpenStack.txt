@@ -1,5 +1,5 @@
 _____________________________________________________________________________________________________________________________________
-
+                                                   OpenStack for Autoscaling
 
 OpenStack is a cloud computing platform designed to build and manage public and private clouds. It is open-source and highly modular, consisting of various services that work together to provide infrastructure-as-a-service (IaaS). OpenStack can be used for virtual machine (VM) management, storage management, and networking. In the context of autoscaling, OpenStack provides tools and services to enable the automatic scaling of cloud resources based on demand.
 

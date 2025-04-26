@@ -2,7 +2,8 @@ ________________________________________________________________________________
                                         🔹 Understanding `/var/log/nginx/` Directory  
 
  1️⃣ What is `/var/log/nginx/`?  
-The `/var/log/nginx/` directory contains log files that store important information about Nginx’s operation, including access requests, errors, and debugging data.
+The `/var/log/nginx/` directory contains log files that store important information about Nginx’s operation,
+ including access requests, errors, and debugging data.
 
 📌 Location:  
 ````````````````````````````````````````````````````````````````````bash
@@ -17,13 +18,13 @@ ls -la /var/log/nginx/
 _______________________________________________________________________________________________________________________________________
 
  2️⃣ Common Log Files in `/var/log/nginx/`
-| Log File         | Description |
-| `access.log`        | Logs all HTTP requests received by Nginx. |
-| `error.log`         | Logs errors and warnings encountered by Nginx. |
-| `ssl_access.log`    | Logs HTTPS (SSL/TLS) requests. |
-| `ssl_error.log`     | Logs SSL/TLS-related errors. |
-| `proxy_access.log`  | Logs requests forwarded to a backend server (if proxying is used). |
-| `proxy_error.log`   | Logs errors from the proxy_pass directive. |
+| Log File            | Description 
+| `access.log`        | Logs all HTTP requests received by Nginx. 
+| `error.log`         | Logs errors and warnings encountered by Nginx. 
+| `ssl_access.log`    | Logs HTTPS (SSL/TLS) requests. 
+| `ssl_error.log`     | Logs SSL/TLS-related errors. 
+| `proxy_access.log`  | Logs requests forwarded to a backend server (if proxying is used). 
+| `proxy_error.log`   | Logs errors from the proxy_pass directive. 
 
 _______________________________________________________________________________________________________________________________________
 
@@ -53,15 +54,15 @@ Nginx logs HTTP requests in a predefined format:
 ````````````````````````````````````````````````````````````````````
 192.168.1.1 - - [25/Mar/2025:14:00:02 +0000] "GET /index.html HTTP/1.1" 200 512 "-" "Mozilla/5.0"
 ````````````````````````````````````````````````````````````````````
-| Field          | Description |
-| `192.168.1.1`     | Client IP address. |
-| `- -`             | User identity and authentication info (often empty). |
-| `[25/Mar/2025:14:00:02 +0000]` | Timestamp of the request. |
-| `"GET /index.html HTTP/1.1"` | Request method, path, and HTTP version. |
-| `200`             | HTTP status code (e.g., `200 OK`, `404 Not Found`). |
-| `512`             | Size of response in bytes. |
-| `"-"`            | Referrer (if any). |
-| `"Mozilla/5.0"`  | User-Agent (browser info). |
+| Field                             | Description ient IP address. 
+| `192.168.1.1`                     | Cl
+| `- -`                             | User identity and authentication info (often empty). 
+| `[25/Mar/2025:14:00:02 +0000]`    | Timestamp of the request. 
+| `"GET /index.html HTTP/1.1"`      | Request method, path, and HTTP version. 
+| `200`                             | HTTP status code (e.g., `200 OK`, `404 Not Found`). 
+| `512`                             | Size of response in bytes. 
+| `"-"`                             | Referrer (if any). 
+| `"Mozilla/5.0"`                   | User-Agent (browser info). 
 
 📌 Custom Log Format (Example)  
 You can define a custom log format in Nginx:
@@ -133,3 +134,5 @@ ________________________________________________________________________________
 - Use `tail -f` to monitor logs in real-time.
 - Logs can be cleared using `truncate -s 0`.
 - Log rotation is managed by `logrotate`.
+
+_______________________________________________________________________________________________________________________________________

@@ -9,11 +9,11 @@ Request Routing is the process of directing client requests to the appropriate b
 It is a critical function in API Gateways, Load Balancers, Reverse Proxies, and Web Servers.
 
  Why is Request Routing Important?  
-✅ Efficient Traffic Management: Directs requests to the correct service, reducing latency.  
-✅ Load Balancing: Distributes requests across multiple instances.  
-✅ Microservices Support: Routes API calls to different microservices.  
-✅ Security Enforcement: Blocks unauthorized requests and applies rate limiting.  
-✅ Version Control: Directs requests to different API versions without breaking existing clients.  
+✅ Efficient Traffic Management : Directs requests to the correct service, reducing latency.  
+✅ Load Balancing               : Distributes requests across multiple instances.  
+✅ Microservices Support        : Routes API calls to different microservices.  
+✅ Security Enforcement         : Blocks unauthorized requests and applies rate limiting.  
+✅ Version Control              : Directs requests to different API versions without breaking existing clients.  
 
 _____________________________________________________________________________________________________________________________________
                                               2. Types of Request Routing  

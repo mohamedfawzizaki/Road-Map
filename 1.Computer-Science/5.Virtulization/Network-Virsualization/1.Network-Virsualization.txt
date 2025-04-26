@@ -38,17 +38,18 @@ Here’s a detailed breakdown of network virtualization:
                                                      |       |                           |       |
                                                       \     /                             \     /
                                                        \   /                               \   /
-                                                   V-Router/Switch                     V-Router/Switch
+                                                   V-Router/Switch -----------------  V-Router/Switch
                                                          
                                                           
       - Virtual Network Interface Cards (vNICs): 
                 - These virtualized interfaces connect virtual machines (VMs) or 
                    other devices to virtual networks, similar to how physical NICs are used in physical machines.
       
-      - Software-Defined Networking (SDN): 
+      - Software-Defined Networking (SDN): 'like hypervisor'
                 - SDN is often a key enabler of network virtualization.
                 - It decouples the control plane (decision-making) from the 
-                   data plane (traffic forwarding), allowing network configuration and management to be done centrally via software.
+                   data plane (traffic forwarding),
+                   allowing network configuration and management to be done centrally via software.
       
       - Network Function Virtualization (NFV): 
                 - NFV is the process of virtualizing network functions
@@ -60,7 +61,8 @@ Here’s a detailed breakdown of network virtualization:
                    secure logical networks, improving security, isolation, and traffic management.
       
       - Overlay Networks: 
-                - These are virtual networks built over the physical infrastructure 
+                - These
+                 are virtual networks built over the physical infrastructure 
                    using tunneling protocols, often seen in technologies like VXLAN and NVGRE.
 --------------------------------------------------------------------------------------------------------------
  2.Types of Network Virtualization
@@ -125,7 +127,7 @@ Here’s a detailed breakdown of network virtualization:
 
                 - VXLAN (Virtual Extensible LAN): 
                           - An overlay technology used to create virtual networks over physical infrastructure.
-                          - It supports large    -scale networks and multi    -tenant environments.
+                          - It supports large-scale networks and multi-tenant environments.
                 - NVGRE (Network Virtualization using Generic Routing Encapsulation): 
                           - Similar to VXLAN, NVGRE is used for creating network overlays in virtualized environments.
 

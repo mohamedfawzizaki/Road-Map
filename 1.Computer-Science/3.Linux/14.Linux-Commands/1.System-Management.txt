@@ -12,6 +12,7 @@
 |   who                  |    `who`                                         | Show who is currently logged in.                                          |
 |   last                 |     last                                         |   Lists login history for all users.                                      |
 |   which                |    `which command`                               | Show the path to the command.                                             |
+|   whereis              |    `whereis command`                             | Show the path to the command.                                             |
 |   id                   |    `id username`                                 | Display UID, GID, and groups of a user.   
 |   lsb_release          |     lsb_release -a                               | Disable information about the Operating System.
 |   cat /etc/os-release  |     cat /etc/os-release                          | Disable information about the Operating System.

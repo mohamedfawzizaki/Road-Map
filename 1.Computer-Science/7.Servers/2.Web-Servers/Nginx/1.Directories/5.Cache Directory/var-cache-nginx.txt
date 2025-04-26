@@ -2,7 +2,8 @@ ________________________________________________________________________________
                                     🔹 Understanding `/var/cache/nginx/` Directory  
 
  1️⃣ What is `/var/cache/nginx/`?  
-The `/var/cache/nginx/` directory is where Nginx stores cached data when caching is enabled. This improves performance by reducing backend load and speeding up responses.
+The `/var/cache/nginx/` directory is where Nginx stores cached data when caching is enabled. 
+This improves performance by reducing backend load and speeding up responses.
 
 📌 Location:  
 ````````````````````````````````````````````````````````````````````bash
@@ -19,11 +20,11 @@ ________________________________________________________________________________
  2️⃣ What Gets Stored in `/var/cache/nginx/`?  
 The directory may contain:  
 
-| Cache Type       | Description |
-| `proxy_cache`       | Stores cached responses from backend servers (if `proxy_cache` is enabled). |
-| `fastcgi_cache`     | Stores cached responses from FastCGI applications (e.g., PHP-FPM). |
-| `scgi_cache`        | Stores cached responses from SCGI servers. |
-| `uwsgi_cache`       | Stores cached responses from uWSGI applications. |
+| Cache Type          | Description 
+| `proxy_cache`       | Stores cached responses from backend servers (if `proxy_cache` is enabled). 
+| `fastcgi_cache`     | Stores cached responses from FastCGI applications (e.g., PHP-FPM). 
+| `scgi_cache`        | Stores cached responses from SCGI servers. 
+| `uwsgi_cache`       | Stores cached responses from uWSGI applications. 
 
 _______________________________________________________________________________________________________________________________________
 
@@ -99,3 +100,5 @@ ________________________________________________________________________________
 - Use `proxy_cache_path` to configure caching in Nginx.  
 - Clear cache manually with `rm -rf /var/cache/nginx/`.  
 - Check cache status with `curl -I`.  
+
+_______________________________________________________________________________________________________________________________________

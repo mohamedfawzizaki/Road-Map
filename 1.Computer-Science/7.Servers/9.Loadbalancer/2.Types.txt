@@ -3,7 +3,8 @@ ________________________________________________________________________________
 
 
 A Load Balancer is a system that distributes incoming network traffic across
- multiple servers to ensure no single server becomes overwhelmed. This improves availability, fault tolerance, and scalability.  
+ multiple servers to ensure no single server becomes overwhelmed. 
+This improves availability, fault tolerance, and scalability.  
 _____________________________________________________________________________________________________________________________________
                                             1. Based on Deployment Type
 
@@ -148,6 +149,8 @@ _________________________________________________________________
 
   server {
       listen 80;
+      server_name example.com;
+      
       if ($geoip2_data_country_code = "US") {
           return 301 https://us.example.com;
       }

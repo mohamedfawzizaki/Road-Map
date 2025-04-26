@@ -2,7 +2,9 @@ ________________________________________________________________________________
                                                       /etc/nginx/
 
 The `/etc/nginx/` directory is the main configuration directory for Nginx on Linux systems. 
-It contains several important files and subdirectories that control how Nginx functions. Below is a detailed breakdown:
+It contains several important files and subdirectories that control how Nginx functions. 
+
+Below is a detailed breakdown:
 
 _______________________________________________________________________________________________________________________________________
 
@@ -21,7 +23,7 @@ ________________________________________________________________________________
 - Typically used for including extra settings.
 - Files inside are automatically included in `nginx.conf` using:
   ````````````````````````````````````````````````````````````````````nginx
-  include /etc/nginx/conf.d/.conf;
+  include /etc/nginx/conf.d/*.conf;
   ````````````````````````````````````````````````````````````````````
 
 _______________________________________________________________________________________________________________________________________

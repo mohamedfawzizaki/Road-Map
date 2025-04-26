@@ -2,7 +2,8 @@ ________________________________________________________________________________
                                         🔹 Understanding `/usr/lib/nginx/modules/` Directory  
 
  1️⃣ What is `/usr/lib/nginx/modules/`?  
-The `/usr/lib/nginx/modules/` directory stores dynamically loadable Nginx modules. These modules extend Nginx’s functionality without recompiling the server.
+The `/usr/lib/nginx/modules/` directory stores dynamically loadable Nginx modules. 
+These modules extend Nginx’s functionality without recompiling the server.
 
 📌 Location:  
 ````````````````````````````````````````````````````````````````````bash
@@ -19,14 +20,15 @@ ________________________________________________________________________________
  2️⃣ Types of Nginx Modules
 There are two types of Nginx modules:  
 
-| Module Type    | Description |
-| Static Modules | Built into Nginx at compile time (e.g., core HTTP, proxy, FastCGI). |
-| Dynamic Modules | Can be loaded or unloaded at runtime (`.so` files in `/usr/lib/nginx/modules/`). |
+| Module Type     | Description 
+| Static Modules  | Built into Nginx at compile time (e.g., core HTTP, proxy, FastCGI). 
+| Dynamic Modules | Can be loaded or unloaded at runtime (`.so` files in `/usr/lib/nginx/modules/`). 
 
 _______________________________________________________________________________________________________________________________________
 
  3️⃣ Loading Nginx Dynamic Modules
-To use a module from `/usr/lib/nginx/modules/`, add `load_module` in the Nginx configuration file (`/etc/nginx/nginx.conf` or inside a virtual host file).  
+To use a module from `/usr/lib/nginx/modules/`, add `load_module` in
+ the Nginx configuration file (`/etc/nginx/nginx.conf` or inside a virtual host file).  
 
 📌 Example: Load the Brotli compression module  
 Edit `/etc/nginx/nginx.conf` and add:  
@@ -42,14 +44,14 @@ sudo systemctl restart nginx
 _______________________________________________________________________________________________________________________________________
 
  4️⃣ Common Modules in `/usr/lib/nginx/modules/`
-| Module Name | Description |
-| `ngx_http_brotli_filter_module.so` | Brotli compression for HTTP responses. |
-| `ngx_http_brotli_static_module.so` | Serves pre-compressed Brotli files. |
-| `ngx_http_geoip_module.so` | Allows GeoIP-based location tracking. |
-| `ngx_http_image_filter_module.so` | Enables image resizing and processing. |
-| `ngx_http_headers_more_filter_module.so` | Allows modifying HTTP headers. |
-| `ngx_http_ssl_module.so` | Enables SSL/TLS support. |
-| `ngx_http_vhost_traffic_status_module.so` | Provides real-time traffic stats. |
+| Module Name                               | Description 
+| `ngx_http_brotli_filter_module.so`        | Brotli compression for HTTP responses. 
+| `ngx_http_brotli_static_module.so`        | Serves pre-compressed Brotli files. 
+| `ngx_http_geoip_module.so`                | Allows GeoIP-based location tracking. 
+| `ngx_http_image_filter_module.so`         | Enables image resizing and processing. 
+| `ngx_http_headers_more_filter_module.so`  | Allows modifying HTTP headers. 
+| `ngx_http_ssl_module.so`                  | Enables SSL/TLS support. 
+| `ngx_http_vhost_traffic_status_module.so` | Provides real-time traffic stats. 
 
 _______________________________________________________________________________________________________________________________________
 
@@ -90,3 +92,5 @@ ________________________________________________________________________________
 - Check available modules using `ls -la /usr/lib/nginx/modules/`.  
 - Install extra modules using `apt`, `yum`, or `pacman`.  
 - Restart Nginx after enabling modules.  
+
+_______________________________________________________________________________________________________________________________________

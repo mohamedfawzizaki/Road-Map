@@ -14,45 +14,38 @@ location [modifier] pattern {
 }
 ````````````````````````````````````````````````````````````````````
  Matching Modifiers
-| Modifier | Description | Example |
-| (None) | Exact prefix match | `location /images/` |
-| `=` | Exact match (no longer URI processing) | `location = /favicon.ico` |
-| `^~` | Prefix match (highest priority for prefix) | `location ^~ /static/` |
-| `~` | Case-sensitive regex match | `location ~ \.(jpg|png)$` |
-| `~` | Case-insensitive regex match | `location ~ \.(jpg|png|gif)$` |
+| Modifier  |           Description                     |       Example             
+| (None)    | Exact prefix match                        | `location /images/` 
+| `=`       | Exact match (no longer URI processing)    | `location = /favicon.ico` 
+| `^~`      | Prefix match (highest priority for prefix)| `location ^~ /static/` 
+| `~`       | Case-sensitive regex match                | `location ~ \.(jpg|png)$` 
+| `~`       | Case-insensitive regex match              | `location ~ \.(jpg|png|gif)$` 
 
 _______________________________________________________________________________________________________________________________________
 
  🔹 2️⃣ Core `location` Directives
-| Directive | Description |
-| `root` | Defines the root directory for file requests. |
-| `index` | Specifies the default index file (e.g., `index.html`). |
-| `alias` | Maps a URI path to a different physical path. |
-| `try_files` | Checks for files in order before returning an error. |
-| `return` | Redirects or sends an HTTP status response. |
-| `rewrite` | Modifies request URIs using regex. |
+| Directive     |               Description 
+| `root`        | Defines the root directory for file requests. 
+| `index`       | Specifies the default index file (e.g., `index.html`). 
+| `alias`       | Maps a URI path to a different physical path. 
+| `try_files`   | Checks for files in order before returning an error. 
+| `return`      | Redirects or sends an HTTP status response. 
+| `rewrite`     | Modifies request URIs using regex. 
 
 _______________________________________________________________________________________________________________________________________
 
  🔹 3️⃣ Security & Access Control
-| `allow` | Allows access from specific IPs. |
-| `deny` | Denies access from specific IPs. |
-| `auth_basic` | Enables HTTP basic authentication. |
-| `auth_basic_user_file` | Specifies the password file for authentication. |
+| `allow`                   | Allows access from specific IPs. 
+| `deny`                    | Denies access from specific IPs. 
+| `auth_basic`              | Enables HTTP basic authentication. 
+| `auth_basic_user_file`    | Specifies the password file for authentication. 
 
 _______________________________________________________________________________________________________________________________________
 
  🔹 4️⃣ Proxy & Reverse Proxy
-| `proxy_pass` | Forwards requests to a backend server. |
-| `proxy_set_header` | Modifies headers sent to the backend. |
-| `proxy_redirect` | Adjusts redirects from the backend. |
-
-_______________________________________________________________________________________________________________________________________
-
- 🔹 5️⃣ Caching & Performance
-| `expires` | Controls browser caching of static files. |
-| `gzip` | Enables gzip compression for responses. |
-| `gzip_types` | Defines MIME types to compress. |
+| `proxy_pass`          | Forwards requests to a backend server. 
+| `proxy_set_header`    | Modifies headers sent to the backend. 
+| `proxy_redirect`      | Adjusts redirects from the backend. 
 
 _______________________________________________________________________________________________________________________________________
 
@@ -214,12 +207,3 @@ location / {
 ✅ Ensures the same user (IP) always connects to the same backend server.
 
 _______________________________________________________________________________________________________________________________________
-
- 📌 Summary
-| Feature          | Example |
-| Regex Matching | `location ~ \.(jpg|png)$` |
-| Basic Auth | `auth_basic "Restricted";` |
-| IP Restriction | `allow 192.168.1.100; deny all;` |
-| Reverse Proxy | `proxy_pass http://backend;` |
-| Load Balancing | `server backend1 weight=3; server backend2 weight=1;` |
-| Sticky Sessions | `ip_hash;` |

@@ -1,26 +1,28 @@
 _______________________________________________________________________________________________________________________________________
-                                    🔹 `server` Block in Nginx (Detailed Explanation)  
+                                            🔹 `server` Block in Nginx  
 
-The `server {}` block in Nginx defines a virtual host that handles HTTP and HTTPS traffic for a particular domain or IP. It is the main component responsible for directing incoming requests based on domain, port, and location.  
+The `server {}` block in Nginx defines a virtual host that handles HTTP and HTTPS traffic for a particular domain or IP. 
+It is the main component responsible for directing incoming requests based on domain, port, and location.  
 
 _______________________________________________________________________________________________________________________________________
+                                            📌 Key Directives in `server {}`
 
- 📌 Key Directives in `server {}`
 Inside the `server` block, you can define multiple directives, such as:  
-1. `listen` – Specifies the port Nginx should listen on.  
-2. `server_name` – Defines the domain or subdomain the server should respond to.  
-3. `location` – Defines request handling rules.  
-4. `root` – Specifies the root directory for serving files.  
-5. `index` – Defines the default file to serve (e.g., `index.html`).  
-6. `error_page` – Custom error pages for HTTP errors.  
-7. `access_log` / `error_log` – Defines log file locations.  
-8. `proxy_pass` – For reverse proxying requests to backend servers.  
-9. `return` / `rewrite` – Redirects or modifies requests.  
+
+1. `listen`                     – Specifies the port Nginx should listen on.  
+2. `server_name`                – Defines the domain or subdomain the server should respond to.  
+3. `location`                   – Defines request handling rules.  
+4. `root`                       – Specifies the root directory for serving files.  
+5. `index`                      – Defines the default file to serve (e.g., `index.html`).  
+6. `error_page`                 – Custom error pages for HTTP errors.  
+7. `access_log` / `error_log`   – Defines log file locations.  
+8. `proxy_pass`                 – For reverse proxying requests to backend servers.  
+9. `return` / `rewrite`         – Redirects or modifies requests.  
 10. `ssl_certificate` / `ssl_certificate_key` – Defines SSL/TLS settings.  
 
 _______________________________________________________________________________________________________________________________________
+                                            🔹 Basic `server {}` Block Example
 
- 🔹 Basic `server {}` Block Example
 ````````````````````````````````````````````````````````````````````nginx
 server {
     listen 80;  # Listen on port 80 (HTTP)
@@ -53,7 +55,7 @@ ________________________________________________________________________________
 
  🔹 2️⃣ `server_name` Directive (Domain Name)
 - Specifies which domains or subdomains this block should handle.  
-- Supports wildcards (`.example.com`) for subdomains.  
+- Supports wildcards (`*.example.com`) for subdomains.  
 ````````````````````````````````````````````````````````````````````nginx
 server {
     server_name example.com www.example.com api.example.com;
@@ -112,7 +114,7 @@ Defines where logs are saved.
 ````````````````````````````````````````````````````````````````````nginx
 server {
     access_log /var/log/nginx/access.log;
-    error_log /var/log/nginx/error.log warn;
+    error_log  /var/log/nginx/error.log warn;
 }
 ````````````````````````````````````````````````````````````````````
 ✅ Access logs are stored in `/var/log/nginx/access.log`.
@@ -167,8 +169,8 @@ server {
 ✅ Enables HTTPS for `example.com`.
 
 _______________________________________________________________________________________________________________________________________
+                                        📌 Complete Example: Advanced `server {}` Block
 
- 📌 Complete Example: Advanced `server {}` Block
 ````````````````````````````````````````````````````````````````````nginx
 server {
     listen 80;
@@ -209,13 +211,3 @@ server {
 ✅ Handles static files, PHP requests, reverse proxy, logging, and HTTPS.
 
 _______________________________________________________________________________________________________________________________________
-
- 📌 Summary
-✔ `listen` – Defines the port (80 for HTTP, 443 for HTTPS).  
-✔ `server_name` – Defines domains handled by the server.  
-✔ `location` – Handles requests for different paths.  
-✔ `root` & `index` – Specifies where files are stored.  
-✔ `proxy_pass` – Forwards requests to backend servers.  
-✔ `error_page` – Defines custom error pages.  
-✔ `return` & `rewrite` – Handles redirects.  
-✔ `ssl_certificate` – Enables HTTPS.  

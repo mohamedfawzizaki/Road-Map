@@ -1,15 +1,16 @@
 _______________________________________________________________________________________________________________________________________
-                                    🔹 Stream Block in Nginx (`stream {}`) – Full Details  
+                                            🔹 Stream Block in Nginx (`stream {}`)
 
-The `stream` block in Nginx is used for handling TCP and UDP traffic, making it useful for reverse proxying non-HTTP services like:  
+The `stream` block in Nginx is used for handling TCP and UDP traffic,
+ making it useful for reverse proxying non-HTTP services like:  
 
 ✅ Database connections (MySQL, PostgreSQL, Redis)  
 ✅ Load balancing TCP/UDP traffic (e.g., DNS, SSH, MQTT, FTP)  
 ✅ Proxying SSL/TLS traffic (e.g., OpenVPN, SMTP)  
 
 _______________________________________________________________________________________________________________________________________
+                                            📌 Structure of the `stream` Block  
 
- 📌 Structure of the `stream` Block  
 The `stream {}` block is outside the `http {}` block and is defined globally in `nginx.conf`:
 ````````````````````````````````````````````````````````````````````nginx
 stream {
@@ -30,15 +31,15 @@ ________________________________________________________________________________
 
  🔹 Key Directives in the `stream` Block  
 
-| Directive        | Description |
-| `server`            | Defines each TCP/UDP server that listens for connections. |
-| `listen`            | Specifies the port and protocol (TCP or UDP) for the server. |
-| `proxy_pass`        | Forwards incoming connections to an upstream backend. |
-| `upstream`          | Defines backend servers for load balancing. |
-| `proxy_protocol`    | Enables Proxy Protocol (preserves client IP). |
-| `ssl_preread`       | Extracts SSL/TLS metadata before passing connections. |
-| `limit_conn`        | Limits the number of simultaneous connections per client. |
-| `resolver`          | Configures DNS resolution for upstream servers. |
+|       Directive     |                         Description 
+| `server`            | Defines each TCP/UDP server that listens for connections. 
+| `listen`            | Specifies the port and protocol (TCP or UDP) for the server. 
+| `proxy_pass`        | Forwards incoming connections to an upstream backend. 
+| `upstream`          | Defines backend servers for load balancing. 
+| `proxy_protocol`    | Enables Proxy Protocol (preserves client IP). 
+| `ssl_preread`       | Extracts SSL/TLS metadata before passing connections. 
+| `limit_conn`        | Limits the number of simultaneous connections per client. 
+| `resolver`          | Configures DNS resolution for upstream servers. 
 
 _______________________________________________________________________________________________________________________________________
 
@@ -203,11 +204,13 @@ stream {
 ✅ Nginx load-balances MySQL traffic and limits connections per client!
 
 _______________________________________________________________________________________________________________________________________
-
- 🔹 Summary
+                                                        🔹 Summary
+                                                        
 ✔️ The `stream` block is for TCP/UDP traffic (not HTTP).  
 ✔️ Use `proxy_pass` to forward requests to backend services.  
 ✔️ Use `upstream` for load balancing between multiple backends.  
 ✔️ `ssl_preread` is useful for TLS SNI-based routing.  
 ✔️ `limit_conn` helps prevent DDoS attacks on TCP/UDP services.  
 ✔️ Use `resolver` if backends have dynamic IPs.  
+
+_______________________________________________________________________________________________________________________________________

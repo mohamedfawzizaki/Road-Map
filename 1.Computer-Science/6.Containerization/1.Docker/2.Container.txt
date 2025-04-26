@@ -36,10 +36,10 @@ ________________________________________________________________________________
 | docker container ls -a                                                                  | Same as docker container ps -a.                                                                     |
 | docker image inspect <container_name-or-id>                                             | Displays detailed information about the specified container or image.                               |
 |-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| docker container logs <container_name-or-id>                                            | Fetches the logs of a container.                                                                    |
+| docker container logs  <container_name-or-id>                                           | Fetches the logs of a container.                                                                    |
 | docker container stats <container_name-or-id>                                           | Displays a live stream of container(s) resource usage statistics.                                   |
-| docker container port <container_name-or-id>                                            | Lists port mappings or a specific mapping for the container.                                        |
-| docker container top <container_name-or-id>                                             | Displays the running processes of a container.                                                      |
+| docker container port  <container_name-or-id>                                           | Lists port mappings or a specific mapping for the container.                                        |
+| docker container top   <container_name-or-id>                                           | Displays the running processes of a container.                                                      |
 |-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | docker image pull <image>                                                               | Pulls an image from a registry.                                                                     |
 | docker container create -it --name <my-container> <ImageNameOrID> bash/sh               | Creates a container from an image.                                                                  |

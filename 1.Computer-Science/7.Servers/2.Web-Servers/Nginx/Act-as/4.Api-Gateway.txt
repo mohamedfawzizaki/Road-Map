@@ -30,7 +30,7 @@ Example:
         ````````````````````````````````````nginx
         server {
             listen 80;
-
+            server_name example.com
             location /auth {
                 proxy_pass http://auth_service;
             }
@@ -46,8 +46,8 @@ Example:
         ````````````````````````````````````
 
 In this configuration:
-        - Requests to `/auth` are routed to the `auth_service`.
-        - Requests to `/user` are routed to the `user_service`.
+        - Requests to `/auth`  are routed to the `auth_service`.
+        - Requests to `/user`  are routed to the `user_service`.
         - Requests to `/order` are routed to the `order_service`.
 
 _____________________________________________________________________________________________________________________________________
@@ -70,6 +70,7 @@ Example:
 
         server {
             listen 80;
+            server_name example.com
 
             location /auth {
                 proxy_pass http://auth_service;
@@ -98,9 +99,10 @@ Example:
         ````````````````````````````````````nginx
         server {
             listen 80;
+            server_name example.com
 
             location /user {
-                Require JWT token for authorization
+                # Require JWT token for authorization
                 auth_request /auth;
                 proxy_pass http://user_service;
             }
@@ -129,6 +131,7 @@ Example:
         ````````````````````````````````````nginx
         server {
             listen 80;
+            server_name example.com
 
             location /user {
                 proxy_cache my_cache;
@@ -154,6 +157,7 @@ Example:
 
         server {
             listen 80;
+            server_name example.com
 
             location /user {
                 limit_req zone=mylimit burst=20;
@@ -176,6 +180,7 @@ Example:
         ````````````````````````````````````nginx
         server {
             listen 80;
+            server_name example.com
 
             location /user/order {
                 proxy_pass http://user_service;
@@ -216,6 +221,7 @@ Example:
         ````````````````````````````````````nginx
         server {
             listen 80;
+            server_name example.com
 
             location /user {
                 proxy_pass http://user_service;

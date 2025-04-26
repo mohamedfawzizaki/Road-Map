@@ -426,7 +426,7 @@ Modify your Nginx configuration to route traffic based on country.
 
 ````````````````````````````````````````````````````````````nginx
 http {
-     Load the GeoIP2 module
+    # Load the GeoIP2 module
     geoip2 /etc/nginx/GeoLite2-Country.mmdb {
         $geoip2_data_country_code country iso_code;
     }
@@ -447,7 +447,8 @@ http {
 
     server {
         listen 80;
-
+        server_name example.com;
+        
         location / {
             set $backend "default_servers";
 
