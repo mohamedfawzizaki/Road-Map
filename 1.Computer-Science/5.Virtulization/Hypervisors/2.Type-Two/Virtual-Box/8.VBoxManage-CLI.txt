@@ -8,9 +8,11 @@ Awesome — here's a **VirtualBox Cheat Sheet** for you! 🔥
 
 | Command | Description |
 |:-------|:------------|
+   VBoxManage list ostypes
 | `VBoxManage list vms` | List all registered VMs. |
 | `VBoxManage list runningvms` | List currently running VMs. |
 | `VBoxManage startvm "VM_Name"` | Start a VM by name. |
+|  VBoxManage startvm "Ubuntu-Server" --type headless
 | `VBoxManage controlvm "VM_Name" poweroff` | Force shutdown a VM (like pulling the power plug). |
 | `VBoxManage controlvm "VM_Name" acpipowerbutton` | Send ACPI shutdown signal (normal OS shutdown). |
 | `VBoxManage showvminfo "VM_Name"` | Show detailed information about a VM. |
@@ -22,7 +24,7 @@ Awesome — here's a **VirtualBox Cheat Sheet** for you! 🔥
 
 | Command | Description |
 |:--------|:------------|
-| `VBoxManage createvm --name "VM_Name" --register` | Create a new VM. |
+| `VBoxManage createvm --name "VM_Name" --ostype "Oracle_64" --register` | Create a new VM. |
 | `VBoxManage modifyvm "VM_Name" --memory 4096 --cpus 2` | Set memory (RAM) and CPU count. |
 | `VBoxManage modifyvm "VM_Name" --nic1 bridged --bridgeadapter1 "en0"` | Set network mode to Bridged. |
 | `VBoxManage modifyvm "VM_Name" --vrde on` | Enable Remote Desktop for VM. |
@@ -47,8 +49,10 @@ Awesome — here's a **VirtualBox Cheat Sheet** for you! 🔥
 | `VBoxManage modifyvm "VM_Name" --nic1 nat` | Set network to NAT (default). |
 | `VBoxManage modifyvm "VM_Name" --nic1 bridged` | Set network to Bridged Adapter. |
 | `VBoxManage modifyvm "VM_Name" --nic1 hostonly` | Set network to Host-Only. |
+| `VBoxManage modifyvm "VM_Name" --natpf1 "Name,protocol,,hostPort,,guestPort"` | Port forwarding from host (port 2222) to guest (port 22). |
 | `VBoxManage modifyvm "VM_Name" --natpf1 "guestssh,tcp,,2222,,22"` | Port forwarding from host (port 2222) to guest (port 22). |
-
+| `VBoxManage modifyvm "VM_Name" --natpf1 "NGINX,TCP,,8000,,80"` | Port forwarding from host (port 8000) to guest (port 80). |
+              
 ---
 
 ## 📸 Snapshots
@@ -59,6 +63,20 @@ Awesome — here's a **VirtualBox Cheat Sheet** for you! 🔥
 | `VBoxManage snapshot "VM_Name" list` | List all snapshots for a VM. |
 | `VBoxManage snapshot "VM_Name" restore "Snapshot_Name"` | Restore a VM to a snapshot. |
 | `VBoxManage snapshot "VM_Name" delete "Snapshot_Name"` | Delete a snapshot. |
+
+
+
+
+
+## 📡 Grouping
+
+| Command | Description |
+|:--------|:------------|
+| `VBoxManage modifyvm "vm01" --groups "/TestGroup" | This command creates a group TestGroup and attaches the VM vm01 to that group.
+| `VBoxManage modifyvm "vm01" --groups "" | Detach a VM from the group, and delete the group if empty.
+| `VBoxManage modifyvm "vm01" --groups "/TestGroup,/TestGroup2" | This command creates the groups TestGroup and TestGroup2, if they do not exist, and attaches the VM vm01 to both of them.
+| `VBoxManage modifyvm "vm01" --groups "/TestGroup/TestGroup2"` | This command attaches the VM vm01 to the subgroup TestGroup2 of the TestGroup group.
+
 
 ---
 

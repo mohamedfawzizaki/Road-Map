@@ -42,7 +42,7 @@ ________________________________________________________________________________
          - Bridged Adapter    : The guest gets its own IP address on the physical network.
          - Host-Only Adapter  : Creates a private network between the host and the guest.
          - Internal Network   : Enables networking only between VMs.
-         
+            
 7.VirtualBox Extension Pack  
    - An additional package that enhances functionality by providing:
          - USB 2.0/3.0 support

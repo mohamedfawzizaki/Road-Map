@@ -1,0 +1,61 @@
+
+
+
+
+                  'VBox'
+1.Host OS -> installation packages -> VM -> Guest OS -> Guest Additions
+
+installation packages : 
+    Oracle VirtualBox is split into the following components:
+
+        Base package :
+            - The base package consists of all open source components and is licensed under the GNU General Public License V3.
+
+        Extension packs :
+            - Additional extension packs can be downloaded which extend the functionality of the Oracle VirtualBox base package. 
+            - Currently, Oracle provides a single extension pack, available from: http://www.virtualbox.org. 
+            - The extension pack provides the following added functionality:
+                    VirtualBox Remote Desktop Protocol (VRDP) support. See Remote Display (VRDP Support).
+                    Host webcam passthrough. See Webcam Passthrough.
+                    Intel PXE boot ROM.
+                    Disk image encryption with AES algorithm. See Encryption of Disk Images.
+                    Cloud integration features. See Integrating with Oracle Cloud Infrastructure.
+
+Configuring Oracle VirtualBox
+        - Before creating, adding or importing any Virtual Machines,
+           you must set up Oracle VirtualBox to work with your network and host machine.
+
+
+Open Virtualization Format 'OVF' : 
+
+Guest Additions: 
+    - shared folders, seamless windows, 3D virtualization.
+
+Guest multiprocessing (SMP) :
+    - Oracle VirtualBox can present up to 32 virtual CPUs to each virtual machine,
+      irrespective of how many CPU cores are physically present on your host.
+
+VM groups :
+    - Oracle VirtualBox provides a groups feature that enables
+       the user to organize and control virtual machines collectively, as well as individually. 
+    - In addition to basic groups, it is also possible for any VM to be
+       in more than one group, and for groups to be nested in a hierarchy. This means you can have groups of groups. 
+    - In general, the operations that can be performed on groups
+       are the same as those that can be applied to
+       individual VMs: Start, Pause, Reset, Close (Save state, Send Shutdown, Poweroff), Discard Saved State, Show in File System, Sort.
+
+
+
+
+Alternative Front Ends:
+    VirtualBox. This is the VirtualBox Manager, a graphical user interface that uses the Qt toolkit. This interface is described throughout this user guide. While this is the simplest and easiest front end to use, some of the more advanced Oracle VirtualBox features are not included.
+
+    VBoxManage. A command-line interface for automated and detailed control of every aspect of Oracle VirtualBox. See VBoxManage.
+
+    VBoxHeadless. A front end that produces no visible output on the host at all, but can act as a RDP server if the VirtualBox Remote Desktop Extension (VRDE) is installed and enabled for the VM. As opposed to the other graphical interfaces, the headless front end requires no graphics support. This is useful, for example, if you want to host your virtual machines on a headless Linux server that has no X Window system installed. See VBoxHeadless, the Remote Desktop Server.
+
+    Separate mode. A front end that is based on VBoxHeadless, but does not require VRDE or an RDP viewer. See Separate Mode.
+
+
+
+

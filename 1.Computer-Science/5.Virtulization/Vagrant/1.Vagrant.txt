@@ -26,23 +26,23 @@ ________________________________________________________________________________
 Example `Vagrantfile`:
           ````````````````````````````````````````ruby
           Vagrant.configure("2") do |config|
-            Define the base box
+            # Define the base box
             config.vm.box = "ubuntu/bionic64"
 
-            Configure VM resources
+            # Configure VM resources
             config.vm.provider "virtualbox" do |vb|
               vb.name = "My VM"
               vb.memory = "2048"
               vb.cpus = 2
             end
 
-            Configure networking
+            # Configure networking
             config.vm.network "private_network", type: "dhcp"
 
-            Define a synced folder
+            # Define a synced folder
             config.vm.synced_folder "./app", "/var/www/app"
 
-            Add provisioning with a shell script
+            # Add provisioning with a shell script
             config.vm.provision "shell", inline: <<-SHELL
               apt-get update
               apt-get install -y nginx
